@@ -1,5 +1,7 @@
-
+import time
 from tkinter import Tk, Canvas, Label, Button
+import threading
+
 
 #----------------------------------------------------------------Fonction---------------------------------------------------------------------------
 
@@ -32,10 +34,15 @@ def creer_text():
     # Création du texte du score
     texte_score=Label(fenetre, text=f"{score} truc", bg="black", fg="white")
     texte_score.grid(row=0, column=5)
-    # Création du texte du score/sec (ou nb de clic)
-    texte_clicSec=Label(fenetre, text=f"{scoreClick} truc/Clic", bg="black", fg="white")
-    texte_clicSec.grid(row=1, column=5)
-    return Amelioration1Text, Amelioration2Text, texte_score, texte_clicSec
+    # Création du nb de clic
+    texte_scoreClick=Label(fenetre, text=f"{scoreClick} truc/Clic", bg="black", fg="white")
+    texte_scoreClick.grid(row=1, column=5)
+    # Création du texte du score/sec
+    texte_clicSec=Label(fenetre, text=f"{scoreSec} truc/Clic", bg="black", fg="white")
+    texte_clicSec.grid(row=2, column=5)
+
+
+    return Amelioration1Text, Amelioration2Text, texte_score, texte_clicSec, texte_scoreClick
 
 
 def creer_Canvas():
@@ -48,7 +55,16 @@ def AjoutScore():
     global score
     score=score+scoreClick                                  # A modifier
     #Maj du score sur l'HUD
-    texte_score.configure(text=score)
+    texte_score.configure(text=f"{score} truc")
+
+
+def MajScoreSec():
+    global score
+    t = 0
+    while t==0:
+        time.sleep(1)
+        score=score+scoreSec
+        texte_score.configure(text=f"{score} truc")
 
 
 def Amelioration1Clic():
@@ -56,19 +72,19 @@ def Amelioration1Clic():
     global score
     if score >= 10:                                         # A modifier
         scoreClick=scoreClick+1                             # A modifier
-        texte_clicSec.configure(text=f"{scoreClick}/sec")
+        texte_scoreClick.configure(text=f"{scoreClick} truc/Clic")
         score=score-10                                      # A modifier
-        texte_score.configure(text=f"{score}")
+        texte_score.configure(text=f"{score} truc")
 
 
 def Amelioration2Clic():
-    global scoreClick
+    global scoreSec
     global score
     if score >= 100:                                         # A modifier
-        scoreClick=scoreClick+10                             # A modifier
-        texte_clicSec.configure(text=f"{scoreClick}/sec")
+        scoreSec=scoreSec+1                                  # A modifier
+        texte_clicSec.configure(text=f"{scoreSec} truc/Clic")
         score=score-100                                      # A modifier
-        texte_score.configure(text=f"{score}")
+        texte_score.configure(text=f"{score} truc")
 
 
 def Amelioration3Clic():
@@ -76,25 +92,29 @@ def Amelioration3Clic():
     global score
     if score >= 1000:                                         # A modifier
         scoreClick=scoreClick+100                             # A modifier
-        texte_clicSec.configure(text=f"{scoreClick}/sec")
+        texte_scoreClick.configure(text=f"{scoreClick} truc/Clic")
         score=score-1000                                      # A modifier
-        texte_score.configure(text=f"{score}")
+        texte_score.configure(text=f"{score} truc")
 
 
 #----------------------------------------------------------------Main-----------------------------------------------------------------------------
 
 scoreClick=1
+scoreSec=0
 prix1=10
 prix2=100
 score=0
-t=0
-fenetre=creer_fenetre()
 
+
+fenetre=creer_fenetre()
+zone_graphique=creer_Canvas()
 bouton_clicker, Amelioration1Button, Amelioration2Button=creer_button()
 
-Amelioration1Text, Amelioration2Text, texte_score, texte_clicSec=creer_text()
+Amelioration1Text, Amelioration2Text, texte_score, texte_clicSec, texte_scoreClick=creer_text()
 
-zone_graphique=creer_Canvas()
+# Gestion du multithread pour les clic/sec
+th1=threading.Thread(target=MajScoreSec)
+th1.start()
 
 
 fenetre.mainloop()
