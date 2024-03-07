@@ -10,37 +10,46 @@ def creer_fenetre():
     return fenetre
 
 
-def creer_widgets():
-    zone_graphique = Canvas(fenetre, width=900, height=500, bg='black')
-    zone_graphique.grid(row=0, column=0, rowspan=15, columnspan=15)
-
+def creer_button():
     bouton_clicker = Button(fenetre, text="Clique !!!", width=50, height=20, bg="black",bd=0, activebackground="black", command=AjoutScore)
     bouton_clicker.grid(row=5, column=5)
-
+    #Création des différents bouton d'améliorations
     Amelioration1Button = Button(fenetre, text="Acheter", width=10, height=1, bg="white", command=Amelioration1Clic)
     Amelioration1Button.grid(row=1, column=14)
 
     Amelioration2Button = Button(fenetre, text="Acheter", width=10, height=1, bg="white", command=Amelioration2Clic)
     Amelioration2Button.grid(row=2, column=14)
+    return bouton_clicker, Amelioration1Button, Amelioration2Button
 
-    texte_score=Label(fenetre, text=f"{score} truc", bg="black", fg="white")
-    texte_score.grid(row=0, column=5)
 
+def creer_text():
+    # Création des différents textes d'améliorations
     Amelioration1Text=Label(fenetre, text=f"Amelioration 1 :  {prix1} truc", bg="black", fg="white")
     Amelioration1Text.grid(row=1, column=13)
 
     Amelioration2Text=Label(fenetre, text=f"Amelioration 1 :  {prix2} truc", bg="black", fg="white")
     Amelioration2Text.grid(row=2, column=13)
-
+    # Création du texte du score
+    texte_score=Label(fenetre, text=f"{score} truc", bg="black", fg="white")
+    texte_score.grid(row=0, column=5)
+    # Création du texte du score/sec (ou nb de clic)
     texte_clicSec=Label(fenetre, text=f"{scoreClick} truc/Clic", bg="black", fg="white")
     texte_clicSec.grid(row=1, column=5)
-    return zone_graphique, bouton_clicker, texte_score, texte_clicSec, Amelioration1Button, Amelioration1Text, Amelioration2Button
+    return Amelioration1Text, Amelioration2Text, texte_score, texte_clicSec
+
+
+def creer_Canvas():
+    zone_graphique = Canvas(fenetre, width=900, height=500, bg='black')
+    zone_graphique.grid(row=0, column=0, rowspan=15, columnspan=15)
+    return zone_graphique
 
 
 def AjoutScore():
     global score
     score=score+scoreClick                                  # A modifier
+    #Maj du score sur l'HUD
     texte_score.configure(text=score)
+
 
 def Amelioration1Clic():
     global scoreClick
@@ -80,8 +89,12 @@ prix2=100
 score=0
 t=0
 fenetre=creer_fenetre()
-zone_graphique, bouton_clicker, texte_score, texte_clicSec, Amelioration1Button, Amelioration1Text, Amelioration2Button=creer_widgets()
 
+bouton_clicker, Amelioration1Button, Amelioration2Button=creer_button()
+
+Amelioration1Text, Amelioration2Text, texte_score, texte_clicSec=creer_text()
+
+zone_graphique=creer_Canvas()
 
 
 fenetre.mainloop()
