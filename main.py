@@ -85,7 +85,7 @@ def Amelioration2Clic():
     global score
     if score >= 100:                                         # A modifier
         scoreSec+=1                                  # A modifier
-        texte_clicSec.configure(text=f"{scoreSec} notes/Clic")
+        texte_clicSec.configure(text=f"{scoreSec} notes/Secondes")
         score-=100                                      # A modifier
         texte_score.configure(text=f"{score} notes")
 
@@ -98,6 +98,22 @@ def Amelioration3Clic():
         texte_scoreClick.configure(text=f"{scoreClick} notes/Clic")
         score=score-1000                                      # A modifier
         texte_score.configure(text=f"{score} notes")
+#---------------------------------------------------------Provisoire---------------------------------------
+def point1k(event):
+    global score
+    score = 1000
+    texte_score.configure(text=f"{score} notes")
+
+
+def ptpclick(event):
+    global scoreClick
+    scoreClick = 20
+    texte_scoreClick.configure(text=f"{scoreClick} notes/Clic")
+
+def ptpsecondes(event):
+    global scoreSec
+    scoreSec = 25
+    texte_clicSec.configure(text=f"{scoreSec} notes/Secondes")
 
 
 #----------------------------------------------------------------Main-----------------------------------------------------------------------------
@@ -114,6 +130,11 @@ zone_graphique=creer_Canvas()
 bouton_clicker, Amelioration1Button, Amelioration2Button=creer_button()
 
 Amelioration1Text, Amelioration2Text, texte_score, texte_clicSec, texte_scoreClick=creer_text()
+
+# activation commandes admin
+fenetre.bind("<Up>", point1k)
+fenetre.bind("<Left>", ptpclick)
+fenetre.bind("<Right>", ptpsecondes)
 
 # Gestion du multithread pour les clic/sec
 th1=threading.Thread(target=MajScoreSec)
