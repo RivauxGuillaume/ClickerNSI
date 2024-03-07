@@ -1,7 +1,5 @@
 """
-Commentaire : 
-    il faudrait trouver un moyen pour faire fonctionner une fonction pendant que d'autre joue en meme temps
-    je sais que c'est possible (enfin je crois)
+commentaire pour l'autre ici
 """
 import time
 from tkinter import Tk, Canvas, Label, Button
@@ -18,7 +16,7 @@ def creer_fenetre():
 
 
 def creer_button():
-    bouton_clicker = Button(fenetre, text="Clique !!!", width=50, height=20, bg="black", fg="white", bd=0, activebackground="black", command=AjoutScore, borderwidth=3) #remplacer le clicker qui est actuelement un bouton par une image (qui si possible change au fur a mesur du niveau)
+    bouton_clicker = Button(fenetre, text="Clique !!!", width=50, height=20, bg="black", fg="white", bd=0, activebackground="black", command=AjoutScore, borderwidth=5) #remplacer le clicker qui est actuelement un bouton par une image (qui si possible change au fur a mesur du niveau)
     bouton_clicker.grid(row=5, column=5)
     #Création des différents bouton d'améliorations
     Amelioration1Button = Button(fenetre, text="Acheter", width=10, height=1, bg="white", command=Amelioration1Clic)
@@ -40,10 +38,10 @@ def creer_text():
     texte_score=Label(fenetre, text=f"{score} notes", bg="black", fg="white")
     texte_score.grid(row=0, column=5)
     # Création du nb de clic
-    texte_scoreClick=Label(fenetre, text=f"{scoreClick} notes/Clic", bg="black", fg="white")
+    texte_scoreClick=Label(fenetre, text=f"{scoreClick} notes/Clics", bg="black", fg="white")
     texte_scoreClick.grid(row=1, column=5)
     # Création du texte du score/sec
-    texte_clicSec=Label(fenetre, text=f"{scoreSec} notes/Clic", bg="black", fg="white")
+    texte_clicSec=Label(fenetre, text=f"{scoreSec} notes/Secondes", bg="black", fg="white")
     texte_clicSec.grid(row=2, column=5)
 
 
@@ -58,27 +56,27 @@ def creer_Canvas():
 
 def AjoutScore():
     global score
-    score=score+scoreClick                                  # A modifier
+    score+=scoreClick                                  
     #Maj du score sur l'HUD
     texte_score.configure(text=f"{score} notes")
 
 
 def MajScoreSec():
     global score
-    t = 0
-    while t==0:
-        time.sleep(1)
-        score=score+scoreSec
-        texte_score.configure(text=f"{score} notes")
+    while True:
+        if scoreSec != 0 :
+            time.sleep(1/scoreSec)
+            score+=1
+            texte_score.configure(text=f"{score} notes")
 
 
 def Amelioration1Clic():
     global scoreClick
     global score
     if score >= 10:                                         # A modifier
-        scoreClick=scoreClick+1                             # A modifier
+        scoreClick+=1                             # A modifier
         texte_scoreClick.configure(text=f"{scoreClick} notes/Clic")
-        score=score-10                                      # A modifier
+        score-=10                                      # A modifier
         texte_score.configure(text=f"{score} notes")
 
 
@@ -86,9 +84,9 @@ def Amelioration2Clic():
     global scoreSec
     global score
     if score >= 100:                                         # A modifier
-        scoreSec=scoreSec+1                                  # A modifier
+        scoreSec+=1                                  # A modifier
         texte_clicSec.configure(text=f"{scoreSec} notes/Clic")
-        score=score-100                                      # A modifier
+        score-=100                                      # A modifier
         texte_score.configure(text=f"{score} notes")
 
 
