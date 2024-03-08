@@ -59,7 +59,7 @@ def creer_text():
     texte_clicSec.grid(row=3, column=5)
 
     # Création de l'entête affichant le joueur qui joue
-    text_joueur = Label(fenetre, text="Joueur : ", bg="black", fg="white")
+    text_joueur = Label(fenetre, text=f"Joueur : {joueur}", bg="black", fg="white")
     text_joueur.grid(row=0, column=5, columnspan=2)
 
     return Amelioration1Text, Amelioration2Text, texte_score, texte_clicSec, texte_scoreClick, Amelioration3Text, text_joueur
@@ -81,10 +81,9 @@ def pop_up():
     return fenetre_pop_up, text_popup, prenom_user, bouton_valider_popup
     
 def recuperer_nom():
+    global joueur
     joueur = prenom_user.get("1.0", "end-1c")
-    text_joueur.configure(text=f"Joueur : {joueur}")
     fenetre_pop_up.destroy()
-    return joueur
 
 def AjoutScore():
     global score
@@ -92,7 +91,7 @@ def AjoutScore():
     #Maj du score sur l'HUD
     texte_score.configure(text=f"{score} notes")
 
-#marche mieu mais tjs pas ok
+#marche pas mieu
 def MajScoreSec():
     global score
     coeficient = int(scoreSec/100)
@@ -163,11 +162,14 @@ prix2=100
 prix3=1000
 score=0
 
+fenetre_pop_up, text_popup, prenom_user, bouton_valider_popup = pop_up()
+fenetre_pop_up.mainloop()
+
 fenetre=creer_fenetre()
 zone_graphique=creer_Canvas()
 bouton_clicker, Amelioration1Button, Amelioration2Button, Amelioration3Button=creer_button()
 Amelioration1Text, Amelioration2Text, texte_score, texte_clicSec, texte_scoreClick, Amelioration3Text, text_joueur=creer_text()
-fenetre_pop_up, text_popup, prenom_user, bouton_valider_popup = pop_up()
+
 
 
 # activation commandes admin
@@ -175,10 +177,12 @@ fenetre.bind("<Up>", point1k)
 fenetre.bind("<Left>", ptpclick)
 fenetre.bind("<Right>", ptpsecondes)
 
+
+
 # Gestion du multithread pour les clic/sec
-th1=threading.Thread(target=MajScoreSec)
-th1.daemon=True
+th1 = threading.Thread(target=MajScoreSec)
+th1.daemon = True
 th1.start()
 
-
 fenetre.mainloop()
+
