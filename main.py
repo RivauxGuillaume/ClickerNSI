@@ -1,6 +1,7 @@
 """
 commentaire pour l'autre ici
 """
+import sys
 import time
 from tkinter import Tk, Canvas, Label, Button, Text
 import threading
@@ -24,7 +25,10 @@ def creer_button():
 
     Amelioration2Button = Button(fenetre, text="Acheter", width=10, height=1, bg="white", command=Amelioration2Clic)
     Amelioration2Button.grid(row=3, column=14)
-    return bouton_clicker, Amelioration1Button, Amelioration2Button
+
+    Amelioration3Button = Button(fenetre, text="Acheter", width=10, height=1, bg="white", command=Amelioration3Clic)
+    Amelioration3Button.grid(row=4, column=14)
+    return bouton_clicker, Amelioration1Button, Amelioration2Button, Amelioration3Button
 
 
 def creer_text():
@@ -34,6 +38,9 @@ def creer_text():
 
     Amelioration2Text=Label(fenetre, text=f"Amelioration 1 :  {prix2} notes", bg="black", fg="white")
     Amelioration2Text.grid(row=3, column=13)
+
+    Amelioration3Text=Label(fenetre, text=f"Amelioration 1 :  {prix3} notes", bg="black", fg="white")
+    Amelioration3Text.grid(row=4, column=13)
     # Création du texte du score
     texte_score=Label(fenetre, text=f"{score} notes", bg="black", fg="white")
     texte_score.grid(row=1, column=5)
@@ -43,9 +50,7 @@ def creer_text():
     # Création du texte du score/sec
     texte_clicSec=Label(fenetre, text=f"{scoreSec} notes/Secondes", bg="black", fg="white")
     texte_clicSec.grid(row=3, column=5)
-
-
-    return Amelioration1Text, Amelioration2Text, texte_score, texte_clicSec, texte_scoreClick
+    return Amelioration1Text, Amelioration2Text, texte_score, texte_clicSec, texte_scoreClick, Amelioration3Text
 
 def creer_Canvas():
     zone_graphique = Canvas(fenetre, width=900, height=500, bg='black')
@@ -64,11 +69,11 @@ def MajScoreSec():
     global score
     while close == False:
         if scoreSec != 0 :
-            time.sleep(1/scoreSec)
+            time.sleep(1/scoreSec)      #bug si le scoreSec est trop élevé
             score+=1
             texte_score.configure(text=f"{score} notes")
             if close == True:
-                raise SystemExit()
+                sys.exit()
 
 
 def Amelioration1Clic():
@@ -103,18 +108,18 @@ def Amelioration3Clic():
 
 def point1k(event):
     global score
-    score = 1000
+    score += 1000
     texte_score.configure(text=f"{score} notes")
 
 
 def ptpclick(event):
     global scoreClick
-    scoreClick = 20
+    scoreClick += 20
     texte_scoreClick.configure(text=f"{scoreClick} notes/Clic")
 
 def ptpsecondes(event):
     global scoreSec
-    scoreSec = 25
+    scoreSec += 25
     texte_clicSec.configure(text=f"{scoreSec} notes/Secondes")
 
 
@@ -124,13 +129,13 @@ scoreClick=1
 scoreSec=0
 prix1=10
 prix2=100
+prix3=1000
 score=0
-
 
 fenetre=creer_fenetre()
 zone_graphique=creer_Canvas()
-bouton_clicker, Amelioration1Button, Amelioration2Button=creer_button()
-Amelioration1Text, Amelioration2Text, texte_score, texte_clicSec, texte_scoreClick=creer_text()
+bouton_clicker, Amelioration1Button, Amelioration2Button, Amelioration3Button=creer_button()
+Amelioration1Text, Amelioration2Text, texte_score, texte_clicSec, texte_scoreClick, Amelioration3Text=creer_text()
 
 # activation commandes admin
 fenetre.bind("<Up>", point1k)
@@ -140,8 +145,9 @@ fenetre.bind("<Right>", ptpsecondes)
 # Gestion du multithread pour les clic/sec
 close = False
 th1=threading.Thread(target=MajScoreSec)
+th1.daemon=True
 th1.start()
+
 
 fenetre.mainloop()
 close = True
-
