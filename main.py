@@ -52,24 +52,32 @@ def creer_text():
     texte_clicSec.grid(row=3, column=5)
 
     # Création de l'entête affichant le joueur qui joue
-    text_joueur = Label(fenetre, "Joueur : ", bg="black", fg="white")
-    text_joueur.grid(row=0, column=6, columnspan=2)
+    text_joueur = Label(fenetre, text="Joueur : ", bg="black", fg="white")
+    text_joueur.grid(row=0, column=5, columnspan=2)
 
-    return Amelioration1Text, Amelioration2Text, texte_score, texte_clicSec, texte_scoreClick
+    return Amelioration1Text, Amelioration2Text, texte_score, texte_clicSec, texte_scoreClick, text_joueur
 
 def pop_up():
     fenetre_pop_up = Tk()
     fenetre_pop_up.title("Entre ton nom")
-    fenetre_pop_up.geometry("300x200")
-    text_popup = Label(fenetre_pop_up, "Entre ton nom : ", height=11, ).grid(row=0, column=0)
+    # fenetre_pop_up.geometry("300x200")
+
+    text_popup = Label(fenetre_pop_up, text="Entre ton nom : ", height=7)
+    text_popup.grid(row=0, column=0)
+
     prenom_user = Text(fenetre_pop_up, height=1, width=14)
     prenom_user.grid(row=0, column=1)
-    joueur = prenom_user.get("1.0", "end-1c")
 
+    bouton_valider_popup = Button(fenetre_pop_up, text="Valider", width=12, command=recuperer_nom)
+    bouton_valider_popup.grid(row=1, column=0, columnspan=2)
 
-    return fenetre_pop_up, text_popup, prenom_user, joueur
+    return fenetre_pop_up, text_popup, prenom_user, bouton_valider_popup
     
-
+def recuperer_nom():
+    joueur = prenom_user.get("1.0", "end-1c")
+    text_joueur.configure(text=f"Joueur : {joueur}")
+    fenetre_pop_up.destroy()
+    return joueur
 
 def AjoutScore():
     global score
@@ -145,8 +153,8 @@ score=0
 fenetre=creer_fenetre()
 zone_graphique=creer_Canvas()
 bouton_clicker, Amelioration1Button, Amelioration2Button=creer_button()
-Amelioration1Text, Amelioration2Text, texte_score, texte_clicSec, texte_scoreClick=creer_text()
-fenetre_pop_up, text_popup, prenom_user, joueur = pop_up()
+Amelioration1Text, Amelioration2Text, texte_score, texte_clicSec, texte_scoreClick, text_joueur=creer_text()
+fenetre_pop_up, text_popup, prenom_user, bouton_valider_popup = pop_up()
 
 
 # activation commandes admin
