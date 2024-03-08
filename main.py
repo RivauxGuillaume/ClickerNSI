@@ -92,16 +92,19 @@ def AjoutScore():
     #Maj du score sur l'HUD
     texte_score.configure(text=f"{score} notes")
 
-
+#marche mieu mais tjs pas ok
 def MajScoreSec():
     global score
-    while close == False:
-        if scoreSec != 0 :
-            time.sleep(1/scoreSec)      #bug si le scoreSec est trop élevé
+    coeficient = int(scoreSec/100)
+    while True:
+        if coeficient == 0 and scoreSec != 0:
+            time.sleep(1/scoreSec)      #bug si le scoreSec est trop élevé 
             score+=1
-            texte_score.configure(text=f"{score} notes")
-            if close == True:
-                sys.exit()
+        elif coeficient > 0 :
+            time.sleep(1/(scoreSec/coeficient))
+            score+=coeficient
+        texte_score.configure(text=f"{score} notes")
+
 
 
 def Amelioration1Clic():
@@ -173,11 +176,9 @@ fenetre.bind("<Left>", ptpclick)
 fenetre.bind("<Right>", ptpsecondes)
 
 # Gestion du multithread pour les clic/sec
-close = False
 th1=threading.Thread(target=MajScoreSec)
 th1.daemon=True
 th1.start()
 
 
 fenetre.mainloop()
-close = True
