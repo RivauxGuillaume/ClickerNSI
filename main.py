@@ -14,6 +14,10 @@ def creer_fenetre():
     fenetre.title("Music Clicker")
     return fenetre
 
+def creer_Canvas():
+    zone_graphique = Canvas(fenetre, width=900, height=500, bg='black')
+    zone_graphique.grid(row=0, column=0, rowspan=15, columnspan=15)
+    return zone_graphique
 
 def creer_button():
     bouton_clicker = Button(fenetre, text="Clique !!!", width=50, height=20, bg="black", fg="white", bd=0, activebackground="black", command=AjoutScore, borderwidth=5) #remplacer le clicker qui est actuelement un bouton par une image (qui si possible change au fur a mesur du niveau)
@@ -34,24 +38,46 @@ def creer_text():
 
     Amelioration2Text=Label(fenetre, text=f"Amelioration 1 :  {prix2} notes", bg="black", fg="white")
     Amelioration2Text.grid(row=3, column=13)
+
     # Création du texte du score
     texte_score=Label(fenetre, text=f"{score} notes", bg="black", fg="white")
     texte_score.grid(row=1, column=5)
+    
     # Création du nb de clic
     texte_scoreClick=Label(fenetre, text=f"{scoreClick} notes/Clics", bg="black", fg="white")
     texte_scoreClick.grid(row=2, column=5)
+    
     # Création du texte du score/sec
     texte_clicSec=Label(fenetre, text=f"{scoreSec} notes/Secondes", bg="black", fg="white")
     texte_clicSec.grid(row=3, column=5)
 
+    # Création de l'entête affichant le joueur qui joue
+    text_joueur = Label(fenetre, text="Joueur : ", bg="black", fg="white")
+    text_joueur.grid(row=0, column=5, columnspan=2)
 
-    return Amelioration1Text, Amelioration2Text, texte_score, texte_clicSec, texte_scoreClick
+    return Amelioration1Text, Amelioration2Text, texte_score, texte_clicSec, texte_scoreClick, text_joueur
 
-def creer_Canvas():
-    zone_graphique = Canvas(fenetre, width=900, height=500, bg='black')
-    zone_graphique.grid(row=0, column=0, rowspan=15, columnspan=15)
-    return zone_graphique
+def pop_up():
+    fenetre_pop_up = Tk()
+    fenetre_pop_up.title("Entre ton nom")
+    # fenetre_pop_up.geometry("300x200")
 
+    text_popup = Label(fenetre_pop_up, text="Entre ton nom : ", height=7)
+    text_popup.grid(row=0, column=0)
+
+    prenom_user = Text(fenetre_pop_up, height=1, width=14)
+    prenom_user.grid(row=0, column=1)
+
+    bouton_valider_popup = Button(fenetre_pop_up, text="Valider", width=12, command=recuperer_nom)
+    bouton_valider_popup.grid(row=1, column=0, columnspan=2)
+
+    return fenetre_pop_up, text_popup, prenom_user, bouton_valider_popup
+    
+def recuperer_nom():
+    joueur = prenom_user.get("1.0", "end-1c")
+    text_joueur.configure(text=f"Joueur : {joueur}")
+    fenetre_pop_up.destroy()
+    return joueur
 
 def AjoutScore():
     global score
@@ -130,7 +156,9 @@ score=0
 fenetre=creer_fenetre()
 zone_graphique=creer_Canvas()
 bouton_clicker, Amelioration1Button, Amelioration2Button=creer_button()
-Amelioration1Text, Amelioration2Text, texte_score, texte_clicSec, texte_scoreClick=creer_text()
+Amelioration1Text, Amelioration2Text, texte_score, texte_clicSec, texte_scoreClick, text_joueur=creer_text()
+fenetre_pop_up, text_popup, prenom_user, bouton_valider_popup = pop_up()
+
 
 # activation commandes admin
 fenetre.bind("<Up>", point1k)
@@ -143,5 +171,6 @@ th1=threading.Thread(target=MajScoreSec)
 th1.start()
 
 fenetre.mainloop()
-close = True
+
+
 
