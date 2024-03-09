@@ -18,7 +18,7 @@ def creer_Canvas():
     return zone_graphique
 
 def creer_button():
-    photo = PhotoImage(file="ordi1.png")
+    photo = PhotoImage(file="ordi2.png")
     bouton_clicker = Button(fenetre, image=photo, command=AjoutScore, bg = "black", activebackground="black", width=500, height=300, bd=0)
     bouton_clicker.grid(row=6, column=5)
     #Création des différents bouton d'améliorations
