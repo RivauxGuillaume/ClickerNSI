@@ -1,4 +1,3 @@
-import sys
 import time
 from tkinter import Tk, Canvas, Label, Button, Text, PhotoImage
 import threading
