@@ -1,10 +1,8 @@
-"""
-commentaire pour l'autre ici
-"""
 import sys
 import time
-from tkinter import Tk, Canvas, Label, Button, Text
+from tkinter import Tk, Canvas, Label, Button, Text, PhotoImage
 import threading
+from PIL import *
 
 
 #----------------------------------------------------------------Fonction---------------------------------------------------------------------------
@@ -12,16 +10,17 @@ import threading
 
 def creer_fenetre():
     fenetre=Tk()
-    fenetre.title("Music Clicker")
+    fenetre.title("Computer Clicker")
     return fenetre
 
 def creer_Canvas():
-    zone_graphique = Canvas(fenetre, width=900, height=500, bg='black')
+    zone_graphique = Canvas(fenetre, width=900, height=500, bg = "black")
     zone_graphique.grid(row=0, column=0, rowspan=15, columnspan=15)
     return zone_graphique
 
 def creer_button():
-    bouton_clicker = Button(fenetre, text="Clique !!!", width=50, height=20, bg="black", fg="white", bd=0, activebackground="black", command=AjoutScore, borderwidth=5) #remplacer le clicker qui est actuelement un bouton par une image (qui si possible change au fur a mesur du niveau)
+    photo = PhotoImage(file="ordi1.png")
+    bouton_clicker = Button(fenetre, image=photo, command=AjoutScore, bg = "black", activebackground="black", width=500, height=300, bd=0)
     bouton_clicker.grid(row=6, column=5)
     #Création des différents bouton d'améliorations
     Amelioration1Button = Button(fenetre, text="Acheter", width=10, height=1, bg="white", command=Amelioration1Clic)
@@ -32,7 +31,7 @@ def creer_button():
 
     Amelioration3Button = Button(fenetre, text="Acheter", width=10, height=1, bg="white", command=Amelioration3Clic)
     Amelioration3Button.grid(row=4, column=14)
-    return bouton_clicker, Amelioration1Button, Amelioration2Button, Amelioration3Button
+    return photo, bouton_clicker, Amelioration1Button, Amelioration2Button, Amelioration3Button
 
 
 def creer_text():
@@ -91,16 +90,16 @@ def AjoutScore():
     #Maj du score sur l'HUD
     texte_score.configure(text=f"{score} notes")
 
-#marche pas mieu
+# peut pas marcher pqs time a une précision de 1e-7 mais windows block avant
 def MajScoreSec():
     global score
     coeficient = int(scoreSec/100)
     while True:
         if coeficient == 0 and scoreSec != 0:
-            time.sleep(1/scoreSec)      #bug si le scoreSec est trop élevé 
+            time.sleep(1/scoreSec)
             score+=1
         elif coeficient > 0 :
-            time.sleep(1/(scoreSec/coeficient))
+            time.nanosleep((1/(scoreSec/coeficient))/1.5)
             score+=coeficient
         texte_score.configure(text=f"{score} notes")
 
@@ -115,15 +114,15 @@ def Amelioration1Clic():
         score-=10                                      # A modifier
         texte_score.configure(text=f"{score} notes")
 
-
+# bug : n'enlève pas les 100 points au score
 def Amelioration2Clic():
     global scoreSec
     global score
     if score >= 100:                                         # A modifier
         scoreSec+=1                                  # A modifier
         texte_clicSec.configure(text=f"{scoreSec} notes/Secondes")
-        score-=100                                      # A modifier
-        texte_score.configure(text=f"{score} notes")
+        score = score - 100                                      # A modifier
+        texte_score.configure(text=f"{score} notes")        
 
 
 def Amelioration3Clic():
@@ -167,7 +166,7 @@ fenetre_pop_up.mainloop()
 
 fenetre=creer_fenetre()
 zone_graphique=creer_Canvas()
-bouton_clicker, Amelioration1Button, Amelioration2Button, Amelioration3Button=creer_button()
+photo, bouton_clicker, Amelioration1Button, Amelioration2Button, Amelioration3Button=creer_button()
 Amelioration1Text, Amelioration2Text, texte_score, texte_clicSec, texte_scoreClick, Amelioration3Text, text_joueur=creer_text()
 
 
