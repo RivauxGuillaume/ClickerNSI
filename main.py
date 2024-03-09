@@ -2,7 +2,6 @@ import time
 from tkinter import Tk, Canvas, Label, Button, Text, PhotoImage
 import threading
 from PIL import *
-test
 
 #----------------------------------------------------------------Fonction---------------------------------------------------------------------------
 
@@ -18,8 +17,8 @@ def creer_Canvas():
     return zone_graphique
 
 def creer_button():
-    photo = PhotoImage(file="ordi1.png")
-    bouton_clicker = Button(fenetre, image=photo, command=AjoutScore, bg = "black", activebackground="black", width=500, height=300, bd=0)
+    photo = PhotoImage(file="ordi2.png")
+    bouton_clicker = Button(fenetre, image=photo, command=AjoutScore, bg = "black", activebackground="black", width=270, height=255, bd=0)
     bouton_clicker.grid(row=6, column=5)
     #Création des différents bouton d'améliorations
     Amelioration1Button = Button(fenetre, text="Acheter", width=10, height=1, bg="white", command=Amelioration1Clic)
