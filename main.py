@@ -92,14 +92,17 @@ def AjoutScore():
 def MajScoreSec():
     global score
     global scoreSec
+    initial_diviseur = 100
     while True:
-        coeficient = int(scoreSec/100)
+        coeficient = int(scoreSec/initial_diviseur)
+        if coeficient > initial_diviseur:
+            initial_diviseur = initial_diviseur * 10
         if coeficient == 0 and scoreSec != 0:
             time.sleep(1/scoreSec)
             score+=1
-        elif coeficient > 0 :
+        elif coeficient > 0:
             time.sleep(1/(scoreSec/coeficient))
-            score+=coeficient
+            score+=int(coeficient * (initial_diviseur/100))
         texte_score.configure(text=f"{score} notes")
 
 
