@@ -161,10 +161,10 @@ def widgetUpgrade2():
     buttonUpgrade2 = Button(fenetre, image=pictureUpgrade2, bg="black", activebackground="black", command=Amelioration2Clic, width=60, height=60)
     buttonUpgrade2.grid(row=5, column=12, rowspan=2)
 
-    priceUpgrade2 = Label(fenetre, text="prix : 10", bg="black", fg="white")
+    priceUpgrade2 = Label(fenetre, text="prix : 100", bg="black", fg="white")
     priceUpgrade2.grid(row=5, column=13, rowspan=2)
 
-    textUpgrade2 = Label(fenetre, text="augmente de 0.1 le nombre\nd'octets par secondes", bg="black", fg="white", font="Helvetica 10")
+    textUpgrade2 = Label(fenetre, text="augmente de 2 le nombre\nd'octets par secondes", bg="black", fg="white", font="Helvetica 10")
     textUpgrade2.grid(row=5, column=14, rowspan=2)
 
     return levelUpgrade2, pictureUpgrade2, buttonUpgrade2, priceUpgrade2, textUpgrade2
@@ -174,13 +174,13 @@ def widgetUpgrade3():
     levelUpgrade3.grid(row=7, column=11, rowspan=2)
 
     pictureUpgrade3 = PhotoImage(file="image/python.png")
-    buttonUpgrade3 = Button(fenetre, image=pictureUpgrade3, bg="black", activebackground="black", command=Amelioration4Clic, width=60, height=60)
+    buttonUpgrade3 = Button(fenetre, image=pictureUpgrade3, bg="black", activebackground="black", command=Amelioration3Clic, width=60, height=60)
     buttonUpgrade3.grid(row=7, column=12, rowspan=2)
 
-    priceUpgrade3 = Label(fenetre, text="prix : 10", bg="black", fg="white")
+    priceUpgrade3 = Label(fenetre, text="prix : 1 100", bg="black", fg="white")
     priceUpgrade3.grid(row=7, column=13, rowspan=2)
 
-    textUpgrade3 = Label(fenetre, text="augmente de 0.1 le nombre\nd'octets par secondes", bg="black", fg="white", font="Helvetica 10")
+    textUpgrade3 = Label(fenetre, text="augmente de 8 le nombre\nd'octets par secondes", bg="black", fg="white", font="Helvetica 10")
     textUpgrade3.grid(row=7, column=14, rowspan=2)
 
     return levelUpgrade3, pictureUpgrade3, buttonUpgrade3, priceUpgrade3, textUpgrade3
@@ -193,10 +193,10 @@ def widgetUpgrade4():
     buttonUpgrade4 = Button(fenetre, image=pictureUpgrade4, bg="black", activebackground="black", command=Amelioration4Clic, width=60, height=60)
     buttonUpgrade4.grid(row=9, column=12, rowspan=2)
 
-    priceUpgrade4 = Label(fenetre, text="prix : 10", bg="black", fg="white")
+    priceUpgrade4 = Label(fenetre, text="prix : 12 000", bg="black", fg="white")
     priceUpgrade4.grid(row=9, column=13, rowspan=2)
 
-    textUpgrade4 = Label(fenetre, text="augmente de 0.1 le nombre\nd'octets par secondes", bg="black", fg="white", font="Helvetica 10")
+    textUpgrade4 = Label(fenetre, text="augmente de 47 le nombre\nd'octets par secondes", bg="black", fg="white", font="Helvetica 10")
     textUpgrade4.grid(row=9, column=14, rowspan=2)
 
     return levelUpgrade4, pictureUpgrade4, buttonUpgrade4, priceUpgrade4, textUpgrade4
@@ -209,16 +209,16 @@ def widgetUpgrade5():
     buttonUpgrade5 = Button(fenetre, image=pictureUpgrade5, bg="black", activebackground="black", command=Amelioration5Clic, width=60, height=60)
     buttonUpgrade5.grid(row=11, column=12, rowspan=2)
 
-    priceUpgrade5 = Label(fenetre, text="prix : 10", bg="black", fg="white")
+    priceUpgrade5 = Label(fenetre, text="prix : 130 000", bg="black", fg="white")
     priceUpgrade5.grid(row=11, column=13, rowspan=2)
 
-    textUpgrade5 = Label(fenetre, text="augmente de 0.1 le nombre\nd'octets par secondes", bg="black", fg="white", font="Helvetica 10")
+    textUpgrade5 = Label(fenetre, text="augmente de 260 le nombre\nd'octets par secondes", bg="black", fg="white", font="Helvetica 10")
     textUpgrade5.grid(row=11, column=14, rowspan=2)
 
     return levelUpgrade5, pictureUpgrade5, buttonUpgrade5, priceUpgrade5, textUpgrade5
 
 def Amelioration1Clic():
-    global scoreClick
+    global scoreSec
     global score
     global niveau_amelioration1
     global levelUpgrade1
@@ -231,22 +231,86 @@ def Amelioration1Clic():
             else:
                 levelUpgrade1.configure(text=niveau_amelioration1)
                 priceUpgrade1.configure(text=f"prix : {prix_amelioration_1[niveau_amelioration1]}")
-            scoreClick = round(scoreClick + 0.1, 1)                            # A modifier
-            text_octets_click.configure(text=f"{scoreClick} octets/Clic")
+            scoreSec = round(scoreSec + 0.1, 1)                            # A modifier
+            text_octets_secondes.configure(text=f"{scoreSec} octets/Secondes")
             score= round(score-prix_amelioration_1[niveau_amelioration1 - 1], 1)                                      # A modifier
             text_score.configure(text=f"{score} notes")
 
 def Amelioration2Clic():
-    pass
+    global scoreSec
+    global score
+    global niveau_amelioration2
+    global levelUpgrade2
+    if niveau_amelioration2 <= 49:
+        if score >= prix_amelioration_2[niveau_amelioration2]:
+            niveau_amelioration2 += 1# A modifier
+            if niveau_amelioration2 == 50:
+                levelUpgrade2.configure(text="MAX")
+                priceUpgrade2.configure(text=f"niveau max\natteint")
+            else:
+                levelUpgrade2.configure(text=niveau_amelioration2)
+                priceUpgrade2.configure(text=f"prix : {prix_amelioration_2[niveau_amelioration2]}")
+            scoreSec = round(scoreSec + 2, 1)                            # A modifier
+            text_octets_secondes.configure(text=f"{scoreSec} octets/Secondes")
+            score= round(score-prix_amelioration_2[niveau_amelioration2 - 1], 1)                                      # A modifier
+            text_score.configure(text=f"{score} notes")
 
 def Amelioration3Clic():
-    pass
+    global scoreSec
+    global score
+    global niveau_amelioration3
+    global levelUpgrade3
+    if niveau_amelioration3 <= 49:
+        if score >= prix_amelioration_3[niveau_amelioration3]:
+            niveau_amelioration3 += 1# A modifier
+            if niveau_amelioration3 == 50:
+                levelUpgrade3.configure(text="MAX")
+                priceUpgrade3.configure(text=f"niveau max\natteint")
+            else:
+                levelUpgrade3.configure(text=niveau_amelioration3)
+                priceUpgrade3.configure(text=f"prix : {prix_amelioration_3[niveau_amelioration3]}")
+            scoreSec = round(scoreSec + 8, 1)                            # A modifier
+            text_octets_secondes.configure(text=f"{scoreSec} octets/Secondes")
+            score= round(score-prix_amelioration_3[niveau_amelioration3 - 1], 1)                                      # A modifier
+            text_score.configure(text=f"{score} notes")
 
 def Amelioration4Clic():
-    pass
+    global scoreSec
+    global score
+    global niveau_amelioration4
+    global levelUpgrade4
+    if niveau_amelioration4 <= 49:
+        if score >= prix_amelioration_4[niveau_amelioration4]:
+            niveau_amelioration4 += 1# A modifier
+            if niveau_amelioration4 == 50:
+                levelUpgrade4.configure(text="MAX")
+                priceUpgrade4.configure(text=f"niveau max\natteint")
+            else:
+                levelUpgrade4.configure(text=niveau_amelioration4)
+                priceUpgrade4.configure(text=f"prix : {prix_amelioration_4[niveau_amelioration4]}")
+            scoreSec = round(scoreSec + 47, 1)                            # A modifier
+            text_octets_secondes.configure(text=f"{scoreSec} octets/Secondes")
+            score= round(score-prix_amelioration_4[niveau_amelioration4 - 1], 1)                                      # A modifier
+            text_score.configure(text=f"{score} notes")
 
 def Amelioration5Clic():
-    pass
+    global scoreSec
+    global score
+    global niveau_amelioration5
+    global levelUpgrade5
+    if niveau_amelioration5 <= 49:
+        if score >= prix_amelioration_5[niveau_amelioration5]:
+            niveau_amelioration5 += 1  # A modifier
+            if niveau_amelioration5 == 50:
+                levelUpgrade5.configure(text="MAX")
+                priceUpgrade5.configure(text=f"niveau max\natteint")
+            else:
+                levelUpgrade5.configure(text=niveau_amelioration5)
+                priceUpgrade5.configure(text=f"prix : {prix_amelioration_5[niveau_amelioration5]}")
+            scoreSec = round(scoreSec + 260, 1)  # A modifier
+            text_octets_secondes.configure(text=f"{scoreSec} octets/Secondes")
+            score = round(score - prix_amelioration_5[niveau_amelioration5 - 1], 1)  # A modifier
+            text_score.configure(text=f"{score} notes")
 
 """
         elif coeficient > 0:
@@ -289,18 +353,18 @@ def Amelioration3Clic():
 
 def point1k(event):
     global score
-    score += 1000
+    score += 100000
     text_score.configure(text=f"{score} notes")
 
 
 def ptpclick(event):
     global scoreClick
-    scoreClick += 20
+    scoreClick += 2000
     text_octets_click.configure(text=f"{scoreClick} notes/Clic")
 
 def ptpsecondes(event):
     global scoreSec
-    scoreSec += 25
+    scoreSec += 250
     text_octets_secondes.configure(text=f"{scoreSec} notes/Secondes")
 
 
@@ -309,8 +373,17 @@ def ptpsecondes(event):
 scoreClick=1
 scoreSec=0
 score=0
+
 niveau_amelioration1 = 0
-prix_amelioration_1 = [10, 12.0, 14.4, 17.3, 20.8, 25.0, 30.0, 36.0, 43.2, 51.8, 62.2, 74.6, 89.5, 107.4, 128.9, 154.7, 185.6, 222.7, 267.2, 320.6, 384.7, 461.6, 553.9, 664.7, 797.6, 957.1, 1148.5, 1378.2, 1653.8, 1984.6, 2381.5, 2857.8, 3429.4, 4115.3, 4938.4, 5926.1, 7111.3, 8533.6, 10240.3, 12288.4, 14746.1, 17695.3, 21234.4, 25481.3, 30577.6, 36693.1, 44031.7, 52838.0, 63405.6, 76086.7]
+prix_amelioration_1 = [10, 12, 14, 17, 21, 25, 30, 36, 43, 52, 62, 75, 90, 107, 129, 155, 186, 223, 267, 321, 385, 462, 554, 665, 798, 957, 1149, 1378, 1654, 1985, 2381, 2858, 3429, 4115, 4938, 5926, 7111, 8534, 10240, 12288, 14746, 17695, 21234, 25481, 30578, 36693, 44032, 52838, 63406, 76087]
+niveau_amelioration2 = 0
+prix_amelioration_2 = [100, 115, 132, 152, 174, 201, 231, 266, 305, 351, 404, 465, 535, 615, 707, 813, 935, 1076, 1237, 1423, 1636, 1882, 2164, 2489, 2862, 3291, 3785, 4353, 5006, 5757, 6621, 7614, 8756, 10069, 11580, 13317, 15315, 17612, 20254, 23292, 26786, 30804, 35424, 40738, 46849, 53876, 61958, 71252, 81940, 94231]
+niveau_amelioration3 = 0
+prix_amelioration_3 = [1100, 1265, 1454, 1672, 1923, 2212, 2544, 2926, 3364, 3869, 4450, 5117, 5885, 6768, 7783, 8950, 10293, 11837, 13612, 15654, 18003, 20703, 23809, 27380, 31487, 36210, 41642, 47888, 55072, 63332, 72832, 83757, 96321, 110769, 127385, 146493, 168467, 193737, 222797, 256217, 294649, 338847, 389674, 448125, 515344, 592646, 681543, 783774, 901340, 1036541]
+niveau_amelioration4 = 0
+prix_amelioration_4 = [12000, 13799, 15869, 18250, 20988, 24136, 27756, 31920, 36708, 42214, 48546, 55828, 64203, 73833, 84908, 97644, 112291, 129135, 148505, 170781, 196398, 225858, 259736, 298697, 343502, 395027, 454281, 522423, 600787, 690905, 794541, 913722, 1050780, 1208397, 1389657, 1598106, 1837822, 2113495, 2430519, 2795097, 3214362, 3696516, 4250994, 4888643, 5621940, 6465231, 7435015, 8550268, 9832808, 11307729]
+niveau_amelioration5 = 0
+prix_amelioration_5 = [149490, 171920, 197710, 227370, 261470, 300690, 345800, 397670, 457320, 525920, 604810, 695530, 799860, 919840, 1057810, 1216490, 1398960, 1608800, 1850130, 2127640, 244679, 2813810, 3235880, 3721270, 4279460, 4921380, 5659590, 6508520, 7484800, 8607530, 9898650, 11383450, 13090970, 15054620, 17312810, 19909740, 22896200, 26330630, 30280220, 34822260, 40045600, 46052440, 52960300, 60904350, 70040000, 80546000, 92627900, 106522090, 122500400]
 
 fenetre_pop_up, text_popup, prenom_user, bouton_valider_popup = pop_up()
 fenetre_pop_up.mainloop()
@@ -347,15 +420,22 @@ fenetre.mainloop()
 #Prix de cookie clicker (a voir si on fait les mm)
 #Amelioration 1 : Prix : 15 (+15% a chaque amelioration) Effet : + 0.1/sec
 #Amelioration 2 : Prix : 100 (+15% a chaque amelioration) Effet : + 2/sec
-#Amelioration 3 : Prix : 1100 (+15% a chaque amelioration) Effet : 8/sec
-#Amelioration 4 : Prix : 12000 (+15% a chaque amelioration) Effet :
-#Amelioration 5 : Prix : 130000 (+15% a chaque amelioration) Effet :
+#Amelioration 3 : Prix : 1 100 (+15% a chaque amelioration) Effet : + 8/sec
+#Amelioration 4 : Prix : 12 000 (+15% a chaque amelioration) Effet : + 47/sec
+#Amelioration 5 : Prix : 130 000 (+15% a chaque amelioration) Effet :
 #Amelioration 6 : Prix : 1.4 millions (+15% a chaque amelioration) Effet :
 
 #Boost 1 : Prix : 100 Effet : Double les clic + Amelioration 1
 #Boost 2 : Prix : 500 Effet : Double les clic + Amelioration 1
-#Boost 3 : Prix : 1000 Effet :  Double Amelioration 2
-#Boost 4 : Prix : 10000 Effet : Double les clic + Amelioration 1
-#Boost 5 : Prix : 11000 Effet : Double Amelioration 3
-#Boost 6 : Prix : 50000 Effet : + 1% /sec
-#Boost 7 : Prix : 55000 Effet : Double Amelioration 3
+#Boost 3 : Prix : 1 000 Effet :  Double Amelioration 2
+#Boost 4 : Prix : 10 000 Effet : Double les clic + Amelioration 1
+#Boost 5 : Prix : 11 000 Effet : Double Amelioration 3
+#Boost 6 : Prix : 50 000 Effet : + 1% Clic
+#Boost 7 : Prix : 55 000 Effet : Double Amelioration 3
+#Boost 8 : Prix : 120 000 Effet : Double Amelioration 4
+#Boost 9 : Prix : 999 999 Effet : + 1%/sec
+
+#Boost 10 : Prix : 9 000 000 Effet : Gagné ?
+
+
+
