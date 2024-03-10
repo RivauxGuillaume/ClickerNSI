@@ -131,10 +131,11 @@ def MajScoreSec():
         if coeficient == 0 and scoreSec != 0:
             time.sleep(1/scoreSec)
             score+=1
-        elif coeficient > 0 :
-            time.nanosleep((1/(scoreSec/coeficient))/1.5)
-            score+=coeficient
+        elif coeficient > 0:
+            time.sleep(1/(scoreSec/coeficient))
+            score+=int(coeficient * (initial_diviseur/100))
         text_score.configure(text=f"{score} notes")
+
 
 def widgetUpgrade1():
     levelUpgrade1 = Label(fenetre, text="0", bg="black", fg="grey", font=("Arial",  18))
@@ -288,7 +289,7 @@ def Amelioration3Clic():
 
 def point1k(event):
     global score
-    score += 100000
+    score += 1000
     text_score.configure(text=f"{score} notes")
 
 
