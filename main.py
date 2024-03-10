@@ -319,6 +319,7 @@ lastSave = start()
 fenetre = creer_fenetre()
 zone_graphique = creer_Canvas()
 text_player, picture, button_clicker, text_last_save, text_score, text_octets_secondes, text_octets_click, button_save, button_save_quit =  cree_widget()
+
 levelUpgrade1, pictureUpgrade1, buttonUpgrade1, priceUpgrade1, textUpgrade1 = widgetUpgrade1()
 levelUpgrade2, pictureUpgrade2, buttonUpgrade2, priceUpgrade2, textUpgrade2 = widgetUpgrade2()
 levelUpgrade3, pictureUpgrade3, buttonUpgrade3, priceUpgrade3, textUpgrade3 = widgetUpgrade3()
@@ -341,3 +342,20 @@ th1.start()
 
 fenetre.mainloop()
 
+
+
+#Prix de cookie clicker (a voir si on fait les mm)
+#Amelioration 1 : Prix : 15 (+15% a chaque amelioration) Effet : + 0.1/sec
+#Amelioration 2 : Prix : 100 (+15% a chaque amelioration) Effet : + 2/sec
+#Amelioration 3 : Prix : 1100 (+15% a chaque amelioration) Effet : 8/sec
+#Amelioration 4 : Prix : 12000 (+15% a chaque amelioration) Effet :
+#Amelioration 5 : Prix : 130000 (+15% a chaque amelioration) Effet :
+#Amelioration 6 : Prix : 1.4 millions (+15% a chaque amelioration) Effet :
+
+#Boost 1 : Prix : 100 Effet : Double les clic + Amelioration 1
+#Boost 2 : Prix : 500 Effet : Double les clic + Amelioration 1
+#Boost 3 : Prix : 1000 Effet :  Double Amelioration 2
+#Boost 4 : Prix : 10000 Effet : Double les clic + Amelioration 1
+#Boost 5 : Prix : 11000 Effet : Double Amelioration 3
+#Boost 6 : Prix : 50000 Effet : + 1% /sec
+#Boost 7 : Prix : 55000 Effet : Double Amelioration 3
