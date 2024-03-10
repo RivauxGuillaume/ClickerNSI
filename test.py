@@ -36,7 +36,7 @@ def creer_fenetre():
     return fenetre
 
 def creer_Canvas():
-    zone_graphique = Canvas(fenetre, width=900, height=420, bg = "black")
+    zone_graphique = Canvas(fenetre, width=900, height=420, bg = "red")
     zone_graphique.grid(row=0, column=0, rowspan=15, columnspan=14)
     return zone_graphique
 
