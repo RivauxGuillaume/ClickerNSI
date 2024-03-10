@@ -89,16 +89,16 @@ def AjoutScore():
     #Maj du score sur l'HUD
     texte_score.configure(text=f"{score} notes")
 
-# peut pas marcher pqs time a une précision de 1e-7 mais windows block avant
 def MajScoreSec():
     global score
-    coeficient = int(scoreSec/100)
+    global scoreSec
     while True:
+        coeficient = int(scoreSec/100)
         if coeficient == 0 and scoreSec != 0:
             time.sleep(1/scoreSec)
             score+=1
         elif coeficient > 0 :
-            time.nanosleep((1/(scoreSec/coeficient))/1.5)
+            time.sleep(1/(scoreSec/coeficient))
             score+=coeficient
         texte_score.configure(text=f"{score} notes")
 
