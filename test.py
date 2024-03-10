@@ -1,10 +1,32 @@
-import time
-from tkinter import Tk, Canvas, Label, Button, Text, PhotoImage
-import threading
+from tkinter import *
 from PIL import *
 import datetime
 
-#----------------------------------------------------------------Fonction---------------------------------------------------------------------------
+def start():
+    lastSave = datetime.datetime.now().strftime('%a %d/%m/%y %H:%M') # modifié pour avoir la dernière datetime a récuperer dans le fichier de sauvegarde
+
+    return lastSave
+
+def pop_up():
+    fenetre_pop_up = Tk()
+    fenetre_pop_up.title("Entre ton nom")
+    # fenetre_pop_up.geometry("300x200")
+
+    text_popup = Label(fenetre_pop_up, text="Entre ton nom : ", height=7)
+    text_popup.grid(row=0, column=0)
+
+    prenom_user = Text(fenetre_pop_up, height=1, width=14)
+    prenom_user.grid(row=0, column=1)
+
+    bouton_valider_popup = Button(fenetre_pop_up, text="Valider", width=12, command=recuperer_nom)
+    bouton_valider_popup.grid(row=1, column=0, columnspan=2)
+
+    return fenetre_pop_up, text_popup, prenom_user, bouton_valider_popup
+
+def recuperer_nom():
+    global joueur
+    joueur = prenom_user.get("1.0", "end-1c")
+    fenetre_pop_up.destroy()
 
 def creer_fenetre():
     fenetre=Tk()
@@ -82,59 +104,6 @@ def cree_widget():
 
     return text_player, picture, button_clicker, text_last_save, text_score, text_octets_secondes, text_octets_click, button_save, button_save_quit     #pour que le programmme fonctionne, on est obligé de return la photo
 
-def save():
-    pass
-
-def save_and_quit():
-    save()
-    fenetre.destroy()
-
-def start():
-    lastSave = datetime.datetime.now().strftime('%a %d/%m/%y %H:%M') # modifié pour avoir la dernière datetime a récuperer dans le fichier de sauvegarde
-
-    return lastSave
-
-def pop_up():
-    fenetre_pop_up = Tk()
-    fenetre_pop_up.title("Entre ton nom")
-    # fenetre_pop_up.geometry("300x200")
-
-    text_popup = Label(fenetre_pop_up, text="Entre ton nom : ", height=7)
-    text_popup.grid(row=0, column=0)
-
-    prenom_user = Text(fenetre_pop_up, height=1, width=14)
-    prenom_user.grid(row=0, column=1)
-
-    bouton_valider_popup = Button(fenetre_pop_up, text="Valider", width=12, command=recuperer_nom)
-    bouton_valider_popup.grid(row=1, column=0, columnspan=2)
-
-    return fenetre_pop_up, text_popup, prenom_user, bouton_valider_popup
-    
-def recuperer_nom():
-    global joueur
-    joueur = prenom_user.get("1.0", "end-1c")
-    fenetre_pop_up.destroy()
-
-def AjoutScore():
-    global score
-    score= round(score + scoreClick, 1)
-    text_score.configure(text=f"{score} notes")
-
-def MajScoreSec():
-    global score
-    global scoreSec
-    initial_diviseur = 100
-    while True:
-        coeficient = int(scoreSec/initial_diviseur)
-        if coeficient > initial_diviseur:
-            initial_diviseur = initial_diviseur * 10
-        if coeficient == 0 and scoreSec != 0:
-            time.sleep(1/scoreSec)
-            score+=1
-        elif coeficient > 0 :
-            time.nanosleep((1/(scoreSec/coeficient))/1.5)
-            score+=coeficient
-        text_score.configure(text=f"{score} notes")
 
 def widgetUpgrade1():
     levelUpgrade1 = Label(fenetre, text="0", bg="black", fg="grey", font=("Arial",  18))
@@ -216,24 +185,39 @@ def widgetUpgrade5():
 
     return levelUpgrade5, pictureUpgrade5, buttonUpgrade5, priceUpgrade5, textUpgrade5
 
+
+
+def AjoutScore():
+    global score
+    score= round(score + scoreClick, 1)                                  
+    #Maj du score sur l'HUD
+    text_score.configure(text=f"{score} notes")
+
+def save():
+    pass
+
+def save_and_quit():
+    save()
+    fenetre.destroy()
+
+##################### Modifier cette fonction pour adapter le prix a x1.2, augmenter le niveau, augmenter le prix
 def Amelioration1Clic():
     global scoreClick
     global score
     global niveau_amelioration1
     global levelUpgrade1
-    if niveau_amelioration1 <= 49:
+    if niveau_amelioration1 != 50:
         if score >= prix_amelioration_1[niveau_amelioration1]:
             niveau_amelioration1 += 1# A modifier
             if niveau_amelioration1 == 50:
                 levelUpgrade1.configure(text="MAX")
-                priceUpgrade1.configure(text=f"niveau max\natteint")
             else:
                 levelUpgrade1.configure(text=niveau_amelioration1)
-                priceUpgrade1.configure(text=f"prix : {prix_amelioration_1[niveau_amelioration1]}")
             scoreClick = round(scoreClick + 0.1, 1)                            # A modifier
-            text_octets_click.configure(text=f"{scoreClick} octets/Clic")
+            text_octets_click.configure(text=f"{scoreClick} notes/Clic")
             score= round(score-prix_amelioration_1[niveau_amelioration1 - 1], 1)                                      # A modifier
             text_score.configure(text=f"{score} notes")
+            priceUpgrade1.configure(text=f"prix : {prix_amelioration_1[niveau_amelioration1]}")
 
 def Amelioration2Clic():
     pass
@@ -246,64 +230,6 @@ def Amelioration4Clic():
 
 def Amelioration5Clic():
     pass
-
-"""
-        elif coeficient > 0:
-            time.sleep(1/(scoreSec/coeficient))
-            score+=int(coeficient * (initial_diviseur/100))
-        texte_score.configure(text=f"{score} notes")
-
-
-
-def Amelioration1Clic():
-    global scoreClick
-    global score
-    if score >= 10:                                         # A modifier
-        scoreClick+=1                             # A modifier
-        texte_scoreClick.configure(text=f"{scoreClick} notes/Clic")
-        score-=10                                      # A modifier
-        texte_score.configure(text=f"{score} notes")
-
-# bug : n'enlève pas les 100 points au score
-def Amelioration2Clic():
-    global scoreSec
-    global score
-    if score >= 100:                                         # A modifier
-        scoreSec+=1                                  # A modifier
-        texte_clicSec.configure(text=f"{scoreSec} notes/Secondes")
-        score = score - 100                                      # A modifier
-        texte_score.configure(text=f"{score} notes")        
-
-
-def Amelioration3Clic():
-    global scoreClick
-    global score
-    if score >= 1000:                                         # A modifier
-        scoreClick=scoreClick+100                             # A modifier
-        texte_scoreClick.configure(text=f"{scoreClick} notes/Clic")
-        score=score-1000                                      # A modifier
-        texte_score.configure(text=f"{score} notes")
-"""
-#---------------------------------------------------------Provisoire---------------------------------------
-
-def point1k(event):
-    global score
-    score += 100000
-    text_score.configure(text=f"{score} notes")
-
-
-def ptpclick(event):
-    global scoreClick
-    scoreClick += 20
-    text_octets_click.configure(text=f"{scoreClick} notes/Clic")
-
-def ptpsecondes(event):
-    global scoreSec
-    scoreSec += 25
-    text_octets_secondes.configure(text=f"{scoreSec} notes/Secondes")
-
-
-#----------------------------------------------------------------Main-----------------------------------------------------------------------------
 
 scoreClick=1
 scoreSec=0
@@ -323,20 +249,4 @@ levelUpgrade2, pictureUpgrade2, buttonUpgrade2, priceUpgrade2, textUpgrade2 = wi
 levelUpgrade3, pictureUpgrade3, buttonUpgrade3, priceUpgrade3, textUpgrade3 = widgetUpgrade3()
 levelUpgrade4, pictureUpgrade4, buttonUpgrade4, priceUpgrade4, textUpgrade4 = widgetUpgrade4()
 levelUpgrade5, pictureUpgrade5, buttonUpgrade5, priceUpgrade5, textUpgrade5 = widgetUpgrade5()
-
-
-
-# activation commandes admin
-fenetre.bind("<Up>", point1k)
-fenetre.bind("<Left>", ptpclick)
-fenetre.bind("<Right>", ptpsecondes)
-
-
-
-# Gestion du multithread pour les clic/sec
-th1 = threading.Thread(target=MajScoreSec)
-th1.daemon = True
-th1.start()
-
 fenetre.mainloop()
-
