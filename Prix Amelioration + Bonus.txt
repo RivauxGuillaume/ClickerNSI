@@ -1,0 +1,31 @@
+#Boost 1 : Prix : 100 Effet : Double les clic + Amelioration 1
+#Boost 2 : Prix : 500 Effet : Double les clic + Amelioration 1
+#Boost 3 : Prix : 1 000 Effet :  Double Amelioration 2
+#Boost 4 : Prix : 5 000 Effet :  Double Amelioration 2
+#Boost 5 : Prix : 10 000 Effet : Double les clic + Amelioration 1
+#Boost 6 : Prix : 11 000 Effet : Double Amelioration 3
+#Boost 7 : Prix : 50 000 Effet : + 1% Clic
+#Boost 8 : Prix : 50 000 Effet :  Double Amelioration 2
+#Boost 9 : Prix : 55 000 Effet : Double Amelioration 3
+#Boost 10 : Prix : 55 000 Effet : Double Amelioration 2
+#Boost 11 : Prix : 120 000 Effet : Double Amelioration 4
+#Boost 12 : Prix : 550 000 Effet : Double Amelioration 3
+#Boost 13 : Prix : 600 000 Effet : Double Amelioration 4
+#Boost 14 : Prix : 600 000 Effet : Double Amelioration 2 + 1%/sec pour Amelioration 3 (par 2 Amelioration 2)
+#Boost 15 : Prix : 999 999 Effet : + 1%/sec
+#Boost 16 : Prix : 1 300 000 Effet : Double Amelioration 5
+#Boost 17 : Prix : 5 000 000 Effet : + 1%/sec
+#Boost 18 : Prix : 6 000 000 Effet : Double Amelioration 4
+#Boost 19 : Prix : 6 500 000 Effet : Double Amelioration 5
+#Boost 20 : Prix : 6 500 000 Effet : Double Amelioration 2 + 1%/sec pour Amelioration 3 (par 3 Amelioration 2)
+#Boost 21 : Prix : 9 000 000 Effet : + 1%/sec
+#Boost 22 : Prix : 10 000 000 Effet : + 1%/sec
+#Boost 23 : Prix : 10 000 000 Effet : + 5%/sec
+#Boost 24 : Prix : 14 000 000 Effet : Double Amelioration 6
+#Boost 25 : Prix : 50 000 000 Effet : + 2%/sec
+#Boost 26 : Prix : 100 000 000 Effet : + 2%/sec
+#Boost 27 : Prix : 100 000 000 Effet : + 2%/sec
+#Boost 28 : Prix : 100 000 000 Effet : + 2%/sec
+#Boost 29 : Prix : 100 000 000 Effet : + 2%/sec
+#Boost 30 : Prix : 100 000 000 Effet : + 2%/sec
+#Boost 31 : Prix : 100 000 000 Effet : + 2%/sec
