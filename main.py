@@ -9,6 +9,9 @@ import datetime
 def creer_fenetre():
     fenetre=Tk()
     fenetre.title("Computer Clicker")
+    screen_width = fenetre.winfo_screenwidth()
+    screen_height = fenetre.winfo_screenheight()
+    fenetre.geometry(f"{screen_width}x{screen_height}")
     fenetre.columnconfigure(0, minsize=60, pad=0)
     fenetre.rowconfigure(0, minsize=30, pad=0)
     fenetre.columnconfigure(1, minsize=60, pad=0)
@@ -39,10 +42,10 @@ def creer_fenetre():
     fenetre.rowconfigure(13, minsize=30, pad=0)
     fenetre.columnconfigure(14, minsize=60, pad=0)
     fenetre.rowconfigure(14, minsize=30, pad=0)
-    return fenetre
+    return fenetre, screen_width, screen_height
 
 def creer_Canvas():
-    zone_graphique = Canvas(fenetre, width=1200, height=600, bg = "black")
+    zone_graphique = Canvas(fenetre, width=screen_width, height=screen_height, bg = "black")
     zone_graphique.grid(row=0, column=0, rowspan=15, columnspan=15)
     return zone_graphique
 
@@ -97,7 +100,7 @@ def start():
 def pop_up():
     fenetre_pop_up = Tk()
     fenetre_pop_up.title("Entre ton nom")
-    # fenetre_pop_up.geometry("300x200")
+    fenetre_pop_up.geometry("200x150+900+400")
 
     text_popup = Label(fenetre_pop_up, text="Entre ton nom : ", height=7)
     text_popup.grid(row=0, column=0)
@@ -383,13 +386,13 @@ prix_amelioration_3 = [1100, 1265, 1454, 1672, 1923, 2212, 2544, 2926, 3364, 386
 niveau_amelioration4 = 0
 prix_amelioration_4 = [12000, 13799, 15869, 18250, 20988, 24136, 27756, 31920, 36708, 42214, 48546, 55828, 64203, 73833, 84908, 97644, 112291, 129135, 148505, 170781, 196398, 225858, 259736, 298697, 343502, 395027, 454281, 522423, 600787, 690905, 794541, 913722, 1050780, 1208397, 1389657, 1598106, 1837822, 2113495, 2430519, 2795097, 3214362, 3696516, 4250994, 4888643, 5621940, 6465231, 7435015, 8550268, 9832808, 11307729]
 niveau_amelioration5 = 0
-prix_amelioration_5 = [149490, 171920, 197710, 227370, 261470, 300690, 345800, 397670, 457320, 525920, 604810, 695530, 799860, 919840, 1057810, 1216490, 1398960, 1608800, 1850130, 2127640, 244679, 2813810, 3235880, 3721270, 4279460, 4921380, 5659590, 6508520, 7484800, 8607530, 9898650, 11383450, 13090970, 15054620, 17312810, 19909740, 22896200, 26330630, 30280220, 34822260, 40045600, 46052440, 52960300, 60904350, 70040000, 80546000, 92627900, 106522090, 122500400]
+prix_amelioration_5 = [130000, 149490, 171920, 197710, 227370, 261470, 300690, 345800, 397670, 457320, 525920, 604810, 695530, 799860, 919840, 1057810, 1216490, 1398960, 1608800, 1850130, 2127640, 244679, 2813810, 3235880, 3721270, 4279460, 4921380, 5659590, 6508520, 7484800, 8607530, 9898650, 11383450, 13090970, 15054620, 17312810, 19909740, 22896200, 26330630, 30280220, 34822260, 40045600, 46052440, 52960300, 60904350, 70040000, 80546000, 92627900, 106522090, 122500400]
 
 fenetre_pop_up, text_popup, prenom_user, bouton_valider_popup = pop_up()
 fenetre_pop_up.mainloop()
 
 lastSave = start()
-fenetre = creer_fenetre()
+fenetre, screen_width, screen_height = creer_fenetre()
 zone_graphique = creer_Canvas()
 text_player, picture, button_clicker, text_last_save, text_score, text_octets_secondes, text_octets_click, button_save, button_save_quit =  cree_widget()
 
@@ -422,8 +425,8 @@ fenetre.mainloop()
 #Amelioration 2 : Prix : 100 (+15% a chaque amelioration) Effet : + 2/sec
 #Amelioration 3 : Prix : 1 100 (+15% a chaque amelioration) Effet : + 8/sec
 #Amelioration 4 : Prix : 12 000 (+15% a chaque amelioration) Effet : + 47/sec
-#Amelioration 5 : Prix : 130 000 (+15% a chaque amelioration) Effet :
-#Amelioration 6 : Prix : 1.4 millions (+15% a chaque amelioration) Effet :
+#Amelioration 5 : Prix : 130 000 (+15% a chaque amelioration) Effet : + 260/sec
+#Amelioration 6 : Prix : 1.4 millions (+15% a chaque amelioration) Effet : +
 
 #Boost 1 : Prix : 100 Effet : Double les clic + Amelioration 1
 #Boost 2 : Prix : 500 Effet : Double les clic + Amelioration 1
