@@ -11,7 +11,7 @@ def creer_fenetre():
     fenetre.title("Computer Clicker")
     screen_width = fenetre.winfo_screenwidth()
     screen_height = fenetre.winfo_screenheight()
-    fenetre.geometry(f"{screen_width}x{screen_height}")
+    fenetre.attributes('-fullscreen', True)
     fenetre.columnconfigure(0, minsize=60, pad=0)
     fenetre.rowconfigure(0, minsize=30, pad=0)
     fenetre.columnconfigure(1, minsize=60, pad=0)
@@ -227,16 +227,16 @@ def Amelioration1Clic():
     global levelUpgrade1
     if niveau_amelioration1 <= 49:
         if score >= prix_amelioration_1[niveau_amelioration1]:
-            niveau_amelioration1 += 1# A modifier
+            niveau_amelioration1 += 1
             if niveau_amelioration1 == 50:
                 levelUpgrade1.configure(text="MAX")
                 priceUpgrade1.configure(text=f"niveau max\natteint")
             else:
                 levelUpgrade1.configure(text=niveau_amelioration1)
                 priceUpgrade1.configure(text=f"prix : {prix_amelioration_1[niveau_amelioration1]}")
-            scoreSec = round(scoreSec + 0.1, 1)                            # A modifier
+            scoreSec = round(scoreSec + 0.1, 1)
             text_octets_secondes.configure(text=f"{scoreSec} octets/Secondes")
-            score= round(score-prix_amelioration_1[niveau_amelioration1 - 1], 1)                                      # A modifier
+            score= round(score-prix_amelioration_1[niveau_amelioration1 - 1], 1)
             text_score.configure(text=f"{score} notes")
 
 def Amelioration2Clic():
@@ -246,16 +246,16 @@ def Amelioration2Clic():
     global levelUpgrade2
     if niveau_amelioration2 <= 49:
         if score >= prix_amelioration_2[niveau_amelioration2]:
-            niveau_amelioration2 += 1# A modifier
+            niveau_amelioration2 += 1
             if niveau_amelioration2 == 50:
                 levelUpgrade2.configure(text="MAX")
                 priceUpgrade2.configure(text=f"niveau max\natteint")
             else:
                 levelUpgrade2.configure(text=niveau_amelioration2)
                 priceUpgrade2.configure(text=f"prix : {prix_amelioration_2[niveau_amelioration2]}")
-            scoreSec = round(scoreSec + 2, 1)                            # A modifier
+            scoreSec = round(scoreSec + 2, 1)
             text_octets_secondes.configure(text=f"{scoreSec} octets/Secondes")
-            score= round(score-prix_amelioration_2[niveau_amelioration2 - 1], 1)                                      # A modifier
+            score= round(score-prix_amelioration_2[niveau_amelioration2 - 1], 1)
             text_score.configure(text=f"{score} notes")
 
 def Amelioration3Clic():
@@ -265,16 +265,16 @@ def Amelioration3Clic():
     global levelUpgrade3
     if niveau_amelioration3 <= 49:
         if score >= prix_amelioration_3[niveau_amelioration3]:
-            niveau_amelioration3 += 1# A modifier
+            niveau_amelioration3 += 1
             if niveau_amelioration3 == 50:
                 levelUpgrade3.configure(text="MAX")
                 priceUpgrade3.configure(text=f"niveau max\natteint")
             else:
                 levelUpgrade3.configure(text=niveau_amelioration3)
                 priceUpgrade3.configure(text=f"prix : {prix_amelioration_3[niveau_amelioration3]}")
-            scoreSec = round(scoreSec + 8, 1)                            # A modifier
+            scoreSec = round(scoreSec + 8, 1)
             text_octets_secondes.configure(text=f"{scoreSec} octets/Secondes")
-            score= round(score-prix_amelioration_3[niveau_amelioration3 - 1], 1)                                      # A modifier
+            score= round(score-prix_amelioration_3[niveau_amelioration3 - 1], 1)
             text_score.configure(text=f"{score} notes")
 
 def Amelioration4Clic():
@@ -284,16 +284,16 @@ def Amelioration4Clic():
     global levelUpgrade4
     if niveau_amelioration4 <= 49:
         if score >= prix_amelioration_4[niveau_amelioration4]:
-            niveau_amelioration4 += 1# A modifier
+            niveau_amelioration4 += 1
             if niveau_amelioration4 == 50:
                 levelUpgrade4.configure(text="MAX")
                 priceUpgrade4.configure(text=f"niveau max\natteint")
             else:
                 levelUpgrade4.configure(text=niveau_amelioration4)
                 priceUpgrade4.configure(text=f"prix : {prix_amelioration_4[niveau_amelioration4]}")
-            scoreSec = round(scoreSec + 47, 1)                            # A modifier
+            scoreSec = round(scoreSec + 47, 1)
             text_octets_secondes.configure(text=f"{scoreSec} octets/Secondes")
-            score= round(score-prix_amelioration_4[niveau_amelioration4 - 1], 1)                                      # A modifier
+            score= round(score-prix_amelioration_4[niveau_amelioration4 - 1], 1)
             text_score.configure(text=f"{score} notes")
 
 def Amelioration5Clic():
@@ -303,16 +303,16 @@ def Amelioration5Clic():
     global levelUpgrade5
     if niveau_amelioration5 <= 49:
         if score >= prix_amelioration_5[niveau_amelioration5]:
-            niveau_amelioration5 += 1  # A modifier
+            niveau_amelioration5 += 1
             if niveau_amelioration5 == 50:
                 levelUpgrade5.configure(text="MAX")
                 priceUpgrade5.configure(text=f"niveau max\natteint")
             else:
                 levelUpgrade5.configure(text=niveau_amelioration5)
                 priceUpgrade5.configure(text=f"prix : {prix_amelioration_5[niveau_amelioration5]}")
-            scoreSec = round(scoreSec + 260, 1)  # A modifier
+            scoreSec = round(scoreSec + 260, 1)
             text_octets_secondes.configure(text=f"{scoreSec} octets/Secondes")
-            score = round(score - prix_amelioration_5[niveau_amelioration5 - 1], 1)  # A modifier
+            score = round(score - prix_amelioration_5[niveau_amelioration5 - 1], 1)
             text_score.configure(text=f"{score} notes")
 
 """
@@ -356,18 +356,18 @@ def Amelioration3Clic():
 
 def point1k(event):
     global score
-    score += 100000
+    score += 100000000
     text_score.configure(text=f"{score} notes")
 
 
 def ptpclick(event):
     global scoreClick
-    scoreClick += 2000
+    scoreClick += 2000000
     text_octets_click.configure(text=f"{scoreClick} notes/Clic")
 
 def ptpsecondes(event):
     global scoreSec
-    scoreSec += 250
+    scoreSec += 250000
     text_octets_secondes.configure(text=f"{scoreSec} notes/Secondes")
 
 
@@ -387,6 +387,7 @@ niveau_amelioration4 = 0
 prix_amelioration_4 = [12000, 13799, 15869, 18250, 20988, 24136, 27756, 31920, 36708, 42214, 48546, 55828, 64203, 73833, 84908, 97644, 112291, 129135, 148505, 170781, 196398, 225858, 259736, 298697, 343502, 395027, 454281, 522423, 600787, 690905, 794541, 913722, 1050780, 1208397, 1389657, 1598106, 1837822, 2113495, 2430519, 2795097, 3214362, 3696516, 4250994, 4888643, 5621940, 6465231, 7435015, 8550268, 9832808, 11307729]
 niveau_amelioration5 = 0
 prix_amelioration_5 = [130000, 149490, 171920, 197710, 227370, 261470, 300690, 345800, 397670, 457320, 525920, 604810, 695530, 799860, 919840, 1057810, 1216490, 1398960, 1608800, 1850130, 2127640, 244679, 2813810, 3235880, 3721270, 4279460, 4921380, 5659590, 6508520, 7484800, 8607530, 9898650, 11383450, 13090970, 15054620, 17312810, 19909740, 22896200, 26330630, 30280220, 34822260, 40045600, 46052440, 52960300, 60904350, 70040000, 80546000, 92627900, 106522090, 122500400]
+
 
 fenetre_pop_up, text_popup, prenom_user, bouton_valider_popup = pop_up()
 fenetre_pop_up.mainloop()
@@ -426,7 +427,7 @@ fenetre.mainloop()
 #Amelioration 3 : Prix : 1 100 (+15% a chaque amelioration) Effet : + 8/sec
 #Amelioration 4 : Prix : 12 000 (+15% a chaque amelioration) Effet : + 47/sec
 #Amelioration 5 : Prix : 130 000 (+15% a chaque amelioration) Effet : + 260/sec
-#Amelioration 6 : Prix : 1.4 millions (+15% a chaque amelioration) Effet : +
+#Amelioration 6 : Prix : 1.4 millions (+15% a chaque amelioration) Effet : + 1400/sec
 
 #Boost 1 : Prix : 100 Effet : Double les clic + Amelioration 1
 #Boost 2 : Prix : 500 Effet : Double les clic + Amelioration 1
