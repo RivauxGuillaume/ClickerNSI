@@ -22,6 +22,11 @@ def creer_Canvas():
     zone_graphique.grid(row=0, column=0, rowspan=15, columnspan=15)
     return zone_graphique
 
+def testCanvasBoost():
+    zone_graphiqueBoost=Canvas(fenetre, width=300, height=300, bg = "blue")
+    zone_graphiqueBoost.grid(row=1, column=10, rowspan=4, columnspan=5)
+    return zone_graphiqueBoost
+
 def cree_widget():
     # Joueur qui joue
     text_player = Label(fenetre, text=f"Joueur : {joueur}", bg="black", fg="white")
@@ -115,83 +120,108 @@ def MajScoreSec():
 
 def widgetUpgrade1():
     levelUpgrade1 = Label(fenetre, text="0", bg="black", fg="grey", font=("Arial",  18))
-    levelUpgrade1.grid(row=3, column=11, rowspan=2)
+    levelUpgrade1.grid(row=3, column=10, rowspan=2)
 
     pictureUpgrade1 = PhotoImage(file="image/python.png")
     buttonUpgrade1 = Button(fenetre, image=pictureUpgrade1, bg="black", activebackground="black", command=Amelioration1Clic, width=60, height=60)
-    buttonUpgrade1.grid(row=3, column=12, rowspan=2)
+    buttonUpgrade1.grid(row=3, column=11, rowspan=2)
 
     priceUpgrade1 = Label(fenetre, text="prix : 10", bg="black", fg="white")
-    priceUpgrade1.grid(row=3, column=13, rowspan=2)
+    priceUpgrade1.grid(row=3, column=12, rowspan=2)
 
     textUpgrade1 = Label(fenetre, text="augmente de 0.1 le nombre\nd'octets par secondes", bg="black", fg="white", font="Helvetica 10")
-    textUpgrade1.grid(row=3, column=14, rowspan=2)
+    textUpgrade1.grid(row=3, column=13, rowspan=2, columnspan=2)
 
     return levelUpgrade1, pictureUpgrade1, buttonUpgrade1, priceUpgrade1, textUpgrade1
 
 def widgetUpgrade2():
     levelUpgrade2 = Label(fenetre, text="0", bg="black", fg="grey", font=("Arial",  18))
-    levelUpgrade2.grid(row=5, column=11, rowspan=2)
+    levelUpgrade2.grid(row=5, column=10, rowspan=2)
 
     pictureUpgrade2 = PhotoImage(file="image/python.png")
     buttonUpgrade2 = Button(fenetre, image=pictureUpgrade2, bg="black", activebackground="black", command=Amelioration2Clic, width=60, height=60)
-    buttonUpgrade2.grid(row=5, column=12, rowspan=2)
+    buttonUpgrade2.grid(row=5, column=11, rowspan=2)
 
     priceUpgrade2 = Label(fenetre, text="prix : 100", bg="black", fg="white")
-    priceUpgrade2.grid(row=5, column=13, rowspan=2)
+    priceUpgrade2.grid(row=5, column=12, rowspan=2)
 
     textUpgrade2 = Label(fenetre, text="augmente de 2 le nombre\nd'octets par secondes", bg="black", fg="white", font="Helvetica 10")
-    textUpgrade2.grid(row=5, column=14, rowspan=2)
+    textUpgrade2.grid(row=5, column=13, rowspan=2)
 
     return levelUpgrade2, pictureUpgrade2, buttonUpgrade2, priceUpgrade2, textUpgrade2
 
 def widgetUpgrade3():
     levelUpgrade3 = Label(fenetre, text="0", bg="black", fg="grey", font=("Arial",  18))
-    levelUpgrade3.grid(row=7, column=11, rowspan=2)
+    levelUpgrade3.grid(row=7, column=10, rowspan=2)
 
     pictureUpgrade3 = PhotoImage(file="image/python.png")
     buttonUpgrade3 = Button(fenetre, image=pictureUpgrade3, bg="black", activebackground="black", command=Amelioration3Clic, width=60, height=60)
-    buttonUpgrade3.grid(row=7, column=12, rowspan=2)
+    buttonUpgrade3.grid(row=7, column=11, rowspan=2)
 
     priceUpgrade3 = Label(fenetre, text="prix : 1 100", bg="black", fg="white")
-    priceUpgrade3.grid(row=7, column=13, rowspan=2)
+    priceUpgrade3.grid(row=7, column=12, rowspan=2)
 
     textUpgrade3 = Label(fenetre, text="augmente de 8 le nombre\nd'octets par secondes", bg="black", fg="white", font="Helvetica 10")
-    textUpgrade3.grid(row=7, column=14, rowspan=2)
+    textUpgrade3.grid(row=7, column=13, rowspan=2)
 
     return levelUpgrade3, pictureUpgrade3, buttonUpgrade3, priceUpgrade3, textUpgrade3
 
 def widgetUpgrade4():
     levelUpgrade4 = Label(fenetre, text="0", bg="black", fg="grey", font=("Arial",  18))
-    levelUpgrade4.grid(row=9, column=11, rowspan=2)
+    levelUpgrade4.grid(row=9, column=10, rowspan=2)
 
     pictureUpgrade4 = PhotoImage(file="image/python.png")
     buttonUpgrade4 = Button(fenetre, image=pictureUpgrade4, bg="black", activebackground="black", command=Amelioration4Clic, width=60, height=60)
-    buttonUpgrade4.grid(row=9, column=12, rowspan=2)
+    buttonUpgrade4.grid(row=9, column=11, rowspan=2)
 
     priceUpgrade4 = Label(fenetre, text="prix : 12 000", bg="black", fg="white")
-    priceUpgrade4.grid(row=9, column=13, rowspan=2)
+    priceUpgrade4.grid(row=9, column=12, rowspan=2)
 
     textUpgrade4 = Label(fenetre, text="augmente de 47 le nombre\nd'octets par secondes", bg="black", fg="white", font="Helvetica 10")
-    textUpgrade4.grid(row=9, column=14, rowspan=2)
+    textUpgrade4.grid(row=9, column=13, rowspan=2)
 
     return levelUpgrade4, pictureUpgrade4, buttonUpgrade4, priceUpgrade4, textUpgrade4
 
 def widgetUpgrade5():
     levelUpgrade5 = Label(fenetre, text="0", bg="black", fg="grey", font=("Arial",  18))
-    levelUpgrade5.grid(row=11, column=11, rowspan=2)
+    levelUpgrade5.grid(row=11, column=10, rowspan=2)
 
     pictureUpgrade5 = PhotoImage(file="image/python.png")
     buttonUpgrade5 = Button(fenetre, image=pictureUpgrade5, bg="black", activebackground="black", command=Amelioration5Clic, width=60, height=60)
-    buttonUpgrade5.grid(row=11, column=12, rowspan=2)
+    buttonUpgrade5.grid(row=11, column=11, rowspan=2)
 
     priceUpgrade5 = Label(fenetre, text="prix : 130 000", bg="black", fg="white")
-    priceUpgrade5.grid(row=11, column=13, rowspan=2)
+    priceUpgrade5.grid(row=11, column=12, rowspan=2)
 
     textUpgrade5 = Label(fenetre, text="augmente de 260 le nombre\nd'octets par secondes", bg="black", fg="white", font="Helvetica 10")
-    textUpgrade5.grid(row=11, column=14, rowspan=2)
+    textUpgrade5.grid(row=11, column=13, rowspan=2)
 
     return levelUpgrade5, pictureUpgrade5, buttonUpgrade5, priceUpgrade5, textUpgrade5
+
+
+def widgetBoost():
+    pictureBoost1 = PhotoImage(file="image/python.png")
+    buttonBoost1=Button(fenetre, image=pictureBoost1, bg="black", activebackground="black", width=60, height=60)
+    buttonBoost1.grid(row=1, column=10)
+
+    pictureBoost2 = PhotoImage(file="image/python.png")
+    buttonBoost2=Button(fenetre, image=pictureBoost1, bg="black", activebackground="black", width=60, height=60)
+    buttonBoost2.grid(row=1, column=11)
+
+    pictureBoost3 = PhotoImage(file="image/python.png")
+    buttonBoost3=Button(fenetre, image=pictureBoost1, bg="black", activebackground="black", width=60, height=60)
+    buttonBoost3.grid(row=1, column=12)
+
+    pictureBoost4 = PhotoImage(file="image/python.png")
+    buttonBoost4=Button(fenetre, image=pictureBoost1, bg="black", activebackground="black", width=60, height=60)
+    buttonBoost4.grid(row=1, column=13)
+
+    pictureBoost5 = PhotoImage(file="image/python.png")
+    buttonBoost5=Button(fenetre, image=pictureBoost1, bg="black", activebackground="black", width=60, height=60)
+    buttonBoost5.grid(row=1, column=14)
+    return buttonBoost1, pictureBoost1
+    
+        
 
 def Amelioration1Clic():
     global scoreSec
@@ -329,18 +359,18 @@ def Amelioration3Clic():
 
 def point1k(event):
     global score
-    score += 100000000
+    score += 10000000000000
     text_score.configure(text=f"{score} notes")
 
 
 def ptpclick(event):
     global scoreClick
-    scoreClick += 2000000
+    scoreClick += 200000000000
     text_octets_click.configure(text=f"{scoreClick} notes/Clic")
 
 def ptpsecondes(event):
     global scoreSec
-    scoreSec += 250000
+    scoreSec += 250000000000
     text_octets_secondes.configure(text=f"{scoreSec} notes/Secondes")
 
 
@@ -349,6 +379,7 @@ def ptpsecondes(event):
 scoreClick=1
 scoreSec=0
 score=0
+dicImageBoost={}
 
 niveau_amelioration1 = 0
 prix_amelioration_1 = [10, 12, 14, 17, 21, 25, 30, 36, 43, 52, 62, 75, 90, 107, 129, 155, 186, 223, 267, 321, 385, 462, 554, 665, 798, 957, 1149, 1378, 1654, 1985, 2381, 2858, 3429, 4115, 4938, 5926, 7111, 8534, 10240, 12288, 14746, 17695, 21234, 25481, 30578, 36693, 44032, 52838, 63406, 76087]
@@ -368,6 +399,7 @@ fenetre_pop_up.mainloop()
 lastSave = start()
 fenetre, screen_width, screen_height = creer_fenetre()
 zone_graphique = creer_Canvas()
+zone_graphiqueBoost=testCanvasBoost()
 text_player, picture, button_clicker, text_last_save, text_score, text_octets_secondes, text_octets_click, button_save, button_save_quit =  cree_widget()
 
 levelUpgrade1, pictureUpgrade1, buttonUpgrade1, priceUpgrade1, textUpgrade1 = widgetUpgrade1()
@@ -375,6 +407,7 @@ levelUpgrade2, pictureUpgrade2, buttonUpgrade2, priceUpgrade2, textUpgrade2 = wi
 levelUpgrade3, pictureUpgrade3, buttonUpgrade3, priceUpgrade3, textUpgrade3 = widgetUpgrade3()
 levelUpgrade4, pictureUpgrade4, buttonUpgrade4, priceUpgrade4, textUpgrade4 = widgetUpgrade4()
 levelUpgrade5, pictureUpgrade5, buttonUpgrade5, priceUpgrade5, textUpgrade5 = widgetUpgrade5()
+ButtonBoost1, pictureBoost1=widgetBoost()
 
 
 
