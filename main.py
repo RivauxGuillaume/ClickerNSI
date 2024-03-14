@@ -20,7 +20,11 @@ def creer_fenetre():
 def creer_Canvas():
     zone_graphique = Canvas(fenetre, width=screen_width, height=screen_height, bg = "black")
     zone_graphique.grid(row=0, column=0, rowspan=15, columnspan=15)
-    return zone_graphique
+
+    backgroundPng = PhotoImage(file="image/background.png")
+    backgroundText = Label(zone_graphique, image=backgroundPng)
+    backgroundText.grid(row=0, column=0, rowspan=15, columnspan=15)
+    return zone_graphique, backgroundPng, backgroundText
 
 def testCanvasBoost():
     zone_graphiqueBoost=Canvas(fenetre, width=300, height=300, bg = "blue")
@@ -398,7 +402,7 @@ fenetre_pop_up.mainloop()
 
 lastSave = start()
 fenetre, screen_width, screen_height = creer_fenetre()
-zone_graphique = creer_Canvas()
+zone_graphique, backgroundPng, backgroundText = creer_Canvas()
 zone_graphiqueBoost=testCanvasBoost()
 text_player, picture, button_clicker, text_last_save, text_score, text_octets_secondes, text_octets_click, button_save, button_save_quit =  cree_widget()
 
