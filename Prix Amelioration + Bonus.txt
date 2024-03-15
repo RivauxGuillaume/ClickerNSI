@@ -29,3 +29,24 @@
 #Boost 29 : Prix : 100 000 000 Effet : + 2%/sec
 #Boost 30 : Prix : 100 000 000 Effet : + 2%/sec
 #Boost 31 : Prix : 100 000 000 Effet : + 2%/sec
+
+
+#Prix de cookie clicker (a voir si on fait les mm)
+#Amelioration 1 : Prix : 15 (+15% a chaque amelioration) Effet : + 0.1/sec
+#Amelioration 2 : Prix : 100 (+15% a chaque amelioration) Effet : + 2/sec
+#Amelioration 3 : Prix : 1 100 (+15% a chaque amelioration) Effet : + 8/sec
+#Amelioration 4 : Prix : 12 000 (+15% a chaque amelioration) Effet : + 47/sec
+#Amelioration 5 : Prix : 130 000 (+15% a chaque amelioration) Effet : + 260/sec
+#Amelioration 6 : Prix : 1.4 millions (+15% a chaque amelioration) Effet : + 1400/sec
+
+#Boost 1 : Prix : 100 Effet : Double les clic + Amelioration 1
+#Boost 2 : Prix : 500 Effet : Double les clic + Amelioration 1
+#Boost 3 : Prix : 1 000 Effet :  Double Amelioration 2
+#Boost 4 : Prix : 10 000 Effet : Double les clic + Amelioration 1
+#Boost 5 : Prix : 11 000 Effet : Double Amelioration 3
+#Boost 6 : Prix : 50 000 Effet : + 1% Clic
+#Boost 7 : Prix : 55 000 Effet : Double Amelioration 3
+#Boost 8 : Prix : 120 000 Effet : Double Amelioration 4
+#Boost 9 : Prix : 999 999 Effet : + 1%/sec
+
+#Boost 10 : Prix : 9 000 000 Effet : Gagné ?
