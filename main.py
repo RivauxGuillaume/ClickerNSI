@@ -21,10 +21,7 @@ def creer_Canvas():
     zone_graphique = Canvas(fenetre, width=screen_width, height=screen_height, bg = "black")
     zone_graphique.grid(row=0, column=0, rowspan=15, columnspan=15)
 
-    backgroundPng = PhotoImage(file="image/background.png")
-    backgroundText = Label(zone_graphique, image=backgroundPng)
-    backgroundText.grid(row=0, column=0, rowspan=15, columnspan=15)
-    return zone_graphique, backgroundPng, backgroundText
+    return zone_graphique
 
 def testCanvasBoost():
     zone_graphiqueBoost=Canvas(fenetre, width=300, height=300, bg = "blue")
@@ -322,43 +319,7 @@ def Amelioration5Clic():
             score = round(score - prix_amelioration_5[niveau_amelioration5 - 1], 1)
             text_score.configure(text=f"{score} notes")
 
-"""
-        elif coeficient > 0:
-            time.sleep(1/(scoreSec/coeficient))
-            score+=int(coeficient * (initial_diviseur/100))
-        texte_score.configure(text=f"{score} notes")
 
-
-
-def Amelioration1Clic():
-    global scoreClick
-    global score
-    if score >= 10:                                         # A modifier
-        scoreClick+=1                             # A modifier
-        texte_scoreClick.configure(text=f"{scoreClick} notes/Clic")
-        score-=10                                      # A modifier
-        texte_score.configure(text=f"{score} notes")
-
-# bug : n'enlève pas les 100 points au score
-def Amelioration2Clic():
-    global scoreSec
-    global score
-    if score >= 100:                                         # A modifier
-        scoreSec+=1                                  # A modifier
-        texte_clicSec.configure(text=f"{scoreSec} notes/Secondes")
-        score = score - 100                                      # A modifier
-        texte_score.configure(text=f"{score} notes")        
-
-
-def Amelioration3Clic():
-    global scoreClick
-    global score
-    if score >= 1000:                                         # A modifier
-        scoreClick=scoreClick+100                             # A modifier
-        texte_scoreClick.configure(text=f"{scoreClick} notes/Clic")
-        score=score-1000                                      # A modifier
-        texte_score.configure(text=f"{score} notes")
-"""
 #---------------------------------------------------------Provisoire---------------------------------------
 
 def point1k(event):
@@ -402,7 +363,7 @@ fenetre_pop_up.mainloop()
 
 lastSave = start()
 fenetre, screen_width, screen_height = creer_fenetre()
-zone_graphique, backgroundPng, backgroundText = creer_Canvas()
+zone_graphique = creer_Canvas()
 zone_graphiqueBoost=testCanvasBoost()
 text_player, picture, button_clicker, text_last_save, text_score, text_octets_secondes, text_octets_click, button_save, button_save_quit =  cree_widget()
 
@@ -428,28 +389,3 @@ th1.daemon = True
 th1.start()
 
 fenetre.mainloop()
-
-
-
-#Prix de cookie clicker (a voir si on fait les mm)
-#Amelioration 1 : Prix : 15 (+15% a chaque amelioration) Effet : + 0.1/sec
-#Amelioration 2 : Prix : 100 (+15% a chaque amelioration) Effet : + 2/sec
-#Amelioration 3 : Prix : 1 100 (+15% a chaque amelioration) Effet : + 8/sec
-#Amelioration 4 : Prix : 12 000 (+15% a chaque amelioration) Effet : + 47/sec
-#Amelioration 5 : Prix : 130 000 (+15% a chaque amelioration) Effet : + 260/sec
-#Amelioration 6 : Prix : 1.4 millions (+15% a chaque amelioration) Effet : + 1400/sec
-
-#Boost 1 : Prix : 100 Effet : Double les clic + Amelioration 1
-#Boost 2 : Prix : 500 Effet : Double les clic + Amelioration 1
-#Boost 3 : Prix : 1 000 Effet :  Double Amelioration 2
-#Boost 4 : Prix : 10 000 Effet : Double les clic + Amelioration 1
-#Boost 5 : Prix : 11 000 Effet : Double Amelioration 3
-#Boost 6 : Prix : 50 000 Effet : + 1% Clic
-#Boost 7 : Prix : 55 000 Effet : Double Amelioration 3
-#Boost 8 : Prix : 120 000 Effet : Double Amelioration 4
-#Boost 9 : Prix : 999 999 Effet : + 1%/sec
-
-#Boost 10 : Prix : 9 000 000 Effet : Gagné ?
-
-
-
