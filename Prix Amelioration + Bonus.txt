@@ -1,3 +1,4 @@
+https://cookieclicker.fandom.com/fr/wiki/Am%C3%A9liorations
 #Boost 1 : Prix : 100 Effet : Double les clic + Amelioration 1
 #Boost 2 : Prix : 500 Effet : Double les clic + Amelioration 1
 #Boost 3 : Prix : 1 000 Effet :  Double Amelioration 2
@@ -32,12 +33,14 @@
 
 
 #Prix de cookie clicker (a voir si on fait les mm)
+https://cookieclicker.fandom.com/fr/wiki/Constructions
 #Amelioration 1 : Prix : 15 (+15% a chaque amelioration) Effet : + 0.1/sec
 #Amelioration 2 : Prix : 100 (+15% a chaque amelioration) Effet : + 2/sec
 #Amelioration 3 : Prix : 1 100 (+15% a chaque amelioration) Effet : + 8/sec
 #Amelioration 4 : Prix : 12 000 (+15% a chaque amelioration) Effet : + 47/sec
 #Amelioration 5 : Prix : 130 000 (+15% a chaque amelioration) Effet : + 260/sec
 #Amelioration 6 : Prix : 1.4 millions (+15% a chaque amelioration) Effet : + 1400/sec
+Amelioration 9 : Prix : 5.1 billions (+15% a chaque amelioration) Effet : 
 
 #Boost 1 : Prix : 100 Effet : Double les clic + Amelioration 1
 #Boost 2 : Prix : 500 Effet : Double les clic + Amelioration 1
