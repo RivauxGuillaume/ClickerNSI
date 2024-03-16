@@ -31,7 +31,7 @@ def cree_widget():
     text_player.grid(row=0, column=0)
 
     # Bouton clicker
-    picture = PhotoImage(file="ordi2.png")
+    picture = PhotoImage(file="image/ordi2.png")
     button_clicker = Button(fenetre, image=picture, command=AjoutScore, bg = "black", activebackground="black", bd=0)
     button_clicker.grid(row=1, column=0, rowspan=11, columnspan=6)
     
