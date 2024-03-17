@@ -30,6 +30,13 @@ https://cookieclicker.fandom.com/fr/wiki/Am%C3%A9liorations
 #Boost 29 : Prix : 100 000 000 Effet : + 2%/sec
 #Boost 30 : Prix : 100 000 000 Effet : + 2%/sec
 #Boost 31 : Prix : 100 000 000 Effet : + 2%/sec
+#Boost ? : Prix : 500 000 000 Effet : + 2%/sec (cookies chocho blanc)
+#Boost ? : Prix : 100 000 000 Effet : + 2%/sec
+#Boost ? : Prix : 100 000 000 Effet : + 2%/sec
+#Boost ? : Prix : 100 000 000 Effet : + 2%/sec
+#Boost ? : Prix : 100 000 000 Effet : + 2%/sec
+#Boost ? : Prix : 100 000 000 Effet : + 2%/sec
+
 
 
 #Prix de cookie clicker (a voir si on fait les mm)
