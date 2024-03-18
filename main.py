@@ -8,7 +8,7 @@ import datetime
 
 def creer_fenetre():
     fenetre=Tk()
-
+    
     fenetre.title("Computer Clicker")
     screen_width = fenetre.winfo_screenwidth()
     screen_height = fenetre.winfo_screenheight()
@@ -33,7 +33,7 @@ def cree_widget():
     picture = PhotoImage(file="image/ordi2.png")
     button_clicker = Button(fenetre, image=picture, command=AjoutScore, bg = "black", activebackground="black", bd=0)
     button_clicker.grid(row=1, column=0, rowspan=11, columnspan=6)
-
+    
     # Texte dernière enregistrement
     text_last_save = Label(fenetre, text=f"Dernière sauvegarde :\n {lastSave}", bg="black", fg="white")
     text_last_save.grid(row=13, column=1, columnspan=4)
@@ -87,7 +87,7 @@ def pop_up():
     bouton_valider_popup.grid(row=1, column=0, columnspan=2)
 
     return fenetre_pop_up, text_popup, prenom_user, bouton_valider_popup
-
+    
 def recuperer_nom():
     global joueur
     joueur = prenom_user.get("1.0", "end-1c")
@@ -125,7 +125,6 @@ def load_picture():
     pictureUpgrade8 = PhotoImage(file="image/python.png")
 
     return pictureUpgrade1,  pictureUpgrade2, pictureUpgrade3, pictureUpgrade4, pictureUpgrade5,  pictureUpgrade6, pictureUpgrade7, pictureUpgrade8
-
 
 def widgetUpgrade1():
     global pictureUpgrade1
@@ -256,59 +255,27 @@ def widgetUpgrade8():
     return levelUpgrade8, buttonUpgrade8, priceUpgrade8, textUpgrade8
 
 
-def widgetBoost1():
-    pictureBoost1 = PhotoImage(file="image/css.png")
-    buttonBoost1=Button(fenetre, image=pictureBoost1, bg="black", activebackground="black", width=60, height=60, command=Boost1Clic)
-    buttonBoost1.grid(row=1, column=columnBoost1)
-    return pictureBoost1, buttonBoost1
+def widgetBoost():
+    pictureBoost1 = PhotoImage(file="image/python.png")
+    buttonBoost1=Button(fenetre, image=pictureBoost1, bg="black", activebackground="black", width=60, height=60)
+    buttonBoost1.grid(row=1, column=10)
 
-def widgetBoost2():
-    pictureBoost2 = PhotoImage(file="image/html.png")
-    buttonBoost2=Button(fenetre, image=pictureBoost2, bg="black", activebackground="black", width=60, height=60)
-    buttonBoost2.grid(row=1, column=columnBoost2)
-    return pictureBoost2, buttonBoost2
+    pictureBoost2 = PhotoImage(file="image/python.png")
+    buttonBoost2=Button(fenetre, image=pictureBoost1, bg="black", activebackground="black", width=60, height=60)
+    buttonBoost2.grid(row=1, column=11)
 
-def widgetBoost3():
     pictureBoost3 = PhotoImage(file="image/python.png")
-    buttonBoost3=Button(fenetre, image=pictureBoost3, bg="black", activebackground="black", width=60, height=60)
-    buttonBoost3.grid(row=1, column=columnBoost3)
-    return pictureBoost3, buttonBoost3
+    buttonBoost3=Button(fenetre, image=pictureBoost1, bg="black", activebackground="black", width=60, height=60)
+    buttonBoost3.grid(row=1, column=12)
 
-def widgetBoost4():
     pictureBoost4 = PhotoImage(file="image/python.png")
-    buttonBoost4=Button(fenetre, image=pictureBoost4, bg="black", activebackground="black", width=60, height=60)
-    buttonBoost4.grid(row=1, column=columnBoost4)
-    return pictureBoost4, buttonBoost4
+    buttonBoost4=Button(fenetre, image=pictureBoost1, bg="black", activebackground="black", width=60, height=60)
+    buttonBoost4.grid(row=1, column=13)
 
-def widgetBoost5():
     pictureBoost5 = PhotoImage(file="image/python.png")
-    buttonBoost5=Button(fenetre, image=pictureBoost5, bg="black", activebackground="black", width=60, height=60)
-    buttonBoost5.grid(row=1, column=columnBoost5)
-    return pictureBoost5, buttonBoost5
-
-def widgetBoost6():
-    pictureBoost6 = PhotoImage(file="image/python.png")
-    buttonBoost6=Button(fenetre, image=pictureBoost6, bg="black", activebackground="black", width=60, height=60)
-    buttonBoost6.grid(row=1, column=columnBoost6)
-    return pictureBoost6, buttonBoost6
-
-def widgetBoost7():
-    pictureBoost7 = PhotoImage(file="image/python.png")
-    buttonBoost7=Button(fenetre, image=pictureBoost7, bg="black", activebackground="black", width=60, height=60)
-    buttonBoost7.grid(row=1, column=columnBoost7)
-    return pictureBoost7, buttonBoost7
-
-def widgetBoost8():
-    pictureBoost8 = PhotoImage(file="image/python.png")
-    buttonBoost8=Button(fenetre, image=pictureBoost8, bg="black", activebackground="black", width=60, height=60)
-    buttonBoost8.grid(row=1, column=columnBoost8)
-    return pictureBoost8, buttonBoost8
-
-def widgetBoost9():
-    pictureBoost9 = PhotoImage(file="image/python.png")
-    buttonBoost9=Button(fenetre, image=pictureBoost9, bg="black", activebackground="black", width=60, height=60)
-    buttonBoost9.grid(row=1, column=columnBoost9)
-    return pictureBoost9, buttonBoost9
+    buttonBoost5=Button(fenetre, image=pictureBoost1, bg="black", activebackground="black", width=60, height=60)
+    buttonBoost5.grid(row=1, column=14)
+    return buttonBoost1, pictureBoost1
 
 def deleteAmelioration(niveau):
     global dicVariable
@@ -333,6 +300,8 @@ def deleteAmelioration(niveau):
                     dicVariable[f"textUpgrade{j}"].grid(row=dicVariable[f"rowUpgrade{j}"])
             numADelete = i
     del(listAmelioration[numADelete])
+    if listAmelioration == []:
+        listAmelioration.append(0)
     if max(listAmelioration) == 5:
         levelUpgrade6, buttonUpgrade6,  priceUpgrade6, textUpgrade6 = widgetUpgrade6()
         dicVariable["levelUpgrade6"] = levelUpgrade6
@@ -357,34 +326,7 @@ def deleteAmelioration(niveau):
         dicVariable["textUpgrade8"] = textUpgrade8
         dicVariable["rowUpgrade8"] = rowUpgrade8
         listAmelioration.append(8)
-
-
-def deleteBoost(niveau):
-    global dicVariable
-    global listBoost
-    global buttonBoost6, buttonBoost7, buttonBoost8, buttonBoost9
-
-    dicVariable[f"buttonBoost{niveau}"].destroy() #erreur
-    for i in range(len(listBoost)):
-        if listBoost[i] == niveau:
-            for j in listBoost:
-                if j > niveau:
-                    dicVariable[f"columnBoost{j}"] -= 1
-                    dicVariable[f"buttonBoost{j}"].grid(column=dicVariable[f"columnBoost{j}"])
-            numADelete = i
-    del(listBoost[numADelete])
-    if max(listBoost) == 5:
-        buttonBoost6=widgetBoost6()
-        dicVariable["buttonBoost6"] = buttonBoost6
-        listBoost.append(6)
-    elif max(listBoost) == 6:
-        buttonBoost7=widgetBoost7()
-        dicVariable["buttonBoost7"] = buttonBoost7
-        listBoost.append(7)
-    elif max(listBoost) == 7:
-        buttonBoost8=widgetBoost8()
-        dicVariable["buttonBoost8"] = buttonBoost8
-        listBoost.append(8)
+    
 
 def Amelioration1Clic():
     global scoreSec
@@ -554,17 +496,6 @@ def Amelioration8Clic():
 
 
 
-def Boost1Clic():
-    global scoreClick
-    global score
-    if score >= prix_boost1:
-        scoreClick = scoreClick*2
-        text_octets_click.configure(text=f"Par Click : {scoreClick}")
-        score=score-prix_boost1
-        text_score.configure(text=f"{score} notes")
-        th3 = threading.Thread(target=deleteBoost, args=[1])
-        th3.start()
-
 def prix(prix_base):
     a = [prix_base]
     for i in range(50):
@@ -596,7 +527,6 @@ scoreSec=0
 score=0
 dicImageBoost={}
 listAmelioration = [1, 2, 3, 4, 5]
-listBoost = [1, 2, 3, 4, 5]
 rowUpgrade1 = 3
 rowUpgrade2 = 5
 rowUpgrade3 = 7
@@ -605,16 +535,6 @@ rowUpgrade5 = 11
 rowUpgrade6 = 11
 rowUpgrade7 = 11
 rowUpgrade8 = 11
-
-columnBoost1 = 10
-columnBoost2 = 11
-columnBoost3 = 12
-columnBoost4 = 13
-columnBoost5 = 14
-columnBoost6 = 14
-columnBoost7 = 14
-columnBoost8 = 14
-columnBoost9 = 14
 
 niveau_amelioration1 = 0
 prix_amelioration_1 = prix(10)
@@ -633,16 +553,6 @@ prix_amelioration_7 = prix(20000000)
 niveau_amelioration8 = 0
 prix_amelioration_8 = prix(330000000)
 
-prix_boost1=100
-prix_boost2=500
-prix_boost3=1000
-prix_boost4=5000
-prix_boost5=10000
-prix_boost6=11000
-prix_boost7=50000
-prix_boost8=50000
-prix_boost9=55000
-
 
 #a mdifier pour 1 seul écran
 fenetre_pop_up, text_popup, prenom_user, bouton_valider_popup = pop_up()
@@ -660,18 +570,10 @@ levelUpgrade3, buttonUpgrade3, priceUpgrade3, textUpgrade3 = widgetUpgrade3()
 levelUpgrade4, buttonUpgrade4, priceUpgrade4, textUpgrade4 = widgetUpgrade4()
 levelUpgrade5, buttonUpgrade5, priceUpgrade5, textUpgrade5 = widgetUpgrade5()
 
-pictureBoost1, buttonBoost1=widgetBoost1()
-pictureBoost2, buttonBoost2=widgetBoost2()
-pictureBoost3, buttonBoost3=widgetBoost3()
-pictureBoost4, buttonBoost4=widgetBoost4()
-pictureBoost5, buttonBoost5=widgetBoost5()
-pictureBoost6, buttonBoost6=widgetBoost6()
-pictureBoost7, buttonBoost7=widgetBoost7()
-pictureBoost8, buttonBoost8=widgetBoost8()
-pictureBoost9, buttonBoost9=widgetBoost9()
 
+dicVariable={"levelUpgrade1" : levelUpgrade1, "buttonUpgrade1" : buttonUpgrade1, "priceUpgrade1" : priceUpgrade1, "textUpgrade1" : textUpgrade1, "rowUpgrade1" : rowUpgrade1, "levelUpgrade2" : levelUpgrade2, "buttonUpgrade2" : buttonUpgrade2, "priceUpgrade2" : priceUpgrade2, "textUpgrade2" : textUpgrade2, "rowUpgrade2" : rowUpgrade2, "levelUpgrade3" : levelUpgrade3, "buttonUpgrade3" : buttonUpgrade3, "priceUpgrade3" : priceUpgrade3, "textUpgrade3" : textUpgrade3, "rowUpgrade3" : rowUpgrade3, "levelUpgrade4" : levelUpgrade4, "buttonUpgrade4" : buttonUpgrade4, "priceUpgrade4" : priceUpgrade4, "textUpgrade4" : textUpgrade4, "rowUpgrade4" : rowUpgrade4, "levelUpgrade5" : levelUpgrade5, "buttonUpgrade5" : buttonUpgrade5, "priceUpgrade5" : priceUpgrade5, "textUpgrade5" : textUpgrade5, "rowUpgrade5" : rowUpgrade5}
 
-dicVariable={"levelUpgrade1" : levelUpgrade1, "buttonUpgrade1" : buttonUpgrade1, "priceUpgrade1" : priceUpgrade1, "textUpgrade1" : textUpgrade1, "rowUpgrade1" : rowUpgrade1, "levelUpgrade2" : levelUpgrade2, "buttonUpgrade2" : buttonUpgrade2, "priceUpgrade2" : priceUpgrade2, "textUpgrade2" : textUpgrade2, "rowUpgrade2" : rowUpgrade2, "levelUpgrade3" : levelUpgrade3, "buttonUpgrade3" : buttonUpgrade3, "priceUpgrade3" : priceUpgrade3, "textUpgrade3" : textUpgrade3, "rowUpgrade3" : rowUpgrade3, "levelUpgrade4" : levelUpgrade4, "buttonUpgrade4" : buttonUpgrade4, "priceUpgrade4" : priceUpgrade4, "textUpgrade4" : textUpgrade4, "rowUpgrade4" : rowUpgrade4, "levelUpgrade5" : levelUpgrade5, "buttonUpgrade5" : buttonUpgrade5, "priceUpgrade5" : priceUpgrade5, "textUpgrade5" : textUpgrade5, "rowUpgrade5" : rowUpgrade5, "buttonBoost1" : pictureBoost1, "buttonBoost2" : buttonBoost2, "buttonBoost3" : buttonBoost3, "buttonBoost4" : buttonBoost4, "buttonBoost5": buttonBoost5, "columnBoost1" : columnBoost1, "columnBoost2" : columnBoost2, "columnBoost3" : columnBoost3, "columnBoost4" : columnBoost4, "columnBoost5" : columnBoost5, "columnBoost6" : columnBoost6, "columnBoost7" : columnBoost7, "columnBoost8" : columnBoost8, "columnBoost9" : columnBoost9}
+ButtonBoost1, pictureBoost1=widgetBoost()
 
 
 
