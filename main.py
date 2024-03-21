@@ -131,8 +131,23 @@ def load_picture():
     pictureUpgrade14 = PhotoImage(file="image/python.png")
     pictureUpgrade15 = PhotoImage(file="image/python.png")
     pictureUpgrade16 = PhotoImage(file="image/python.png")
+    pictureBoost1 = PhotoImage(file="image/css.png")
+    pictureBoost2 = PhotoImage(file="image/html.png")
+    pictureBoost3 = PhotoImage(file="image/c#.png")
+    pictureBoost4 = PhotoImage(file="image/js.png")
+    pictureBoost5 = PhotoImage(file="image/c#.png")
+    pictureBoost6 = PhotoImage(file="image/js.png")
+    pictureBoost7 = PhotoImage(file="image/c#.png")
+    pictureBoost8 = PhotoImage(file="image/js.png")
+    pictureBoost9 = PhotoImage(file="image/c#.png")
+    pictureBoost10 = PhotoImage(file="image/js.png")
+    pictureBoost11 = PhotoImage(file="image/c#.png")
+    pictureBoost12 = PhotoImage(file="image/js.png")
+    pictureBoost13 = PhotoImage(file="image/c#.png")
+    pictureBoost14 = PhotoImage(file="image/js.png")
+    pictureBoost15 = PhotoImage(file="image/c#.png")
 
-    return pictureUpgrade1,  pictureUpgrade2, pictureUpgrade3, pictureUpgrade4, pictureUpgrade5,  pictureUpgrade6, pictureUpgrade7, pictureUpgrade8, pictureUpgrade9, pictureUpgrade10, pictureUpgrade11, pictureUpgrade12, pictureUpgrade13, pictureUpgrade14, pictureUpgrade15, pictureUpgrade16
+    return pictureUpgrade1,  pictureUpgrade2, pictureUpgrade3, pictureUpgrade4, pictureUpgrade5,  pictureUpgrade6, pictureUpgrade7, pictureUpgrade8, pictureUpgrade9, pictureUpgrade10, pictureUpgrade11, pictureUpgrade12, pictureUpgrade13, pictureUpgrade14, pictureUpgrade15, pictureUpgrade16, pictureBoost1, pictureBoost2, pictureBoost3, pictureBoost4, pictureBoost5, pictureBoost6, pictureBoost7, pictureBoost8, pictureBoost9, pictureBoost10, pictureBoost11, pictureBoost12, pictureBoost13, pictureBoost14, pictureBoost15
 
 
 def widgetUpgrade1():
@@ -392,58 +407,79 @@ def widgetUpgrade16():
     return levelUpgrade16, buttonUpgrade16, priceUpgrade16, textUpgrade16
 
 def widgetBoost1():
-    pictureBoost1 = PhotoImage(file="image/css.png")
     buttonBoost1=Button(fenetre, image=pictureBoost1, bg="gray28", activebackground="gray28", width=60, height=60, command=Boost1Clic)
     buttonBoost1.grid(row=1, column=columnBoost1)
-    return pictureBoost1, buttonBoost1
+    return buttonBoost1
 
 def widgetBoost2():
-    pictureBoost2 = PhotoImage(file="image/html.png")
     buttonBoost2=Button(fenetre, image=pictureBoost2, bg="gray28", activebackground="gray28", width=60, height=60, command=Boost2Clic)
     buttonBoost2.grid(row=1, column=columnBoost2)
-    return pictureBoost2, buttonBoost2
+    return buttonBoost2
 
 def widgetBoost3():
-    pictureBoost3 = PhotoImage(file="image/c#.png")
     buttonBoost3=Button(fenetre, image=pictureBoost3, bg="gray28", activebackground="gray28", width=60, height=60, command=Boost3Clic)
     buttonBoost3.grid(row=1, column=columnBoost3)
-    return pictureBoost3, buttonBoost3
+    return buttonBoost3
 
 def widgetBoost4():
-    pictureBoost4 = PhotoImage(file="image/js.png")
     buttonBoost4=Button(fenetre, image=pictureBoost4, bg="gray28", activebackground="gray28", width=60, height=60, command=Boost4Clic)
     buttonBoost4.grid(row=1, column=columnBoost4)
-    return pictureBoost4, buttonBoost4
+    return buttonBoost4
 
 def widgetBoost5():
-    pictureBoost5 = PhotoImage(file="image/c#.png")
     buttonBoost5=Button(fenetre, image=pictureBoost5, bg="gray28", activebackground="gray28", width=60, height=60, command=Boost5Clic)
     buttonBoost5.grid(row=1, column=columnBoost5)
-    return pictureBoost5, buttonBoost5
+    return buttonBoost5
 
 def widgetBoost6():
-    pictureBoost6 = PhotoImage(file="image/python.png")
     buttonBoost6=Button(fenetre, image=pictureBoost6, bg="gray28", activebackground="gray28", width=60, height=60, command=Boost6Clic)
     buttonBoost6.grid(row=1, column=columnBoost6)
-    return pictureBoost6, buttonBoost6
+    return buttonBoost6
 
 def widgetBoost7():
-    pictureBoost7 = PhotoImage(file="image/python.png")
     buttonBoost7=Button(fenetre, image=pictureBoost7, bg="gray28", activebackground="gray28", width=60, height=60, command=Boost7Clic)
     buttonBoost7.grid(row=1, column=columnBoost7)
-    return pictureBoost7, buttonBoost7
+    return buttonBoost7
 
 def widgetBoost8():
-    pictureBoost8 = PhotoImage(file="image/python.png")
     buttonBoost8=Button(fenetre, image=pictureBoost8, bg="gray28", activebackground="gray28", width=60, height=60, command=Boost8Clic)
     buttonBoost8.grid(row=1, column=columnBoost8)
-    return pictureBoost8, buttonBoost8
+    return buttonBoost8
 
 def widgetBoost9():
-    pictureBoost9 = PhotoImage(file="image/python.png")
     buttonBoost9=Button(fenetre, image=pictureBoost9, bg="gray28", activebackground="gray28", width=60, height=60, command=Boost9Clic)
     buttonBoost9.grid(row=1, column=columnBoost9)
-    return pictureBoost9, buttonBoost9
+    return buttonBoost9
+
+def widgetBoost10():
+    buttonBoost10=Button(fenetre, image=pictureBoost10, bg="gray28", activebackground="gray28", width=60, height=60, command=Boost10Clic)
+    buttonBoost10.grid(row=1, column=columnBoost10)
+    return buttonBoost10
+
+def widgetBoost11():
+    buttonBoost11=Button(fenetre, image=pictureBoost11, bg="gray28", activebackground="gray28", width=60, height=60, command=Boost11Clic)
+    buttonBoost11.grid(row=1, column=columnBoost11)
+    return buttonBoost11
+
+def widgetBoost12():
+    buttonBoost12=Button(fenetre, image=pictureBoost12, bg="gray28", activebackground="gray28", width=60, height=60, command=Boost12Clic)
+    buttonBoost12.grid(row=1, column=columnBoost12)
+    return buttonBoost12
+
+def widgetBoost13():
+    buttonBoost13=Button(fenetre, image=pictureBoost13, bg="gray28", activebackground="gray28", width=60, height=60, command=Boost13Clic)
+    buttonBoost13.grid(row=1, column=columnBoost13)
+    return buttonBoost13
+
+def widgetBoost14():
+    buttonBoost14=Button(fenetre, image=pictureBoost14, bg="gray28", activebackground="gray28", width=60, height=60, command=Boost14Clic)
+    buttonBoost14.grid(row=1, column=columnBoost14)
+    return buttonBoost14
+
+def widgetBoost15():
+    buttonBoost15=Button(fenetre, image=pictureBoost15, bg="gray28", activebackground="gray28", width=60, height=60, command=Boost15Clic)
+    buttonBoost15.grid(row=1, column=columnBoost15)
+    return buttonBoost15
 
 def deleteAmelioration(niveau):
     global dicVariable
@@ -569,7 +605,7 @@ def deleteAmelioration(niveau):
 def deleteBoost(niveau):
     global dicVariable
     global listBoost
-    global buttonBoost6, buttonBoost7, buttonBoost8, buttonBoost9
+    global buttonBoost6, buttonBoost7, buttonBoost8, buttonBoost9, buttonBoost10, buttonBoost11, buttonBoost12, buttonBoost13, buttonBoost14, buttonBoost15
 
     dicVariable[f"buttonBoost{niveau}"].destroy()
     for i in range(len(listBoost)):
@@ -577,7 +613,7 @@ def deleteBoost(niveau):
             for j in listBoost:
                 if j > niveau:
                     dicVariable[f"columnBoost{j}"] -= 1
-                    dicVariable[f"buttonBoost{j}"].grid(column=dicVariable[f"columnBoost{j}"]) # erreur dicVariable[f"buttonBoost{j}"] est considérer comme un tuple donc .grid marche pas
+                    dicVariable[f"buttonBoost{j}"].grid(column=dicVariable[f"columnBoost{j}"])
             numADelete = i
     del(listBoost[numADelete])
     if max(listBoost) == 5:
@@ -592,7 +628,37 @@ def deleteBoost(niveau):
         buttonBoost8=widgetBoost8()
         dicVariable["buttonBoost8"] = buttonBoost8
         listBoost.append(8)
+    elif max(listBoost) == 8:
+        buttonBoost9 = widgetBoost9()
+        dicVariable["buttonBoost9"] = buttonBoost9
+        listBoost.append(9)
+    elif max(listBoost) == 9:
+        buttonBoost10 = widgetBoost10()
+        dicVariable["buttonBoost10"] = buttonBoost10
+        listBoost.append(10)
+    elif max(listBoost) == 10:
+        buttonBoost11 = widgetBoost11()
+        dicVariable["buttonBoost11"] = buttonBoost11
+        listBoost.append(11)
+    elif max(listBoost) == 11:
+        buttonBoost12 = widgetBoost12()
+        dicVariable["buttonBoost12"] = buttonBoost12
+        listBoost.append(12)
+    elif max(listBoost) == 12:
+        buttonBoost13 = widgetBoost13()
+        dicVariable["buttonBoost13"] = buttonBoost13
+        listBoost.append(13)
+    elif max(listBoost) == 13:
+        buttonBoost14 = widgetBoost14()
+        dicVariable["buttonBoost14"] = buttonBoost14
+        listBoost.append(14)
+    elif max(listBoost) == 14:
+        buttonBoost15 = widgetBoost15()
+        dicVariable["buttonBoost15"] = buttonBoost15
+        listBoost.append(15)
     print(listBoost)
+
+
 
 
 def Amelioration1Clic():
@@ -935,10 +1001,10 @@ def Boost1Clic():
 def Boost2Clic():
     global scoreClick
     global score
-    if score >= prix_boost1:
+    if score >= prix_boost2:
         scoreClick = scoreClick*2
         text_octets_click.configure(text=f"Par Click : {scoreClick}")
-        score=score-prix_boost1
+        score=score-prix_boost2
         text_score.configure(text=f"{score} notes")
         th3 = threading.Thread(target=deleteBoost, args=[2])
         th3.start()
@@ -946,10 +1012,10 @@ def Boost2Clic():
 def Boost3Clic():
     global scoreClick
     global score
-    if score >= prix_boost1:
+    if score >= prix_boost3:
         scoreClick = scoreClick*2
         text_octets_click.configure(text=f"Par Click : {scoreClick}")
-        score=score-prix_boost1
+        score=score-prix_boost3
         text_score.configure(text=f"{score} notes")
         th3 = threading.Thread(target=deleteBoost, args=[3])
         th3.start()
@@ -957,10 +1023,10 @@ def Boost3Clic():
 def Boost4Clic():
     global scoreClick
     global score
-    if score >= prix_boost1:
+    if score >= prix_boost4:
         scoreClick = scoreClick*2
         text_octets_click.configure(text=f"Par Click : {scoreClick}")
-        score=score-prix_boost1
+        score=score-prix_boost4
         text_score.configure(text=f"{score} notes")
         th3 = threading.Thread(target=deleteBoost, args=[4])
         th3.start()
@@ -968,10 +1034,10 @@ def Boost4Clic():
 def Boost5Clic():
     global scoreClick
     global score
-    if score >= prix_boost1:
+    if score >= prix_boost5:
         scoreClick = scoreClick*2
         text_octets_click.configure(text=f"Par Click : {scoreClick}")
-        score=score-prix_boost1
+        score=score-prix_boost5
         text_score.configure(text=f"{score} notes")
         th3 = threading.Thread(target=deleteBoost, args=[5])
         th3.start()
@@ -979,10 +1045,10 @@ def Boost5Clic():
 def Boost6Clic():
     global scoreClick
     global score
-    if score >= prix_boost1:
+    if score >= prix_boost6:
         scoreClick = scoreClick*2
         text_octets_click.configure(text=f"Par Click : {scoreClick}")
-        score=score-prix_boost1
+        score=score-prix_boost6
         text_score.configure(text=f"{score} notes")
         th3 = threading.Thread(target=deleteBoost, args=[6])
         th3.start()
@@ -990,10 +1056,10 @@ def Boost6Clic():
 def Boost7Clic():
     global scoreClick
     global score
-    if score >= prix_boost1:
+    if score >= prix_boost7:
         scoreClick = scoreClick*2
         text_octets_click.configure(text=f"Par Click : {scoreClick}")
-        score=score-prix_boost1
+        score=score-prix_boost7
         text_score.configure(text=f"{score} notes")
         th3 = threading.Thread(target=deleteBoost, args=[7])
         th3.start()
@@ -1001,10 +1067,10 @@ def Boost7Clic():
 def Boost8Clic():
     global scoreClick
     global score
-    if score >= prix_boost1:
+    if score >= prix_boost8:
         scoreClick = scoreClick*2
         text_octets_click.configure(text=f"Par Click : {scoreClick}")
-        score=score-prix_boost1
+        score=score-prix_boost8
         text_score.configure(text=f"{score} notes")
         th3 = threading.Thread(target=deleteBoost, args=[8])
         th3.start()
@@ -1012,12 +1078,78 @@ def Boost8Clic():
 def Boost9Clic():
     global scoreClick
     global score
-    if score >= prix_boost1:
+    if score >= prix_boost9:
         scoreClick = scoreClick*2
         text_octets_click.configure(text=f"Par Click : {scoreClick}")
-        score=score-prix_boost1
+        score=score-prix_boost9
         text_score.configure(text=f"{score} notes")
         th3 = threading.Thread(target=deleteBoost, args=[9])
+        th3.start()
+
+def Boost10Clic():
+    global scoreClick
+    global score
+    if score >= prix_boost10:
+        scoreClick = scoreClick*2
+        text_octets_click.configure(text=f"Par Click : {scoreClick}")
+        score=score-prix_boost10
+        text_score.configure(text=f"{score} notes")
+        th3 = threading.Thread(target=deleteBoost, args=[10])
+        th3.start()
+
+def Boost11Clic():
+    global scoreClick
+    global score
+    if score >= prix_boost11:
+        scoreClick = scoreClick*2
+        text_octets_click.configure(text=f"Par Click : {scoreClick}")
+        score=score-prix_boost11
+        text_score.configure(text=f"{score} notes")
+        th3 = threading.Thread(target=deleteBoost, args=[11])
+        th3.start()
+
+def Boost12Clic():
+    global scoreClick
+    global score
+    if score >= prix_boost12:
+        scoreClick = scoreClick*2
+        text_octets_click.configure(text=f"Par Click : {scoreClick}")
+        score=score-prix_boost12
+        text_score.configure(text=f"{score} notes")
+        th3 = threading.Thread(target=deleteBoost, args=[12])
+        th3.start()
+
+def Boost13Clic():
+    global scoreClick
+    global score
+    if score >= prix_boost13:
+        scoreClick = scoreClick*2
+        text_octets_click.configure(text=f"Par Click : {scoreClick}")
+        score=score-prix_boost13
+        text_score.configure(text=f"{score} notes")
+        th3 = threading.Thread(target=deleteBoost, args=[13])
+        th3.start()
+
+def Boost14Clic():
+    global scoreClick
+    global score
+    if score >= prix_boost14:
+        scoreClick = scoreClick*2
+        text_octets_click.configure(text=f"Par Click : {scoreClick}")
+        score=score-prix_boost14
+        text_score.configure(text=f"{score} notes")
+        th3 = threading.Thread(target=deleteBoost, args=[14])
+        th3.start()
+
+def Boost15Clic():
+    global scoreClick
+    global score
+    if score >= prix_boost15:
+        scoreClick = scoreClick*2
+        text_octets_click.configure(text=f"Par Click : {scoreClick}")
+        score=score-prix_boost15
+        text_score.configure(text=f"{score} notes")
+        th3 = threading.Thread(target=deleteBoost, args=[15])
         th3.start()
 
 def prix(prix_base):
@@ -1078,6 +1210,12 @@ columnBoost6 = 14
 columnBoost7 = 14
 columnBoost8 = 14
 columnBoost9 = 14
+columnBoost10 = 14
+columnBoost11 = 14
+columnBoost12 = 14
+columnBoost13 = 14
+columnBoost14 = 14
+columnBoost15 = 14
 
 niveau_amelioration1 = 0
 prix_amelioration_1 = prix(10)
@@ -1121,7 +1259,12 @@ prix_boost6=11000
 prix_boost7=50000
 prix_boost8=50000
 prix_boost9=55000
-
+prix_boost10=55000
+prix_boost11=120000
+prix_boost12=550000
+prix_boost13=600000
+prix_boost14=600000
+prix_boost15=999999
 
 #a mdifier pour 1 seul écran
 fenetre_pop_up, text_popup, prenom_user, bouton_valider_popup = pop_up()
@@ -1132,25 +1275,30 @@ fenetre, screen_width, screen_height = creer_fenetre()
 zone_graphique = creer_Canvas()
 text_player, picture, button_clicker, text_last_save, text_score, text_octets_secondes, text_octets_click, button_save, button_save_quit =  cree_widget()
 
-pictureUpgrade1,  pictureUpgrade2, pictureUpgrade3, pictureUpgrade4, pictureUpgrade5,  pictureUpgrade6, pictureUpgrade7, pictureUpgrade8, pictureUpgrade9, pictureUpgrade10, pictureUpgrade11, pictureUpgrade12, pictureUpgrade13, pictureUpgrade14, pictureUpgrade15, pictureUpgrade16 = load_picture()
+pictureUpgrade1,  pictureUpgrade2, pictureUpgrade3, pictureUpgrade4, pictureUpgrade5,  pictureUpgrade6, pictureUpgrade7, pictureUpgrade8, pictureUpgrade9, pictureUpgrade10, pictureUpgrade11, pictureUpgrade12, pictureUpgrade13, pictureUpgrade14, pictureUpgrade15, pictureUpgrade16, pictureBoost1, pictureBoost2, pictureBoost3, pictureBoost4, pictureBoost5, pictureBoost6, pictureBoost7, pictureBoost8, pictureBoost9, pictureBoost10, pictureBoost11, pictureBoost12, pictureBoost13, pictureBoost14, pictureBoost15 = load_picture()
 levelUpgrade1, buttonUpgrade1, priceUpgrade1, textUpgrade1 = widgetUpgrade1()
 levelUpgrade2, buttonUpgrade2, priceUpgrade2, textUpgrade2 = widgetUpgrade2()
 levelUpgrade3, buttonUpgrade3, priceUpgrade3, textUpgrade3 = widgetUpgrade3()
 levelUpgrade4, buttonUpgrade4, priceUpgrade4, textUpgrade4 = widgetUpgrade4()
 levelUpgrade5, buttonUpgrade5, priceUpgrade5, textUpgrade5 = widgetUpgrade5()
 
-pictureBoost1, buttonBoost1=widgetBoost1()
-pictureBoost2, buttonBoost2=widgetBoost2()
-pictureBoost3, buttonBoost3=widgetBoost3()
-pictureBoost4, buttonBoost4=widgetBoost4()
-pictureBoost5, buttonBoost5=widgetBoost5()
-pictureBoost6, buttonBoost6=widgetBoost6()
-pictureBoost7, buttonBoost7=widgetBoost7()
-pictureBoost8, buttonBoost8=widgetBoost8()
-pictureBoost9, buttonBoost9=widgetBoost9()
+buttonBoost1=widgetBoost1()
+buttonBoost2=widgetBoost2()
+buttonBoost3=widgetBoost3()
+buttonBoost4=widgetBoost4()
+buttonBoost5=widgetBoost5()
+buttonBoost6=widgetBoost6()
+buttonBoost7=widgetBoost7()
+buttonBoost8=widgetBoost8()
+buttonBoost9=widgetBoost9()
+buttonBoost10=widgetBoost10()
+buttonBoost11=widgetBoost11()
+buttonBoost12=widgetBoost12()
+buttonBoost13=widgetBoost13()
+buttonBoost14=widgetBoost14()
+buttonBoost15=widgetBoost15()
 
-
-dicVariable={"levelUpgrade1" : levelUpgrade1, "buttonUpgrade1" : buttonUpgrade1, "priceUpgrade1" : priceUpgrade1, "textUpgrade1" : textUpgrade1, "rowUpgrade1" : rowUpgrade1, "levelUpgrade2" : levelUpgrade2, "buttonUpgrade2" : buttonUpgrade2, "priceUpgrade2" : priceUpgrade2, "textUpgrade2" : textUpgrade2, "rowUpgrade2" : rowUpgrade2, "levelUpgrade3" : levelUpgrade3, "buttonUpgrade3" : buttonUpgrade3, "priceUpgrade3" : priceUpgrade3, "textUpgrade3" : textUpgrade3, "rowUpgrade3" : rowUpgrade3, "levelUpgrade4" : levelUpgrade4, "buttonUpgrade4" : buttonUpgrade4, "priceUpgrade4" : priceUpgrade4, "textUpgrade4" : textUpgrade4, "rowUpgrade4" : rowUpgrade4, "levelUpgrade5" : levelUpgrade5, "buttonUpgrade5" : buttonUpgrade5, "priceUpgrade5" : priceUpgrade5, "textUpgrade5" : textUpgrade5, "rowUpgrade5" : rowUpgrade5, "buttonBoost1" : buttonBoost1, "buttonBoost2" : buttonBoost2, "buttonBoost3" : buttonBoost3, "buttonBoost4" : buttonBoost4, "buttonBoost5": buttonBoost5, "buttonBoost6": buttonBoost6, "buttonBoost7": buttonBoost7, "buttonBoost8": buttonBoost8, "buttonBoost9": buttonBoost9, "columnBoost1" : columnBoost1, "columnBoost2" : columnBoost2, "columnBoost3" : columnBoost3, "columnBoost4" : columnBoost4, "columnBoost5" : columnBoost5, "columnBoost6" : columnBoost6, "columnBoost7" : columnBoost7, "columnBoost8" : columnBoost8, "columnBoost9" : columnBoost9}
+dicVariable={"levelUpgrade1" : levelUpgrade1, "buttonUpgrade1" : buttonUpgrade1, "priceUpgrade1" : priceUpgrade1, "textUpgrade1" : textUpgrade1, "rowUpgrade1" : rowUpgrade1, "levelUpgrade2" : levelUpgrade2, "buttonUpgrade2" : buttonUpgrade2, "priceUpgrade2" : priceUpgrade2, "textUpgrade2" : textUpgrade2, "rowUpgrade2" : rowUpgrade2, "levelUpgrade3" : levelUpgrade3, "buttonUpgrade3" : buttonUpgrade3, "priceUpgrade3" : priceUpgrade3, "textUpgrade3" : textUpgrade3, "rowUpgrade3" : rowUpgrade3, "levelUpgrade4" : levelUpgrade4, "buttonUpgrade4" : buttonUpgrade4, "priceUpgrade4" : priceUpgrade4, "textUpgrade4" : textUpgrade4, "rowUpgrade4" : rowUpgrade4, "levelUpgrade5" : levelUpgrade5, "buttonUpgrade5" : buttonUpgrade5, "priceUpgrade5" : priceUpgrade5, "textUpgrade5" : textUpgrade5, "rowUpgrade5" : rowUpgrade5, "buttonBoost1" : buttonBoost1, "buttonBoost2" : buttonBoost2, "buttonBoost3" : buttonBoost3, "buttonBoost4" : buttonBoost4, "buttonBoost5": buttonBoost5, "buttonBoost6": buttonBoost6, "buttonBoost7": buttonBoost7, "buttonBoost8": buttonBoost8, "buttonBoost9": buttonBoost9, "buttonBoost10": buttonBoost10, "buttonBoost11": buttonBoost11,  "buttonBoost12": buttonBoost12, "buttonBoost13": buttonBoost13, "buttonBoost14": buttonBoost14, "buttonBoost15": buttonBoost15, "columnBoost1" : columnBoost1, "columnBoost2" : columnBoost2, "columnBoost3" : columnBoost3, "columnBoost4" : columnBoost4, "columnBoost5" : columnBoost5, "columnBoost6" : columnBoost6, "columnBoost7" : columnBoost7, "columnBoost8" : columnBoost8, "columnBoost9" : columnBoost9, "columnBoost10" : columnBoost10, "columnBoost11" : columnBoost11, "columnBoost12" : columnBoost12, "columnBoost13" : columnBoost13, "columnBoost14" : columnBoost14, "columnBoost15" : columnBoost15}
 
 
 
