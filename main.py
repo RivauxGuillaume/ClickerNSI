@@ -19,43 +19,43 @@ def creer_fenetre():
     return fenetre, screen_width, screen_height
 
 def creer_Canvas():
-    zone_graphique = Canvas(fenetre, width=screen_width, height=screen_height, bg = "black", border=0, borderwidth=0)
+    zone_graphique = Canvas(fenetre, width=screen_width, height=screen_height, bg = "gray28", border=0, borderwidth=0)
     zone_graphique.grid(row=0, column=0, rowspan=15, columnspan=15)
 
     return zone_graphique
 
 def cree_widget():
     # Joueur qui joue
-    text_player = Label(fenetre, text=f"Joueur : {joueur}", bg="black", fg="white")
+    text_player = Label(fenetre, text=f"Joueur : {joueur}", bg="gray28", fg="white")
     text_player.grid(row=0, column=0)
 
     # Bouton clicker
     picture = PhotoImage(file="image/ordi2.png")
-    button_clicker = Button(fenetre, image=picture, command=AjoutScore, bg = "black", activebackground="black", bd=0)
+    button_clicker = Button(fenetre, image=picture, command=AjoutScore, bg = "gray28", activebackground="gray28", bd=0)
     button_clicker.grid(row=1, column=0, rowspan=11, columnspan=6)
 
     # Texte dernière enregistrement
-    text_last_save = Label(fenetre, text=f"Dernière sauvegarde :\n {lastSave}", bg="black", fg="white")
+    text_last_save = Label(fenetre, text=f"Dernière sauvegarde :\n {lastSave}", bg="gray28", fg="white")
     text_last_save.grid(row=13, column=1, columnspan=4)
 
     # Text score
-    text_score=Label(fenetre, text=f"{score} octets", bg="black", fg="white")
+    text_score=Label(fenetre, text=f"{score} octets", bg="gray28", fg="white")
     text_score.grid(row=1, column=7, columnspan=3)
 
     # Text octets/secondes
-    text_octets_secondes=Label(fenetre, text=f"Par Secondes : {scoreSec}", bg="black", fg="white")
+    text_octets_secondes=Label(fenetre, text=f"Par Secondes : {scoreSec}", bg="gray28", fg="white")
     text_octets_secondes.grid(row=2, column=7, columnspan=3)
 
     # Text octets/click
-    text_octets_click=Label(fenetre, text=f"Par Click : {scoreClick}", bg="black", fg="white")
+    text_octets_click=Label(fenetre, text=f"Par Click : {scoreClick}", bg="gray28", fg="white")
     text_octets_click.grid(row=3, column=7, columnspan=3)
 
     # Bouton pour sauvegarder
-    button_save = Button(fenetre, bg="black", activebackground="black", bd=5, command=save, text="Sauvegarder la\nprogression", fg="white", font="Helvetica 12")
+    button_save = Button(fenetre, bg="gray28", activebackground="gray28", bd=5, command=save, text="Sauvegarder la\nprogression", fg="white", font="Helvetica 12")
     button_save.grid(row=7, column=7, rowspan=2, columnspan=3)
 
     # Bouton pour sauvegarder et quitter
-    button_save_quit = Button(fenetre, bg="black", activebackground="black", bd=5, command=save_and_quit, text="Sauvegarder et\nquitter", fg="white", font="Helvetica 12")
+    button_save_quit = Button(fenetre, bg="gray28", activebackground="gray28", bd=5, command=save_and_quit, text="Sauvegarder et\nquitter", fg="white", font="Helvetica 12")
     button_save_quit.grid(row=11, column=7, rowspan=2, columnspan=3)
 
     return text_player, picture, button_clicker, text_last_save, text_score, text_octets_secondes, text_octets_click, button_save, button_save_quit     #pour que le programmme fonctionne, on est obligé de return la photo
@@ -137,311 +137,311 @@ def load_picture():
 
 def widgetUpgrade1():
     global pictureUpgrade1
-    levelUpgrade1 = Label(fenetre, text="0", bg="black", fg="grey", font=("Arial",  18))
+    levelUpgrade1 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade1.grid(row=rowUpgrade1, column=10, rowspan=2)
 
-    buttonUpgrade1 = Button(fenetre, image=pictureUpgrade1, bg="black", activebackground="black", command=Amelioration1Clic, width=60, height=60)
+    buttonUpgrade1 = Button(fenetre, image=pictureUpgrade1, bg="gray28", activebackground="gray28", command=Amelioration1Clic, width=60, height=60)
     buttonUpgrade1.grid(row=rowUpgrade1, column=11, rowspan=2)
 
-    priceUpgrade1 = Label(fenetre, text="prix : 10", bg="black", fg="white")
+    priceUpgrade1 = Label(fenetre, text="prix : 10", bg="gray28", fg="white")
     priceUpgrade1.grid(row=rowUpgrade1, column=12, rowspan=2)
 
-    textUpgrade1 = Label(fenetre, text="augmente de 0.1\nle nombre d'octets\npar secondes", bg="black", fg="white", font="Helvetica 10")
+    textUpgrade1 = Label(fenetre, text="augmente de 0.1\nle nombre d'octets\npar secondes", bg="gray28", fg="white", font="Helvetica 10")
     textUpgrade1.grid(row=rowUpgrade1, column=13, rowspan=2)
 
     return levelUpgrade1, buttonUpgrade1, priceUpgrade1, textUpgrade1
 
 def widgetUpgrade2():
     global pictureUpgrade2
-    levelUpgrade2 = Label(fenetre, text="0", bg="black", fg="grey", font=("Arial",  18))
+    levelUpgrade2 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade2.grid(row=rowUpgrade2, column=10, rowspan=2)
 
-    buttonUpgrade2 = Button(fenetre, image=pictureUpgrade2, bg="black", activebackground="black", command=Amelioration2Clic, width=60, height=60)
+    buttonUpgrade2 = Button(fenetre, image=pictureUpgrade2, bg="gray28", activebackground="gray28", command=Amelioration2Clic, width=60, height=60)
     buttonUpgrade2.grid(row=rowUpgrade2, column=11, rowspan=2)
 
-    priceUpgrade2 = Label(fenetre, text="prix : 100", bg="black", fg="white")
+    priceUpgrade2 = Label(fenetre, text="prix : 100", bg="gray28", fg="white")
     priceUpgrade2.grid(row=rowUpgrade2, column=12, rowspan=2)
 
-    textUpgrade2 = Label(fenetre, text="augmente de 2\nle nombre d'octets\npar secondes", bg="black", fg="white", font="Helvetica 10")
+    textUpgrade2 = Label(fenetre, text="augmente de 2\nle nombre d'octets\npar secondes", bg="gray28", fg="white", font="Helvetica 10")
     textUpgrade2.grid(row=rowUpgrade2, column=13, rowspan=2)
 
     return levelUpgrade2, buttonUpgrade2, priceUpgrade2, textUpgrade2
 
 def widgetUpgrade3():
     global pictureUpgrade3
-    levelUpgrade3 = Label(fenetre, text="0", bg="black", fg="grey", font=("Arial",  18))
+    levelUpgrade3 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade3.grid(row=rowUpgrade3, column=10, rowspan=2)
 
-    buttonUpgrade3 = Button(fenetre, image=pictureUpgrade3, bg="black", activebackground="black", command=Amelioration3Clic, width=60, height=60)
+    buttonUpgrade3 = Button(fenetre, image=pictureUpgrade3, bg="gray28", activebackground="gray28", command=Amelioration3Clic, width=60, height=60)
     buttonUpgrade3.grid(row=rowUpgrade3, column=11, rowspan=2)
 
-    priceUpgrade3 = Label(fenetre, text="prix : 1 100", bg="black", fg="white")
+    priceUpgrade3 = Label(fenetre, text="prix : 1 100", bg="gray28", fg="white")
     priceUpgrade3.grid(row=rowUpgrade3, column=12, rowspan=2)
 
-    textUpgrade3 = Label(fenetre, text="augmente de 8\nle nombre d'octets\npar secondes", bg="black", fg="white", font="Helvetica 10")
+    textUpgrade3 = Label(fenetre, text="augmente de 8\nle nombre d'octets\npar secondes", bg="gray28", fg="white", font="Helvetica 10")
     textUpgrade3.grid(row=rowUpgrade3, column=13, rowspan=2)
 
     return levelUpgrade3, buttonUpgrade3, priceUpgrade3, textUpgrade3
 
 def widgetUpgrade4():
     global pictureUpgrade4
-    levelUpgrade4 = Label(fenetre, text="0", bg="black", fg="grey", font=("Arial",  18))
+    levelUpgrade4 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade4.grid(row=rowUpgrade4, column=10, rowspan=2)
 
-    buttonUpgrade4 = Button(fenetre, image=pictureUpgrade4, bg="black", activebackground="black", command=Amelioration4Clic, width=60, height=60)
+    buttonUpgrade4 = Button(fenetre, image=pictureUpgrade4, bg="gray28", activebackground="gray28", command=Amelioration4Clic, width=60, height=60)
     buttonUpgrade4.grid(row=rowUpgrade4, column=11, rowspan=2)
 
-    priceUpgrade4 = Label(fenetre, text="prix : 12 000", bg="black", fg="white")
+    priceUpgrade4 = Label(fenetre, text="prix : 12 000", bg="gray28", fg="white")
     priceUpgrade4.grid(row=rowUpgrade4, column=12, rowspan=2)
 
-    textUpgrade4 = Label(fenetre, text="augmente de 47\nle nombre d'octets\npar secondes", bg="black", fg="white", font="Helvetica 10")
+    textUpgrade4 = Label(fenetre, text="augmente de 47\nle nombre d'octets\npar secondes", bg="gray28", fg="white", font="Helvetica 10")
     textUpgrade4.grid(row=rowUpgrade4, column=13, rowspan=2)
 
     return levelUpgrade4, buttonUpgrade4, priceUpgrade4, textUpgrade4
 
 def widgetUpgrade5():
     global pictureUpgrade5
-    levelUpgrade5 = Label(fenetre, text="0", bg="black", fg="grey", font=("Arial",  18))
+    levelUpgrade5 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade5.grid(row=rowUpgrade5, column=10, rowspan=2)
 
-    buttonUpgrade5 = Button(fenetre, image=pictureUpgrade5, bg="black", activebackground="black", command=Amelioration5Clic, width=60, height=60)
+    buttonUpgrade5 = Button(fenetre, image=pictureUpgrade5, bg="gray28", activebackground="gray28", command=Amelioration5Clic, width=60, height=60)
     buttonUpgrade5.grid(row=rowUpgrade5, column=11, rowspan=2)
 
-    priceUpgrade5 = Label(fenetre, text="prix : 130 000", bg="black", fg="white")
+    priceUpgrade5 = Label(fenetre, text="prix : 130 000", bg="gray28", fg="white")
     priceUpgrade5.grid(row=rowUpgrade5, column=12, rowspan=2)
 
-    textUpgrade5 = Label(fenetre, text="augmente de 260\nle nombre d'octets\npar secondes", bg="black", fg="white", font="Helvetica 10")
+    textUpgrade5 = Label(fenetre, text="augmente de 260\nle nombre d'octets\npar secondes", bg="gray28", fg="white", font="Helvetica 10")
     textUpgrade5.grid(row=rowUpgrade5, column=13, rowspan=2)
 
     return levelUpgrade5, buttonUpgrade5, priceUpgrade5, textUpgrade5
 
 def widgetUpgrade6():
     global pictureUpgrade6
-    levelUpgrade6 = Label(fenetre, text="0", bg="black", fg="grey", font=("Arial",  18))
+    levelUpgrade6 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade6.grid(row=rowUpgrade6, column=10, rowspan=2)
 
-    buttonUpgrade6 = Button(fenetre, image=pictureUpgrade6, bg="black", activebackground="black", command=Amelioration6Clic, width=60, height=60)
+    buttonUpgrade6 = Button(fenetre, image=pictureUpgrade6, bg="gray28", activebackground="gray28", command=Amelioration6Clic, width=60, height=60)
     buttonUpgrade6.grid(row=rowUpgrade6, column=11, rowspan=2)
 
-    priceUpgrade6 = Label(fenetre, text="prix : 1 400 000", bg="black", fg="white")
+    priceUpgrade6 = Label(fenetre, text="prix : 1 400 000", bg="gray28", fg="white")
     priceUpgrade6.grid(row=rowUpgrade6, column=12, rowspan=2)
 
-    textUpgrade6 = Label(fenetre, text="augmente de 1 400\nle nombre d'octets\npar secondes", bg="black", fg="white", font="Helvetica 10")
+    textUpgrade6 = Label(fenetre, text="augmente de 1 400\nle nombre d'octets\npar secondes", bg="gray28", fg="white", font="Helvetica 10")
     textUpgrade6.grid(row=rowUpgrade6, column=13, rowspan=2)
 
     return levelUpgrade6, buttonUpgrade6, priceUpgrade6, textUpgrade6
 
 def widgetUpgrade7():
     global pictureUpgrade7
-    levelUpgrade7 = Label(fenetre, text="0", bg="black", fg="grey", font=("Arial",  18))
+    levelUpgrade7 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade7.grid(row=rowUpgrade7, column=10, rowspan=2)
 
-    buttonUpgrade7 = Button(fenetre, image=pictureUpgrade7, bg="black", activebackground="black", command=Amelioration7Clic, width=60, height=60)
+    buttonUpgrade7 = Button(fenetre, image=pictureUpgrade7, bg="gray28", activebackground="gray28", command=Amelioration7Clic, width=60, height=60)
     buttonUpgrade7.grid(row=rowUpgrade7, column=11, rowspan=2)
 
-    priceUpgrade7 = Label(fenetre, text="prix : 20 000 000", bg="black", fg="white")
+    priceUpgrade7 = Label(fenetre, text="prix : 20 000 000", bg="gray28", fg="white")
     priceUpgrade7.grid(row=rowUpgrade7, column=12, rowspan=2)
 
-    textUpgrade7 = Label(fenetre, text="augmente de 7 800\nle nombre d'octets\npar secondes", bg="black", fg="white", font="Helvetica 10")
+    textUpgrade7 = Label(fenetre, text="augmente de 7 800\nle nombre d'octets\npar secondes", bg="gray28", fg="white", font="Helvetica 10")
     textUpgrade7.grid(row=rowUpgrade7, column=13, rowspan=2)
 
     return levelUpgrade7, buttonUpgrade7, priceUpgrade7, textUpgrade7
 
 def widgetUpgrade8():
     global pictureUpgrade8
-    levelUpgrade8 = Label(fenetre, text="0", bg="black", fg="grey", font=("Arial",  18))
+    levelUpgrade8 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade8.grid(row=rowUpgrade8, column=10, rowspan=2)
 
-    buttonUpgrade8 = Button(fenetre, image=pictureUpgrade8, bg="black", activebackground="black", command=Amelioration8Clic, width=60, height=60)
+    buttonUpgrade8 = Button(fenetre, image=pictureUpgrade8, bg="gray28", activebackground="gray28", command=Amelioration8Clic, width=60, height=60)
     buttonUpgrade8.grid(row=rowUpgrade8, column=11, rowspan=2)
 
-    priceUpgrade8 = Label(fenetre, text="prix : 330 000 000", bg="black", fg="white")
+    priceUpgrade8 = Label(fenetre, text="prix : 330 000 000", bg="gray28", fg="white")
     priceUpgrade8.grid(row=rowUpgrade8, column=12, rowspan=2)
 
-    textUpgrade8 = Label(fenetre, text="augmente de 44 000\nle nombre d'octets\npar secondes", bg="black", fg="white", font="Helvetica 10")
+    textUpgrade8 = Label(fenetre, text="augmente de 44 000\nle nombre d'octets\npar secondes", bg="gray28", fg="white", font="Helvetica 10")
     textUpgrade8.grid(row=rowUpgrade8, column=13, rowspan=2)
 
     return levelUpgrade8, buttonUpgrade8, priceUpgrade8, textUpgrade8
 
 def widgetUpgrade9():
     global pictureUpgrade9
-    levelUpgrade9 = Label(fenetre, text="0", bg="black", fg="grey", font=("Arial",  18))
+    levelUpgrade9 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade9.grid(row=rowUpgrade9, column=10, rowspan=2)
 
-    buttonUpgrade9 = Button(fenetre, image=pictureUpgrade9, bg="black", activebackground="black", command=Amelioration9Clic, width=60, height=60)
+    buttonUpgrade9 = Button(fenetre, image=pictureUpgrade9, bg="gray28", activebackground="gray28", command=Amelioration9Clic, width=60, height=60)
     buttonUpgrade9.grid(row=rowUpgrade9, column=11, rowspan=2)
 
-    priceUpgrade9 = Label(fenetre, text="prix :5 100 000 000", bg="black", fg="white")
+    priceUpgrade9 = Label(fenetre, text="prix :5 100 000 000", bg="gray28", fg="white")
     priceUpgrade9.grid(row=rowUpgrade9, column=12, rowspan=2)
 
-    textUpgrade9 = Label(fenetre, text="augmente de 260 000\nle nombre d'octets\npar secondes", bg="black", fg="white", font="Helvetica 10")
+    textUpgrade9 = Label(fenetre, text="augmente de 260 000\nle nombre d'octets\npar secondes", bg="gray28", fg="white", font="Helvetica 10")
     textUpgrade9.grid(row=rowUpgrade9, column=13, rowspan=2)
 
     return levelUpgrade9, buttonUpgrade9, priceUpgrade9, textUpgrade9
 
 def widgetUpgrade10():
     global pictureUpgrade10
-    levelUpgrade10 = Label(fenetre, text="0", bg="black", fg="grey", font=("Arial",  18))
+    levelUpgrade10 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade10.grid(row=rowUpgrade10, column=10, rowspan=2)
 
-    buttonUpgrade10 = Button(fenetre, image=pictureUpgrade10, bg="black", activebackground="black", command=Amelioration10Clic, width=60, height=60)
+    buttonUpgrade10 = Button(fenetre, image=pictureUpgrade10, bg="gray28", activebackground="gray28", command=Amelioration10Clic, width=60, height=60)
     buttonUpgrade10.grid(row=rowUpgrade10, column=11, rowspan=2)
 
-    priceUpgrade10 = Label(fenetre, text="prix : 75 000 000 000", bg="black", fg="white")
+    priceUpgrade10 = Label(fenetre, text="prix : 75 000 000 000", bg="gray28", fg="white")
     priceUpgrade10.grid(row=rowUpgrade10, column=12, rowspan=2)
 
-    textUpgrade10 = Label(fenetre, text="augmente de 1 600 000\nle nombre d'octets\npar secondes", bg="black", fg="white", font="Helvetica 10")
+    textUpgrade10 = Label(fenetre, text="augmente de 1 600 000\nle nombre d'octets\npar secondes", bg="gray28", fg="white", font="Helvetica 10")
     textUpgrade10.grid(row=rowUpgrade10, column=13, rowspan=2)
 
     return levelUpgrade10, buttonUpgrade10, priceUpgrade10, textUpgrade10
 
 def widgetUpgrade11():
     global pictureUpgrade11
-    levelUpgrade11 = Label(fenetre, text="0", bg="black", fg="grey", font=("Arial",  18))
+    levelUpgrade11 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade11.grid(row=rowUpgrade11, column=10, rowspan=2)
 
-    buttonUpgrade11 = Button(fenetre, image=pictureUpgrade11, bg="black", activebackground="black", command=Amelioration11Clic, width=60, height=60)
+    buttonUpgrade11 = Button(fenetre, image=pictureUpgrade11, bg="gray28", activebackground="gray28", command=Amelioration11Clic, width=60, height=60)
     buttonUpgrade11.grid(row=rowUpgrade11, column=11, rowspan=2)
 
-    priceUpgrade11 = Label(fenetre, text="prix : 1 000 000 000 000", bg="black", fg="white")
+    priceUpgrade11 = Label(fenetre, text="prix : 1 000 000 000 000", bg="gray28", fg="white")
     priceUpgrade11.grid(row=rowUpgrade11, column=12, rowspan=2)
 
-    textUpgrade11 = Label(fenetre, text="augmente de 10 000 000\nle nombre d'octets\npar secondes", bg="black", fg="white", font="Helvetica 10")
+    textUpgrade11 = Label(fenetre, text="augmente de 10 000 000\nle nombre d'octets\npar secondes", bg="gray28", fg="white", font="Helvetica 10")
     textUpgrade11.grid(row=rowUpgrade11, column=13, rowspan=2)
 
     return levelUpgrade11, buttonUpgrade11, priceUpgrade11, textUpgrade11
 
 def widgetUpgrade12():
     global pictureUpgrade12
-    levelUpgrade12 = Label(fenetre, text="0", bg="black", fg="grey", font=("Arial",  18))
+    levelUpgrade12 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade12.grid(row=rowUpgrade12, column=10, rowspan=2)
 
-    buttonUpgrade12 = Button(fenetre, image=pictureUpgrade12, bg="black", activebackground="black", command=Amelioration12Clic, width=60, height=60)
+    buttonUpgrade12 = Button(fenetre, image=pictureUpgrade12, bg="gray28", activebackground="gray28", command=Amelioration12Clic, width=60, height=60)
     buttonUpgrade12.grid(row=rowUpgrade12, column=11, rowspan=2)
 
-    priceUpgrade12 = Label(fenetre, text="prix : 14 000 000 000 000", bg="black", fg="white")
+    priceUpgrade12 = Label(fenetre, text="prix : 14 000 000 000 000", bg="gray28", fg="white")
     priceUpgrade12.grid(row=rowUpgrade12, column=12, rowspan=2)
 
-    textUpgrade12 = Label(fenetre, text="augmente de 65 000 000\nle nombre d'octets\npar secondes", bg="black", fg="white", font="Helvetica 10")
+    textUpgrade12 = Label(fenetre, text="augmente de 65 000 000\nle nombre d'octets\npar secondes", bg="gray28", fg="white", font="Helvetica 10")
     textUpgrade12.grid(row=rowUpgrade12, column=13, rowspan=2)
 
     return levelUpgrade12, buttonUpgrade12, priceUpgrade12, textUpgrade12
 
 def widgetUpgrade13():
     global pictureUpgrade13
-    levelUpgrade13 = Label(fenetre, text="0", bg="black", fg="grey", font=("Arial",  18))
+    levelUpgrade13 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade13.grid(row=rowUpgrade13, column=10, rowspan=2)
 
-    buttonUpgrade13 = Button(fenetre, image=pictureUpgrade13, bg="black", activebackground="black", command=Amelioration13Clic, width=60, height=60)
+    buttonUpgrade13 = Button(fenetre, image=pictureUpgrade13, bg="gray28", activebackground="gray28", command=Amelioration13Clic, width=60, height=60)
     buttonUpgrade13.grid(row=rowUpgrade13, column=11, rowspan=2)
 
-    priceUpgrade13 = Label(fenetre, text="prix : 170 000 000 000 000", bg="black", fg="white")
+    priceUpgrade13 = Label(fenetre, text="prix : 170 000 000 000 000", bg="gray28", fg="white")
     priceUpgrade13.grid(row=rowUpgrade13, column=12, rowspan=2)
 
-    textUpgrade13 = Label(fenetre, text="augmente de 430 000 000\nle nombre d'octets\npar secondes", bg="black", fg="white", font="Helvetica 10")
+    textUpgrade13 = Label(fenetre, text="augmente de 430 000 000\nle nombre d'octets\npar secondes", bg="gray28", fg="white", font="Helvetica 10")
     textUpgrade13.grid(row=rowUpgrade13, column=13, rowspan=2)
 
     return levelUpgrade13, buttonUpgrade13, priceUpgrade13, textUpgrade13
 
 def widgetUpgrade14():
     global pictureUpgrade14
-    levelUpgrade14 = Label(fenetre, text="0", bg="black", fg="grey", font=("Arial",  18))
+    levelUpgrade14 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade14.grid(row=rowUpgrade14, column=10, rowspan=2)
 
-    buttonUpgrade14 = Button(fenetre, image=pictureUpgrade14, bg="black", activebackground="black", command=Amelioration14Clic, width=60, height=60)
+    buttonUpgrade14 = Button(fenetre, image=pictureUpgrade14, bg="gray28", activebackground="gray28", command=Amelioration14Clic, width=60, height=60)
     buttonUpgrade14.grid(row=rowUpgrade14, column=11, rowspan=2)
 
-    priceUpgrade14 = Label(fenetre, text="prix : 2 100 000 000 000 000", bg="black", fg="white")
+    priceUpgrade14 = Label(fenetre, text="prix : 2 100 000 000 000 000", bg="gray28", fg="white")
     priceUpgrade14.grid(row=rowUpgrade14, column=12, rowspan=2)
 
-    textUpgrade14 = Label(fenetre, text="augmente de 2 900 000 000\nle nombre d'octets\npar secondes", bg="black", fg="white", font="Helvetica 10")
+    textUpgrade14 = Label(fenetre, text="augmente de 2 900 000 000\nle nombre d'octets\npar secondes", bg="gray28", fg="white", font="Helvetica 10")
     textUpgrade14.grid(row=rowUpgrade14, column=13, rowspan=2)
 
     return levelUpgrade14, buttonUpgrade14, priceUpgrade14, textUpgrade14
 
 def widgetUpgrade15():
     global pictureUpgrade15
-    levelUpgrade15 = Label(fenetre, text="0", bg="black", fg="grey", font=("Arial",  18))
+    levelUpgrade15 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade15.grid(row=rowUpgrade15, column=10, rowspan=2)
 
-    buttonUpgrade15 = Button(fenetre, image=pictureUpgrade15, bg="black", activebackground="black", command=Amelioration15Clic, width=60, height=60)
+    buttonUpgrade15 = Button(fenetre, image=pictureUpgrade15, bg="gray28", activebackground="gray28", command=Amelioration15Clic, width=60, height=60)
     buttonUpgrade15.grid(row=rowUpgrade15, column=11, rowspan=2)
 
-    priceUpgrade15 = Label(fenetre, text="prix : 26 000 000 000 000 000", bg="black", fg="white")
+    priceUpgrade15 = Label(fenetre, text="prix : 26 000 000 000 000 000", bg="gray28", fg="white")
     priceUpgrade15.grid(row=rowUpgrade15, column=12, rowspan=2)
 
-    textUpgrade15 = Label(fenetre, text="augmente de 21 000 000 000\nle nombre d'octets\npar secondes", bg="black", fg="white", font="Helvetica 10")
+    textUpgrade15 = Label(fenetre, text="augmente de 21 000 000 000\nle nombre d'octets\npar secondes", bg="gray28", fg="white", font="Helvetica 10")
     textUpgrade15.grid(row=rowUpgrade15, column=13, rowspan=2)
 
     return levelUpgrade15, buttonUpgrade15, priceUpgrade15, textUpgrade15
 
 def widgetUpgrade16():
     global pictureUpgrade16
-    levelUpgrade16 = Label(fenetre, text="0", bg="black", fg="grey", font=("Arial",  18))
+    levelUpgrade16 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade16.grid(row=rowUpgrade16, column=10, rowspan=2)
 
-    buttonUpgrade16 = Button(fenetre, image=pictureUpgrade16, bg="black", activebackground="black", command=Amelioration16Clic, width=60, height=60)
+    buttonUpgrade16 = Button(fenetre, image=pictureUpgrade16, bg="gray28", activebackground="gray28", command=Amelioration16Clic, width=60, height=60)
     buttonUpgrade16.grid(row=rowUpgrade16, column=11, rowspan=2)
 
-    priceUpgrade16 = Label(fenetre, text="prix : 310 000 000 000 000 000", bg="black", fg="white")
+    priceUpgrade16 = Label(fenetre, text="prix : 310 000 000 000 000 000", bg="gray28", fg="white")
     priceUpgrade16.grid(row=rowUpgrade16, column=12, rowspan=2)
 
-    textUpgrade16 = Label(fenetre, text="augmente de 150 000 000 000\nle nombre d'octets\npar secondes", bg="black", fg="white", font="Helvetica 10")
+    textUpgrade16 = Label(fenetre, text="augmente de 150 000 000 000\nle nombre d'octets\npar secondes", bg="gray28", fg="white", font="Helvetica 10")
     textUpgrade16.grid(row=rowUpgrade16, column=13, rowspan=2)
 
     return levelUpgrade16, buttonUpgrade16, priceUpgrade16, textUpgrade16
 
 def widgetBoost1():
     pictureBoost1 = PhotoImage(file="image/css.png")
-    buttonBoost1=Button(fenetre, image=pictureBoost1, bg="black", activebackground="black", width=60, height=60, command=Boost1Clic)
+    buttonBoost1=Button(fenetre, image=pictureBoost1, bg="gray28", activebackground="gray28", width=60, height=60, command=Boost1Clic)
     buttonBoost1.grid(row=1, column=columnBoost1)
     return pictureBoost1, buttonBoost1
 
 def widgetBoost2():
     pictureBoost2 = PhotoImage(file="image/html.png")
-    buttonBoost2=Button(fenetre, image=pictureBoost2, bg="black", activebackground="black", width=60, height=60)
+    buttonBoost2=Button(fenetre, image=pictureBoost2, bg="gray28", activebackground="gray28", width=60, height=60, command=Boost2Clic)
     buttonBoost2.grid(row=1, column=columnBoost2)
     return pictureBoost2, buttonBoost2
 
 def widgetBoost3():
-    pictureBoost3 = PhotoImage(file="image/python.png")
-    buttonBoost3=Button(fenetre, image=pictureBoost3, bg="black", activebackground="black", width=60, height=60)
+    pictureBoost3 = PhotoImage(file="image/c#.png")
+    buttonBoost3=Button(fenetre, image=pictureBoost3, bg="gray28", activebackground="gray28", width=60, height=60, command=Boost3Clic)
     buttonBoost3.grid(row=1, column=columnBoost3)
     return pictureBoost3, buttonBoost3
 
 def widgetBoost4():
-    pictureBoost4 = PhotoImage(file="image/python.png")
-    buttonBoost4=Button(fenetre, image=pictureBoost4, bg="black", activebackground="black", width=60, height=60)
+    pictureBoost4 = PhotoImage(file="image/js.png")
+    buttonBoost4=Button(fenetre, image=pictureBoost4, bg="gray28", activebackground="gray28", width=60, height=60, command=Boost4Clic)
     buttonBoost4.grid(row=1, column=columnBoost4)
     return pictureBoost4, buttonBoost4
 
 def widgetBoost5():
-    pictureBoost5 = PhotoImage(file="image/python.png")
-    buttonBoost5=Button(fenetre, image=pictureBoost5, bg="black", activebackground="black", width=60, height=60)
+    pictureBoost5 = PhotoImage(file="image/c#.png")
+    buttonBoost5=Button(fenetre, image=pictureBoost5, bg="gray28", activebackground="gray28", width=60, height=60, command=Boost5Clic)
     buttonBoost5.grid(row=1, column=columnBoost5)
     return pictureBoost5, buttonBoost5
 
 def widgetBoost6():
     pictureBoost6 = PhotoImage(file="image/python.png")
-    buttonBoost6=Button(fenetre, image=pictureBoost6, bg="black", activebackground="black", width=60, height=60)
+    buttonBoost6=Button(fenetre, image=pictureBoost6, bg="gray28", activebackground="gray28", width=60, height=60, command=Boost6Clic)
     buttonBoost6.grid(row=1, column=columnBoost6)
     return pictureBoost6, buttonBoost6
 
 def widgetBoost7():
     pictureBoost7 = PhotoImage(file="image/python.png")
-    buttonBoost7=Button(fenetre, image=pictureBoost7, bg="black", activebackground="black", width=60, height=60)
+    buttonBoost7=Button(fenetre, image=pictureBoost7, bg="gray28", activebackground="gray28", width=60, height=60, command=Boost7Clic)
     buttonBoost7.grid(row=1, column=columnBoost7)
     return pictureBoost7, buttonBoost7
 
 def widgetBoost8():
     pictureBoost8 = PhotoImage(file="image/python.png")
-    buttonBoost8=Button(fenetre, image=pictureBoost8, bg="black", activebackground="black", width=60, height=60)
+    buttonBoost8=Button(fenetre, image=pictureBoost8, bg="gray28", activebackground="gray28", width=60, height=60, command=Boost8Clic)
     buttonBoost8.grid(row=1, column=columnBoost8)
     return pictureBoost8, buttonBoost8
 
 def widgetBoost9():
     pictureBoost9 = PhotoImage(file="image/python.png")
-    buttonBoost9=Button(fenetre, image=pictureBoost9, bg="black", activebackground="black", width=60, height=60)
+    buttonBoost9=Button(fenetre, image=pictureBoost9, bg="gray28", activebackground="gray28", width=60, height=60, command=Boost9Clic)
     buttonBoost9.grid(row=1, column=columnBoost9)
     return pictureBoost9, buttonBoost9
 
@@ -571,13 +571,13 @@ def deleteBoost(niveau):
     global listBoost
     global buttonBoost6, buttonBoost7, buttonBoost8, buttonBoost9
 
-    dicVariable[f"buttonBoost{niveau}"].destroy() #erreur
+    dicVariable[f"buttonBoost{niveau}"].destroy()
     for i in range(len(listBoost)):
         if listBoost[i] == niveau:
             for j in listBoost:
                 if j > niveau:
                     dicVariable[f"columnBoost{j}"] -= 1
-                    dicVariable[f"buttonBoost{j}"].grid(column=dicVariable[f"columnBoost{j}"])
+                    dicVariable[f"buttonBoost{j}"].grid(column=dicVariable[f"columnBoost{j}"]) # erreur dicVariable[f"buttonBoost{j}"] est considérer comme un tuple donc .grid marche pas
             numADelete = i
     del(listBoost[numADelete])
     if max(listBoost) == 5:
@@ -592,6 +592,8 @@ def deleteBoost(niveau):
         buttonBoost8=widgetBoost8()
         dicVariable["buttonBoost8"] = buttonBoost8
         listBoost.append(8)
+    print(listBoost)
+
 
 def Amelioration1Clic():
     global scoreSec
@@ -930,6 +932,94 @@ def Boost1Clic():
         th3 = threading.Thread(target=deleteBoost, args=[1])
         th3.start()
 
+def Boost2Clic():
+    global scoreClick
+    global score
+    if score >= prix_boost1:
+        scoreClick = scoreClick*2
+        text_octets_click.configure(text=f"Par Click : {scoreClick}")
+        score=score-prix_boost1
+        text_score.configure(text=f"{score} notes")
+        th3 = threading.Thread(target=deleteBoost, args=[2])
+        th3.start()
+
+def Boost3Clic():
+    global scoreClick
+    global score
+    if score >= prix_boost1:
+        scoreClick = scoreClick*2
+        text_octets_click.configure(text=f"Par Click : {scoreClick}")
+        score=score-prix_boost1
+        text_score.configure(text=f"{score} notes")
+        th3 = threading.Thread(target=deleteBoost, args=[3])
+        th3.start()
+        
+def Boost4Clic():
+    global scoreClick
+    global score
+    if score >= prix_boost1:
+        scoreClick = scoreClick*2
+        text_octets_click.configure(text=f"Par Click : {scoreClick}")
+        score=score-prix_boost1
+        text_score.configure(text=f"{score} notes")
+        th3 = threading.Thread(target=deleteBoost, args=[4])
+        th3.start()
+        
+def Boost5Clic():
+    global scoreClick
+    global score
+    if score >= prix_boost1:
+        scoreClick = scoreClick*2
+        text_octets_click.configure(text=f"Par Click : {scoreClick}")
+        score=score-prix_boost1
+        text_score.configure(text=f"{score} notes")
+        th3 = threading.Thread(target=deleteBoost, args=[5])
+        th3.start()
+        
+def Boost6Clic():
+    global scoreClick
+    global score
+    if score >= prix_boost1:
+        scoreClick = scoreClick*2
+        text_octets_click.configure(text=f"Par Click : {scoreClick}")
+        score=score-prix_boost1
+        text_score.configure(text=f"{score} notes")
+        th3 = threading.Thread(target=deleteBoost, args=[6])
+        th3.start()
+        
+def Boost7Clic():
+    global scoreClick
+    global score
+    if score >= prix_boost1:
+        scoreClick = scoreClick*2
+        text_octets_click.configure(text=f"Par Click : {scoreClick}")
+        score=score-prix_boost1
+        text_score.configure(text=f"{score} notes")
+        th3 = threading.Thread(target=deleteBoost, args=[7])
+        th3.start()
+
+def Boost8Clic():
+    global scoreClick
+    global score
+    if score >= prix_boost1:
+        scoreClick = scoreClick*2
+        text_octets_click.configure(text=f"Par Click : {scoreClick}")
+        score=score-prix_boost1
+        text_score.configure(text=f"{score} notes")
+        th3 = threading.Thread(target=deleteBoost, args=[8])
+        th3.start()
+
+def Boost9Clic():
+    global scoreClick
+    global score
+    if score >= prix_boost1:
+        scoreClick = scoreClick*2
+        text_octets_click.configure(text=f"Par Click : {scoreClick}")
+        score=score-prix_boost1
+        text_score.configure(text=f"{score} notes")
+        th3 = threading.Thread(target=deleteBoost, args=[9])
+        th3.start()
+
 def prix(prix_base):
     a = [prix_base]
     for i in range(50):
@@ -1060,7 +1150,7 @@ pictureBoost8, buttonBoost8=widgetBoost8()
 pictureBoost9, buttonBoost9=widgetBoost9()
 
 
-dicVariable={"levelUpgrade1" : levelUpgrade1, "buttonUpgrade1" : buttonUpgrade1, "priceUpgrade1" : priceUpgrade1, "textUpgrade1" : textUpgrade1, "rowUpgrade1" : rowUpgrade1, "levelUpgrade2" : levelUpgrade2, "buttonUpgrade2" : buttonUpgrade2, "priceUpgrade2" : priceUpgrade2, "textUpgrade2" : textUpgrade2, "rowUpgrade2" : rowUpgrade2, "levelUpgrade3" : levelUpgrade3, "buttonUpgrade3" : buttonUpgrade3, "priceUpgrade3" : priceUpgrade3, "textUpgrade3" : textUpgrade3, "rowUpgrade3" : rowUpgrade3, "levelUpgrade4" : levelUpgrade4, "buttonUpgrade4" : buttonUpgrade4, "priceUpgrade4" : priceUpgrade4, "textUpgrade4" : textUpgrade4, "rowUpgrade4" : rowUpgrade4, "levelUpgrade5" : levelUpgrade5, "buttonUpgrade5" : buttonUpgrade5, "priceUpgrade5" : priceUpgrade5, "textUpgrade5" : textUpgrade5, "rowUpgrade5" : rowUpgrade5, "buttonBoost1" : pictureBoost1, "buttonBoost2" : buttonBoost2, "buttonBoost3" : buttonBoost3, "buttonBoost4" : buttonBoost4, "buttonBoost5": buttonBoost5, "columnBoost1" : columnBoost1, "columnBoost2" : columnBoost2, "columnBoost3" : columnBoost3, "columnBoost4" : columnBoost4, "columnBoost5" : columnBoost5, "columnBoost6" : columnBoost6, "columnBoost7" : columnBoost7, "columnBoost8" : columnBoost8, "columnBoost9" : columnBoost9}
+dicVariable={"levelUpgrade1" : levelUpgrade1, "buttonUpgrade1" : buttonUpgrade1, "priceUpgrade1" : priceUpgrade1, "textUpgrade1" : textUpgrade1, "rowUpgrade1" : rowUpgrade1, "levelUpgrade2" : levelUpgrade2, "buttonUpgrade2" : buttonUpgrade2, "priceUpgrade2" : priceUpgrade2, "textUpgrade2" : textUpgrade2, "rowUpgrade2" : rowUpgrade2, "levelUpgrade3" : levelUpgrade3, "buttonUpgrade3" : buttonUpgrade3, "priceUpgrade3" : priceUpgrade3, "textUpgrade3" : textUpgrade3, "rowUpgrade3" : rowUpgrade3, "levelUpgrade4" : levelUpgrade4, "buttonUpgrade4" : buttonUpgrade4, "priceUpgrade4" : priceUpgrade4, "textUpgrade4" : textUpgrade4, "rowUpgrade4" : rowUpgrade4, "levelUpgrade5" : levelUpgrade5, "buttonUpgrade5" : buttonUpgrade5, "priceUpgrade5" : priceUpgrade5, "textUpgrade5" : textUpgrade5, "rowUpgrade5" : rowUpgrade5, "buttonBoost1" : buttonBoost1, "buttonBoost2" : buttonBoost2, "buttonBoost3" : buttonBoost3, "buttonBoost4" : buttonBoost4, "buttonBoost5": buttonBoost5, "buttonBoost6": buttonBoost6, "buttonBoost7": buttonBoost7, "buttonBoost8": buttonBoost8, "buttonBoost9": buttonBoost9, "columnBoost1" : columnBoost1, "columnBoost2" : columnBoost2, "columnBoost3" : columnBoost3, "columnBoost4" : columnBoost4, "columnBoost5" : columnBoost5, "columnBoost6" : columnBoost6, "columnBoost7" : columnBoost7, "columnBoost8" : columnBoost8, "columnBoost9" : columnBoost9}
 
 
 
