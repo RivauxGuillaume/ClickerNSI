@@ -1163,14 +1163,13 @@ def prix(prix_base):
     for i in range(50):
         a.append(int(a[i]*1.15))
     return a
-"""
-def motionBoost(event):
-    x=event.x
-    y=event.y
-    for i in range(len(listBoost)):
-        if 
+
+def OnEnterBoost1(event):
     zone_graphique.itemconfigure(numTransparent, image=pictureBoost1)
-"""
+
+def OnLeaveBoost1(event):
+    zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
+
 #---------------------------------------------------------Provisoire---------------------------------------
 
 def point1k(event):
@@ -1326,9 +1325,10 @@ fenetre.bind("<Left>", ptpclick)
 fenetre.bind("<Right>", ptpsecondes)
 
 # bind affichage boost
-"""
-zone_graphique.bind("<Motion>",motionBoost)
-"""
+buttonBoost1.bind("<Enter>", OnEnterBoost1)
+buttonBoost1.bind("<Leave>", OnLeaveBoost1)
+
+
 # Gestion du multithread pour les clic/sec
 th1 = threading.Thread(target=MajScoreSec)
 th1.daemon = True
