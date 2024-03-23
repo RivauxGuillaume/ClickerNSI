@@ -609,6 +609,36 @@ def deleteBoost(niveau):
     global buttonBoost6, buttonBoost7, buttonBoost8, buttonBoost9, buttonBoost10, buttonBoost11, buttonBoost12, buttonBoost13, buttonBoost14, buttonBoost15
 
     dicVariable[f"buttonBoost{niveau}"].destroy()
+    if niveau==1:
+        OnLeaveBoost1()
+    if niveau==2:
+        OnLeaveBoost2()
+    if niveau==3:
+        OnLeaveBoost3()
+    if niveau==4:
+        OnLeaveBoost4()
+    if niveau==5:
+        OnLeaveBoost5()
+    if niveau==6:
+        OnLeaveBoost6()
+    if niveau==7:
+        OnLeaveBoost7()
+    if niveau==8:
+        OnLeaveBoost8()
+    if niveau==9:
+        OnLeaveBoost9()
+    if niveau==10:
+        OnLeaveBoost10()
+    if niveau==11:
+        OnLeaveBoost11()
+    if niveau==12:
+        OnLeaveBoost12()
+    if niveau==13:
+        OnLeaveBoost13()
+    if niveau==14:
+        OnLeaveBoost14()
+    if niveau==15:
+        OnLeaveBoost15()
     for i in range(len(listBoost)):
         if listBoost[i] == niveau:
             for j in listBoost:
@@ -1164,10 +1194,81 @@ def prix(prix_base):
         a.append(int(a[i]*1.15))
     return a
 
+#Images a creer et définir
+
 def OnEnterBoost1(event):
     zone_graphique.itemconfigure(numTransparent, image=pictureBoost1)
-
 def OnLeaveBoost1(event):
+    zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
+
+def OnEnterBoost2(event):
+    zone_graphique.itemconfigure(numTransparent, image=pictureBoost1)
+def OnLeaveBoost2(event):
+    zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
+
+def OnEnterBoost3(event):
+    zone_graphique.itemconfigure(numTransparent, image=pictureBoost1)
+def OnLeaveBoost3(event):
+    zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
+
+def OnEnterBoost4(event):
+    zone_graphique.itemconfigure(numTransparent, image=pictureBoost1)
+def OnLeaveBoost4(event):
+    zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
+
+def OnEnterBoost5(event):
+    zone_graphique.itemconfigure(numTransparent, image=pictureBoost1)
+def OnLeaveBoost5(event):
+    zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
+
+def OnEnterBoost6(event):
+    zone_graphique.itemconfigure(numTransparent, image=pictureBoost1)
+def OnLeaveBoost6(event):
+    zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
+
+def OnEnterBoost7(event):
+    zone_graphique.itemconfigure(numTransparent, image=pictureBoost1)
+def OnLeaveBoost7(event):
+    zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
+
+def OnEnterBoost8(event):
+    zone_graphique.itemconfigure(numTransparent, image=pictureBoost1)
+def OnLeaveBoost8(event):
+    zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
+
+def OnEnterBoost9(event):
+    zone_graphique.itemconfigure(numTransparent, image=pictureBoost1)
+def OnLeaveBoost9(event):
+    zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
+
+def OnEnterBoost10(event):
+    zone_graphique.itemconfigure(numTransparent, image=pictureBoost1)
+def OnLeaveBoost10(event):
+    zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
+
+def OnEnterBoost11(event):
+    zone_graphique.itemconfigure(numTransparent, image=pictureBoost1)
+def OnLeaveBoost11(event):
+    zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
+
+def OnEnterBoost12(event):
+    zone_graphique.itemconfigure(numTransparent, image=pictureBoost1)
+def OnLeaveBoost12(event):
+    zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
+
+def OnEnterBoost13(event):
+    zone_graphique.itemconfigure(numTransparent, image=pictureBoost1)
+def OnLeaveBoost13(event):
+    zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
+
+def OnEnterBoost14(event):
+    zone_graphique.itemconfigure(numTransparent, image=pictureBoost1)
+def OnLeaveBoost14(event):
+    zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
+
+def OnEnterBoost15(event):
+    zone_graphique.itemconfigure(numTransparent, image=pictureBoost1)
+def OnLeaveBoost15(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 #---------------------------------------------------------Provisoire---------------------------------------
@@ -1325,8 +1426,37 @@ fenetre.bind("<Left>", ptpclick)
 fenetre.bind("<Right>", ptpsecondes)
 
 # bind affichage boost
+
 buttonBoost1.bind("<Enter>", OnEnterBoost1)
 buttonBoost1.bind("<Leave>", OnLeaveBoost1)
+buttonBoost2.bind("<Enter>", OnEnterBoost1)
+buttonBoost2.bind("<Leave>", OnLeaveBoost1)
+buttonBoost3.bind("<Enter>", OnEnterBoost1)
+buttonBoost3.bind("<Leave>", OnLeaveBoost1)
+buttonBoost4.bind("<Enter>", OnEnterBoost1)
+buttonBoost4.bind("<Leave>", OnLeaveBoost1)
+buttonBoost5.bind("<Enter>", OnEnterBoost1)
+buttonBoost5.bind("<Leave>", OnLeaveBoost1)
+buttonBoost6.bind("<Enter>", OnEnterBoost1)
+buttonBoost6.bind("<Leave>", OnLeaveBoost1)
+buttonBoost7.bind("<Enter>", OnEnterBoost1)
+buttonBoost7.bind("<Leave>", OnLeaveBoost1)
+buttonBoost8.bind("<Enter>", OnEnterBoost1)
+buttonBoost8.bind("<Leave>", OnLeaveBoost1)
+buttonBoost9.bind("<Enter>", OnEnterBoost1)
+buttonBoost9.bind("<Leave>", OnLeaveBoost1)
+buttonBoost10.bind("<Enter>", OnEnterBoost1)
+buttonBoost10.bind("<Leave>", OnLeaveBoost1)
+buttonBoost11.bind("<Enter>", OnEnterBoost1)
+buttonBoost11.bind("<Leave>", OnLeaveBoost1)
+buttonBoost12.bind("<Enter>", OnEnterBoost1)
+buttonBoost12.bind("<Leave>", OnLeaveBoost1)
+buttonBoost13.bind("<Enter>", OnEnterBoost1)
+buttonBoost13.bind("<Leave>", OnLeaveBoost1)
+buttonBoost14.bind("<Enter>", OnEnterBoost1)
+buttonBoost14.bind("<Leave>", OnLeaveBoost1)
+buttonBoost15.bind("<Enter>", OnEnterBoost1)
+buttonBoost15.bind("<Leave>", OnLeaveBoost1)
 
 
 # Gestion du multithread pour les clic/sec
