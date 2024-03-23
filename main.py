@@ -147,8 +147,9 @@ def load_picture():
     pictureBoost14 = PhotoImage(file="image/js.png")
     pictureBoost15 = PhotoImage(file="image/c#.png")
     imageTransparente = PhotoImage(file="image/transparent.png")
+    imageTest=PhotoImage(file="image/test.png")
 
-    return pictureUpgrade1,  pictureUpgrade2, pictureUpgrade3, pictureUpgrade4, pictureUpgrade5,  pictureUpgrade6, pictureUpgrade7, pictureUpgrade8, pictureUpgrade9, pictureUpgrade10, pictureUpgrade11, pictureUpgrade12, pictureUpgrade13, pictureUpgrade14, pictureUpgrade15, pictureUpgrade16, pictureBoost1, pictureBoost2, pictureBoost3, pictureBoost4, pictureBoost5, pictureBoost6, pictureBoost7, pictureBoost8, pictureBoost9, pictureBoost10, pictureBoost11, pictureBoost12, pictureBoost13, pictureBoost14, pictureBoost15, imageTransparente
+    return pictureUpgrade1,  pictureUpgrade2, pictureUpgrade3, pictureUpgrade4, pictureUpgrade5,  pictureUpgrade6, pictureUpgrade7, pictureUpgrade8, pictureUpgrade9, pictureUpgrade10, pictureUpgrade11, pictureUpgrade12, pictureUpgrade13, pictureUpgrade14, pictureUpgrade15, pictureUpgrade16, pictureBoost1, pictureBoost2, pictureBoost3, pictureBoost4, pictureBoost5, pictureBoost6, pictureBoost7, pictureBoost8, pictureBoost9, pictureBoost10, pictureBoost11, pictureBoost12, pictureBoost13, pictureBoost14, pictureBoost15, imageTransparente, imageTest
 
 
 def widgetUpgrade1():
@@ -610,35 +611,35 @@ def deleteBoost(niveau):
 
     dicVariable[f"buttonBoost{niveau}"].destroy()
     if niveau==1:
-        OnLeaveBoost1()
+        OnLeaveBoost1(event="")
     if niveau==2:
-        OnLeaveBoost2()
+        OnLeaveBoost2(event="")
     if niveau==3:
-        OnLeaveBoost3()
+        OnLeaveBoost3(event="")
     if niveau==4:
-        OnLeaveBoost4()
+        OnLeaveBoost4(event="")
     if niveau==5:
-        OnLeaveBoost5()
+        OnLeaveBoost5(event="")
     if niveau==6:
-        OnLeaveBoost6()
+        OnLeaveBoost6(event="")
     if niveau==7:
-        OnLeaveBoost7()
+        OnLeaveBoost7(event="")
     if niveau==8:
-        OnLeaveBoost8()
+        OnLeaveBoost8(event="")
     if niveau==9:
-        OnLeaveBoost9()
+        OnLeaveBoost9(event="")
     if niveau==10:
-        OnLeaveBoost10()
+        OnLeaveBoost10(event="")
     if niveau==11:
-        OnLeaveBoost11()
+        OnLeaveBoost11(event="")
     if niveau==12:
-        OnLeaveBoost12()
+        OnLeaveBoost12(event="")
     if niveau==13:
-        OnLeaveBoost13()
+        OnLeaveBoost13(event="")
     if niveau==14:
-        OnLeaveBoost14()
+        OnLeaveBoost14(event="")
     if niveau==15:
-        OnLeaveBoost15()
+        OnLeaveBoost15(event="")
     for i in range(len(listBoost)):
         if listBoost[i] == niveau:
             for j in listBoost:
@@ -687,6 +688,7 @@ def deleteBoost(niveau):
         buttonBoost15 = widgetBoost15()
         dicVariable["buttonBoost15"] = buttonBoost15
         listBoost.append(15)
+    print(numADelete)
     print(listBoost)
 
 
@@ -1197,7 +1199,7 @@ def prix(prix_base):
 #Images a creer et définir
 
 def OnEnterBoost1(event):
-    zone_graphique.itemconfigure(numTransparent, image=pictureBoost1)
+    zone_graphique.itemconfigure(numTransparent, image=imageTest)
 def OnLeaveBoost1(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
@@ -1275,18 +1277,18 @@ def OnLeaveBoost15(event):
 
 def point1k(event):
     global score
-    score += 10000000000000
+    score += 1000000000000000000000000000
     text_score.configure(text=f"{score} octets")
 
 
 def ptpclick(event):
     global scoreClick
-    scoreClick += 200000000000
+    scoreClick += 200000000000000000000000000000
     text_octets_click.configure(text=f"{scoreClick} octets/Clic")
 
 def ptpsecondes(event):
     global scoreSec
-    scoreSec += 250000000000
+    scoreSec += 25000000000000000000000000000
     text_octets_secondes.configure(text=f"{scoreSec} octets/Secondes")
 
 
@@ -1390,7 +1392,7 @@ fenetre, screen_width, screen_height = creer_fenetre()
 zone_graphique = creer_Canvas()
 text_player, picture, button_clicker, text_last_save, text_score, text_octets_secondes, text_octets_click, button_save, button_save_quit =  cree_widget()
 
-pictureUpgrade1,  pictureUpgrade2, pictureUpgrade3, pictureUpgrade4, pictureUpgrade5,  pictureUpgrade6, pictureUpgrade7, pictureUpgrade8, pictureUpgrade9, pictureUpgrade10, pictureUpgrade11, pictureUpgrade12, pictureUpgrade13, pictureUpgrade14, pictureUpgrade15, pictureUpgrade16, pictureBoost1, pictureBoost2, pictureBoost3, pictureBoost4, pictureBoost5, pictureBoost6, pictureBoost7, pictureBoost8, pictureBoost9, pictureBoost10, pictureBoost11, pictureBoost12, pictureBoost13, pictureBoost14, pictureBoost15, imageTransparente = load_picture()
+pictureUpgrade1,  pictureUpgrade2, pictureUpgrade3, pictureUpgrade4, pictureUpgrade5,  pictureUpgrade6, pictureUpgrade7, pictureUpgrade8, pictureUpgrade9, pictureUpgrade10, pictureUpgrade11, pictureUpgrade12, pictureUpgrade13, pictureUpgrade14, pictureUpgrade15, pictureUpgrade16, pictureBoost1, pictureBoost2, pictureBoost3, pictureBoost4, pictureBoost5, pictureBoost6, pictureBoost7, pictureBoost8, pictureBoost9, pictureBoost10, pictureBoost11, pictureBoost12, pictureBoost13, pictureBoost14, pictureBoost15, imageTransparente, imageTest = load_picture()
 levelUpgrade1, buttonUpgrade1, priceUpgrade1, textUpgrade1 = widgetUpgrade1()
 levelUpgrade2, buttonUpgrade2, priceUpgrade2, textUpgrade2 = widgetUpgrade2()
 levelUpgrade3, buttonUpgrade3, priceUpgrade3, textUpgrade3 = widgetUpgrade3()
@@ -1427,37 +1429,36 @@ fenetre.bind("<Right>", ptpsecondes)
 
 # bind affichage boost
 
-buttonBoost1.bind("<Enter>", OnEnterBoost1)
-buttonBoost1.bind("<Leave>", OnLeaveBoost1)
-buttonBoost2.bind("<Enter>", OnEnterBoost1)
-buttonBoost2.bind("<Leave>", OnLeaveBoost1)
-buttonBoost3.bind("<Enter>", OnEnterBoost1)
-buttonBoost3.bind("<Leave>", OnLeaveBoost1)
-buttonBoost4.bind("<Enter>", OnEnterBoost1)
-buttonBoost4.bind("<Leave>", OnLeaveBoost1)
-buttonBoost5.bind("<Enter>", OnEnterBoost1)
-buttonBoost5.bind("<Leave>", OnLeaveBoost1)
-buttonBoost6.bind("<Enter>", OnEnterBoost1)
-buttonBoost6.bind("<Leave>", OnLeaveBoost1)
-buttonBoost7.bind("<Enter>", OnEnterBoost1)
-buttonBoost7.bind("<Leave>", OnLeaveBoost1)
-buttonBoost8.bind("<Enter>", OnEnterBoost1)
-buttonBoost8.bind("<Leave>", OnLeaveBoost1)
-buttonBoost9.bind("<Enter>", OnEnterBoost1)
-buttonBoost9.bind("<Leave>", OnLeaveBoost1)
-buttonBoost10.bind("<Enter>", OnEnterBoost1)
-buttonBoost10.bind("<Leave>", OnLeaveBoost1)
-buttonBoost11.bind("<Enter>", OnEnterBoost1)
-buttonBoost11.bind("<Leave>", OnLeaveBoost1)
-buttonBoost12.bind("<Enter>", OnEnterBoost1)
-buttonBoost12.bind("<Leave>", OnLeaveBoost1)
-buttonBoost13.bind("<Enter>", OnEnterBoost1)
-buttonBoost13.bind("<Leave>", OnLeaveBoost1)
-buttonBoost14.bind("<Enter>", OnEnterBoost1)
-buttonBoost14.bind("<Leave>", OnLeaveBoost1)
-buttonBoost15.bind("<Enter>", OnEnterBoost1)
-buttonBoost15.bind("<Leave>", OnLeaveBoost1)
-
+dicVariable["buttonBoost1"].bind("<Enter>", OnEnterBoost1)
+dicVariable["buttonBoost1"].bind("<Leave>", OnLeaveBoost1)
+dicVariable["buttonBoost2"].bind("<Enter>", OnEnterBoost1)
+dicVariable["buttonBoost2"].bind("<Leave>", OnLeaveBoost1)
+dicVariable["buttonBoost3"].bind("<Enter>", OnEnterBoost1)
+dicVariable["buttonBoost3"].bind("<Leave>", OnLeaveBoost1)
+dicVariable["buttonBoost4"].bind("<Enter>", OnEnterBoost1)
+dicVariable["buttonBoost4"].bind("<Leave>", OnLeaveBoost1)
+dicVariable["buttonBoost5"].bind("<Enter>", OnEnterBoost1)
+dicVariable["buttonBoost5"].bind("<Leave>", OnLeaveBoost1)
+dicVariable["buttonBoost6"].bind("<Enter>", OnEnterBoost1)
+dicVariable["buttonBoost6"].bind("<Leave>", OnLeaveBoost1)
+dicVariable["buttonBoost7"].bind("<Enter>", OnEnterBoost1)
+dicVariable["buttonBoost7"].bind("<Leave>", OnLeaveBoost1)
+dicVariable["buttonBoost8"].bind("<Enter>", OnEnterBoost1)
+dicVariable["buttonBoost8"].bind("<Leave>", OnLeaveBoost1)
+dicVariable["buttonBoost9"].bind("<Enter>", OnEnterBoost1)
+dicVariable["buttonBoost9"].bind("<Leave>", OnLeaveBoost1)
+dicVariable["buttonBoost10"].bind("<Enter>", OnEnterBoost1)
+dicVariable["buttonBoost10"].bind("<Leave>", OnLeaveBoost1)
+dicVariable["buttonBoost11"].bind("<Enter>", OnEnterBoost1)
+dicVariable["buttonBoost11"].bind("<Leave>", OnLeaveBoost1)
+dicVariable["buttonBoost12"].bind("<Enter>", OnEnterBoost1)
+dicVariable["buttonBoost12"].bind("<Leave>", OnLeaveBoost1)
+dicVariable["buttonBoost13"].bind("<Enter>", OnEnterBoost1)
+dicVariable["buttonBoost13"].bind("<Leave>", OnLeaveBoost1)
+dicVariable["buttonBoost14"].bind("<Enter>", OnEnterBoost1)
+dicVariable["buttonBoost14"].bind("<Leave>", OnLeaveBoost1)
+dicVariable["buttonBoost15"].bind("<Enter>", OnEnterBoost1)
+dicVariable["buttonBoost15"].bind("<Leave>", OnLeaveBoost1)
 
 # Gestion du multithread pour les clic/sec
 th1 = threading.Thread(target=MajScoreSec)
