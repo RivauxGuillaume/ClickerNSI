@@ -24,6 +24,24 @@ def creer_Canvas():
 
     return zone_graphique
 
+def points(points):
+    terminaison = ["octets", "Ko", "Mo", "Go", "To", "Po", "Eo", "Zo", "Yo", "Ro", "Qo"]
+    al="abcdefghijklmnopqrstuvwxyz"
+    for i in range(26):
+        for j in range(26):
+            text = ""
+            text += (al[i])
+            text += (al[j])
+            terminaison.append(text)
+    k = 1
+    while points > 1_000_000:
+        points = points / 1000
+        k += 1
+    points = round(points / 1000, 2)
+    texte = f"{points} {terminaison[k]}"
+    return(texte)
+        
+
 def cree_widget():
     # Joueur qui joue
     text_player = Label(fenetre, text=f"Joueur : {joueur}", bg="gray28", fg="white")
@@ -157,7 +175,7 @@ def widgetUpgrade1():
     levelUpgrade1 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade1.grid(row=rowUpgrade1, column=10, rowspan=2)
 
-    buttonUpgrade1 = Button(fenetre, image=pictureUpgrade1, bg="gray28", activebackground="gray28", command=Amelioration1Clic, border=0)
+    buttonUpgrade1 = Button(fenetre, image=pictureUpgrade1, bg="gray28", activebackground="gray28", command=Amelioration1Clic, bd=0)
     buttonUpgrade1.grid(row=rowUpgrade1, column=11, rowspan=2)
 
     priceUpgrade1 = Label(fenetre, text="prix : 10", bg="gray28", fg="white")
@@ -173,7 +191,7 @@ def widgetUpgrade2():
     levelUpgrade2 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade2.grid(row=rowUpgrade2, column=10, rowspan=2)
 
-    buttonUpgrade2 = Button(fenetre, image=pictureUpgrade2, bg="gray28", activebackground="gray28", command=Amelioration2Clic, width=60, height=60)
+    buttonUpgrade2 = Button(fenetre, image=pictureUpgrade2, bg="gray28", activebackground="gray28", command=Amelioration2Clic, bd=0)
     buttonUpgrade2.grid(row=rowUpgrade2, column=11, rowspan=2)
 
     priceUpgrade2 = Label(fenetre, text="prix : 100", bg="gray28", fg="white")
@@ -189,7 +207,7 @@ def widgetUpgrade3():
     levelUpgrade3 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade3.grid(row=rowUpgrade3, column=10, rowspan=2)
 
-    buttonUpgrade3 = Button(fenetre, image=pictureUpgrade3, bg="gray28", activebackground="gray28", command=Amelioration3Clic, width=60, height=60)
+    buttonUpgrade3 = Button(fenetre, image=pictureUpgrade3, bg="gray28", activebackground="gray28", command=Amelioration3Clic, bd=0)
     buttonUpgrade3.grid(row=rowUpgrade3, column=11, rowspan=2)
 
     priceUpgrade3 = Label(fenetre, text="prix : 1 100", bg="gray28", fg="white")
@@ -205,7 +223,7 @@ def widgetUpgrade4():
     levelUpgrade4 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade4.grid(row=rowUpgrade4, column=10, rowspan=2)
 
-    buttonUpgrade4 = Button(fenetre, image=pictureUpgrade4, bg="gray28", activebackground="gray28", command=Amelioration4Clic, width=60, height=60)
+    buttonUpgrade4 = Button(fenetre, image=pictureUpgrade4, bg="gray28", activebackground="gray28", command=Amelioration4Clic, bd=0)
     buttonUpgrade4.grid(row=rowUpgrade4, column=11, rowspan=2)
 
     priceUpgrade4 = Label(fenetre, text="prix : 12 000", bg="gray28", fg="white")
@@ -221,7 +239,7 @@ def widgetUpgrade5():
     levelUpgrade5 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade5.grid(row=rowUpgrade5, column=10, rowspan=2)
 
-    buttonUpgrade5 = Button(fenetre, image=pictureUpgrade5, bg="gray28", activebackground="gray28", command=Amelioration5Clic, width=60, height=60)
+    buttonUpgrade5 = Button(fenetre, image=pictureUpgrade5, bg="gray28", activebackground="gray28", command=Amelioration5Clic, bd=0)
     buttonUpgrade5.grid(row=rowUpgrade5, column=11, rowspan=2)
 
     priceUpgrade5 = Label(fenetre, text="prix : 130 000", bg="gray28", fg="white")
@@ -237,7 +255,7 @@ def widgetUpgrade6():
     levelUpgrade6 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade6.grid(row=rowUpgrade6, column=10, rowspan=2)
 
-    buttonUpgrade6 = Button(fenetre, image=pictureUpgrade6, bg="gray28", activebackground="gray28", command=Amelioration6Clic, width=60, height=60)
+    buttonUpgrade6 = Button(fenetre, image=pictureUpgrade6, bg="gray28", activebackground="gray28", command=Amelioration6Clic, bd=0)
     buttonUpgrade6.grid(row=rowUpgrade6, column=11, rowspan=2)
 
     priceUpgrade6 = Label(fenetre, text="prix : 1 400 000", bg="gray28", fg="white")
@@ -253,7 +271,7 @@ def widgetUpgrade7():
     levelUpgrade7 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade7.grid(row=rowUpgrade7, column=10, rowspan=2)
 
-    buttonUpgrade7 = Button(fenetre, image=pictureUpgrade7, bg="gray28", activebackground="gray28", command=Amelioration7Clic, width=60, height=60)
+    buttonUpgrade7 = Button(fenetre, image=pictureUpgrade7, bg="gray28", activebackground="gray28", command=Amelioration7Clic, bd=0)
     buttonUpgrade7.grid(row=rowUpgrade7, column=11, rowspan=2)
 
     priceUpgrade7 = Label(fenetre, text="prix : 20 000 000", bg="gray28", fg="white")
@@ -269,7 +287,7 @@ def widgetUpgrade8():
     levelUpgrade8 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade8.grid(row=rowUpgrade8, column=10, rowspan=2)
 
-    buttonUpgrade8 = Button(fenetre, image=pictureUpgrade8, bg="gray28", activebackground="gray28", command=Amelioration8Clic, width=60, height=60)
+    buttonUpgrade8 = Button(fenetre, image=pictureUpgrade8, bg="gray28", activebackground="gray28", command=Amelioration8Clic, bd=0)
     buttonUpgrade8.grid(row=rowUpgrade8, column=11, rowspan=2)
 
     priceUpgrade8 = Label(fenetre, text="prix : 330 000 000", bg="gray28", fg="white")
@@ -285,7 +303,7 @@ def widgetUpgrade9():
     levelUpgrade9 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade9.grid(row=rowUpgrade9, column=10, rowspan=2)
 
-    buttonUpgrade9 = Button(fenetre, image=pictureUpgrade9, bg="gray28", activebackground="gray28", command=Amelioration9Clic, width=60, height=60)
+    buttonUpgrade9 = Button(fenetre, image=pictureUpgrade9, bg="gray28", activebackground="gray28", command=Amelioration9Clic, bd=0)
     buttonUpgrade9.grid(row=rowUpgrade9, column=11, rowspan=2)
 
     priceUpgrade9 = Label(fenetre, text="prix :5 100 000 000", bg="gray28", fg="white")
@@ -301,7 +319,7 @@ def widgetUpgrade10():
     levelUpgrade10 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade10.grid(row=rowUpgrade10, column=10, rowspan=2)
 
-    buttonUpgrade10 = Button(fenetre, image=pictureUpgrade10, bg="gray28", activebackground="gray28", command=Amelioration10Clic, width=60, height=60)
+    buttonUpgrade10 = Button(fenetre, image=pictureUpgrade10, bg="gray28", activebackground="gray28", command=Amelioration10Clic, bd=0)
     buttonUpgrade10.grid(row=rowUpgrade10, column=11, rowspan=2)
 
     priceUpgrade10 = Label(fenetre, text="prix : 75 000 000 000", bg="gray28", fg="white")
@@ -317,7 +335,7 @@ def widgetUpgrade11():
     levelUpgrade11 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade11.grid(row=rowUpgrade11, column=10, rowspan=2)
 
-    buttonUpgrade11 = Button(fenetre, image=pictureUpgrade11, bg="gray28", activebackground="gray28", command=Amelioration11Clic, width=60, height=60)
+    buttonUpgrade11 = Button(fenetre, image=pictureUpgrade11, bg="gray28", activebackground="gray28", command=Amelioration11Clic, bd=0)
     buttonUpgrade11.grid(row=rowUpgrade11, column=11, rowspan=2)
 
     priceUpgrade11 = Label(fenetre, text="prix : 1 000 000 000 000", bg="gray28", fg="white")
@@ -333,7 +351,7 @@ def widgetUpgrade12():
     levelUpgrade12 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade12.grid(row=rowUpgrade12, column=10, rowspan=2)
 
-    buttonUpgrade12 = Button(fenetre, image=pictureUpgrade12, bg="gray28", activebackground="gray28", command=Amelioration12Clic, width=60, height=60)
+    buttonUpgrade12 = Button(fenetre, image=pictureUpgrade12, bg="gray28", activebackground="gray28", command=Amelioration12Clic, bd=0)
     buttonUpgrade12.grid(row=rowUpgrade12, column=11, rowspan=2)
 
     priceUpgrade12 = Label(fenetre, text="prix : 14 000 000 000 000", bg="gray28", fg="white")
@@ -349,7 +367,7 @@ def widgetUpgrade13():
     levelUpgrade13 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade13.grid(row=rowUpgrade13, column=10, rowspan=2)
 
-    buttonUpgrade13 = Button(fenetre, image=pictureUpgrade13, bg="gray28", activebackground="gray28", command=Amelioration13Clic, width=60, height=60)
+    buttonUpgrade13 = Button(fenetre, image=pictureUpgrade13, bg="gray28", activebackground="gray28", command=Amelioration13Clic, bd=0)
     buttonUpgrade13.grid(row=rowUpgrade13, column=11, rowspan=2)
 
     priceUpgrade13 = Label(fenetre, text="prix : 170 000 000 000 000", bg="gray28", fg="white")
@@ -365,7 +383,7 @@ def widgetUpgrade14():
     levelUpgrade14 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade14.grid(row=rowUpgrade14, column=10, rowspan=2)
 
-    buttonUpgrade14 = Button(fenetre, image=pictureUpgrade14, bg="gray28", activebackground="gray28", command=Amelioration14Clic, width=60, height=60)
+    buttonUpgrade14 = Button(fenetre, image=pictureUpgrade14, bg="gray28", activebackground="gray28", command=Amelioration14Clic, bd=0)
     buttonUpgrade14.grid(row=rowUpgrade14, column=11, rowspan=2)
 
     priceUpgrade14 = Label(fenetre, text="prix : 2 100 000 000 000 000", bg="gray28", fg="white")
@@ -381,7 +399,7 @@ def widgetUpgrade15():
     levelUpgrade15 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade15.grid(row=rowUpgrade15, column=10, rowspan=2)
 
-    buttonUpgrade15 = Button(fenetre, image=pictureUpgrade15, bg="gray28", activebackground="gray28", command=Amelioration15Clic, width=60, height=60)
+    buttonUpgrade15 = Button(fenetre, image=pictureUpgrade15, bg="gray28", activebackground="gray28", command=Amelioration15Clic, bd=0)
     buttonUpgrade15.grid(row=rowUpgrade15, column=11, rowspan=2)
 
     priceUpgrade15 = Label(fenetre, text="prix : 26 000 000 000 000 000", bg="gray28", fg="white")
@@ -397,7 +415,7 @@ def widgetUpgrade16():
     levelUpgrade16 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade16.grid(row=rowUpgrade16, column=10, rowspan=2)
 
-    buttonUpgrade16 = Button(fenetre, image=pictureUpgrade16, bg="gray28", activebackground="gray28", command=Amelioration16Clic, width=60, height=60)
+    buttonUpgrade16 = Button(fenetre, image=pictureUpgrade16, bg="gray28", activebackground="gray28", command=Amelioration16Clic, bd=0)
     buttonUpgrade16.grid(row=rowUpgrade16, column=11, rowspan=2)
 
     priceUpgrade16 = Label(fenetre, text="prix : 310 000 000 000 000 000", bg="gray28", fg="white")
