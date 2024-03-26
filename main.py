@@ -626,46 +626,46 @@ def deleteBoost(niveau):
     global dicVariable
     global listBoost
     global buttonBoost6, buttonBoost7, buttonBoost8, buttonBoost9, buttonBoost10, buttonBoost11, buttonBoost12, buttonBoost13, buttonBoost14, buttonBoost15
+
+    dicVariable[f"buttonBoost{niveau}"].destroy()
     if niveau==1:
         OnLeaveBoost1(event="")
-    if niveau==2:
+    elif niveau==2:
         OnLeaveBoost2(event="")
-    if niveau==3:
+    elif niveau==3:
         OnLeaveBoost3(event="")
-    if niveau==4:
+    elif niveau==4:
         OnLeaveBoost4(event="")
-    if niveau==5:
+    elif niveau==5:
         OnLeaveBoost5(event="")
-    if niveau==6:
+    elif niveau==6:
         OnLeaveBoost6(event="")
-    if niveau==7:
+    elif niveau==7:
         OnLeaveBoost7(event="")
-    if niveau==8:
+    elif niveau==8:
         OnLeaveBoost8(event="")
-    if niveau==9:
+    elif niveau==9:
         OnLeaveBoost9(event="")
-    if niveau==10:
+    elif niveau==10:
         OnLeaveBoost10(event="")
-    if niveau==11:
+    elif niveau==11:
         OnLeaveBoost11(event="")
-    if niveau==12:
+    elif niveau==12:
         OnLeaveBoost12(event="")
-    if niveau==13:
+    elif niveau==13:
         OnLeaveBoost13(event="")
-    if niveau==14:
+    elif niveau==14:
         OnLeaveBoost14(event="")
-    if niveau==15:
+    elif niveau==15:
         OnLeaveBoost15(event="")
-    numADelete=""
     for i in range(len(listBoost)):
+        print(listBoost, niveau)
         if listBoost[i] == niveau:
             for j in listBoost:
                 if j > niveau:
                     dicVariable[f"columnBoost{j}"] -= 1
                     dicVariable[f"buttonBoost{j}"].grid(column=dicVariable[f"columnBoost{j}"])
-                    print(i)
             numADelete = i
-    dicVariable[f"buttonBoost{niveau}"].destroy()
     if max(listBoost) == 5:
         buttonBoost6=widgetBoost6()
         dicVariable["buttonBoost6"] = buttonBoost6
@@ -736,8 +736,8 @@ def deleteBoost(niveau):
         dicVariable["buttonBoost15"].bind("<Enter>", OnEnterBoost15)
         dicVariable["buttonBoost15"].bind("<Leave>", OnLeaveBoost15)
         listBoost.append(15)
-
     del(listBoost[numADelete])
+
 
 def Amelioration1Clic():
     global scoreSec
@@ -1245,91 +1245,76 @@ def prix(prix_base):
 
 def OnEnterBoost1(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTest)
-    print(columnBoost1, prix_boost1, listBoost, "1")
 def OnLeaveBoost1(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost2(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTest)
-    print(columnBoost2, prix_boost2, listBoost, "2")
 def OnLeaveBoost2(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost3(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTest)
-    print(columnBoost3, prix_boost3, listBoost, "3")
 def OnLeaveBoost3(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost4(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTest)
-    print(columnBoost4, prix_boost4, listBoost, "4")
 def OnLeaveBoost4(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost5(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTest)
-    print(columnBoost5, prix_boost5, listBoost, "5")
 def OnLeaveBoost5(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost6(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTest)
-    print(columnBoost6, prix_boost6, listBoost, "6")
 def OnLeaveBoost6(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost7(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTest)
-    print(columnBoost7, prix_boost7, listBoost, "7")
 def OnLeaveBoost7(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost8(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTest)
-    print(columnBoost8, prix_boost8, listBoost, "8")
 def OnLeaveBoost8(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost9(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTest)
-    print(columnBoost9, prix_boost9, listBoost, "9")
 def OnLeaveBoost9(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost10(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTest)
-    print(columnBoost10, prix_boost10, listBoost, "10")
 def OnLeaveBoost10(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost11(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTest)
-    print(columnBoost11, prix_boost11, listBoost, "11")
 def OnLeaveBoost11(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost12(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTest)
-    print(columnBoost12, prix_boost12, listBoost, "12")
 def OnLeaveBoost12(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost13(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTest)
-    print(columnBoost13, prix_boost13, listBoost, "13")
 def OnLeaveBoost13(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost14(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTest)
-    print(columnBoost14, prix_boost14, listBoost, "14")
 def OnLeaveBoost14(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost15(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTest)
-    print(columnBoost15, prix_boost15, listBoost, "15", " test")
 def OnLeaveBoost15(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
@@ -1459,16 +1444,6 @@ levelUpgrade3, buttonUpgrade3, priceUpgrade3, textUpgrade3 = widgetUpgrade3()
 levelUpgrade4, buttonUpgrade4, priceUpgrade4, textUpgrade4 = widgetUpgrade4()
 levelUpgrade5, buttonUpgrade5, priceUpgrade5, textUpgrade5 = widgetUpgrade5()
 
-buttonBoost15=widgetBoost15()
-buttonBoost14=widgetBoost14()
-buttonBoost13=widgetBoost13()
-buttonBoost12=widgetBoost12()
-buttonBoost11=widgetBoost11()
-buttonBoost10=widgetBoost10()
-buttonBoost9=widgetBoost9()
-buttonBoost8=widgetBoost8()
-buttonBoost7=widgetBoost7()
-buttonBoost6=widgetBoost6()
 buttonBoost5=widgetBoost5()
 buttonBoost4=widgetBoost4()
 buttonBoost3=widgetBoost3()
