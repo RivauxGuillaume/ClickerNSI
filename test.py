@@ -18,4 +18,4 @@ def points(points):
     texte = f"{points} {terminaison[k]}"
     return(texte)
 
-print(points(0.1))
+print(points(10000000))
