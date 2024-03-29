@@ -821,7 +821,7 @@ def Amelioration1Clic():
     if niveau_amelioration1 <= 49:
         if score >= prix_amelioration_1[niveau_amelioration1]:
             niveau_amelioration1 += 1
-            scoreSec = round(scoreSec + 0.1, 1)
+            scoreSec = round(scoreSec + 0.1* multiplicateurBoost1, 1)
             text_octets_secondes.configure(text=f"Par Seconde : {points(scoreSec)}")
             score= round(score-prix_amelioration_1[niveau_amelioration1 - 1], 1)
             text_score.configure(text=f"{points(score)}")
@@ -843,7 +843,7 @@ def Amelioration2Clic():
     if niveau_amelioration2 <= 49:
         if score >= prix_amelioration_2[niveau_amelioration2]:
             niveau_amelioration2 += 1
-            scoreSec = round(scoreSec + 2, 1)
+            scoreSec = round(scoreSec + 2* multiplicateurBoost2, 1)
             text_octets_secondes.configure(text=f"Par Seconde : {points(scoreSec)}")
             score= round(score-prix_amelioration_2[niveau_amelioration2 - 1], 1)
             text_score.configure(text=f"{points(score)}")
@@ -864,7 +864,7 @@ def Amelioration3Clic():
     if niveau_amelioration3 <= 49:
         if score >= prix_amelioration_3[niveau_amelioration3]:
             niveau_amelioration3 += 1
-            scoreSec = round(scoreSec + 8, 1)
+            scoreSec = round(scoreSec + 8* multiplicateurBoost3, 1)
             text_octets_secondes.configure(text=f"Par Seconde : {points(scoreSec)}")
             score= round(score-prix_amelioration_3[niveau_amelioration3 - 1], 1)
             text_score.configure(text=f"{points(score)}")
@@ -885,7 +885,7 @@ def Amelioration4Clic():
     if niveau_amelioration4 <= 49:
         if score >= prix_amelioration_4[niveau_amelioration4]:
             niveau_amelioration4 += 1
-            scoreSec = round(scoreSec + 47, 1)
+            scoreSec = round(scoreSec + 47* multiplicateurBoost4, 1)
             text_octets_secondes.configure(text=f"Par Seconde : {points(scoreSec)}")
             score= round(score-prix_amelioration_4[niveau_amelioration4 - 1], 1)
             text_score.configure(text=f"{score}")
@@ -906,7 +906,7 @@ def Amelioration5Clic():
     if niveau_amelioration5 <= 49:
         if score >= prix_amelioration_5[niveau_amelioration5]:
             niveau_amelioration5 += 1
-            scoreSec = round(scoreSec + 260, 1)
+            scoreSec = round(scoreSec + 260 * multiplicateurBoost5, 1)
             text_octets_secondes.configure(text=f"Par Seconde : {points(scoreSec)}")
             score = round(score - prix_amelioration_5[niveau_amelioration5 - 1], 1)
             text_score.configure(text=f"{score}")
@@ -1140,10 +1140,12 @@ def Amelioration16Clic():
                 priceUpgrade16.configure(text=f"prix : {points(prix_amelioration_16[niveau_amelioration16])}")
 
 def Boost1Clic():
+    global multiplicateurBoost1
     global scoreClick
     global score
     if score >= prix_boost1:
         scoreClick = scoreClick*2
+        multiplicateurBoost1 = multiplicateurBoost1 * 2
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost1
         text_score.configure(text=f"{score}")
@@ -1151,10 +1153,12 @@ def Boost1Clic():
         th3.start()
 
 def Boost2Clic():
+    global multiplicateurBoost1
     global scoreClick
     global score
     if score >= prix_boost2:
         scoreClick = scoreClick*2
+        multiplicateurBoost1 = multiplicateurBoost1 * 2
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost2
         text_score.configure(text=f"{score}")
@@ -1162,10 +1166,10 @@ def Boost2Clic():
         th3.start()
 
 def Boost3Clic():
-    global scoreClick
+    global multiplicateurBoost2
     global score
     if score >= prix_boost3:
-        scoreClick = scoreClick*2
+        multiplicateurBoost2 = multiplicateurBoost2 * 2
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost3
         text_score.configure(text=f"{score}")
@@ -1173,10 +1177,10 @@ def Boost3Clic():
         th3.start()
 
 def Boost4Clic():
-    global scoreClick
+    global multiplicateurBoost2
     global score
     if score >= prix_boost4:
-        scoreClick = scoreClick*2
+        multiplicateurBoost2 = multiplicateurBoost2 * 2
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost4
         text_score.configure(text=f"{score}")
@@ -1184,10 +1188,12 @@ def Boost4Clic():
         th3.start()
 
 def Boost5Clic():
+    global multiplicateurBoost1
     global scoreClick
     global score
     if score >= prix_boost5:
         scoreClick = scoreClick*2
+        multiplicateurBoost1 = multiplicateurBoost1 * 2
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost5
         text_score.configure(text=f"{score}")
@@ -1195,10 +1201,10 @@ def Boost5Clic():
         th3.start()
 
 def Boost6Clic():
-    global scoreClick
+    global multiplicateurBoost3
     global score
     if score >= prix_boost6:
-        scoreClick = scoreClick*2
+        multiplicateurBoost3 = multiplicateurBoost3 * 2
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost6
         text_score.configure(text=f"{score}")
@@ -1209,7 +1215,7 @@ def Boost7Clic():
     global scoreClick
     global score
     if score >= prix_boost7:
-        scoreClick = scoreClick*2
+        scoreClick=scoreClick*1.01
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost7
         text_score.configure(text=f"{score}")
@@ -1217,10 +1223,10 @@ def Boost7Clic():
         th3.start()
 
 def Boost8Clic():
-    global scoreClick
+    global multiplicateurBoost2
     global score
     if score >= prix_boost8:
-        scoreClick = scoreClick*2
+        multiplicateurBoost2 = multiplicateurBoost2 * 2
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost8
         text_score.configure(text=f"{score}")
@@ -1228,10 +1234,10 @@ def Boost8Clic():
         th3.start()
 
 def Boost9Clic():
-    global scoreClick
+    global multiplicateurBoost3
     global score
     if score >= prix_boost9:
-        scoreClick = scoreClick*2
+        multiplicateurBoost3 = multiplicateurBoost3 * 2
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost9
         text_score.configure(text=f"{score}")
@@ -1239,10 +1245,10 @@ def Boost9Clic():
         th3.start()
 
 def Boost10Clic():
-    global scoreClick
+    global multiplicateurBoost2
     global score
     if score >= prix_boost10:
-        scoreClick = scoreClick*2
+        multiplicateurBoost2 = multiplicateurBoost2 * 2
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost10
         text_score.configure(text=f"{score}")
@@ -1250,10 +1256,10 @@ def Boost10Clic():
         th3.start()
 
 def Boost11Clic():
-    global scoreClick
+    global multiplicateurBoost4
     global score
     if score >= prix_boost11:
-        scoreClick = scoreClick*2
+        multiplicateurBoost4 = multiplicateurBoost4 * 2
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost11
         text_score.configure(text=f"{score}")
@@ -1261,10 +1267,10 @@ def Boost11Clic():
         th3.start()
 
 def Boost12Clic():
-    global scoreClick
+    global multiplicateurBoost3
     global score
     if score >= prix_boost12:
-        scoreClick = scoreClick*2
+        multiplicateurBoost3 = multiplicateurBoost3 * 2
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost12
         text_score.configure(text=f"{score}")
@@ -1272,10 +1278,10 @@ def Boost12Clic():
         th3.start()
 
 def Boost13Clic():
-    global scoreClick
+    global multiplicateurBoost4
     global score
     if score >= prix_boost13:
-        scoreClick = scoreClick*2
+        multiplicateurBoost4 = multiplicateurBoost4 * 2
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost13
         text_score.configure(text=f"{score}")
@@ -1283,10 +1289,11 @@ def Boost13Clic():
         th3.start()
 
 def Boost14Clic():
-    global scoreClick
+    global multiplicateurBoost2
     global score
     if score >= prix_boost14:
-        scoreClick = scoreClick*2
+        multiplicateurBoost2 = multiplicateurBoost2 * 2
+        # A Faire :for i in range(len(niveau_amelioration2//2)):
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost14
         text_score.configure(text=f"{score}")
@@ -1294,10 +1301,10 @@ def Boost14Clic():
         th3.start()
 
 def Boost15Clic():
-    global scoreClick
     global score
+    global scoreSec
     if score >= prix_boost15:
-        scoreClick = scoreClick*2
+        scoreSec = scoreSec*1.01
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost15
         text_score.configure(text=f"{score}")
@@ -1305,10 +1312,11 @@ def Boost15Clic():
         th3.start()
 
 def Boost16Clic():
+    global multiplicateurBoost5
     global scoreClick
     global score
     if score >= prix_boost16:
-        scoreClick = scoreClick*2
+        multiplicateurBoost5=multiplicateurBoost5*2
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost16
         text_score.configure(text=f"{score}")
@@ -1316,10 +1324,10 @@ def Boost16Clic():
         th3.start()
 
 def Boost17Clic():
-    global scoreClick
+    global scoreSec
     global score
     if score >= prix_boost17:
-        scoreClick = scoreClick*2
+        scoreSec = scoreSec*1.01
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost17
         text_score.configure(text=f"{score}")
@@ -1327,10 +1335,10 @@ def Boost17Clic():
         th3.start()
 
 def Boost18Clic():
-    global scoreClick
+    global multiplicateurBoost4
     global score
     if score >= prix_boost18:
-        scoreClick = scoreClick*2
+        multiplicateurBoost4=multiplicateurBoost4*2
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost18
         text_score.configure(text=f"{score}")
@@ -1338,10 +1346,10 @@ def Boost18Clic():
         th3.start()
 
 def Boost19Clic():
-    global scoreClick
+    global multiplicateurBoost5
     global score
     if score >= prix_boost19:
-        scoreClick = scoreClick*2
+        multiplicateurBoost5=multiplicateurBoost5*2
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost19
         text_score.configure(text=f"{score}")
@@ -1680,6 +1688,12 @@ dicVariable={"levelUpgrade1" : levelUpgrade1, "buttonUpgrade1" : buttonUpgrade1,
 
 boostVerif={"Boost1" : False, "Boost2" : False, "Boost3" : False, "Boost4" : False, "Boost5" : False, "Boost6" : False, "Boost7" : False, "Boost8" : False, "Boost9" : False, "Boost10" : False, "Boost11" : False, "Boost12" : False, "Boost13" : False, "Boost14" : False, "Boost15" : False, "Boost16" : False, "Boost17" : False, "Boost18" : False, "Boost19" : False}
 boostIsPlaced={"Boost1" : False, "Boost2" : False, "Boost3" : False, "Boost4" : False, "Boost5" : False, "Boost6" : False, "Boost7" : False, "Boost8" : False, "Boost9" : False, "Boost10" : False, "Boost11" : False, "Boost12" : False, "Boost13" : False, "Boost14" : False, "Boost15" : False, "Boost16" : False, "Boost17" : False, "Boost18" : False, "Boost19" : False}
+
+multiplicateurBoost1=1
+multiplicateurBoost2=1
+multiplicateurBoost3=1
+multiplicateurBoost4=1
+multiplicateurBoost5=1
 
 masquerBoost()
 
