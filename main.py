@@ -651,10 +651,6 @@ def deleteAmelioration(niveau):
 
 
 def deleteBoost(niveau):
-    global dicVariable
-    global listBoost
-    global buttonBoost1,buttonBoost2, buttonBoost3, buttonBoost4, buttonBoost5,buttonBoost6, buttonBoost7, buttonBoost8, buttonBoost9, buttonBoost10, buttonBoost11, buttonBoost12, buttonBoost13, buttonBoost14, buttonBoost15
-
     dicVariable[f"buttonBoost{niveau}"].destroy()
     if niveau==1:
         OnLeaveBoost1(event="")
@@ -696,165 +692,124 @@ def deleteBoost(niveau):
         OnLeaveBoost19(event="")
     for i in range(len(listBoost)):
         if listBoost[i] == niveau:
-            for j in listBoost:
+            for j in range(19):
                 if j > niveau:
                     dicVariable[f"columnBoost{j}"] -= 1
                     dicVariable[f"buttonBoost{j}"].grid(column=dicVariable[f"columnBoost{j}"])
-            numADelete = i-1
     afficherBoost()
-    del(listBoost[numADelete])
-    print(listBoost)
 
 def afficherBoost():
-    if max(listBoost) == 0 and boostVerif["Boost1"]==True and boostIsPlaced["Boost1"]==False:
+    if boostIsPlaced["Boost1"]==False and boostVerif["Boost1"]==True:
         boostIsPlaced["Boost1"] = True
-        buttonBoost1=widgetBoost1()
-        dicVariable["buttonBoost1"] = buttonBoost1
-        dicVariable["columnBoost1"] = columnBoost1
+        buttonBoost1.grid(row=1, column=dicVariable[f"columnBoost1"])
         dicVariable["buttonBoost1"].bind("<Enter>", OnEnterBoost1)
         dicVariable["buttonBoost1"].bind("<Leave>", OnLeaveBoost1)
         listBoost.append(1)
-    elif max(listBoost) == 1 and boostVerif["Boost2"]==True and boostIsPlaced["Boost2"]==False:
+    elif boostIsPlaced["Boost2"]==False and boostVerif["Boost2"]==True:
         boostIsPlaced["Boost2"] = True
-        buttonBoost2=widgetBoost2()
-        dicVariable["buttonBoost2"] = buttonBoost2
-        dicVariable["columnBoost2"] = columnBoost2
+        buttonBoost2.grid(row=1, column=dicVariable[f"columnBoost2"])
         dicVariable["buttonBoost2"].bind("<Enter>", OnEnterBoost2)
         dicVariable["buttonBoost2"].bind("<Leave>", OnLeaveBoost2)
         listBoost.append(2)
-    elif max(listBoost) == 2 and boostVerif["Boost3"]==True and boostIsPlaced["Boost3"]==False:
+    elif boostIsPlaced["Boost3"] == False and boostVerif["Boost3"]==True:
         boostIsPlaced["Boost3"] = True
-        buttonBoost3=widgetBoost3()
-        dicVariable["buttonBoost3"] = buttonBoost3
-        dicVariable["columnBoost3"] = columnBoost3
+        buttonBoost3.grid(row=1, column=dicVariable[f"columnBoost3"])
         dicVariable["buttonBoost3"].bind("<Enter>", OnEnterBoost3)
         dicVariable["buttonBoost3"].bind("<Leave>", OnLeaveBoost3)
         listBoost.append(3)
-    elif max(listBoost) == 3 and boostVerif["Boost4"]==True and boostIsPlaced["Boost4"]==False:
+    elif boostIsPlaced["Boost4"] == False and boostVerif["Boost4"]==True:
         boostIsPlaced["Boost4"] = True
-        buttonBoost4=widgetBoost4()
-        dicVariable["buttonBoost4"] = buttonBoost4
-        dicVariable["columnBoost4"] = columnBoost4
+        buttonBoost4.grid(row=1, column=dicVariable[f"columnBoost4"])
         dicVariable["buttonBoost4"].bind("<Enter>", OnEnterBoost4)
         dicVariable["buttonBoost4"].bind("<Leave>", OnLeaveBoost4)
         listBoost.append(4)
-    elif max(listBoost) == 4 and boostVerif["Boost5"]==True and boostIsPlaced["Boost5"]==False:
+    elif boostIsPlaced["Boost5"] == False and boostVerif["Boost5"]==True:
         boostIsPlaced["Boost5"] = True
-        buttonBoost5=widgetBoost5()
-        dicVariable["buttonBoost5"] = buttonBoost5
-        dicVariable["columnBoost5"] = columnBoost5
+        buttonBoost5.grid(row=1, column=dicVariable[f"columnBoost5"])
         dicVariable["buttonBoost5"].bind("<Enter>", OnEnterBoost5)
         dicVariable["buttonBoost5"].bind("<Leave>", OnLeaveBoost5)
         listBoost.append(5)
-    elif max(listBoost) == 5 and boostVerif["Boost6"]==True and boostIsPlaced["Boost6"]==False:
+    elif boostIsPlaced["Boost6"] == False and boostVerif["Boost6"]==True:
         boostIsPlaced["Boost6"]=True
-        buttonBoost6=widgetBoost6()
-        dicVariable["buttonBoost6"] = buttonBoost6
-        dicVariable["columnBoost6"] = columnBoost6
+        buttonBoost6.grid(row=1, column=dicVariable[f"columnBoost6"])
         dicVariable["buttonBoost6"].bind("<Enter>", OnEnterBoost6)
         dicVariable["buttonBoost6"].bind("<Leave>", OnLeaveBoost6)
         listBoost.append(6)
-    elif max(listBoost) == 6 and boostVerif["Boost7"]==True and boostIsPlaced["Boost7"]==False:
+    elif boostIsPlaced["Boost7"] == False and boostVerif["Boost7"]==True:
         boostIsPlaced["Boost7"] = True
-        buttonBoost7=widgetBoost7()
-        dicVariable["buttonBoost7"] = buttonBoost7
-        dicVariable["columnBoost7"] = columnBoost7
+        buttonBoost7.grid(row=1, column=dicVariable[f"columnBoost7"])
         dicVariable["buttonBoost7"].bind("<Enter>", OnEnterBoost7)
         dicVariable["buttonBoost7"].bind("<Leave>", OnLeaveBoost7)
         listBoost.append(7)
-    elif max(listBoost) == 7 and boostVerif["Boost8"]==True and boostIsPlaced["Boost8"]==False:
+    elif boostIsPlaced["Boost8"] == False and boostVerif["Boost8"]==True:
         boostIsPlaced["Boost8"] = True
-        buttonBoost8=widgetBoost8()
-        dicVariable["buttonBoost8"] = buttonBoost8
-        dicVariable["columnBoost8"] = columnBoost8
+        buttonBoost8.grid(row=1, column=dicVariable[f"columnBoost8"])
         dicVariable["buttonBoost8"].bind("<Enter>", OnEnterBoost8)
         dicVariable["buttonBoost8"].bind("<Leave>", OnLeaveBoost8)
         listBoost.append(8)
-    elif max(listBoost) == 8 and boostVerif["Boost9"]==True and boostIsPlaced["Boost9"]==False:
+    elif boostIsPlaced["Boost9"] == False and boostVerif["Boost9"]==True:
         boostIsPlaced["Boost9"] = True
-        buttonBoost9 = widgetBoost9()
-        dicVariable["buttonBoost9"] = buttonBoost9
-        dicVariable["columnBoost9"] = columnBoost9
+        buttonBoost9.grid(row=1, column=dicVariable[f"columnBoost9"])
         dicVariable["buttonBoost9"].bind("<Enter>", OnEnterBoost9)
         dicVariable["buttonBoost9"].bind("<Leave>", OnLeaveBoost9)
         listBoost.append(9)
-    elif max(listBoost) == 9 and boostVerif["Boost10"]==True and boostIsPlaced["Boost10"]==False:
+    elif boostIsPlaced["Boost10"] == False and boostVerif["Boost10"]==True:
         boostIsPlaced["Boost10"] = True
-        buttonBoost10 = widgetBoost10()
-        dicVariable["buttonBoost10"] = buttonBoost10
-        dicVariable["columnBoost10"] = columnBoost10
+        buttonBoost10.grid(row=1, column=dicVariable[f"columnBoost10"])
         dicVariable["buttonBoost10"].bind("<Enter>", OnEnterBoost10)
         dicVariable["buttonBoost10"].bind("<Leave>", OnLeaveBoost10)
         listBoost.append(10)
-    elif max(listBoost) == 10 and boostVerif["Boost11"]==True and boostIsPlaced["Boost11"]==False:
+    elif boostIsPlaced["Boost11"] == False and boostVerif["Boost11"]==True:
         boostIsPlaced["Boost11"] = True
-        buttonBoost11 = widgetBoost11()
-        dicVariable["buttonBoost11"] = buttonBoost11
-        dicVariable["columnBoost11"] = columnBoost11
+        buttonBoost11.grid(row=1, column=dicVariable[f"columnBoost11"])
         dicVariable["buttonBoost11"].bind("<Enter>", OnEnterBoost11)
         dicVariable["buttonBoost11"].bind("<Leave>", OnLeaveBoost11)
         listBoost.append(11)
-    elif max(listBoost) == 11 and boostVerif["Boost12"]==True and boostIsPlaced["Boost12"]==False:
+    elif boostIsPlaced["Boost12"] == False and boostVerif["Boost12"]==True:
         boostIsPlaced["Boost12"] = True
-        buttonBoost12 = widgetBoost12()
-        dicVariable["buttonBoost12"] = buttonBoost12
-        dicVariable["columnBoost12"] = columnBoost12
+        buttonBoost12.grid(row=1, column=dicVariable[f"columnBoost12"])
         dicVariable["buttonBoost12"].bind("<Enter>", OnEnterBoost12)
         dicVariable["buttonBoost12"].bind("<Leave>", OnLeaveBoost12)
         listBoost.append(12)
-    elif max(listBoost) == 12 and boostVerif["Boost13"]==True and boostIsPlaced["Boost13"]==False:
+    elif boostIsPlaced["Boost13"] == False and boostVerif["Boost13"]==True:
         boostIsPlaced["Boost13"] = True
-        buttonBoost13 = widgetBoost13()
-        dicVariable["buttonBoost13"] = buttonBoost13
-        dicVariable["columnBoost13"] = columnBoost13
+        buttonBoost13.grid(row=1, column=dicVariable[f"columnBoost13"])
         dicVariable["buttonBoost13"].bind("<Enter>", OnEnterBoost13)
         dicVariable["buttonBoost13"].bind("<Leave>", OnLeaveBoost13)
         listBoost.append(13)
-    elif max(listBoost) == 13 and boostVerif["Boost14"]==True and boostIsPlaced["Boost14"]==False:
+    elif boostIsPlaced["Boost14"] == False and boostVerif["Boost14"]==True:
         boostIsPlaced["Boost14"] = True
-        buttonBoost14 = widgetBoost14()
-        dicVariable["buttonBoost14"] = buttonBoost14
-        dicVariable["columnBoost14"] = columnBoost14
+        buttonBoost14.grid(row=1, column=dicVariable[f"columnBoost14"])
         dicVariable["buttonBoost14"].bind("<Enter>", OnEnterBoost14)
         dicVariable["buttonBoost14"].bind("<Leave>", OnLeaveBoost14)
         listBoost.append(14)
-    elif max(listBoost) == 14 and boostVerif["Boost15"]==True and boostIsPlaced["Boost15"]==False:
+    elif boostIsPlaced["Boost15"] == False and boostVerif["Boost15"]==True:
         boostIsPlaced["Boost15"] = True
-        buttonBoost15 = widgetBoost15()
-        dicVariable["buttonBoost15"] = buttonBoost15
-        dicVariable["columnBoost15"] = columnBoost15
+        buttonBoost15.grid(row=1, column=dicVariable[f"columnBoost15"])
         dicVariable["buttonBoost15"].bind("<Enter>", OnEnterBoost15)
         dicVariable["buttonBoost15"].bind("<Leave>", OnLeaveBoost15)
         listBoost.append(15)
-    elif max(listBoost) == 15 and boostVerif["Boost16"]==True and boostIsPlaced["Boost16"]==False:
+    elif boostIsPlaced["Boost16"] == False and boostVerif["Boost16"]==True:
         boostIsPlaced["Boost16"] = True
-        buttonBoost16 = widgetBoost16()
-        dicVariable["buttonBoost16"] = buttonBoost16
-        dicVariable["columnBoost16"] = columnBoost16
+        buttonBoost16.grid(row=1, column=dicVariable[f"columnBoost16"])
         dicVariable["buttonBoost16"].bind("<Enter>", OnEnterBoost16)
         dicVariable["buttonBoost16"].bind("<Leave>", OnLeaveBoost16)
         listBoost.append(16)
-    elif max(listBoost) == 16 and boostVerif["Boost17"]==True and boostIsPlaced["Boost17"]==False:
+    elif boostIsPlaced["Boost17"] == False and boostVerif["Boost17"]==True:
         boostIsPlaced["Boost17"] = True
-        buttonBoost17 = widgetBoost17()
-        dicVariable["buttonBoost17"] = buttonBoost17
-        dicVariable["columnBoost17"] = columnBoost17
+        buttonBoost17.grid(row=1, column=dicVariable[f"columnBoost17"])
         dicVariable["buttonBoost17"].bind("<Enter>", OnEnterBoost17)
         dicVariable["buttonBoost17"].bind("<Leave>", OnLeaveBoost17)
         listBoost.append(17)
-    elif max(listBoost) == 17 and boostVerif["Boost18"]==True and boostIsPlaced["Boost18"]==False:
+    elif boostIsPlaced["Boost18"] == False and boostVerif["Boost18"]==True:
         boostIsPlaced["Boost18"] = True
-        buttonBoost18 = widgetBoost18()
-        dicVariable["buttonBoost18"] = buttonBoost18
-        dicVariable["columnBoost18"] = columnBoost18
+        buttonBoost18.grid(row=1, column=dicVariable[f"columnBoost18"])
         dicVariable["buttonBoost18"].bind("<Enter>", OnEnterBoost18)
         dicVariable["buttonBoost18"].bind("<Leave>", OnLeaveBoost18)
         listBoost.append(18)
-    elif max(listBoost) == 18 and boostVerif["Boost19"]==True and boostIsPlaced["Boost19"]==False:
+    elif boostIsPlaced["Boost19"] == False and boostVerif["Boost19"]==True:
         boostIsPlaced["Boost19"] = True
-        buttonBoost19 = widgetBoost19()
-        dicVariable["buttonBoost19"] = buttonBoost19
-        dicVariable["columnBoost19"] = columnBoost19
+        buttonBoost19.grid(row=1, column=dicVariable[f"columnBoost19"])
         dicVariable["buttonBoost19"].bind("<Enter>", OnEnterBoost19)
         dicVariable["buttonBoost19"].bind("<Leave>", OnLeaveBoost19)
         listBoost.append(19)
@@ -1542,6 +1497,27 @@ def OnEnterBoost19(event):
 def OnLeaveBoost19(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
+def masquerBoost():
+    dicVariable["buttonBoost1"].grid_forget()
+    dicVariable["buttonBoost2"].grid_forget()
+    dicVariable["buttonBoost3"].grid_forget()
+    dicVariable["buttonBoost4"].grid_forget()
+    dicVariable["buttonBoost5"].grid_forget()
+    dicVariable["buttonBoost6"].grid_forget()
+    dicVariable["buttonBoost7"].grid_forget()
+    dicVariable["buttonBoost8"].grid_forget()
+    dicVariable["buttonBoost9"].grid_forget()
+    dicVariable["buttonBoost10"].grid_forget()
+    dicVariable["buttonBoost11"].grid_forget()
+    dicVariable["buttonBoost12"].grid_forget()
+    dicVariable["buttonBoost13"].grid_forget()
+    dicVariable["buttonBoost14"].grid_forget()
+    dicVariable["buttonBoost15"].grid_forget()
+    dicVariable["buttonBoost16"].grid_forget()
+    dicVariable["buttonBoost17"].grid_forget()
+    dicVariable["buttonBoost18"].grid_forget()
+    dicVariable["buttonBoost19"].grid_forget()
+
 #---------------------------------------------------------Provisoire---------------------------------------
 
 def point1k(event):
@@ -1569,7 +1545,8 @@ scoreClick=1
 score=0
 dicImageBoost={}
 listAmelioration = [1, 2, 3, 4, 5]
-listBoost = [0]
+# Maintenant listBoost sert a voir a quel boost on en est on ne supprime plus de boost dans listBoost
+listBoost = []
 rowUpgrade1 = 3
 rowUpgrade2 = 5
 rowUpgrade3 = 7
@@ -1678,12 +1655,33 @@ levelUpgrade5, buttonUpgrade5, priceUpgrade5, textUpgrade5 = widgetUpgrade5()
 
 numTransparent=creerGraphisme()
 
+buttonBoost1=widgetBoost1()
+buttonBoost2=widgetBoost2()
+buttonBoost3=widgetBoost3()
+buttonBoost4=widgetBoost4()
+buttonBoost5=widgetBoost5()
+buttonBoost6=widgetBoost6()
+buttonBoost7=widgetBoost7()
+buttonBoost8=widgetBoost8()
+buttonBoost9=widgetBoost9()
+buttonBoost10=widgetBoost10()
+buttonBoost11=widgetBoost11()
+buttonBoost12=widgetBoost12()
+buttonBoost13=widgetBoost13()
+buttonBoost14=widgetBoost14()
+buttonBoost15=widgetBoost15()
+buttonBoost16=widgetBoost16()
+buttonBoost17=widgetBoost17()
+buttonBoost18=widgetBoost18()
+buttonBoost19=widgetBoost19()
 
-dicVariable={"levelUpgrade1" : levelUpgrade1, "buttonUpgrade1" : buttonUpgrade1, "priceUpgrade1" : priceUpgrade1, "textUpgrade1" : textUpgrade1, "rowUpgrade1" : rowUpgrade1, "levelUpgrade2" : levelUpgrade2, "buttonUpgrade2" : buttonUpgrade2, "priceUpgrade2" : priceUpgrade2, "textUpgrade2" : textUpgrade2, "rowUpgrade2" : rowUpgrade2, "levelUpgrade3" : levelUpgrade3, "buttonUpgrade3" : buttonUpgrade3, "priceUpgrade3" : priceUpgrade3, "textUpgrade3" : textUpgrade3, "rowUpgrade3" : rowUpgrade3, "levelUpgrade4" : levelUpgrade4, "buttonUpgrade4" : buttonUpgrade4, "priceUpgrade4" : priceUpgrade4, "textUpgrade4" : textUpgrade4, "rowUpgrade4" : rowUpgrade4, "levelUpgrade5" : levelUpgrade5, "buttonUpgrade5" : buttonUpgrade5, "priceUpgrade5" : priceUpgrade5, "textUpgrade5" : textUpgrade5, "rowUpgrade5" : rowUpgrade5, "columnBoost1" : columnBoost1, "columnBoost2" : columnBoost2, "columnBoost3" : columnBoost3, "columnBoost4" : columnBoost4, "columnBoost5" : columnBoost5, "columnBoost6" : columnBoost6, "columnBoost7" : columnBoost7, "columnBoost8" : columnBoost8, "columnBoost9" : columnBoost9, "columnBoost10" : columnBoost10, "columnBoost11" : columnBoost11, "columnBoost12" : columnBoost12, "columnBoost13" : columnBoost13, "columnBoost14" : columnBoost14, "columnBoost15" : columnBoost15, "columnBoost16" : columnBoost16, "columnBoost17" : columnBoost17, "columnBoost18" : columnBoost18, "columnBoost19" : columnBoost19}
+
+dicVariable={"levelUpgrade1" : levelUpgrade1, "buttonUpgrade1" : buttonUpgrade1, "priceUpgrade1" : priceUpgrade1, "textUpgrade1" : textUpgrade1, "rowUpgrade1" : rowUpgrade1, "levelUpgrade2" : levelUpgrade2, "buttonUpgrade2" : buttonUpgrade2, "priceUpgrade2" : priceUpgrade2, "textUpgrade2" : textUpgrade2, "rowUpgrade2" : rowUpgrade2, "levelUpgrade3" : levelUpgrade3, "buttonUpgrade3" : buttonUpgrade3, "priceUpgrade3" : priceUpgrade3, "textUpgrade3" : textUpgrade3, "rowUpgrade3" : rowUpgrade3, "levelUpgrade4" : levelUpgrade4, "buttonUpgrade4" : buttonUpgrade4, "priceUpgrade4" : priceUpgrade4, "textUpgrade4" : textUpgrade4, "rowUpgrade4" : rowUpgrade4, "levelUpgrade5" : levelUpgrade5, "buttonUpgrade5" : buttonUpgrade5, "priceUpgrade5" : priceUpgrade5, "textUpgrade5" : textUpgrade5, "rowUpgrade5" : rowUpgrade5, "columnBoost1" : columnBoost1, "columnBoost2" : columnBoost2, "columnBoost3" : columnBoost3, "columnBoost4" : columnBoost4, "columnBoost5" : columnBoost5, "columnBoost6" : columnBoost6, "columnBoost7" : columnBoost7, "columnBoost8" : columnBoost8, "columnBoost9" : columnBoost9, "columnBoost10" : columnBoost10, "columnBoost11" : columnBoost11, "columnBoost12" : columnBoost12, "columnBoost13" : columnBoost13, "columnBoost14" : columnBoost14, "columnBoost15" : columnBoost15, "columnBoost16" : columnBoost16, "columnBoost17" : columnBoost17, "columnBoost18" : columnBoost18, "columnBoost19" : columnBoost19, "buttonBoost1": buttonBoost1, "buttonBoost2": buttonBoost2, "buttonBoost3": buttonBoost3, "buttonBoost4": buttonBoost4, "buttonBoost5": buttonBoost5, "buttonBoost6": buttonBoost6, "buttonBoost7": buttonBoost7, "buttonBoost8": buttonBoost8, "buttonBoost9": buttonBoost9, "buttonBoost10": buttonBoost10, "buttonBoost11": buttonBoost11, "buttonBoost12": buttonBoost12, "buttonBoost13": buttonBoost13, "buttonBoost14": buttonBoost14, "buttonBoost15": buttonBoost15, "buttonBoost16": buttonBoost16, "buttonBoost17": buttonBoost17, "buttonBoost18": buttonBoost18, "buttonBoost19": buttonBoost19}
 
 boostVerif={"Boost1" : False, "Boost2" : False, "Boost3" : False, "Boost4" : False, "Boost5" : False, "Boost6" : False, "Boost7" : False, "Boost8" : False, "Boost9" : False, "Boost10" : False, "Boost11" : False, "Boost12" : False, "Boost13" : False, "Boost14" : False, "Boost15" : False, "Boost16" : False, "Boost17" : False, "Boost18" : False, "Boost19" : False}
 boostIsPlaced={"Boost1" : False, "Boost2" : False, "Boost3" : False, "Boost4" : False, "Boost5" : False, "Boost6" : False, "Boost7" : False, "Boost8" : False, "Boost9" : False, "Boost10" : False, "Boost11" : False, "Boost12" : False, "Boost13" : False, "Boost14" : False, "Boost15" : False, "Boost16" : False, "Boost17" : False, "Boost18" : False, "Boost19" : False}
 
+masquerBoost()
 
 # activation commandes admin
 fenetre.bind("<Up>", point1k)
