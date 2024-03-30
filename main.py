@@ -813,6 +813,8 @@ def afficherBoost():
         dicVariable["buttonBoost19"].bind("<Enter>", OnEnterBoost19)
         dicVariable["buttonBoost19"].bind("<Leave>", OnLeaveBoost19)
         listBoost.append(19)
+    print(listBoost)
+
 def Amelioration1Clic():
     global scoreSec
     global score
@@ -1553,7 +1555,7 @@ scoreClick=1
 score=0
 dicImageBoost={}
 listAmelioration = [1, 2, 3, 4, 5]
-# Maintenant listBoost sert a voir a quel boost on en est on ne supprime plus de boost dans listBoost
+# Maintenant listBoost sert a voir a quel boost on a acheté on ne supprime plus de boost dans listBoost
 listBoost = []
 rowUpgrade1 = 3
 rowUpgrade2 = 5
