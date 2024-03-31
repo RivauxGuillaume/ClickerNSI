@@ -1714,5 +1714,4 @@ th4=threading.Thread(target=actualiserBoostVerif)
 th4.daemon=True
 th4.start()
 
-
 fenetre.mainloop()

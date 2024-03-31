@@ -20,8 +20,8 @@ https://cookieclicker.fandom.com/fr/wiki/Am%C3%A9liorations
 #Boost 10 : Prix : 55 000 Effet : Double Amelioration 2
 #Boost 11 : Prix : 120 000 Effet : Double Amelioration 4
 #Boost 12 : Prix : 550 000 Effet : Double Amelioration 3
-#Boost 13 : Prix : 600 000 Effet : Double Amelioration 4
-#Boost 14 : Prix : 600 000 Effet : Double Amelioration 2 + 1%/sec pour Amelioration 3 (par 2 Amelioration 2)
+# v Boost 13 : Prix : 600 000 Effet : Double Amelioration 4
+# v Boost 14 : Prix : 600 000 Effet : Double Amelioration 2 + 1%/sec pour Amelioration 3 (par 2 Amelioration 2)
 #Boost 15 : Prix : 999 999 Effet : + 1%/sec
 #Boost 16 : Prix : 1 300 000 Effet : Double Amelioration 5
 #Boost 17 : Prix : 5 000 000 Effet : + 1%/sec
