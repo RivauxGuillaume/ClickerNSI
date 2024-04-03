@@ -173,9 +173,30 @@ def load_picture():
     pictureBoost18 = PhotoImage(file="image/js.png")
     pictureBoost19 = PhotoImage(file="image/c#.png")
     imageTransparente = PhotoImage(file="image/transparent.png")
-    imageTest=PhotoImage(file="image/test.png")
+    hoverBoost1=PhotoImage(file="hoverBoost/hoverBoost1.png")
+    hoverBoost2=PhotoImage(file="hoverBoost/hoverBoost2.png")
+    hoverBoost3=PhotoImage(file="hoverBoost/hoverBoost3.png")
+    hoverBoost4=PhotoImage(file="hoverBoost/hoverBoost4.png")
+    hoverBoost5=PhotoImage(file="hoverBoost/hoverBoost5.png")
+    hoverBoost6=PhotoImage(file="hoverBoost/hoverBoost6.png")
+    hoverBoost7=PhotoImage(file="hoverBoost/hoverBoost7.png")
+    hoverBoost8=PhotoImage(file="hoverBoost/hoverBoost8.png")
+    hoverBoost9=PhotoImage(file="hoverBoost/hoverBoost9.png")
+    hoverBoost10=PhotoImage(file="hoverBoost/hoverBoost10.png")
+    hoverBoost11=PhotoImage(file="hoverBoost/hoverBoost11.png")
+    hoverBoost12=PhotoImage(file="hoverBoost/hoverBoost12.png")
+    hoverBoost13=PhotoImage(file="hoverBoost/hoverBoost13.png")
+    hoverBoost14=PhotoImage(file="hoverBoost/hoverBoost14.png")
+    hoverBoost15=PhotoImage(file="hoverBoost/hoverBoost15.png")
+    hoverBoost16=PhotoImage(file="hoverBoost/hoverBoost16.png")
+    hoverBoost17=PhotoImage(file="hoverBoost/hoverBoost17.png")
+    hoverBoost18=PhotoImage(file="hoverBoost/hoverBoost18.png")
+    hoverBoost19=PhotoImage(file="hoverBoost/hoverBoost19.png")
+    hoverBoost20=PhotoImage(file="hoverBoost/hoverBoost20.png")
+    hoverBoost21=PhotoImage(file="hoverBoost/hoverBoost21.png")
+    hoverBoost22=PhotoImage(file="hoverBoost/hoverBoost22.png")
 
-    return pictureUpgrade1,  pictureUpgrade2, pictureUpgrade3, pictureUpgrade4, pictureUpgrade5,  pictureUpgrade6, pictureUpgrade7, pictureUpgrade8, pictureUpgrade9, pictureUpgrade10, pictureUpgrade11, pictureUpgrade12, pictureUpgrade13, pictureUpgrade14, pictureUpgrade15, pictureUpgrade16, pictureBoost1, pictureBoost2, pictureBoost3, pictureBoost4, pictureBoost5, pictureBoost6, pictureBoost7, pictureBoost8, pictureBoost9, pictureBoost10, pictureBoost11, pictureBoost12, pictureBoost13, pictureBoost14, pictureBoost15, pictureBoost16, pictureBoost17, pictureBoost18, pictureBoost19, imageTransparente, imageTest
+    return pictureUpgrade1,  pictureUpgrade2, pictureUpgrade3, pictureUpgrade4, pictureUpgrade5,  pictureUpgrade6, pictureUpgrade7, pictureUpgrade8, pictureUpgrade9, pictureUpgrade10, pictureUpgrade11, pictureUpgrade12, pictureUpgrade13, pictureUpgrade14, pictureUpgrade15, pictureUpgrade16, pictureBoost1, pictureBoost2, pictureBoost3, pictureBoost4, pictureBoost5, pictureBoost6, pictureBoost7, pictureBoost8, pictureBoost9, pictureBoost10, pictureBoost11, pictureBoost12, pictureBoost13, pictureBoost14, pictureBoost15, pictureBoost16, pictureBoost17, pictureBoost18, pictureBoost19, imageTransparente, hoverBoost1, hoverBoost2, hoverBoost3, hoverBoost4, hoverBoost5, hoverBoost6, hoverBoost7, hoverBoost8, hoverBoost9, hoverBoost10, hoverBoost11, hoverBoost12, hoverBoost13, hoverBoost14, hoverBoost15, hoverBoost16, hoverBoost17, hoverBoost18, hoverBoost19, hoverBoost20, hoverBoost21, hoverBoost22
 
 
 def widgetUpgrade1():
@@ -436,97 +457,97 @@ def widgetUpgrade16():
 
 def widgetBoost1():
     buttonBoost1=Button(fenetre, image=pictureBoost1, bg="gray28", activebackground="gray28", command=Boost1Clic, border=0)
-    buttonBoost1.grid(row=1, column=columnBoost1)
+    buttonBoost1.grid(row=1, column=columnBoost1, rowspan=2)
     return buttonBoost1
 
 def widgetBoost2():
     buttonBoost2=Button(fenetre, image=pictureBoost2, bg="gray28", activebackground="gray28", command=Boost2Clic, border=0)
-    buttonBoost2.grid(row=1, column=columnBoost2)
+    buttonBoost2.grid(row=1, column=columnBoost2, rowspan=2)
     return buttonBoost2
 
 def widgetBoost3():
     buttonBoost3=Button(fenetre, image=pictureBoost3, bg="gray28", activebackground="gray28", command=Boost3Clic, border=0)
-    buttonBoost3.grid(row=1, column=columnBoost3)
+    buttonBoost3.grid(row=1, column=columnBoost3, rowspan=2)
     return buttonBoost3
 
 def widgetBoost4():
     buttonBoost4=Button(fenetre, image=pictureBoost4, bg="gray28", activebackground="gray28", command=Boost4Clic, border=0)
-    buttonBoost4.grid(row=1, column=columnBoost4)
+    buttonBoost4.grid(row=1, column=columnBoost4, rowspan=2)
     return buttonBoost4
 
 def widgetBoost5():
     buttonBoost5=Button(fenetre, image=pictureBoost5, bg="gray28", activebackground="gray28", command=Boost5Clic, border=0)
-    buttonBoost5.grid(row=1, column=columnBoost5)
+    buttonBoost5.grid(row=1, column=columnBoost5, rowspan=2)
     return buttonBoost5
 
 def widgetBoost6():
     buttonBoost6=Button(fenetre, image=pictureBoost6, bg="gray28", activebackground="gray28", command=Boost6Clic, border=0)
-    buttonBoost6.grid(row=1, column=columnBoost6)
+    buttonBoost6.grid(row=1, column=columnBoost6, rowspan=2)
     return buttonBoost6
 
 def widgetBoost7():
     buttonBoost7=Button(fenetre, image=pictureBoost7, bg="gray28", activebackground="gray28", command=Boost7Clic, border=0)
-    buttonBoost7.grid(row=1, column=columnBoost7)
+    buttonBoost7.grid(row=1, column=columnBoost7, rowspan=2)
     return buttonBoost7
 
 def widgetBoost8():
     buttonBoost8=Button(fenetre, image=pictureBoost8, bg="gray28", activebackground="gray28", command=Boost8Clic, border=0)
-    buttonBoost8.grid(row=1, column=columnBoost8)
+    buttonBoost8.grid(row=1, column=columnBoost8, rowspan=2)
     return buttonBoost8
 
 def widgetBoost9():
     buttonBoost9=Button(fenetre, image=pictureBoost9, bg="gray28", activebackground="gray28", command=Boost9Clic, border=0)
-    buttonBoost9.grid(row=1, column=columnBoost9)
+    buttonBoost9.grid(row=1, column=columnBoost9, rowspan=2)
     return buttonBoost9
 
 def widgetBoost10():
     buttonBoost10=Button(fenetre, image=pictureBoost10, bg="gray28", activebackground="gray28", command=Boost10Clic, border=0)
-    buttonBoost10.grid(row=1, column=columnBoost10)
+    buttonBoost10.grid(row=1, column=columnBoost10, rowspan=2)
     return buttonBoost10
 
 def widgetBoost11():
     buttonBoost11=Button(fenetre, image=pictureBoost11, bg="gray28", activebackground="gray28", command=Boost11Clic, border=0)
-    buttonBoost11.grid(row=1, column=columnBoost11)
+    buttonBoost11.grid(row=1, column=columnBoost11, rowspan=2)
     return buttonBoost11
 
 def widgetBoost12():
     buttonBoost12=Button(fenetre, image=pictureBoost12, bg="gray28", activebackground="gray28", command=Boost12Clic, border=0)
-    buttonBoost12.grid(row=1, column=columnBoost12)
+    buttonBoost12.grid(row=1, column=columnBoost12, rowspan=2)
     return buttonBoost12
 
 def widgetBoost13():
     buttonBoost13=Button(fenetre, image=pictureBoost13, bg="gray28", activebackground="gray28", command=Boost13Clic, border=0)
-    buttonBoost13.grid(row=1, column=columnBoost13)
+    buttonBoost13.grid(row=1, column=columnBoost13, rowspan=2)
     return buttonBoost13
 
 def widgetBoost14():
     buttonBoost14=Button(fenetre, image=pictureBoost14, bg="gray28", activebackground="gray28", command=Boost14Clic, border=0)
-    buttonBoost14.grid(row=1, column=columnBoost14)
+    buttonBoost14.grid(row=1, column=columnBoost14, rowspan=2)
     return buttonBoost14
 
 def widgetBoost15():
     buttonBoost15=Button(fenetre, image=pictureBoost15, bg="gray28", activebackground="gray28", command=Boost15Clic, border=0)
-    buttonBoost15.grid(row=1, column=columnBoost15)
+    buttonBoost15.grid(row=1, column=columnBoost15, rowspan=2)
     return buttonBoost15
     
 def widgetBoost16():
     buttonBoost16=Button(fenetre, image=pictureBoost16, bg="gray28", activebackground="gray28", command=Boost16Clic, border=0)
-    buttonBoost16.grid(row=1, column=columnBoost16)
+    buttonBoost16.grid(row=1, column=columnBoost16, rowspan=2)
     return buttonBoost16
 
 def widgetBoost17():
     buttonBoost17=Button(fenetre, image=pictureBoost17, bg="gray28", activebackground="gray28", command=Boost17Clic, border=0)
-    buttonBoost17.grid(row=1, column=columnBoost17)
+    buttonBoost17.grid(row=1, column=columnBoost17, rowspan=2)
     return buttonBoost17
 
 def widgetBoost18():
     buttonBoost18=Button(fenetre, image=pictureBoost18, bg="gray28", activebackground="gray28", command=Boost18Clic, border=0)
-    buttonBoost18.grid(row=1, column=columnBoost18)
+    buttonBoost18.grid(row=1, column=columnBoost18, rowspan=2)
     return buttonBoost18
 
 def widgetBoost19():
     buttonBoost19=Button(fenetre, image=pictureBoost19, bg="gray28", activebackground="gray28", command=Boost19Clic, border=0)
-    buttonBoost19.grid(row=1, column=columnBoost19)
+    buttonBoost19.grid(row=1, column=columnBoost19, rowspan=2)
     return buttonBoost19
 
 def deleteAmelioration(niveau):
@@ -701,115 +722,115 @@ def deleteBoost(niveau):
 def afficherBoost():
     if boostIsPlaced["Boost1"]==False and boostVerif["Boost1"]==True:
         boostIsPlaced["Boost1"] = True
-        buttonBoost1.grid(row=1, column=dicVariable[f"columnBoost1"])
+        buttonBoost1.grid(row=1, column=dicVariable[f"columnBoost1"], rowspan=2)
         dicVariable["buttonBoost1"].bind("<Enter>", OnEnterBoost1)
         dicVariable["buttonBoost1"].bind("<Leave>", OnLeaveBoost1)
         listBoost.append(1)
     elif boostIsPlaced["Boost2"]==False and boostVerif["Boost2"]==True:
         boostIsPlaced["Boost2"] = True
-        buttonBoost2.grid(row=1, column=dicVariable[f"columnBoost2"])
+        buttonBoost2.grid(row=1, column=dicVariable[f"columnBoost2"], rowspan=2)
         dicVariable["buttonBoost2"].bind("<Enter>", OnEnterBoost2)
         dicVariable["buttonBoost2"].bind("<Leave>", OnLeaveBoost2)
         listBoost.append(2)
     elif boostIsPlaced["Boost3"] == False and boostVerif["Boost3"]==True:
         boostIsPlaced["Boost3"] = True
-        buttonBoost3.grid(row=1, column=dicVariable[f"columnBoost3"])
+        buttonBoost3.grid(row=1, column=dicVariable[f"columnBoost3"], rowspan=2)
         dicVariable["buttonBoost3"].bind("<Enter>", OnEnterBoost3)
         dicVariable["buttonBoost3"].bind("<Leave>", OnLeaveBoost3)
         listBoost.append(3)
     elif boostIsPlaced["Boost4"] == False and boostVerif["Boost4"]==True:
         boostIsPlaced["Boost4"] = True
-        buttonBoost4.grid(row=1, column=dicVariable[f"columnBoost4"])
+        buttonBoost4.grid(row=1, column=dicVariable[f"columnBoost4"], rowspan=2)
         dicVariable["buttonBoost4"].bind("<Enter>", OnEnterBoost4)
         dicVariable["buttonBoost4"].bind("<Leave>", OnLeaveBoost4)
         listBoost.append(4)
     elif boostIsPlaced["Boost5"] == False and boostVerif["Boost5"]==True:
         boostIsPlaced["Boost5"] = True
-        buttonBoost5.grid(row=1, column=dicVariable[f"columnBoost5"])
+        buttonBoost5.grid(row=1, column=dicVariable[f"columnBoost5"], rowspan=2)
         dicVariable["buttonBoost5"].bind("<Enter>", OnEnterBoost5)
         dicVariable["buttonBoost5"].bind("<Leave>", OnLeaveBoost5)
         listBoost.append(5)
     elif boostIsPlaced["Boost6"] == False and boostVerif["Boost6"]==True:
         boostIsPlaced["Boost6"]=True
-        buttonBoost6.grid(row=1, column=dicVariable[f"columnBoost6"])
+        buttonBoost6.grid(row=1, column=dicVariable[f"columnBoost6"], rowspan=2)
         dicVariable["buttonBoost6"].bind("<Enter>", OnEnterBoost6)
         dicVariable["buttonBoost6"].bind("<Leave>", OnLeaveBoost6)
         listBoost.append(6)
     elif boostIsPlaced["Boost7"] == False and boostVerif["Boost7"]==True:
         boostIsPlaced["Boost7"] = True
-        buttonBoost7.grid(row=1, column=dicVariable[f"columnBoost7"])
+        buttonBoost7.grid(row=1, column=dicVariable[f"columnBoost7"], rowspan=2)
         dicVariable["buttonBoost7"].bind("<Enter>", OnEnterBoost7)
         dicVariable["buttonBoost7"].bind("<Leave>", OnLeaveBoost7)
         listBoost.append(7)
     elif boostIsPlaced["Boost8"] == False and boostVerif["Boost8"]==True:
         boostIsPlaced["Boost8"] = True
-        buttonBoost8.grid(row=1, column=dicVariable[f"columnBoost8"])
+        buttonBoost8.grid(row=1, column=dicVariable[f"columnBoost8"], rowspan=2)
         dicVariable["buttonBoost8"].bind("<Enter>", OnEnterBoost8)
         dicVariable["buttonBoost8"].bind("<Leave>", OnLeaveBoost8)
         listBoost.append(8)
     elif boostIsPlaced["Boost9"] == False and boostVerif["Boost9"]==True:
         boostIsPlaced["Boost9"] = True
-        buttonBoost9.grid(row=1, column=dicVariable[f"columnBoost9"])
+        buttonBoost9.grid(row=1, column=dicVariable[f"columnBoost9"], rowspan=2)
         dicVariable["buttonBoost9"].bind("<Enter>", OnEnterBoost9)
         dicVariable["buttonBoost9"].bind("<Leave>", OnLeaveBoost9)
         listBoost.append(9)
     elif boostIsPlaced["Boost10"] == False and boostVerif["Boost10"]==True:
         boostIsPlaced["Boost10"] = True
-        buttonBoost10.grid(row=1, column=dicVariable[f"columnBoost10"])
+        buttonBoost10.grid(row=1, column=dicVariable[f"columnBoost10"], rowspan=2)
         dicVariable["buttonBoost10"].bind("<Enter>", OnEnterBoost10)
         dicVariable["buttonBoost10"].bind("<Leave>", OnLeaveBoost10)
         listBoost.append(10)
     elif boostIsPlaced["Boost11"] == False and boostVerif["Boost11"]==True:
         boostIsPlaced["Boost11"] = True
-        buttonBoost11.grid(row=1, column=dicVariable[f"columnBoost11"])
+        buttonBoost11.grid(row=1, column=dicVariable[f"columnBoost11"], rowspan=2)
         dicVariable["buttonBoost11"].bind("<Enter>", OnEnterBoost11)
         dicVariable["buttonBoost11"].bind("<Leave>", OnLeaveBoost11)
         listBoost.append(11)
     elif boostIsPlaced["Boost12"] == False and boostVerif["Boost12"]==True:
         boostIsPlaced["Boost12"] = True
-        buttonBoost12.grid(row=1, column=dicVariable[f"columnBoost12"])
+        buttonBoost12.grid(row=1, column=dicVariable[f"columnBoost12"], rowspan=2)
         dicVariable["buttonBoost12"].bind("<Enter>", OnEnterBoost12)
         dicVariable["buttonBoost12"].bind("<Leave>", OnLeaveBoost12)
         listBoost.append(12)
     elif boostIsPlaced["Boost13"] == False and boostVerif["Boost13"]==True:
         boostIsPlaced["Boost13"] = True
-        buttonBoost13.grid(row=1, column=dicVariable[f"columnBoost13"])
+        buttonBoost13.grid(row=1, column=dicVariable[f"columnBoost13"], rowspan=2)
         dicVariable["buttonBoost13"].bind("<Enter>", OnEnterBoost13)
         dicVariable["buttonBoost13"].bind("<Leave>", OnLeaveBoost13)
         listBoost.append(13)
     elif boostIsPlaced["Boost14"] == False and boostVerif["Boost14"]==True:
         boostIsPlaced["Boost14"] = True
-        buttonBoost14.grid(row=1, column=dicVariable[f"columnBoost14"])
+        buttonBoost14.grid(row=1, column=dicVariable[f"columnBoost14"], rowspan=2)
         dicVariable["buttonBoost14"].bind("<Enter>", OnEnterBoost14)
         dicVariable["buttonBoost14"].bind("<Leave>", OnLeaveBoost14)
         listBoost.append(14)
     elif boostIsPlaced["Boost15"] == False and boostVerif["Boost15"]==True:
         boostIsPlaced["Boost15"] = True
-        buttonBoost15.grid(row=1, column=dicVariable[f"columnBoost15"])
+        buttonBoost15.grid(row=1, column=dicVariable[f"columnBoost15"], rowspan=2)
         dicVariable["buttonBoost15"].bind("<Enter>", OnEnterBoost15)
         dicVariable["buttonBoost15"].bind("<Leave>", OnLeaveBoost15)
         listBoost.append(15)
     elif boostIsPlaced["Boost16"] == False and boostVerif["Boost16"]==True:
         boostIsPlaced["Boost16"] = True
-        buttonBoost16.grid(row=1, column=dicVariable[f"columnBoost16"])
+        buttonBoost16.grid(row=1, column=dicVariable[f"columnBoost16"], rowspan=2)
         dicVariable["buttonBoost16"].bind("<Enter>", OnEnterBoost16)
         dicVariable["buttonBoost16"].bind("<Leave>", OnLeaveBoost16)
         listBoost.append(16)
     elif boostIsPlaced["Boost17"] == False and boostVerif["Boost17"]==True:
         boostIsPlaced["Boost17"] = True
-        buttonBoost17.grid(row=1, column=dicVariable[f"columnBoost17"])
+        buttonBoost17.grid(row=1, column=dicVariable[f"columnBoost17"], rowspan=2)
         dicVariable["buttonBoost17"].bind("<Enter>", OnEnterBoost17)
         dicVariable["buttonBoost17"].bind("<Leave>", OnLeaveBoost17)
         listBoost.append(17)
     elif boostIsPlaced["Boost18"] == False and boostVerif["Boost18"]==True:
         boostIsPlaced["Boost18"] = True
-        buttonBoost18.grid(row=1, column=dicVariable[f"columnBoost18"])
+        buttonBoost18.grid(row=1, column=dicVariable[f"columnBoost18"], rowspan=2)
         dicVariable["buttonBoost18"].bind("<Enter>", OnEnterBoost18)
         dicVariable["buttonBoost18"].bind("<Leave>", OnLeaveBoost18)
         listBoost.append(18)
     elif boostIsPlaced["Boost19"] == False and boostVerif["Boost19"]==True:
         boostIsPlaced["Boost19"] = True
-        buttonBoost19.grid(row=1, column=dicVariable[f"columnBoost19"])
+        buttonBoost19.grid(row=1, column=dicVariable[f"columnBoost19"], rowspan=2)
         dicVariable["buttonBoost19"].bind("<Enter>", OnEnterBoost19)
         dicVariable["buttonBoost19"].bind("<Leave>", OnLeaveBoost19)
         listBoost.append(19)
@@ -1359,49 +1380,49 @@ def Boost19Clic():
         th3.start()
 
 def creerGraphisme():
-    numTransparent=zone_graphique.create_image(screen_width//16*6, screen_height//16*5, anchor="nw", image=imageTransparente)
+    numTransparent=zone_graphique.create_image(screen_width//16*8.5, screen_height//16*6.5, anchor="center", image=imageTransparente)
     return numTransparent
 
 def actualiserBoostVerif():
     while True:
         time.sleep(1)
-        if boostVerif["Boost1"]==False and score > prix_boost1/2:
+        if boostVerif["Boost1"]==False and score >= prix_boost1/2:
             boostVerif["Boost1"]=True
-        if boostVerif["Boost2"]==False and score > prix_boost2/2:
+        if boostVerif["Boost2"]==False and score >= prix_boost2/2:
             boostVerif["Boost2"]=True
-        if boostVerif["Boost3"]==False and score > prix_boost3/2:
+        if boostVerif["Boost3"]==False and score >= prix_boost3/2:
             boostVerif["Boost3"]=True
-        if boostVerif["Boost4"]==False and score > prix_boost4/2:
+        if boostVerif["Boost4"]==False and score >= prix_boost4/2:
             boostVerif["Boost4"]=True
-        if boostVerif["Boost5"]==False and score > prix_boost5/2:
+        if boostVerif["Boost5"]==False and score >= prix_boost5/2:
             boostVerif["Boost5"]=True
-        if boostVerif["Boost6"]==False and score > prix_boost6/2:
+        if boostVerif["Boost6"]==False and score >= prix_boost6/2:
             boostVerif["Boost6"]=True
-        if boostVerif["Boost7"]==False and score > prix_boost7/2:
+        if boostVerif["Boost7"]==False and score >= prix_boost7/2:
             boostVerif["Boost7"]=True
-        if boostVerif["Boost8"]==False and score > prix_boost8/2:
+        if boostVerif["Boost8"]==False and score >= prix_boost8/2:
             boostVerif["Boost8"]=True
-        if boostVerif["Boost9"]==False and score > prix_boost9/2:
+        if boostVerif["Boost9"]==False and score >= prix_boost9/2:
             boostVerif["Boost9"]=True
-        if boostVerif["Boost10"]==False and score > prix_boost10/2:
+        if boostVerif["Boost10"]==False and score >= prix_boost10/2:
             boostVerif["Boost10"]=True
-        if boostVerif["Boost11"]==False and score > prix_boost11/2:
+        if boostVerif["Boost11"]==False and score >= prix_boost11/2:
             boostVerif["Boost11"]=True
-        if boostVerif["Boost12"]==False and score > prix_boost12/2:
+        if boostVerif["Boost12"]==False and score >= prix_boost12/2:
             boostVerif["Boost12"]=True
-        if boostVerif["Boost13"]==False and score > prix_boost13/2:
+        if boostVerif["Boost13"]==False and score >= prix_boost13/2:
             boostVerif["Boost13"]=True
-        if boostVerif["Boost14"]==False and score > prix_boost14/2:
+        if boostVerif["Boost14"]==False and score >= prix_boost14/2:
             boostVerif["Boost14"]=True
-        if boostVerif["Boost15"]==False and score > prix_boost15/2:
+        if boostVerif["Boost15"]==False and score >= prix_boost15/2:
             boostVerif["Boost15"]=True
-        if boostVerif["Boost16"]==False and score > prix_boost16/2:
+        if boostVerif["Boost16"]==False and score >= prix_boost16/2:
             boostVerif["Boost16"]=True
-        if boostVerif["Boost17"]==False and score > prix_boost17/2:
+        if boostVerif["Boost17"]==False and score >= prix_boost17/2:
             boostVerif["Boost17"]=True
-        if boostVerif["Boost18"]==False and score > prix_boost18/2:
+        if boostVerif["Boost18"]==False and score >= prix_boost18/2:
             boostVerif["Boost18"]=True
-        if boostVerif["Boost19"]==False and score > prix_boost19/2:
+        if boostVerif["Boost19"]==False and score >= prix_boost19/2:
             boostVerif["Boost19"]=True
         
 def prix(prix_base):
@@ -1413,97 +1434,97 @@ def prix(prix_base):
 #Images a creer et définir
 
 def OnEnterBoost1(event):
-    zone_graphique.itemconfigure(numTransparent, image=imageTest)
+    zone_graphique.itemconfigure(numTransparent, image=hoverBoost1)
 def OnLeaveBoost1(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost2(event):
-    zone_graphique.itemconfigure(numTransparent, image=imageTest)
+    zone_graphique.itemconfigure(numTransparent, image=hoverBoost2)
 def OnLeaveBoost2(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost3(event):
-    zone_graphique.itemconfigure(numTransparent, image=imageTest)
+    zone_graphique.itemconfigure(numTransparent, image=hoverBoost3)
 def OnLeaveBoost3(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost4(event):
-    zone_graphique.itemconfigure(numTransparent, image=imageTest)
+    zone_graphique.itemconfigure(numTransparent, image=hoverBoost4)
 def OnLeaveBoost4(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost5(event):
-    zone_graphique.itemconfigure(numTransparent, image=imageTest)
+    zone_graphique.itemconfigure(numTransparent, image=hoverBoost5)
 def OnLeaveBoost5(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost6(event):
-    zone_graphique.itemconfigure(numTransparent, image=imageTest)
+    zone_graphique.itemconfigure(numTransparent, image=hoverBoost6)
 def OnLeaveBoost6(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost7(event):
-    zone_graphique.itemconfigure(numTransparent, image=imageTest)
+    zone_graphique.itemconfigure(numTransparent, image=hoverBoost7)
 def OnLeaveBoost7(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost8(event):
-    zone_graphique.itemconfigure(numTransparent, image=imageTest)
+    zone_graphique.itemconfigure(numTransparent, image=hoverBoost8)
 def OnLeaveBoost8(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost9(event):
-    zone_graphique.itemconfigure(numTransparent, image=imageTest)
+    zone_graphique.itemconfigure(numTransparent, image=hoverBoost9)
 def OnLeaveBoost9(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost10(event):
-    zone_graphique.itemconfigure(numTransparent, image=imageTest)
+    zone_graphique.itemconfigure(numTransparent, image=hoverBoost10)
 def OnLeaveBoost10(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost11(event):
-    zone_graphique.itemconfigure(numTransparent, image=imageTest)
+    zone_graphique.itemconfigure(numTransparent, image=hoverBoost11)
 def OnLeaveBoost11(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost12(event):
-    zone_graphique.itemconfigure(numTransparent, image=imageTest)
+    zone_graphique.itemconfigure(numTransparent, image=hoverBoost12)
 def OnLeaveBoost12(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost13(event):
-    zone_graphique.itemconfigure(numTransparent, image=imageTest)
+    zone_graphique.itemconfigure(numTransparent, image=hoverBoost13)
 def OnLeaveBoost13(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost14(event):
-    zone_graphique.itemconfigure(numTransparent, image=imageTest)
+    zone_graphique.itemconfigure(numTransparent, image=hoverBoost14)
 def OnLeaveBoost14(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost15(event):
-    zone_graphique.itemconfigure(numTransparent, image=imageTest)
+    zone_graphique.itemconfigure(numTransparent, image=hoverBoost15)
 def OnLeaveBoost15(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost16(event):
-    zone_graphique.itemconfigure(numTransparent, image=imageTest)
+    zone_graphique.itemconfigure(numTransparent, image=hoverBoost16)
 def OnLeaveBoost16(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost17(event):
-    zone_graphique.itemconfigure(numTransparent, image=imageTest)
+    zone_graphique.itemconfigure(numTransparent, image=hoverBoost17)
 def OnLeaveBoost17(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost18(event):
-    zone_graphique.itemconfigure(numTransparent, image=imageTest)
+    zone_graphique.itemconfigure(numTransparent, image=hoverBoost18)
 def OnLeaveBoost18(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def OnEnterBoost19(event):
-    zone_graphique.itemconfigure(numTransparent, image=imageTest)
+    zone_graphique.itemconfigure(numTransparent, image=hoverBoost19)
 def OnLeaveBoost19(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
@@ -1656,7 +1677,7 @@ fenetre, screen_width, screen_height = creer_fenetre()
 zone_graphique = creer_Canvas()
 text_player, picture, button_clicker, text_last_save, text_score, text_octets_secondes, text_octets_click, button_save, button_save_quit =  cree_widget()
 
-pictureUpgrade1,  pictureUpgrade2, pictureUpgrade3, pictureUpgrade4, pictureUpgrade5,  pictureUpgrade6, pictureUpgrade7, pictureUpgrade8, pictureUpgrade9, pictureUpgrade10, pictureUpgrade11, pictureUpgrade12, pictureUpgrade13, pictureUpgrade14, pictureUpgrade15, pictureUpgrade16, pictureBoost1, pictureBoost2, pictureBoost3, pictureBoost4, pictureBoost5, pictureBoost6, pictureBoost7, pictureBoost8, pictureBoost9, pictureBoost10, pictureBoost11, pictureBoost12, pictureBoost13, pictureBoost14, pictureBoost15, pictureBoost16, pictureBoost17, pictureBoost18, pictureBoost19, imageTransparente, imageTest = load_picture()
+pictureUpgrade1,  pictureUpgrade2, pictureUpgrade3, pictureUpgrade4, pictureUpgrade5,  pictureUpgrade6, pictureUpgrade7, pictureUpgrade8, pictureUpgrade9, pictureUpgrade10, pictureUpgrade11, pictureUpgrade12, pictureUpgrade13, pictureUpgrade14, pictureUpgrade15, pictureUpgrade16, pictureBoost1, pictureBoost2, pictureBoost3, pictureBoost4, pictureBoost5, pictureBoost6, pictureBoost7, pictureBoost8, pictureBoost9, pictureBoost10, pictureBoost11, pictureBoost12, pictureBoost13, pictureBoost14, pictureBoost15, pictureBoost16, pictureBoost17, pictureBoost18, pictureBoost19, imageTransparente, hoverBoost1, hoverBoost2, hoverBoost3, hoverBoost4, hoverBoost5, hoverBoost6, hoverBoost7, hoverBoost8, hoverBoost9, hoverBoost10, hoverBoost11, hoverBoost12, hoverBoost13, hoverBoost14, hoverBoost15, hoverBoost16, hoverBoost17, hoverBoost18, hoverBoost19, hoverBoost20, hoverBoost21, hoverBoost22 = load_picture()
 levelUpgrade1, buttonUpgrade1, priceUpgrade1, textUpgrade1 = widgetUpgrade1()
 levelUpgrade2, buttonUpgrade2, priceUpgrade2, textUpgrade2 = widgetUpgrade2()
 levelUpgrade3, buttonUpgrade3, priceUpgrade3, textUpgrade3 = widgetUpgrade3()
