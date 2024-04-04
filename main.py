@@ -844,8 +844,7 @@ def Amelioration1Clic():
     if niveau_amelioration1 <= 49:
         if score >= prix_amelioration_1[niveau_amelioration1]:
             niveau_amelioration1 += 1
-            scoreSec = round(scoreSec + 0.1* multiplicateurBoost1, 1)
-            text_octets_secondes.configure(text=f"Par Seconde : {points(scoreSec)}")
+            scoreSec=scoreSec_fonction()
             score= round(score-prix_amelioration_1[niveau_amelioration1 - 1], 1)
             text_score.configure(text=f"{points(score)}")
             if niveau_amelioration1 == 50:
@@ -866,9 +865,8 @@ def Amelioration2Clic():
     if niveau_amelioration2 <= 49:
         if score >= prix_amelioration_2[niveau_amelioration2]:
             niveau_amelioration2 += 1
-            scoreSec = round(scoreSec + 2* multiplicateurBoost2, 1)
-            text_octets_secondes.configure(text=f"Par Seconde : {points(scoreSec)}")
-            score= round(score-prix_amelioration_2[niveau_amelioration2 - 1], 1)
+            scoreSec=scoreSec_fonction()
+            score = round(score-prix_amelioration_2[niveau_amelioration2 - 1], 1)
             text_score.configure(text=f"{points(score)}")
             if niveau_amelioration2 == 50:
                 levelUpgrade2.configure(text="MAX")
@@ -887,8 +885,7 @@ def Amelioration3Clic():
     if niveau_amelioration3 <= 49:
         if score >= prix_amelioration_3[niveau_amelioration3]:
             niveau_amelioration3 += 1
-            scoreSec = round(scoreSec + 8* multiplicateurBoost3, 1)
-            text_octets_secondes.configure(text=f"Par Seconde : {points(scoreSec)}")
+            scoreSec=scoreSec_fonction()
             score= round(score-prix_amelioration_3[niveau_amelioration3 - 1], 1)
             text_score.configure(text=f"{points(score)}")
             if niveau_amelioration3 == 50:
@@ -908,8 +905,7 @@ def Amelioration4Clic():
     if niveau_amelioration4 <= 49:
         if score >= prix_amelioration_4[niveau_amelioration4]:
             niveau_amelioration4 += 1
-            scoreSec = round(scoreSec + 47* multiplicateurBoost4, 1)
-            text_octets_secondes.configure(text=f"Par Seconde : {points(scoreSec)}")
+            scoreSec=scoreSec_fonction()
             score= round(score-prix_amelioration_4[niveau_amelioration4 - 1], 1)
             text_score.configure(text=f"{score}")
             if niveau_amelioration4 == 50:
@@ -929,8 +925,7 @@ def Amelioration5Clic():
     if niveau_amelioration5 <= 49:
         if score >= prix_amelioration_5[niveau_amelioration5]:
             niveau_amelioration5 += 1
-            scoreSec = round(scoreSec + 260 * multiplicateurBoost5, 1)
-            text_octets_secondes.configure(text=f"Par Seconde : {points(scoreSec)}")
+            scoreSec=scoreSec_fonction()
             score = round(score - prix_amelioration_5[niveau_amelioration5 - 1], 1)
             text_score.configure(text=f"{score}")
             if niveau_amelioration5 == 50:
@@ -949,8 +944,7 @@ def Amelioration6Clic():
     if niveau_amelioration6 <= 49:
         if score >= prix_amelioration_6[niveau_amelioration6]:
             niveau_amelioration6 += 1
-            scoreSec = round(scoreSec + 1_400, 1)
-            text_octets_secondes.configure(text=f"Par Seconde : {points(scoreSec)}")
+            scoreSec=scoreSec_fonction()
             score = round(score - prix_amelioration_6[niveau_amelioration6 - 1], 1)
             text_score.configure(text=f"{score}")
             if niveau_amelioration6 == 50:
@@ -969,8 +963,7 @@ def Amelioration7Clic():
     if niveau_amelioration7 <= 49:
         if score >= prix_amelioration_7[niveau_amelioration7]:
             niveau_amelioration7 += 1
-            scoreSec = round(scoreSec + 7_800, 1)
-            text_octets_secondes.configure(text=f"Par Seconde : {points(scoreSec)}")
+            scoreSec=scoreSec_fonction()
             score = round(score - prix_amelioration_7[niveau_amelioration7 - 1], 1)
             text_score.configure(text=f"{score}")
             if niveau_amelioration7 == 50:
@@ -989,8 +982,7 @@ def Amelioration8Clic():
     if niveau_amelioration8 <= 49:
         if score >= prix_amelioration_8[niveau_amelioration8]:
             niveau_amelioration8 += 1
-            scoreSec = round(scoreSec + 44_000, 1)
-            text_octets_secondes.configure(text=f"Par Seconde : {points(scoreSec)}")
+            scoreSec=scoreSec_fonction()
             score = round(score - prix_amelioration_8[niveau_amelioration8 - 1], 1)
             text_score.configure(text=f"{score}")
             if niveau_amelioration8 == 50:
@@ -1009,8 +1001,7 @@ def Amelioration9Clic():
     if niveau_amelioration9 <= 49:
         if score >= prix_amelioration_9[niveau_amelioration9]:
             niveau_amelioration9 += 1
-            scoreSec = round(scoreSec + 260_000, 1)
-            text_octets_secondes.configure(text=f"Par Seconde : {points(scoreSec)}")
+            scoreSec=scoreSec_fonction()
             score = round(score - prix_amelioration_9[niveau_amelioration9 - 1], 1)
             text_score.configure(text=f"{score}")
             if niveau_amelioration9 == 50:
@@ -1029,8 +1020,7 @@ def Amelioration10Clic():
     if niveau_amelioration10 <= 49:
         if score >= prix_amelioration_10[niveau_amelioration10]:
             niveau_amelioration10 += 1
-            scoreSec = round(scoreSec + 1_600_000, 1)
-            text_octets_secondes.configure(text=f"Par Seconde : {points(scoreSec)}")
+            scoreSec=scoreSec_fonction()
             score = round(score - prix_amelioration_10[niveau_amelioration10 - 1], 1)
             text_score.configure(text=f"{score}")
             if niveau_amelioration10 == 50:
@@ -1049,8 +1039,7 @@ def Amelioration11Clic():
     if niveau_amelioration11 <= 49:
         if score >= prix_amelioration_11[niveau_amelioration11]:
             niveau_amelioration11 += 1
-            scoreSec = round(scoreSec + 10_000_000, 1)
-            text_octets_secondes.configure(text=f"Par Seconde : {points(scoreSec)}")
+            scoreSec=scoreSec_fonction()
             score = round(score - prix_amelioration_11[niveau_amelioration11 - 1], 1)
             text_score.configure(text=f"{score}")
             if niveau_amelioration11 == 50:
@@ -1069,8 +1058,7 @@ def Amelioration12Clic():
     if niveau_amelioration12 <= 49:
         if score >= prix_amelioration_12[niveau_amelioration12]:
             niveau_amelioration12 += 1
-            scoreSec = round(scoreSec + 1400, 1)
-            text_octets_secondes.configure(text=f"Par Seconde : {points(scoreSec)}")
+            scoreSec=scoreSec_fonction()
             score = round(score - prix_amelioration_12[niveau_amelioration12 - 1], 1)
             text_score.configure(text=f"{score}")
             if niveau_amelioration12 == 50:
@@ -1089,8 +1077,7 @@ def Amelioration13Clic():
     if niveau_amelioration13 <= 49:
         if score >= prix_amelioration_13[niveau_amelioration13]:
             niveau_amelioration13 += 1
-            scoreSec = round(scoreSec + 430_000_000, 1)
-            text_octets_secondes.configure(text=f"Par Seconde : {points(scoreSec)}")
+            scoreSec=scoreSec_fonction()
             score = round(score - prix_amelioration_13[niveau_amelioration13 - 1], 1)
             text_score.configure(text=f"{score}")
             if niveau_amelioration13 == 50:
@@ -1109,8 +1096,7 @@ def Amelioration14Clic():
     if niveau_amelioration14 <= 49:
         if score >= prix_amelioration_14[niveau_amelioration14]:
             niveau_amelioration14 += 1
-            scoreSec = round(scoreSec + 2_900_000_000, 1)
-            text_octets_secondes.configure(text=f"Par Seconde : {points(scoreSec)}")
+            scoreSec=scoreSec_fonction()
             score = round(score - prix_amelioration_14[niveau_amelioration14 - 1], 1)
             text_score.configure(text=f"{score}")
             if niveau_amelioration14 == 50:
@@ -1129,8 +1115,7 @@ def Amelioration15Clic():
     if niveau_amelioration15 <= 49:
         if score >= prix_amelioration_15[niveau_amelioration15]:
             niveau_amelioration15 += 1
-            scoreSec = round(scoreSec + 21_000_000_000, 1)
-            text_octets_secondes.configure(text=f"Par Seconde : {points(scoreSec)}")
+            scoreSec=scoreSec_fonction()
             score = round(score - prix_amelioration_15[niveau_amelioration15 - 1], 1)
             text_score.configure(text=f"{score}")
             if niveau_amelioration15 == 50:
@@ -1149,8 +1134,7 @@ def Amelioration16Clic():
     if niveau_amelioration16 <= 49:
         if score >= prix_amelioration_16[niveau_amelioration16]:
             niveau_amelioration16 += 1
-            scoreSec = round(scoreSec + 150_000_000_000, 1)
-            text_octets_secondes.configure(text=f"Par Seconde : {points(scoreSec)}")
+            scoreSec=scoreSec_fonction()
             score = round(score - prix_amelioration_16[niveau_amelioration16 - 1], 1)
             text_score.configure(text=f"{score}")
             if niveau_amelioration16 == 50:
@@ -1316,8 +1300,8 @@ def Boost14Clic():
     global score
     if score >= prix_boost14:
         multiplicateurBoost2 = multiplicateurBoost2 * 2
-        # A Faire :for i in range(len(niveau_amelioration2//2)):
-        text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
+        if niveau_amelioration2 % 2 == 0:multiplicateurBoost3 = multiplicateurBoost3 * 1.01
+        scoreSec = scoreSec_fonction()
         score=score-prix_boost14
         text_score.configure(text=f"{score}")
         th3 = threading.Thread(target=deleteBoost, args=[14])
@@ -1327,8 +1311,8 @@ def Boost15Clic():
     global score
     global scoreSec
     if score >= prix_boost15:
-        scoreSec = scoreSec*1.01
-        text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
+        multiplicateurScoreSec = multiplicateurScoreSec * 1.01
+        scoreSec = scoreSec_fonction()
         score=score-prix_boost15
         text_score.configure(text=f"{score}")
         th3 = threading.Thread(target=deleteBoost, args=[15])
@@ -1350,8 +1334,8 @@ def Boost17Clic():
     global scoreSec
     global score
     if score >= prix_boost17:
-        scoreSec = scoreSec*1.01
-        text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
+        multiplicateurScoreSec = multiplicateurScoreSec * 1.01
+        scoreSec = scoreSec_fonction()
         score=score-prix_boost17
         text_score.configure(text=f"{score}")
         th3 = threading.Thread(target=deleteBoost, args=[17])
@@ -1549,7 +1533,15 @@ def masquerBoost():
     dicVariable["buttonBoost18"].grid_forget()
     dicVariable["buttonBoost19"].grid_forget()
 
-#---------------------------------------------------------Provisoire---------------------------------------
+def scoreSec_fonction():
+    global update_text
+    scoreSec=(niveau_amelioration1*0.1*multiplicateurBoost1 + niveau_amelioration2*2*multiplicateurBoost2 + niveau_amelioration3*8*multiplicateurBoost3 + niveau_amelioration4*47*multiplicateurBoost4 + niveau_amelioration5*260*multiplicateurBoost5 + niveau_amelioration6*1_400*multiplicateurBoost6 + niveau_amelioration7*7_800*multiplicateurBoost7 + niveau_amelioration8*44_000*multiplicateurBoost8 + niveau_amelioration9*260_000*multiplicateurBoost9 + niveau_amelioration10*1_600_000*multiplicateurBoost10 + niveau_amelioration11*10_000_000*multiplicateurBoost11 + niveau_amelioration12*65_000_000*multiplicateurBoost12 + niveau_amelioration13*430_000_000*multiplicateurBoost13 + niveau_amelioration14*2_900_000_000*multiplicateurBoost14 + niveau_amelioration15*21_000_000_000*multiplicateurBoost15 + niveau_amelioration16*160_000_000_000*multiplicateurBoost16)*multiplicateurScoreSec
+    if update_text != 0:
+        text_octets_secondes.configure(text=f"Par Seconde : {points(scoreSec)}")
+    update_text = 1
+    return scoreSec
+
+#---------------------------------------------------------Provisoire--------------------------------------------------------
 
 def point1k(event):
     global score
@@ -1571,9 +1563,7 @@ def ptpsecondes(event):
 #----------------------------------------------------------------Main-----------------------------------------------------------------------------
 
 
-scoreSec=0
-scoreClick=1
-score=0
+
 dicImageBoost={}
 listAmelioration = [1, 2, 3, 4, 5]
 # Maintenant listBoost sert a voir a quel boost on a acheté on ne supprime plus de boost dans listBoost
@@ -1668,6 +1658,29 @@ prix_boost17=5000000
 prix_boost18=6000000
 prix_boost19=6500000
 
+multiplicateurBoost1=1
+multiplicateurBoost2=1
+multiplicateurBoost3=1
+multiplicateurBoost4=1
+multiplicateurBoost5=1
+multiplicateurBoost6=1
+multiplicateurBoost7=1
+multiplicateurBoost8=1
+multiplicateurBoost9=1
+multiplicateurBoost10=1
+multiplicateurBoost11=1
+multiplicateurBoost12=1
+multiplicateurBoost13=1
+multiplicateurBoost14=1
+multiplicateurBoost15=1
+multiplicateurBoost16=1
+multiplicateurScoreSec=1
+
+update_text = 0
+scoreSec=scoreSec_fonction()
+scoreClick = 1
+score=0
+
 #a mdifier pour 1 seul écran
 fenetre_pop_up, text_popup, prenom_user, bouton_valider_popup = pop_up()
 fenetre_pop_up.mainloop()
@@ -1712,11 +1725,7 @@ dicVariable={"levelUpgrade1" : levelUpgrade1, "buttonUpgrade1" : buttonUpgrade1,
 boostVerif={"Boost1" : False, "Boost2" : False, "Boost3" : False, "Boost4" : False, "Boost5" : False, "Boost6" : False, "Boost7" : False, "Boost8" : False, "Boost9" : False, "Boost10" : False, "Boost11" : False, "Boost12" : False, "Boost13" : False, "Boost14" : False, "Boost15" : False, "Boost16" : False, "Boost17" : False, "Boost18" : False, "Boost19" : False}
 boostIsPlaced={"Boost1" : False, "Boost2" : False, "Boost3" : False, "Boost4" : False, "Boost5" : False, "Boost6" : False, "Boost7" : False, "Boost8" : False, "Boost9" : False, "Boost10" : False, "Boost11" : False, "Boost12" : False, "Boost13" : False, "Boost14" : False, "Boost15" : False, "Boost16" : False, "Boost17" : False, "Boost18" : False, "Boost19" : False}
 
-multiplicateurBoost1=1
-multiplicateurBoost2=1
-multiplicateurBoost3=1
-multiplicateurBoost4=1
-multiplicateurBoost5=1
+
 
 masquerBoost()
 
@@ -1725,11 +1734,11 @@ fenetre.bind("<Up>", point1k)
 fenetre.bind("<Left>", ptpclick)
 fenetre.bind("<Right>", ptpsecondes)
 
-
 # Gestion du multithread pour les clic/sec
 th1 = threading.Thread(target=MajScoreSec)
 th1.daemon = True
 th1.start()
+
 # Verification si on affiche le boost ou pas
 th4=threading.Thread(target=actualiserBoostVerif)
 th4.daemon=True
