@@ -137,22 +137,22 @@ def MajScoreSec():
         afficherBoost()
 
 def load_picture():
-    pictureUpgrade1 = PhotoImage(file="image/python.png")
-    pictureUpgrade2 = PhotoImage(file="image/html.png")
-    pictureUpgrade3 = PhotoImage(file="image/css.png")
-    pictureUpgrade4 = PhotoImage(file="image/js.png")
-    pictureUpgrade5 = PhotoImage(file="image/c++.png")
-    pictureUpgrade6 = PhotoImage(file="image/c#.png")
-    pictureUpgrade7 = PhotoImage(file="image/python.png")
-    pictureUpgrade8 = PhotoImage(file="image/python.png")
-    pictureUpgrade9 = PhotoImage(file="image/python.png")
+    pictureUpgrade1 = PhotoImage(file="image/assembleur.png")
+    pictureUpgrade2 = PhotoImage(file="image/mathlab.png")
+    pictureUpgrade3 = PhotoImage(file="image/haskell.png")
+    pictureUpgrade4 = PhotoImage(file="image/scala.png")
+    pictureUpgrade5 = PhotoImage(file="image/lua.png")
+    pictureUpgrade6 = PhotoImage(file="image/c++.png")
+    pictureUpgrade7 = PhotoImage(file="image/c#.png")
+    pictureUpgrade8 = PhotoImage(file="image/blueprint.png")
+    pictureUpgrade9 = PhotoImage(file="image/css.png")
     pictureUpgrade10 = PhotoImage(file="image/python.png")
-    pictureUpgrade11 = PhotoImage(file="image/python.png")
-    pictureUpgrade12 = PhotoImage(file="image/python.png")
-    pictureUpgrade13 = PhotoImage(file="image/python.png")
+    pictureUpgrade11 = PhotoImage(file="image/java.png")
+    pictureUpgrade12 = PhotoImage(file="image/js.png")
+    pictureUpgrade13 = PhotoImage(file="image/delphi.png")
     pictureUpgrade14 = PhotoImage(file="image/python.png")
-    pictureUpgrade15 = PhotoImage(file="image/python.png")
-    pictureUpgrade16 = PhotoImage(file="image/python.png")
+    pictureUpgrade15 = PhotoImage(file="image/html.png")
+    pictureUpgrade16 = PhotoImage(file="image/swift.png")
     pictureBoost1 = PhotoImage(file="image/css.png")
     pictureBoost2 = PhotoImage(file="image/html.png")
     pictureBoost3 = PhotoImage(file="image/c#.png")
@@ -834,7 +834,6 @@ def afficherBoost():
         dicVariable["buttonBoost19"].bind("<Enter>", OnEnterBoost19)
         dicVariable["buttonBoost19"].bind("<Leave>", OnLeaveBoost19)
         listBoost.append(19)
-    print(listBoost)
 
 def Amelioration1Clic():
     global scoreSec
@@ -1529,31 +1528,14 @@ def OnLeaveBoost19(event):
     zone_graphique.itemconfigure(numTransparent, image=imageTransparente)
 
 def masquerBoost():
-    dicVariable["buttonBoost1"].grid_forget()
-    dicVariable["buttonBoost2"].grid_forget()
-    dicVariable["buttonBoost3"].grid_forget()
-    dicVariable["buttonBoost4"].grid_forget()
-    dicVariable["buttonBoost5"].grid_forget()
-    dicVariable["buttonBoost6"].grid_forget()
-    dicVariable["buttonBoost7"].grid_forget()
-    dicVariable["buttonBoost8"].grid_forget()
-    dicVariable["buttonBoost9"].grid_forget()
-    dicVariable["buttonBoost10"].grid_forget()
-    dicVariable["buttonBoost11"].grid_forget()
-    dicVariable["buttonBoost12"].grid_forget()
-    dicVariable["buttonBoost13"].grid_forget()
-    dicVariable["buttonBoost14"].grid_forget()
-    dicVariable["buttonBoost15"].grid_forget()
-    dicVariable["buttonBoost16"].grid_forget()
-    dicVariable["buttonBoost17"].grid_forget()
-    dicVariable["buttonBoost18"].grid_forget()
-    dicVariable["buttonBoost19"].grid_forget()
+    for i in range(1,20):
+        dicVariable[f"buttonBoost{i}"].grid_forget()
 
 #---------------------------------------------------------Provisoire---------------------------------------
 
 def point1k(event):
     global score
-    score += 1000
+    score += 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
     text_score.configure(text=f"{score}")
 
 
