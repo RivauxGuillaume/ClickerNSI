@@ -1295,11 +1295,13 @@ def Boost13Clic():
         th3.start()
 
 def Boost14Clic():
-    global multiplicateurBoost2
     global score
+    global multiplicateurBoost2
+    global multiplicateurBoost3
     if score >= prix_boost14:
         multiplicateurBoost2 = multiplicateurBoost2 * 2
-        if niveau_amelioration2 % 2 == 0:multiplicateurBoost3 = multiplicateurBoost3 * 1.01
+        if niveau_amelioration2 % 2 == 0:
+            multiplicateurBoost3 = multiplicateurBoost3 * 1.01
         scoreSec = scoreSec_fonction()
         score=score-prix_boost14
         text_score.configure(text=f"{score}")
@@ -1309,6 +1311,7 @@ def Boost14Clic():
 def Boost15Clic():
     global score
     global scoreSec
+    global multiplicateurScoreSec
     if score >= prix_boost15:
         multiplicateurScoreSec = multiplicateurScoreSec * 1.01
         scoreSec = scoreSec_fonction()
@@ -1332,6 +1335,7 @@ def Boost16Clic():
 def Boost17Clic():
     global scoreSec
     global score
+    global multiplicateurScoreSec
     if score >= prix_boost17:
         multiplicateurScoreSec = multiplicateurScoreSec * 1.01
         scoreSec = scoreSec_fonction()
