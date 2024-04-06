@@ -1,5 +1,5 @@
 import time
-from tkinter import Tk, Canvas, Label, Button, Text, PhotoImage
+from tkinter import *
 import threading
 from PIL import *
 import datetime
@@ -23,7 +23,22 @@ def creer_Canvas():
     zone_graphique.grid(row=0, column=0, rowspan=15, columnspan=15)
 
     return zone_graphique
+"""
+def creerItemUpgrade():
+    frameUpgrade=Frame(fenetre, width=650, height=800)
+    frameUpgrade.grid(row=1, column=9, rowspan=16, columnspan=7)
 
+    zoneUpgrade = Canvas(frameUpgrade, width=650, height=800, bg="blue", border=0, borderwidth=0, scrollregion=(0,0,650,1500))
+
+    vertibar = Scrollbar(frameUpgrade,orient="vertical")
+    vertibar.pack(side="right", fill="y")
+    vertibar.config(command=zoneUpgrade.yview)
+
+    zoneUpgrade.config(yscrollcommand=vertibar.set)
+    zoneUpgrade.pack(expand=True, side="left", fill="both")
+
+    return frameUpgrade, zoneUpgrade, vertibar
+"""
 def points(pt):
     terminaison = ["octets", "Ko", "Mo", "Go", "To", "Po", "Eo", "Zo", "Yo", "Ro", "Qo"]
     al="abcdefghijklmnopqrstuvwxyz"
@@ -1674,6 +1689,9 @@ fenetre_pop_up.mainloop()
 lastSave = start() #a modifier pour recup dans le fichier sauvegarde
 fenetre, screen_width, screen_height = creer_fenetre()
 zone_graphique = creer_Canvas()
+"""
+frameUpgrade, zoneUpgrade, vertibar = creerItemUpgrade()
+"""
 text_player, picture, button_clicker, text_last_save, text_score, text_octets_secondes, text_octets_click, button_save, button_save_quit =  cree_widget()
 
 pictureUpgrade1,  pictureUpgrade2, pictureUpgrade3, pictureUpgrade4, pictureUpgrade5,  pictureUpgrade6, pictureUpgrade7, pictureUpgrade8, pictureUpgrade9, pictureUpgrade10, pictureUpgrade11, pictureUpgrade12, pictureUpgrade13, pictureUpgrade14, pictureUpgrade15, pictureUpgrade16, pictureBoost1, pictureBoost2, pictureBoost3, pictureBoost4, pictureBoost5, pictureBoost6, pictureBoost7, pictureBoost8, pictureBoost9, pictureBoost10, pictureBoost11, pictureBoost12, pictureBoost13, pictureBoost14, pictureBoost15, pictureBoost16, pictureBoost17, pictureBoost18, pictureBoost19, imageTransparente, hoverBoost1, hoverBoost2, hoverBoost3, hoverBoost4, hoverBoost5, hoverBoost6, hoverBoost7, hoverBoost8, hoverBoost9, hoverBoost10, hoverBoost11, hoverBoost12, hoverBoost13, hoverBoost14, hoverBoost15, hoverBoost16, hoverBoost17, hoverBoost18, hoverBoost19, hoverBoost20, hoverBoost21, hoverBoost22 = load_picture()
