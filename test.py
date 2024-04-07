@@ -20,40 +20,20 @@ def points(points):
 
 print(points(10000000))
 
-
 from tkinter import *
 
-window_screen = Tk()
-window_screen.title('Codeunderscored')
+root=Tk()
+frame=Frame(root,width=300,height=300)
+frame.grid(row=0,column=0)
+canvas=Canvas(frame,bg='#FFFFFF',width=300,height=300,scrollregion=(0,0,500,500))
+hbar=Scrollbar(frame,orient=HORIZONTAL)
+hbar.pack(side=BOTTOM,fill=X)
+hbar.config(command=canvas.xview)
+vbar=Scrollbar(frame,orient=VERTICAL)
+vbar.pack(side=RIGHT,fill=Y)
+vbar.config(command=canvas.yview)
+canvas.config(width=300,height=300)
+canvas.config(xscrollcommand=hbar.set, yscrollcommand=vbar.set)
+canvas.pack(side=LEFT,expand=True,fill=BOTH)
 
-theFrame = Frame(
-    window_screen,
-    width=500,
-    height=400
-    )
-theFrame.pack(expand=True, fill=BOTH)
-
-theCanvas=Canvas(
-    theFrame,
-    bg='#4A7A8C',
-    width=500,
-    height=400,
-    scrollregion=(0,0,700,700)
-    )
-
-vertibar=Scrollbar(
-    theFrame,
-    orient=VERTICAL
-    )
-vertibar.pack(side=RIGHT,fill=Y)
-vertibar.config(command=theCanvas.yview)
-
-
-theCanvas.config(width=500,height=400)
-
-theCanvas.config(
-    yscrollcommand=vertibar.set
-    )
-theCanvas.pack(expand=True,side=LEFT,fill=BOTH)
-
-window_screen.mainloop()
+root.mainloop()
