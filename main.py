@@ -24,6 +24,27 @@ def creer_Canvas():
 
     return zone_graphique
 
+def creerItemUpgrade():
+
+    frame_canvas = Frame(fenetre)
+    frame_canvas.grid(row=5, column=10,rowspan=2, columnspan=2, sticky='nw')
+
+    canvas = Canvas(frame_canvas, bg="yellow")
+    canvas.grid(row=0, column=0, sticky="news")
+
+    vsb = Scrollbar(frame_canvas, orient="vertical", command=canvas.yview)
+    vsb.grid(row=0, column=1, sticky='ns')
+    canvas.configure(yscrollcommand=vsb.set)
+
+    frame_buttons = Frame(canvas, bg="blue")
+    canvas.create_window((0, 0), window=frame_buttons, anchor='nw')
+
+    btn1=Button(frame_buttons, width=50, height=200).place(x=50,y=50)
+
+    canvas.config(scrollregion=canvas.bbox("all"))
+
+    return frame_canvas, canvas, vsb
+
 def points(pt):
     terminaison = ["octets", "Ko", "Mo", "Go", "To", "Po", "Eo", "Zo", "Yo", "Ro", "Qo"]
     al="abcdefghijklmnopqrstuvwxyz"
@@ -43,7 +64,7 @@ def points(pt):
     pt = round(pt, 2)
     texte = f"{pt} {terminaison[k]}"
     return(texte)
-        
+
 
 def cree_widget():
     # Joueur qui joue
@@ -528,7 +549,7 @@ def widgetBoost15():
     buttonBoost15=Button(fenetre, image=pictureBoost15, bg="gray28", activebackground="gray28", command=Boost15Clic, border=0)
     buttonBoost15.grid(row=1, column=columnBoost15, rowspan=2)
     return buttonBoost15
-    
+
 def widgetBoost16():
     buttonBoost16=Button(fenetre, image=pictureBoost16, bg="gray28", activebackground="gray28", command=Boost16Clic, border=0)
     buttonBoost16.grid(row=1, column=columnBoost16, rowspan=2)
@@ -1410,7 +1431,7 @@ def actualiserBoostVerif():
             boostVerif["Boost18"]=True
         if boostVerif["Boost19"]==False and score >= prix_boost19/2:
             boostVerif["Boost19"]=True
-        
+
 def prix(prix_base):
     a = [prix_base]
     for i in range(50):
@@ -1530,7 +1551,7 @@ def scoreSec_fonction():
 
 def point1k(event):
     global score
-    score += 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    score += 100
     text_score.configure(text=f"{score}")
 
 
@@ -1673,9 +1694,9 @@ fenetre_pop_up.mainloop()
 lastSave = start() #a modifier pour recup dans le fichier sauvegarde
 fenetre, screen_width, screen_height = creer_fenetre()
 zone_graphique = creer_Canvas()
-"""
-frameUpgrade, zoneUpgrade, vertibar = creerItemUpgrade()
-"""
+
+frame_canvas, canvas, vsb = creerItemUpgrade()
+
 fenetre.update()
 text_player, picture, button_clicker, text_last_save, text_score, text_octets_secondes, text_octets_click, button_save, button_save_quit =  cree_widget()
 
@@ -1732,6 +1753,7 @@ th1.start()
 th4=threading.Thread(target=actualiserBoostVerif)
 th4.daemon=True
 th4.start()
+
 fenetre.mainloop()
 
 #fin du prog
