@@ -23,19 +23,7 @@ def creer_Canvas():
     zone_graphique.grid(row=0, column=0, rowspan=15, columnspan=15)
 
     return zone_graphique
-"""
-def creerItemUpgrade():
-    frameUpgrade=Frame(fenetre, width=650, height=800)
-    frameUpgrade.grid(row=1, column=9, rowspan=16, columnspan=7)
-    zoneUpgrade = Canvas(frameUpgrade, width=650, height=800, bg="blue", border=0, borderwidth=0, scrollregion=(0,0,650,1500))
-    vertibar = Scrollbar(frameUpgrade,orient=VERTICAL)
-    vertibar.pack(side=RIGHT, fill=Y)
-    vertibar.config(command=zoneUpgrade.yview)
-    zoneUpgrade.config(width=650, height=800)
-    zoneUpgrade.config(yscrollcommand=vertibar.set)
-    zoneUpgrade.pack(side=LEFT, expand=True, fill=BOTH)
-    return frameUpgrade, zoneUpgrade, vertibar
-"""
+
 def points(pt):
     terminaison = ["octets", "Ko", "Mo", "Go", "To", "Po", "Eo", "Zo", "Yo", "Ro", "Qo"]
     al="abcdefghijklmnopqrstuvwxyz"
@@ -1744,9 +1732,6 @@ th1.start()
 th4=threading.Thread(target=actualiserBoostVerif)
 th4.daemon=True
 th4.start()
-"""
-zoneUpgrade.bind('<Configure>', lambda e: zoneUpgrade.configure(scrollregion=zoneUpgrade.bbox("all"))) # Actualiser la scrollBar
-"""
 fenetre.mainloop()
 
 #fin du prog
