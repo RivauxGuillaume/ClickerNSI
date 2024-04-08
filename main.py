@@ -60,7 +60,7 @@ def cree_widget():
     text_last_save.grid(row=13, column=1, columnspan=4)
 
     # Text score
-    text_score=Label(fenetre, text=f"{score}", bg="gray28", fg="white")
+    text_score=Label(fenetre, text=f"{points(score)}", bg="gray28", fg="white")
     text_score.grid(row=1, column=7, columnspan=3)
 
     # Text octets/secondes
@@ -82,16 +82,103 @@ def cree_widget():
     return text_player, picture, button_clicker, text_last_save, text_score, text_octets_secondes, text_octets_click, button_save, button_save_quit     #pour que le programmme fonctionne, on est obligé de return la photo
 
 def save():
-    pass
+    global score, scoreClick, scoreSec, niveau_amelioration1, niveau_amelioration2, niveau_amelioration3, niveau_amelioration4, niveau_amelioration5, niveau_amelioration6, niveau_amelioration7, niveau_amelioration8, niveau_amelioration9, niveau_amelioration10, niveau_amelioration11, niveau_amelioration12, niveau_amelioration13, niveau_amelioration14, niveau_amelioration15, niveau_amelioration16, listboostBought
+    savefile = open("save.txt", "r", encoding="utf-8")
+    textRead = savefile.readlines()
+    savefile.close()
+    savefile = open("save.txt", "w", encoding="utf-8")
+    textWrite = ""
+    for person in textRead:
+        person = person[:-1].split(",")
+        user = person[0]
+        user_lastSave = person[1]
+        user_score = person[2]
+        user_scoreClick = person[3]
+        user_scoreSec = person[4]
+        user_niveau_amelioration1 = person[5]
+        user_niveau_amelioration2 = person[6]
+        user_niveau_amelioration3 = person[7]
+        user_niveau_amelioration4 = person[8]
+        user_niveau_amelioration5 = person[9]
+        user_niveau_amelioration6 = person[10]
+        user_niveau_amelioration7 = person[11]
+        user_niveau_amelioration8 = person[12]
+        user_niveau_amelioration9 = person[13]
+        user_niveau_amelioration10 = person[14]
+        user_niveau_amelioration11 = person[15]
+        user_niveau_amelioration12 = person[16]
+        user_niveau_amelioration13 = person[17]
+        user_niveau_amelioration14 = person[18]
+        user_niveau_amelioration15 = person[19]
+        user_niveau_amelioration16 = person[20]
+        user_listboostBought = person[21]
+        if user == joueur:
+            user_lastSave = datetime.datetime.now().strftime('%a %d/%m/%y %H:%M')
+            user_score = score
+            user_scoreClick = scoreClick
+            user_scoreSec = scoreSec
+            user_niveau_amelioration1 = niveau_amelioration1
+            user_niveau_amelioration2 = niveau_amelioration2
+            user_niveau_amelioration3 = niveau_amelioration3
+            user_niveau_amelioration4 = niveau_amelioration4
+            user_niveau_amelioration5 = niveau_amelioration5
+            user_niveau_amelioration6 = niveau_amelioration6
+            user_niveau_amelioration7 = niveau_amelioration7
+            user_niveau_amelioration8 = niveau_amelioration8
+            user_niveau_amelioration9 = niveau_amelioration9
+            user_niveau_amelioration10 = niveau_amelioration10
+            user_niveau_amelioration11 = niveau_amelioration11
+            user_niveau_amelioration12 = niveau_amelioration12
+            user_niveau_amelioration13 = niveau_amelioration13
+            user_niveau_amelioration14 = niveau_amelioration14
+            user_niveau_amelioration15 = niveau_amelioration15
+            user_niveau_amelioration16 = niveau_amelioration16
+            user_listboostBought = listboostBought
+        textWrite = textWrite + f"{user},{user_lastSave},{user_score},{user_scoreClick},{user_scoreSec},{user_niveau_amelioration1},{user_niveau_amelioration2},{user_niveau_amelioration3},{user_niveau_amelioration4},{user_niveau_amelioration5},{user_niveau_amelioration6},{user_niveau_amelioration7},{user_niveau_amelioration8},{user_niveau_amelioration9},{user_niveau_amelioration10},{user_niveau_amelioration11},{user_niveau_amelioration12},{user_niveau_amelioration13},{user_niveau_amelioration14},{user_niveau_amelioration15},{user_niveau_amelioration16},{user_listboostBought}" + "\n"
+    if textRead == []:
+        textWrite = f"{joueur},{datetime.datetime.now().strftime('%a %d/%m/%y %H:%M')},{score},{scoreClick},{scoreSec},{niveau_amelioration1},{niveau_amelioration2},{niveau_amelioration3},{niveau_amelioration4},{niveau_amelioration5},{niveau_amelioration6},{niveau_amelioration7},{niveau_amelioration8},{niveau_amelioration9},{niveau_amelioration10},{niveau_amelioration11},{niveau_amelioration12},{niveau_amelioration13},{niveau_amelioration14},{niveau_amelioration15},{niveau_amelioration16},{listboostBought}\n"
+    print(listboostBought)
+    savefile.write(textWrite)
+    savefile.close()
+
 
 def save_and_quit():
     save()
     fenetre.destroy()
 
-def start():
-    lastSave = datetime.datetime.now().strftime('%a %d/%m/%y %H:%M') # à modifié pour avoir la dernière datetime a récuperer dans le fichier de sauvegarde
-
-    return lastSave
+def start(joueur):
+    savefile = open("save.txt", "r", encoding="utf-8")
+    people = savefile.readlines()
+    lastSave = "pas de sauvegarde\neffectué"
+    for person in people:
+        person = person[:-1].split(",")
+        if person[0] == joueur:
+            lastSave = person[1]
+            score = person[2]
+            scoreClick = person[3]
+            scoreSec = person[4]
+            niveau_amelioration1 = person[5]
+            niveau_amelioration2 = person[6]
+            niveau_amelioration3 = person[7]
+            niveau_amelioration4 = person[8]
+            niveau_amelioration5 = person[9]
+            niveau_amelioration6 = person[10]
+            niveau_amelioration7 = person[11]
+            niveau_amelioration8 = person[12]
+            niveau_amelioration9 = person[13]
+            niveau_amelioration10 = person[14]
+            niveau_amelioration11 = person[15]
+            niveau_amelioration12 = person[16]
+            niveau_amelioration13 = person[17]
+            niveau_amelioration14 = person[18]
+            niveau_amelioration15 = person[19]
+            niveau_amelioration16 = person[20]
+            listboostBought = person[21]
+    savefile.close()
+    if people != []:
+        return lastSave, float(score), float(scoreClick), float(scoreSec), int(niveau_amelioration1), int(niveau_amelioration2), int(niveau_amelioration3), int(niveau_amelioration4), int(niveau_amelioration5), int(niveau_amelioration6), int(niveau_amelioration7), int(niveau_amelioration8), int(niveau_amelioration9), int(niveau_amelioration10), int(niveau_amelioration11), int(niveau_amelioration12), int(niveau_amelioration13), int(niveau_amelioration14), int(niveau_amelioration15), int(niveau_amelioration16), listboostBought
+    else:
+        return lastSave, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, []
 
 def pop_up():
     fenetre_pop_up = Tk()
@@ -201,13 +288,13 @@ def load_picture():
 
 def widgetUpgrade1():
     global pictureUpgrade1
-    levelUpgrade1 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
+    levelUpgrade1 = Label(fenetre, text=niveau_amelioration1, bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade1.grid(row=rowUpgrade1, column=10, rowspan=2)
 
     buttonUpgrade1 = Button(fenetre, image=pictureUpgrade1, bg="gray28", activebackground="gray28", command=Amelioration1Clic, bd=0)
     buttonUpgrade1.grid(row=rowUpgrade1, column=11, rowspan=2)
 
-    priceUpgrade1 = Label(fenetre, text=f"prix : {points(prix_amelioration_1[0])}", bg="gray28", fg="white")
+    priceUpgrade1 = Label(fenetre, text=f"prix : {points(prix_amelioration_1[niveau_amelioration1])}", bg="gray28", fg="white")
     priceUpgrade1.grid(row=rowUpgrade1, column=12, rowspan=2)
 
     textUpgrade1 = Label(fenetre, text=f"augmente de {points(0.1)}\nle nombre d'octets\npar Seconde", bg="gray28", fg="white", font="Helvetica 10")
@@ -216,13 +303,13 @@ def widgetUpgrade1():
 
 def widgetUpgrade2():
     global pictureUpgrade2
-    levelUpgrade2 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
+    levelUpgrade2 = Label(fenetre, text=niveau_amelioration2, bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade2.grid(row=rowUpgrade2, column=10, rowspan=2)
 
     buttonUpgrade2 = Button(fenetre, image=pictureUpgrade2, bg="gray28", activebackground="gray28", command=Amelioration2Clic, bd=0)
     buttonUpgrade2.grid(row=rowUpgrade2, column=11, rowspan=2)
 
-    priceUpgrade2 = Label(fenetre, text=f"prix : {points(prix_amelioration_2[0])}", bg="gray28", fg="white")
+    priceUpgrade2 = Label(fenetre, text=f"prix : {points(prix_amelioration_2[niveau_amelioration2])}", bg="gray28", fg="white")
     priceUpgrade2.grid(row=rowUpgrade2, column=12, rowspan=2)
 
     textUpgrade2 = Label(fenetre, text=f"augmente de {points(2)}\nle nombre d'octets\npar seconde", bg="gray28", fg="white", font="Helvetica 10")
@@ -232,13 +319,13 @@ def widgetUpgrade2():
 
 def widgetUpgrade3():
     global pictureUpgrade3
-    levelUpgrade3 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
+    levelUpgrade3 = Label(fenetre, text=niveau_amelioration3, bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade3.grid(row=rowUpgrade3, column=10, rowspan=2)
 
     buttonUpgrade3 = Button(fenetre, image=pictureUpgrade3, bg="gray28", activebackground="gray28", command=Amelioration3Clic, bd=0)
     buttonUpgrade3.grid(row=rowUpgrade3, column=11, rowspan=2)
 
-    priceUpgrade3 = Label(fenetre, text=f"prix : {points(prix_amelioration_3[0])}", bg="gray28", fg="white")
+    priceUpgrade3 = Label(fenetre, text=f"prix : {points(prix_amelioration_3[niveau_amelioration3])}", bg="gray28", fg="white")
     priceUpgrade3.grid(row=rowUpgrade3, column=12, rowspan=2)
 
     textUpgrade3 = Label(fenetre, text=f"augmente de {points(8)}\nle nombre d'octets\npar seconde", bg="gray28", fg="white", font="Helvetica 10")
@@ -248,13 +335,13 @@ def widgetUpgrade3():
 
 def widgetUpgrade4():
     global pictureUpgrade4
-    levelUpgrade4 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
+    levelUpgrade4 = Label(fenetre, text=niveau_amelioration4, bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade4.grid(row=rowUpgrade4, column=10, rowspan=2)
 
     buttonUpgrade4 = Button(fenetre, image=pictureUpgrade4, bg="gray28", activebackground="gray28", command=Amelioration4Clic, bd=0)
     buttonUpgrade4.grid(row=rowUpgrade4, column=11, rowspan=2)
 
-    priceUpgrade4 = Label(fenetre, text=f"prix : {points(prix_amelioration_4[0])}", bg="gray28", fg="white")
+    priceUpgrade4 = Label(fenetre, text=f"prix : {points(prix_amelioration_4[niveau_amelioration4])}", bg="gray28", fg="white")
     priceUpgrade4.grid(row=rowUpgrade4, column=12, rowspan=2)
 
     textUpgrade4 = Label(fenetre, text=f"augmente de {points(47)}\nle nombre d'octets\npar seconde", bg="gray28", fg="white", font="Helvetica 10")
@@ -264,13 +351,13 @@ def widgetUpgrade4():
 
 def widgetUpgrade5():
     global pictureUpgrade5
-    levelUpgrade5 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
+    levelUpgrade5 = Label(fenetre, text=niveau_amelioration5, bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade5.grid(row=rowUpgrade5, column=10, rowspan=2)
 
     buttonUpgrade5 = Button(fenetre, image=pictureUpgrade5, bg="gray28", activebackground="gray28", command=Amelioration5Clic, bd=0)
     buttonUpgrade5.grid(row=rowUpgrade5, column=11, rowspan=2)
 
-    priceUpgrade5 = Label(fenetre, text=f"prix : {points(prix_amelioration_5[0])}", bg="gray28", fg="white")
+    priceUpgrade5 = Label(fenetre, text=f"prix : {points(prix_amelioration_5[niveau_amelioration5])}", bg="gray28", fg="white")
     priceUpgrade5.grid(row=rowUpgrade5, column=12, rowspan=2)
 
     textUpgrade5 = Label(fenetre, text=f"augmente de {points(260)}\nle nombre d'octets\npar seconde", bg="gray28", fg="white", font="Helvetica 10")
@@ -280,13 +367,13 @@ def widgetUpgrade5():
 
 def widgetUpgrade6():
     global pictureUpgrade6
-    levelUpgrade6 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
+    levelUpgrade6 = Label(fenetre, text=niveau_amelioration6, bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade6.grid(row=rowUpgrade6, column=10, rowspan=2)
 
     buttonUpgrade6 = Button(fenetre, image=pictureUpgrade6, bg="gray28", activebackground="gray28", command=Amelioration6Clic, bd=0)
     buttonUpgrade6.grid(row=rowUpgrade6, column=11, rowspan=2)
 
-    priceUpgrade6 = Label(fenetre, text=f"prix : {points(prix_amelioration_6[0])}", bg="gray28", fg="white")
+    priceUpgrade6 = Label(fenetre, text=f"prix : {points(prix_amelioration_6[niveau_amelioration6])}", bg="gray28", fg="white")
     priceUpgrade6.grid(row=rowUpgrade6, column=12, rowspan=2)
 
     textUpgrade6 = Label(fenetre, text=f"augmente de {points(1_400)}\nle nombre d'octets\npar seconde", bg="gray28", fg="white", font="Helvetica 10")
@@ -296,13 +383,13 @@ def widgetUpgrade6():
 
 def widgetUpgrade7():
     global pictureUpgrade7
-    levelUpgrade7 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
+    levelUpgrade7 = Label(fenetre, text=niveau_amelioration7, bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade7.grid(row=rowUpgrade7, column=10, rowspan=2)
 
     buttonUpgrade7 = Button(fenetre, image=pictureUpgrade7, bg="gray28", activebackground="gray28", command=Amelioration7Clic, bd=0)
     buttonUpgrade7.grid(row=rowUpgrade7, column=11, rowspan=2)
 
-    priceUpgrade7 = Label(fenetre, text=f"prix : {points(prix_amelioration_7[0])}", bg="gray28", fg="white")
+    priceUpgrade7 = Label(fenetre, text=f"prix : {points(prix_amelioration_7[7])}", bg="gray28", fg="white")
     priceUpgrade7.grid(row=rowUpgrade7, column=12, rowspan=2)
 
     textUpgrade7 = Label(fenetre, text=f"augmente de {points(7_800)}\nle nombre d'octets\npar seconde", bg="gray28", fg="white", font="Helvetica 10")
@@ -312,13 +399,13 @@ def widgetUpgrade7():
 
 def widgetUpgrade8():
     global pictureUpgrade8
-    levelUpgrade8 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
+    levelUpgrade8 = Label(fenetre, text=niveau_amelioration8, bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade8.grid(row=rowUpgrade8, column=10, rowspan=2)
 
     buttonUpgrade8 = Button(fenetre, image=pictureUpgrade8, bg="gray28", activebackground="gray28", command=Amelioration8Clic, bd=0)
     buttonUpgrade8.grid(row=rowUpgrade8, column=11, rowspan=2)
 
-    priceUpgrade8 = Label(fenetre, text=f"prix : {points(prix_amelioration_8[0])}", bg="gray28", fg="white")
+    priceUpgrade8 = Label(fenetre, text=f"prix : {points(prix_amelioration_8[niveau_amelioration8])}", bg="gray28", fg="white")
     priceUpgrade8.grid(row=rowUpgrade8, column=12, rowspan=2)
 
     textUpgrade8 = Label(fenetre, text=f"augmente de {points(44_000)}\nle nombre d'octets\npar seconde", bg="gray28", fg="white", font="Helvetica 10")
@@ -328,13 +415,13 @@ def widgetUpgrade8():
 
 def widgetUpgrade9():
     global pictureUpgrade9
-    levelUpgrade9 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
+    levelUpgrade9 = Label(fenetre, text=niveau_amelioration9, bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade9.grid(row=rowUpgrade9, column=10, rowspan=2)
 
     buttonUpgrade9 = Button(fenetre, image=pictureUpgrade9, bg="gray28", activebackground="gray28", command=Amelioration9Clic, bd=0)
     buttonUpgrade9.grid(row=rowUpgrade9, column=11, rowspan=2)
 
-    priceUpgrade9 = Label(fenetre, text=f"prix : {points(prix_amelioration_9[0])}", bg="gray28", fg="white")
+    priceUpgrade9 = Label(fenetre, text=f"prix : {points(prix_amelioration_9[niveau_amelioration9])}", bg="gray28", fg="white")
     priceUpgrade9.grid(row=rowUpgrade9, column=12, rowspan=2)
 
     textUpgrade9 = Label(fenetre, text=f"augmente de {points(260_000)}\nle nombre d'octets\npar seconde", bg="gray28", fg="white", font="Helvetica 10")
@@ -344,13 +431,13 @@ def widgetUpgrade9():
 
 def widgetUpgrade10():
     global pictureUpgrade10
-    levelUpgrade10 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
+    levelUpgrade10 = Label(fenetre, text=niveau_amelioration10, bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade10.grid(row=rowUpgrade10, column=10, rowspan=2)
 
     buttonUpgrade10 = Button(fenetre, image=pictureUpgrade10, bg="gray28", activebackground="gray28", command=Amelioration10Clic, bd=0)
     buttonUpgrade10.grid(row=rowUpgrade10, column=11, rowspan=2)
 
-    priceUpgrade10 = Label(fenetre, text=f"prix : {points(prix_amelioration_10[0])}", bg="gray28", fg="white")
+    priceUpgrade10 = Label(fenetre, text=f"prix : {points(prix_amelioration_10[niveau_amelioration10])}", bg="gray28", fg="white")
     priceUpgrade10.grid(row=rowUpgrade10, column=12, rowspan=2)
 
     textUpgrade10 = Label(fenetre, text=f"augmente de {points(1_600_000)}\nle nombre d'octets\npar seconde", bg="gray28", fg="white", font="Helvetica 10")
@@ -360,13 +447,13 @@ def widgetUpgrade10():
 
 def widgetUpgrade11():
     global pictureUpgrade11
-    levelUpgrade11 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
+    levelUpgrade11 = Label(fenetre, text=niveau_amelioration11, bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade11.grid(row=rowUpgrade11, column=10, rowspan=2)
 
     buttonUpgrade11 = Button(fenetre, image=pictureUpgrade11, bg="gray28", activebackground="gray28", command=Amelioration11Clic, bd=0)
     buttonUpgrade11.grid(row=rowUpgrade11, column=11, rowspan=2)
 
-    priceUpgrade11 = Label(fenetre, text=f"prix : {points(prix_amelioration_11[0])}", bg="gray28", fg="white")
+    priceUpgrade11 = Label(fenetre, text=f"prix : {points(prix_amelioration_11[niveau_amelioration11])}", bg="gray28", fg="white")
     priceUpgrade11.grid(row=rowUpgrade11, column=12, rowspan=2)
 
     textUpgrade11 = Label(fenetre, text=f"augmente de {points(10_000_000)}\nle nombre d'octets\npar seconde", bg="gray28", fg="white", font="Helvetica 10")
@@ -376,13 +463,13 @@ def widgetUpgrade11():
 
 def widgetUpgrade12():
     global pictureUpgrade12
-    levelUpgrade12 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
+    levelUpgrade12 = Label(fenetre, text=niveau_amelioration12, bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade12.grid(row=rowUpgrade12, column=10, rowspan=2)
 
     buttonUpgrade12 = Button(fenetre, image=pictureUpgrade12, bg="gray28", activebackground="gray28", command=Amelioration12Clic, bd=0)
     buttonUpgrade12.grid(row=rowUpgrade12, column=11, rowspan=2)
 
-    priceUpgrade12 = Label(fenetre, text=f"prix : {points(prix_amelioration_12[0])}", bg="gray28", fg="white")
+    priceUpgrade12 = Label(fenetre, text=f"prix : {points(prix_amelioration_12[niveau_amelioration12])}", bg="gray28", fg="white")
     priceUpgrade12.grid(row=rowUpgrade12, column=12, rowspan=2)
 
     textUpgrade12 = Label(fenetre, text=f"augmente de {points(65_000_000)}\nle nombre d'octets\npar seconde", bg="gray28", fg="white", font="Helvetica 10")
@@ -392,13 +479,13 @@ def widgetUpgrade12():
 
 def widgetUpgrade13():
     global pictureUpgrade13
-    levelUpgrade13 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
+    levelUpgrade13 = Label(fenetre, text=niveau_amelioration13, bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade13.grid(row=rowUpgrade13, column=10, rowspan=2)
 
     buttonUpgrade13 = Button(fenetre, image=pictureUpgrade13, bg="gray28", activebackground="gray28", command=Amelioration13Clic, bd=0)
     buttonUpgrade13.grid(row=rowUpgrade13, column=11, rowspan=2)
 
-    priceUpgrade13 = Label(fenetre, text=f"prix : {points(prix_amelioration_13[0])}", bg="gray28", fg="white")
+    priceUpgrade13 = Label(fenetre, text=f"prix : {points(prix_amelioration_13[niveau_amelioration13])}", bg="gray28", fg="white")
     priceUpgrade13.grid(row=rowUpgrade13, column=12, rowspan=2)
 
     textUpgrade13 = Label(fenetre, text=f"augmente de {points(430_000_000)}\nle nombre d'octets\npar seconde", bg="gray28", fg="white", font="Helvetica 10")
@@ -408,13 +495,13 @@ def widgetUpgrade13():
 
 def widgetUpgrade14():
     global pictureUpgrade14
-    levelUpgrade14 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
+    levelUpgrade14 = Label(fenetre, text=niveau_amelioration14, bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade14.grid(row=rowUpgrade14, column=10, rowspan=2)
 
     buttonUpgrade14 = Button(fenetre, image=pictureUpgrade14, bg="gray28", activebackground="gray28", command=Amelioration14Clic, bd=0)
     buttonUpgrade14.grid(row=rowUpgrade14, column=11, rowspan=2)
 
-    priceUpgrade14 = Label(fenetre, text=f"prix : {points(prix_amelioration_14[0])}", bg="gray28", fg="white")
+    priceUpgrade14 = Label(fenetre, text=f"prix : {points(prix_amelioration_14[niveau_amelioration14])}", bg="gray28", fg="white")
     priceUpgrade14.grid(row=rowUpgrade14, column=12, rowspan=2)
 
     textUpgrade14 = Label(fenetre, text=f"augmente de {points(2_900_000_000)}\nle nombre d'octets\npar seconde", bg="gray28", fg="white", font="Helvetica 10")
@@ -424,13 +511,13 @@ def widgetUpgrade14():
 
 def widgetUpgrade15():
     global pictureUpgrade15
-    levelUpgrade15 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
+    levelUpgrade15 = Label(fenetre, text=niveau_amelioration15, bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade15.grid(row=rowUpgrade15, column=10, rowspan=2)
 
     buttonUpgrade15 = Button(fenetre, image=pictureUpgrade15, bg="gray28", activebackground="gray28", command=Amelioration15Clic, bd=0)
     buttonUpgrade15.grid(row=rowUpgrade15, column=11, rowspan=2)
 
-    priceUpgrade15 = Label(fenetre, text=f"prix : {points(prix_amelioration_15[0])}", bg="gray28", fg="white")
+    priceUpgrade15 = Label(fenetre, text=f"prix : {points(prix_amelioration_15[niveau_amelioration15])}", bg="gray28", fg="white")
     priceUpgrade15.grid(row=rowUpgrade15, column=12, rowspan=2)
 
     textUpgrade15 = Label(fenetre, text=f"augmente de {points(21_000_000_000)}\nle nombre d'octets\npar seconde", bg="gray28", fg="white", font="Helvetica 10")
@@ -440,13 +527,13 @@ def widgetUpgrade15():
 
 def widgetUpgrade16():
     global pictureUpgrade16
-    levelUpgrade16 = Label(fenetre, text="0", bg="gray28", fg="grey", font=("Arial",  18))
+    levelUpgrade16 = Label(fenetre, text=niveau_amelioration16, bg="gray28", fg="grey", font=("Arial",  18))
     levelUpgrade16.grid(row=rowUpgrade16, column=10, rowspan=2)
 
     buttonUpgrade16 = Button(fenetre, image=pictureUpgrade16, bg="gray28", activebackground="gray28", command=Amelioration16Clic, bd=0)
     buttonUpgrade16.grid(row=rowUpgrade16, column=11, rowspan=2)
 
-    priceUpgrade16 = Label(fenetre, text=f"prix : {points(prix_amelioration_16[0])}", bg="gray28", fg="white")
+    priceUpgrade16 = Label(fenetre, text=f"prix : {points(prix_amelioration_16[niveau_amelioration16])}", bg="gray28", fg="white")
     priceUpgrade16.grid(row=rowUpgrade16, column=12, rowspan=2)
 
     textUpgrade16 = Label(fenetre, text=f"augmente de {points(150_000_000_000)}\nle nombre d'octets\npar seconde", bg="gray28", fg="white", font="Helvetica 10")
@@ -1154,6 +1241,7 @@ def Boost1Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost1
         text_score.configure(text=f"{score}")
+        listboostBought.append(1)
         th3 = threading.Thread(target=deleteBoost, args=[1])
         th3.start()
 
@@ -1167,6 +1255,7 @@ def Boost2Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost2
         text_score.configure(text=f"{score}")
+        listboostBought.append(2)
         th3 = threading.Thread(target=deleteBoost, args=[2])
         th3.start()
 
@@ -1178,6 +1267,7 @@ def Boost3Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost3
         text_score.configure(text=f"{score}")
+        listboostBought.append(3)
         th3 = threading.Thread(target=deleteBoost, args=[3])
         th3.start()
 
@@ -1189,6 +1279,7 @@ def Boost4Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost4
         text_score.configure(text=f"{score}")
+        listboostBought.append(4)
         th3 = threading.Thread(target=deleteBoost, args=[4])
         th3.start()
 
@@ -1202,6 +1293,7 @@ def Boost5Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost5
         text_score.configure(text=f"{score}")
+        listboostBought.append(5)
         th3 = threading.Thread(target=deleteBoost, args=[5])
         th3.start()
 
@@ -1213,6 +1305,7 @@ def Boost6Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost6
         text_score.configure(text=f"{score}")
+        listboostBought.append(6)
         th3 = threading.Thread(target=deleteBoost, args=[6])
         th3.start()
 
@@ -1224,6 +1317,7 @@ def Boost7Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost7
         text_score.configure(text=f"{score}")
+        listboostBought.append(7)
         th3 = threading.Thread(target=deleteBoost, args=[7])
         th3.start()
 
@@ -1235,6 +1329,7 @@ def Boost8Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost8
         text_score.configure(text=f"{score}")
+        listboostBought.append(8)
         th3 = threading.Thread(target=deleteBoost, args=[8])
         th3.start()
 
@@ -1246,6 +1341,7 @@ def Boost9Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost9
         text_score.configure(text=f"{score}")
+        listboostBought.append(9)
         th3 = threading.Thread(target=deleteBoost, args=[9])
         th3.start()
 
@@ -1257,6 +1353,7 @@ def Boost10Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost10
         text_score.configure(text=f"{score}")
+        listboostBought.append(10)
         th3 = threading.Thread(target=deleteBoost, args=[10])
         th3.start()
 
@@ -1268,6 +1365,7 @@ def Boost11Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost11
         text_score.configure(text=f"{score}")
+        listboostBought.append(11)
         th3 = threading.Thread(target=deleteBoost, args=[11])
         th3.start()
 
@@ -1279,6 +1377,7 @@ def Boost12Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost12
         text_score.configure(text=f"{score}")
+        listboostBought.append(12)
         th3 = threading.Thread(target=deleteBoost, args=[12])
         th3.start()
 
@@ -1290,6 +1389,7 @@ def Boost13Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost13
         text_score.configure(text=f"{score}")
+        listboostBought.append(13)
         th3 = threading.Thread(target=deleteBoost, args=[13])
         th3.start()
 
@@ -1304,6 +1404,7 @@ def Boost14Clic():
         scoreSec = scoreSec_fonction()
         score=score-prix_boost14
         text_score.configure(text=f"{score}")
+        listboostBought.append(14)
         th3 = threading.Thread(target=deleteBoost, args=[14])
         th3.start()
 
@@ -1316,6 +1417,7 @@ def Boost15Clic():
         scoreSec = scoreSec_fonction()
         score=score-prix_boost15
         text_score.configure(text=f"{score}")
+        listboostBought.append(15)
         th3 = threading.Thread(target=deleteBoost, args=[15])
         th3.start()
 
@@ -1328,6 +1430,7 @@ def Boost16Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost16
         text_score.configure(text=f"{score}")
+        listboostBought.append(16)
         th3 = threading.Thread(target=deleteBoost, args=[16])
         th3.start()
 
@@ -1340,6 +1443,7 @@ def Boost17Clic():
         scoreSec = scoreSec_fonction()
         score=score-prix_boost17
         text_score.configure(text=f"{score}")
+        listboostBought.append(17)
         th3 = threading.Thread(target=deleteBoost, args=[17])
         th3.start()
 
@@ -1351,6 +1455,7 @@ def Boost18Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost18
         text_score.configure(text=f"{score}")
+        listboostBought.append(18)
         th3 = threading.Thread(target=deleteBoost, args=[18])
         th3.start()
 
@@ -1362,6 +1467,7 @@ def Boost19Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost19
         text_score.configure(text=f"{score}")
+        listboostBought.append(19)
         th3 = threading.Thread(target=deleteBoost, args=[19])
         th3.start()
 
@@ -1553,6 +1659,7 @@ dicImageBoost={}
 listAmelioration = [1, 2, 3, 4, 5]
 # Maintenant listBoost sert a voir a quel boost on a acheté on ne supprime plus de boost dans listBoost
 listBoost = []
+listboostBought = []
 rowUpgrade1 = 3
 rowUpgrade2 = 5
 rowUpgrade3 = 7
@@ -1670,12 +1777,16 @@ score=0
 fenetre_pop_up, text_popup, prenom_user, bouton_valider_popup = pop_up()
 fenetre_pop_up.mainloop()
 
-lastSave = start() #a modifier pour recup dans le fichier sauvegarde
+lastSave, score, scoreClick, scoreSec, niveau_amelioration1, niveau_amelioration2, niveau_amelioration3, niveau_amelioration4, niveau_amelioration5, niveau_amelioration6, niveau_amelioration7, niveau_amelioration8, niveau_amelioration9, niveau_amelioration10, niveau_amelioration11, niveau_amelioration12, niveau_amelioration13, niveau_amelioration14, niveau_amelioration15, niveau_amelioration16, listboostBought = start(joueur)
+if type(listboostBought) != type([]):
+    listboostBought2 = []
+    for char in listboostBought:
+        if char != "[" and char != "]" and char != ",":
+            listboostBought2.append(int(char))
+listboostBought2 = listboostBought
 fenetre, screen_width, screen_height = creer_fenetre()
 zone_graphique = creer_Canvas()
-"""
-frameUpgrade, zoneUpgrade, vertibar = creerItemUpgrade()
-"""
+
 fenetre.update()
 text_player, picture, button_clicker, text_last_save, text_score, text_octets_secondes, text_octets_click, button_save, button_save_quit =  cree_widget()
 
