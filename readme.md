@@ -45,8 +45,5 @@ Les contributions sont les bienvenues! Si vous souhaitez contribuer à ce projet
 
 ## Auteurs
 
-- Votre Nom (@votre-utilisateur)
-
-## Licence
-
-Ce projet est sous licence MIT. Veuillez consulter le fichier [LICENSE](LICENSE) pour plus d'informations.
+- Pierre Cuoq (@hp-fort)
+- Guillaume Rivaux (@RivauxGuillaume)
