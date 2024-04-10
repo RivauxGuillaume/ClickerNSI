@@ -18,7 +18,7 @@ Le clicker est un jeu simple où le joueur doit cliquer sur un bouton pour accum
 2. Clonez ce dépôt en utilisant la commande suivante :
 
     ```bash
-    git clone https://github.com/votre-utilisateur/ClickerNSI.git
+    git clone https://github.com/RivauxGuillaume/ClickerNSI.git
     ```
 
 3. Accédez au répertoire du projet :
