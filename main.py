@@ -806,7 +806,7 @@ def deleteBoost(niveau):
     afficherBoost()
 
 def afficherBoost():
-    if boostIsPlaced["Boost1"]==False and boostVerif["Boost1"]==True:
+    if boostIsPlaced["Boost1"]==False and boostVerif["Boost1"]==True and "1" not in listboostBought:
         boostIsPlaced["Boost1"] = True
         buttonBoost1.grid(row=1, column=dicVariable[f"columnBoost1"], rowspan=2)
         dicVariable["buttonBoost1"].bind("<Enter>", OnEnterBoost1)
@@ -1783,7 +1783,7 @@ if type(listboostBought) != type([]):
     for char in listboostBought:
         if char != "[" and char != "]" and char != ",":
             listboostBought2.append(int(char))
-listboostBought2 = listboostBought
+    listboostBought = listboostBought2.copy()
 fenetre, screen_width, screen_height = creer_fenetre()
 zone_graphique = creer_Canvas()
 
