@@ -812,109 +812,109 @@ def afficherBoost():
         dicVariable["buttonBoost1"].bind("<Enter>", OnEnterBoost1)
         dicVariable["buttonBoost1"].bind("<Leave>", OnLeaveBoost1)
         listBoost.append(1)
-    elif boostIsPlaced["Boost2"]==False and boostVerif["Boost2"]==True:
+    elif boostIsPlaced["Boost2"]==False and boostVerif["Boost2"]==True and "2" not in listboostBought:
         boostIsPlaced["Boost2"] = True
         buttonBoost2.grid(row=1, column=dicVariable[f"columnBoost2"], rowspan=2)
         dicVariable["buttonBoost2"].bind("<Enter>", OnEnterBoost2)
         dicVariable["buttonBoost2"].bind("<Leave>", OnLeaveBoost2)
         listBoost.append(2)
-    elif boostIsPlaced["Boost3"] == False and boostVerif["Boost3"]==True:
+    elif boostIsPlaced["Boost3"] == False and boostVerif["Boost3"]==True and "3" not in listboostBought:
         boostIsPlaced["Boost3"] = True
         buttonBoost3.grid(row=1, column=dicVariable[f"columnBoost3"], rowspan=2)
         dicVariable["buttonBoost3"].bind("<Enter>", OnEnterBoost3)
         dicVariable["buttonBoost3"].bind("<Leave>", OnLeaveBoost3)
         listBoost.append(3)
-    elif boostIsPlaced["Boost4"] == False and boostVerif["Boost4"]==True:
+    elif boostIsPlaced["Boost4"] == False and boostVerif["Boost4"]==True and "4" not in listboostBought:
         boostIsPlaced["Boost4"] = True
         buttonBoost4.grid(row=1, column=dicVariable[f"columnBoost4"], rowspan=2)
         dicVariable["buttonBoost4"].bind("<Enter>", OnEnterBoost4)
         dicVariable["buttonBoost4"].bind("<Leave>", OnLeaveBoost4)
         listBoost.append(4)
-    elif boostIsPlaced["Boost5"] == False and boostVerif["Boost5"]==True:
+    elif boostIsPlaced["Boost5"] == False and boostVerif["Boost5"]==True and "5" not in listboostBought:
         boostIsPlaced["Boost5"] = True
         buttonBoost5.grid(row=1, column=dicVariable[f"columnBoost5"], rowspan=2)
         dicVariable["buttonBoost5"].bind("<Enter>", OnEnterBoost5)
         dicVariable["buttonBoost5"].bind("<Leave>", OnLeaveBoost5)
         listBoost.append(5)
-    elif boostIsPlaced["Boost6"] == False and boostVerif["Boost6"]==True:
+    elif boostIsPlaced["Boost6"] == False and boostVerif["Boost6"]==True and "6" not in listboostBought:
         boostIsPlaced["Boost6"]=True
         buttonBoost6.grid(row=1, column=dicVariable[f"columnBoost6"], rowspan=2)
         dicVariable["buttonBoost6"].bind("<Enter>", OnEnterBoost6)
         dicVariable["buttonBoost6"].bind("<Leave>", OnLeaveBoost6)
         listBoost.append(6)
-    elif boostIsPlaced["Boost7"] == False and boostVerif["Boost7"]==True:
+    elif boostIsPlaced["Boost7"] == False and boostVerif["Boost7"]==True and "7" not in listboostBought:
         boostIsPlaced["Boost7"] = True
         buttonBoost7.grid(row=1, column=dicVariable[f"columnBoost7"], rowspan=2)
         dicVariable["buttonBoost7"].bind("<Enter>", OnEnterBoost7)
         dicVariable["buttonBoost7"].bind("<Leave>", OnLeaveBoost7)
         listBoost.append(7)
-    elif boostIsPlaced["Boost8"] == False and boostVerif["Boost8"]==True:
+    elif boostIsPlaced["Boost8"] == False and boostVerif["Boost8"]==True and "8" not in listboostBought:
         boostIsPlaced["Boost8"] = True
         buttonBoost8.grid(row=1, column=dicVariable[f"columnBoost8"], rowspan=2)
         dicVariable["buttonBoost8"].bind("<Enter>", OnEnterBoost8)
         dicVariable["buttonBoost8"].bind("<Leave>", OnLeaveBoost8)
         listBoost.append(8)
-    elif boostIsPlaced["Boost9"] == False and boostVerif["Boost9"]==True:
+    elif boostIsPlaced["Boost9"] == False and boostVerif["Boost9"]==True and "9" not in listboostBought:
         boostIsPlaced["Boost9"] = True
         buttonBoost9.grid(row=1, column=dicVariable[f"columnBoost9"], rowspan=2)
         dicVariable["buttonBoost9"].bind("<Enter>", OnEnterBoost9)
         dicVariable["buttonBoost9"].bind("<Leave>", OnLeaveBoost9)
         listBoost.append(9)
-    elif boostIsPlaced["Boost10"] == False and boostVerif["Boost10"]==True:
+    elif boostIsPlaced["Boost10"] == False and boostVerif["Boost10"]==True and "10" not in listboostBought:
         boostIsPlaced["Boost10"] = True
         buttonBoost10.grid(row=1, column=dicVariable[f"columnBoost10"], rowspan=2)
         dicVariable["buttonBoost10"].bind("<Enter>", OnEnterBoost10)
         dicVariable["buttonBoost10"].bind("<Leave>", OnLeaveBoost10)
         listBoost.append(10)
-    elif boostIsPlaced["Boost11"] == False and boostVerif["Boost11"]==True:
+    elif boostIsPlaced["Boost11"] == False and boostVerif["Boost11"]==True and "11" not in listboostBought:
         boostIsPlaced["Boost11"] = True
         buttonBoost11.grid(row=1, column=dicVariable[f"columnBoost11"], rowspan=2)
         dicVariable["buttonBoost11"].bind("<Enter>", OnEnterBoost11)
         dicVariable["buttonBoost11"].bind("<Leave>", OnLeaveBoost11)
         listBoost.append(11)
-    elif boostIsPlaced["Boost12"] == False and boostVerif["Boost12"]==True:
+    elif boostIsPlaced["Boost12"] == False and boostVerif["Boost12"]==True and "12" not in listboostBought:
         boostIsPlaced["Boost12"] = True
         buttonBoost12.grid(row=1, column=dicVariable[f"columnBoost12"], rowspan=2)
         dicVariable["buttonBoost12"].bind("<Enter>", OnEnterBoost12)
         dicVariable["buttonBoost12"].bind("<Leave>", OnLeaveBoost12)
         listBoost.append(12)
-    elif boostIsPlaced["Boost13"] == False and boostVerif["Boost13"]==True:
+    elif boostIsPlaced["Boost13"] == False and boostVerif["Boost13"]==True and "13" not in listboostBought:
         boostIsPlaced["Boost13"] = True
         buttonBoost13.grid(row=1, column=dicVariable[f"columnBoost13"], rowspan=2)
         dicVariable["buttonBoost13"].bind("<Enter>", OnEnterBoost13)
         dicVariable["buttonBoost13"].bind("<Leave>", OnLeaveBoost13)
         listBoost.append(13)
-    elif boostIsPlaced["Boost14"] == False and boostVerif["Boost14"]==True:
+    elif boostIsPlaced["Boost14"] == False and boostVerif["Boost14"]==True and "14" not in listboostBought:
         boostIsPlaced["Boost14"] = True
         buttonBoost14.grid(row=1, column=dicVariable[f"columnBoost14"], rowspan=2)
         dicVariable["buttonBoost14"].bind("<Enter>", OnEnterBoost14)
         dicVariable["buttonBoost14"].bind("<Leave>", OnLeaveBoost14)
         listBoost.append(14)
-    elif boostIsPlaced["Boost15"] == False and boostVerif["Boost15"]==True:
+    elif boostIsPlaced["Boost15"] == False and boostVerif["Boost15"]==True and "15" not in listboostBought:
         boostIsPlaced["Boost15"] = True
         buttonBoost15.grid(row=1, column=dicVariable[f"columnBoost15"], rowspan=2)
         dicVariable["buttonBoost15"].bind("<Enter>", OnEnterBoost15)
         dicVariable["buttonBoost15"].bind("<Leave>", OnLeaveBoost15)
         listBoost.append(15)
-    elif boostIsPlaced["Boost16"] == False and boostVerif["Boost16"]==True:
+    elif boostIsPlaced["Boost16"] == False and boostVerif["Boost16"]==True and "16" not in listboostBought:
         boostIsPlaced["Boost16"] = True
         buttonBoost16.grid(row=1, column=dicVariable[f"columnBoost16"], rowspan=2)
         dicVariable["buttonBoost16"].bind("<Enter>", OnEnterBoost16)
         dicVariable["buttonBoost16"].bind("<Leave>", OnLeaveBoost16)
         listBoost.append(16)
-    elif boostIsPlaced["Boost17"] == False and boostVerif["Boost17"]==True:
+    elif boostIsPlaced["Boost17"] == False and boostVerif["Boost17"]==True and "17" not in listboostBought:
         boostIsPlaced["Boost17"] = True
         buttonBoost17.grid(row=1, column=dicVariable[f"columnBoost17"], rowspan=2)
         dicVariable["buttonBoost17"].bind("<Enter>", OnEnterBoost17)
         dicVariable["buttonBoost17"].bind("<Leave>", OnLeaveBoost17)
         listBoost.append(17)
-    elif boostIsPlaced["Boost18"] == False and boostVerif["Boost18"]==True:
+    elif boostIsPlaced["Boost18"] == False and boostVerif["Boost18"]==True and "18" not in listboostBought:
         boostIsPlaced["Boost18"] = True
         buttonBoost18.grid(row=1, column=dicVariable[f"columnBoost18"], rowspan=2)
         dicVariable["buttonBoost18"].bind("<Enter>", OnEnterBoost18)
         dicVariable["buttonBoost18"].bind("<Leave>", OnLeaveBoost18)
         listBoost.append(18)
-    elif boostIsPlaced["Boost19"] == False and boostVerif["Boost19"]==True:
+    elif boostIsPlaced["Boost19"] == False and boostVerif["Boost19"]==True and "19" not in listboostBought:
         boostIsPlaced["Boost19"] = True
         buttonBoost19.grid(row=1, column=dicVariable[f"columnBoost19"], rowspan=2)
         dicVariable["buttonBoost19"].bind("<Enter>", OnEnterBoost19)
