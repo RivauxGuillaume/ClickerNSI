@@ -137,7 +137,6 @@ def save():
         textWrite = textWrite + f"{user},{user_lastSave},{user_score},{user_scoreClick},{user_scoreSec},{user_niveau_amelioration1},{user_niveau_amelioration2},{user_niveau_amelioration3},{user_niveau_amelioration4},{user_niveau_amelioration5},{user_niveau_amelioration6},{user_niveau_amelioration7},{user_niveau_amelioration8},{user_niveau_amelioration9},{user_niveau_amelioration10},{user_niveau_amelioration11},{user_niveau_amelioration12},{user_niveau_amelioration13},{user_niveau_amelioration14},{user_niveau_amelioration15},{user_niveau_amelioration16},{user_listboostBought}" + "\n"
     if textRead == []:
         textWrite = f"{joueur},{datetime.datetime.now().strftime('%a %d/%m/%y %H:%M')},{score},{scoreClick},{scoreSec},{niveau_amelioration1},{niveau_amelioration2},{niveau_amelioration3},{niveau_amelioration4},{niveau_amelioration5},{niveau_amelioration6},{niveau_amelioration7},{niveau_amelioration8},{niveau_amelioration9},{niveau_amelioration10},{niveau_amelioration11},{niveau_amelioration12},{niveau_amelioration13},{niveau_amelioration14},{niveau_amelioration15},{niveau_amelioration16},{listboostBought}\n"
-    print(listboostBought)
     savefile.write(textWrite)
     savefile.close()
 
@@ -812,109 +811,109 @@ def afficherBoost():
         dicVariable["buttonBoost1"].bind("<Enter>", OnEnterBoost1)
         dicVariable["buttonBoost1"].bind("<Leave>", OnLeaveBoost1)
         listBoost.append(1)
-    elif boostIsPlaced["Boost2"]==False and boostVerif["Boost2"]==True and "2" not in listboostBought:
+    if boostIsPlaced["Boost2"]==False and boostVerif["Boost2"]==True and "2" not in listboostBought:
         boostIsPlaced["Boost2"] = True
         buttonBoost2.grid(row=1, column=dicVariable[f"columnBoost2"], rowspan=2)
         dicVariable["buttonBoost2"].bind("<Enter>", OnEnterBoost2)
         dicVariable["buttonBoost2"].bind("<Leave>", OnLeaveBoost2)
         listBoost.append(2)
-    elif boostIsPlaced["Boost3"] == False and boostVerif["Boost3"]==True and "3" not in listboostBought:
+    if boostIsPlaced["Boost3"] == False and boostVerif["Boost3"]==True and "3" not in listboostBought:
         boostIsPlaced["Boost3"] = True
         buttonBoost3.grid(row=1, column=dicVariable[f"columnBoost3"], rowspan=2)
         dicVariable["buttonBoost3"].bind("<Enter>", OnEnterBoost3)
         dicVariable["buttonBoost3"].bind("<Leave>", OnLeaveBoost3)
         listBoost.append(3)
-    elif boostIsPlaced["Boost4"] == False and boostVerif["Boost4"]==True and "4" not in listboostBought:
+    if boostIsPlaced["Boost4"] == False and boostVerif["Boost4"]==True and "4" not in listboostBought:
         boostIsPlaced["Boost4"] = True
         buttonBoost4.grid(row=1, column=dicVariable[f"columnBoost4"], rowspan=2)
         dicVariable["buttonBoost4"].bind("<Enter>", OnEnterBoost4)
         dicVariable["buttonBoost4"].bind("<Leave>", OnLeaveBoost4)
         listBoost.append(4)
-    elif boostIsPlaced["Boost5"] == False and boostVerif["Boost5"]==True and "5" not in listboostBought:
+    if boostIsPlaced["Boost5"] == False and boostVerif["Boost5"]==True and "5" not in listboostBought:
         boostIsPlaced["Boost5"] = True
         buttonBoost5.grid(row=1, column=dicVariable[f"columnBoost5"], rowspan=2)
         dicVariable["buttonBoost5"].bind("<Enter>", OnEnterBoost5)
         dicVariable["buttonBoost5"].bind("<Leave>", OnLeaveBoost5)
         listBoost.append(5)
-    elif boostIsPlaced["Boost6"] == False and boostVerif["Boost6"]==True and "6" not in listboostBought:
+    if boostIsPlaced["Boost6"] == False and boostVerif["Boost6"]==True and "6" not in listboostBought:
         boostIsPlaced["Boost6"]=True
         buttonBoost6.grid(row=1, column=dicVariable[f"columnBoost6"], rowspan=2)
         dicVariable["buttonBoost6"].bind("<Enter>", OnEnterBoost6)
         dicVariable["buttonBoost6"].bind("<Leave>", OnLeaveBoost6)
         listBoost.append(6)
-    elif boostIsPlaced["Boost7"] == False and boostVerif["Boost7"]==True and "7" not in listboostBought:
+    if boostIsPlaced["Boost7"] == False and boostVerif["Boost7"]==True and "7" not in listboostBought:
         boostIsPlaced["Boost7"] = True
         buttonBoost7.grid(row=1, column=dicVariable[f"columnBoost7"], rowspan=2)
         dicVariable["buttonBoost7"].bind("<Enter>", OnEnterBoost7)
         dicVariable["buttonBoost7"].bind("<Leave>", OnLeaveBoost7)
         listBoost.append(7)
-    elif boostIsPlaced["Boost8"] == False and boostVerif["Boost8"]==True and "8" not in listboostBought:
+    if boostIsPlaced["Boost8"] == False and boostVerif["Boost8"]==True and "8" not in listboostBought:
         boostIsPlaced["Boost8"] = True
         buttonBoost8.grid(row=1, column=dicVariable[f"columnBoost8"], rowspan=2)
         dicVariable["buttonBoost8"].bind("<Enter>", OnEnterBoost8)
         dicVariable["buttonBoost8"].bind("<Leave>", OnLeaveBoost8)
         listBoost.append(8)
-    elif boostIsPlaced["Boost9"] == False and boostVerif["Boost9"]==True and "9" not in listboostBought:
+    if boostIsPlaced["Boost9"] == False and boostVerif["Boost9"]==True and "9" not in listboostBought:
         boostIsPlaced["Boost9"] = True
         buttonBoost9.grid(row=1, column=dicVariable[f"columnBoost9"], rowspan=2)
         dicVariable["buttonBoost9"].bind("<Enter>", OnEnterBoost9)
         dicVariable["buttonBoost9"].bind("<Leave>", OnLeaveBoost9)
         listBoost.append(9)
-    elif boostIsPlaced["Boost10"] == False and boostVerif["Boost10"]==True and "10" not in listboostBought:
+    if boostIsPlaced["Boost10"] == False and boostVerif["Boost10"]==True and "10" not in listboostBought:
         boostIsPlaced["Boost10"] = True
         buttonBoost10.grid(row=1, column=dicVariable[f"columnBoost10"], rowspan=2)
         dicVariable["buttonBoost10"].bind("<Enter>", OnEnterBoost10)
         dicVariable["buttonBoost10"].bind("<Leave>", OnLeaveBoost10)
         listBoost.append(10)
-    elif boostIsPlaced["Boost11"] == False and boostVerif["Boost11"]==True and "11" not in listboostBought:
+    if boostIsPlaced["Boost11"] == False and boostVerif["Boost11"]==True and "11" not in listboostBought:
         boostIsPlaced["Boost11"] = True
         buttonBoost11.grid(row=1, column=dicVariable[f"columnBoost11"], rowspan=2)
         dicVariable["buttonBoost11"].bind("<Enter>", OnEnterBoost11)
         dicVariable["buttonBoost11"].bind("<Leave>", OnLeaveBoost11)
         listBoost.append(11)
-    elif boostIsPlaced["Boost12"] == False and boostVerif["Boost12"]==True and "12" not in listboostBought:
+    if boostIsPlaced["Boost12"] == False and boostVerif["Boost12"]==True and "12" not in listboostBought:
         boostIsPlaced["Boost12"] = True
         buttonBoost12.grid(row=1, column=dicVariable[f"columnBoost12"], rowspan=2)
         dicVariable["buttonBoost12"].bind("<Enter>", OnEnterBoost12)
         dicVariable["buttonBoost12"].bind("<Leave>", OnLeaveBoost12)
         listBoost.append(12)
-    elif boostIsPlaced["Boost13"] == False and boostVerif["Boost13"]==True and "13" not in listboostBought:
+    if boostIsPlaced["Boost13"] == False and boostVerif["Boost13"]==True and "13" not in listboostBought:
         boostIsPlaced["Boost13"] = True
         buttonBoost13.grid(row=1, column=dicVariable[f"columnBoost13"], rowspan=2)
         dicVariable["buttonBoost13"].bind("<Enter>", OnEnterBoost13)
         dicVariable["buttonBoost13"].bind("<Leave>", OnLeaveBoost13)
         listBoost.append(13)
-    elif boostIsPlaced["Boost14"] == False and boostVerif["Boost14"]==True and "14" not in listboostBought:
+    if boostIsPlaced["Boost14"] == False and boostVerif["Boost14"]==True and "14" not in listboostBought:
         boostIsPlaced["Boost14"] = True
         buttonBoost14.grid(row=1, column=dicVariable[f"columnBoost14"], rowspan=2)
         dicVariable["buttonBoost14"].bind("<Enter>", OnEnterBoost14)
         dicVariable["buttonBoost14"].bind("<Leave>", OnLeaveBoost14)
         listBoost.append(14)
-    elif boostIsPlaced["Boost15"] == False and boostVerif["Boost15"]==True and "15" not in listboostBought:
+    if boostIsPlaced["Boost15"] == False and boostVerif["Boost15"]==True and "15" not in listboostBought:
         boostIsPlaced["Boost15"] = True
         buttonBoost15.grid(row=1, column=dicVariable[f"columnBoost15"], rowspan=2)
         dicVariable["buttonBoost15"].bind("<Enter>", OnEnterBoost15)
         dicVariable["buttonBoost15"].bind("<Leave>", OnLeaveBoost15)
         listBoost.append(15)
-    elif boostIsPlaced["Boost16"] == False and boostVerif["Boost16"]==True and "16" not in listboostBought:
+    if boostIsPlaced["Boost16"] == False and boostVerif["Boost16"]==True and "16" not in listboostBought:
         boostIsPlaced["Boost16"] = True
         buttonBoost16.grid(row=1, column=dicVariable[f"columnBoost16"], rowspan=2)
         dicVariable["buttonBoost16"].bind("<Enter>", OnEnterBoost16)
         dicVariable["buttonBoost16"].bind("<Leave>", OnLeaveBoost16)
         listBoost.append(16)
-    elif boostIsPlaced["Boost17"] == False and boostVerif["Boost17"]==True and "17" not in listboostBought:
+    if boostIsPlaced["Boost17"] == False and boostVerif["Boost17"]==True and "17" not in listboostBought:
         boostIsPlaced["Boost17"] = True
         buttonBoost17.grid(row=1, column=dicVariable[f"columnBoost17"], rowspan=2)
         dicVariable["buttonBoost17"].bind("<Enter>", OnEnterBoost17)
         dicVariable["buttonBoost17"].bind("<Leave>", OnLeaveBoost17)
         listBoost.append(17)
-    elif boostIsPlaced["Boost18"] == False and boostVerif["Boost18"]==True and "18" not in listboostBought:
+    if boostIsPlaced["Boost18"] == False and boostVerif["Boost18"]==True and "18" not in listboostBought:
         boostIsPlaced["Boost18"] = True
         buttonBoost18.grid(row=1, column=dicVariable[f"columnBoost18"], rowspan=2)
         dicVariable["buttonBoost18"].bind("<Enter>", OnEnterBoost18)
         dicVariable["buttonBoost18"].bind("<Leave>", OnLeaveBoost18)
         listBoost.append(18)
-    elif boostIsPlaced["Boost19"] == False and boostVerif["Boost19"]==True and "19" not in listboostBought:
+    if boostIsPlaced["Boost19"] == False and boostVerif["Boost19"]==True and "19" not in listboostBought:
         boostIsPlaced["Boost19"] = True
         buttonBoost19.grid(row=1, column=dicVariable[f"columnBoost19"], rowspan=2)
         dicVariable["buttonBoost19"].bind("<Enter>", OnEnterBoost19)
@@ -1241,7 +1240,7 @@ def Boost1Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost1
         text_score.configure(text=f"{score}")
-        listboostBought.append(1)
+        listboostBought.append("1")
         th3 = threading.Thread(target=deleteBoost, args=[1])
         th3.start()
 
@@ -1255,7 +1254,7 @@ def Boost2Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost2
         text_score.configure(text=f"{score}")
-        listboostBought.append(2)
+        listboostBought.append("2")
         th3 = threading.Thread(target=deleteBoost, args=[2])
         th3.start()
 
@@ -1267,7 +1266,7 @@ def Boost3Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost3
         text_score.configure(text=f"{score}")
-        listboostBought.append(3)
+        listboostBought.append("3")
         th3 = threading.Thread(target=deleteBoost, args=[3])
         th3.start()
 
@@ -1279,7 +1278,7 @@ def Boost4Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost4
         text_score.configure(text=f"{score}")
-        listboostBought.append(4)
+        listboostBought.append("4")
         th3 = threading.Thread(target=deleteBoost, args=[4])
         th3.start()
 
@@ -1293,7 +1292,7 @@ def Boost5Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost5
         text_score.configure(text=f"{score}")
-        listboostBought.append(5)
+        listboostBought.append("5")
         th3 = threading.Thread(target=deleteBoost, args=[5])
         th3.start()
 
@@ -1305,7 +1304,7 @@ def Boost6Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost6
         text_score.configure(text=f"{score}")
-        listboostBought.append(6)
+        listboostBought.append("6")
         th3 = threading.Thread(target=deleteBoost, args=[6])
         th3.start()
 
@@ -1317,7 +1316,7 @@ def Boost7Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost7
         text_score.configure(text=f"{score}")
-        listboostBought.append(7)
+        listboostBought.append("7")
         th3 = threading.Thread(target=deleteBoost, args=[7])
         th3.start()
 
@@ -1329,7 +1328,7 @@ def Boost8Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost8
         text_score.configure(text=f"{score}")
-        listboostBought.append(8)
+        listboostBought.append("8")
         th3 = threading.Thread(target=deleteBoost, args=[8])
         th3.start()
 
@@ -1341,7 +1340,7 @@ def Boost9Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost9
         text_score.configure(text=f"{score}")
-        listboostBought.append(9)
+        listboostBought.append("9")
         th3 = threading.Thread(target=deleteBoost, args=[9])
         th3.start()
 
@@ -1353,7 +1352,7 @@ def Boost10Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost10
         text_score.configure(text=f"{score}")
-        listboostBought.append(10)
+        listboostBought.append("10")
         th3 = threading.Thread(target=deleteBoost, args=[10])
         th3.start()
 
@@ -1365,7 +1364,7 @@ def Boost11Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost11
         text_score.configure(text=f"{score}")
-        listboostBought.append(11)
+        listboostBought.append("11")
         th3 = threading.Thread(target=deleteBoost, args=[11])
         th3.start()
 
@@ -1377,7 +1376,7 @@ def Boost12Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost12
         text_score.configure(text=f"{score}")
-        listboostBought.append(12)
+        listboostBought.append("12")
         th3 = threading.Thread(target=deleteBoost, args=[12])
         th3.start()
 
@@ -1389,7 +1388,7 @@ def Boost13Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost13
         text_score.configure(text=f"{score}")
-        listboostBought.append(13)
+        listboostBought.append("13")
         th3 = threading.Thread(target=deleteBoost, args=[13])
         th3.start()
 
@@ -1404,7 +1403,7 @@ def Boost14Clic():
         scoreSec = scoreSec_fonction()
         score=score-prix_boost14
         text_score.configure(text=f"{score}")
-        listboostBought.append(14)
+        listboostBought.append("14")
         th3 = threading.Thread(target=deleteBoost, args=[14])
         th3.start()
 
@@ -1417,7 +1416,7 @@ def Boost15Clic():
         scoreSec = scoreSec_fonction()
         score=score-prix_boost15
         text_score.configure(text=f"{score}")
-        listboostBought.append(15)
+        listboostBought.append("15")
         th3 = threading.Thread(target=deleteBoost, args=[15])
         th3.start()
 
@@ -1430,7 +1429,7 @@ def Boost16Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost16
         text_score.configure(text=f"{score}")
-        listboostBought.append(16)
+        listboostBought.append("16")
         th3 = threading.Thread(target=deleteBoost, args=[16])
         th3.start()
 
@@ -1443,7 +1442,7 @@ def Boost17Clic():
         scoreSec = scoreSec_fonction()
         score=score-prix_boost17
         text_score.configure(text=f"{score}")
-        listboostBought.append(17)
+        listboostBought.append("17")
         th3 = threading.Thread(target=deleteBoost, args=[17])
         th3.start()
 
@@ -1455,7 +1454,7 @@ def Boost18Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost18
         text_score.configure(text=f"{score}")
-        listboostBought.append(18)
+        listboostBought.append("18")
         th3 = threading.Thread(target=deleteBoost, args=[18])
         th3.start()
 
@@ -1467,7 +1466,7 @@ def Boost19Clic():
         text_octets_click.configure(text=f"Par Click : {points(scoreClick)}")
         score=score-prix_boost19
         text_score.configure(text=f"{score}")
-        listboostBought.append(19)
+        listboostBought.append("19")
         th3 = threading.Thread(target=deleteBoost, args=[19])
         th3.start()
 
@@ -1778,12 +1777,32 @@ fenetre_pop_up, text_popup, prenom_user, bouton_valider_popup = pop_up()
 fenetre_pop_up.mainloop()
 
 lastSave, score, scoreClick, scoreSec, niveau_amelioration1, niveau_amelioration2, niveau_amelioration3, niveau_amelioration4, niveau_amelioration5, niveau_amelioration6, niveau_amelioration7, niveau_amelioration8, niveau_amelioration9, niveau_amelioration10, niveau_amelioration11, niveau_amelioration12, niveau_amelioration13, niveau_amelioration14, niveau_amelioration15, niveau_amelioration16, listboostBought = start(joueur)
-if type(listboostBought) != type([]):
-    listboostBought2 = []
-    for char in listboostBought:
-        if char != "[" and char != "]" and char != ",":
-            listboostBought2.append(int(char))
-    listboostBought = listboostBought2.copy()
+if listboostBought == "[]":
+    listboostBought = []
+else:
+    listboostBought = listboostBought[2:-2]
+    listboostBought.split("', '")
+
+for i in range(len(listboostBought)):
+    columnBoost1 -= 1
+    columnBoost2 -= 1
+    columnBoost3 -= 1
+    columnBoost4 -= 1
+    columnBoost5 -= 1
+    columnBoost6 -= 1
+    columnBoost7 -= 1
+    columnBoost8 -= 1
+    columnBoost9 -= 1
+    columnBoost10 -= 1
+    columnBoost11 -= 1
+    columnBoost12 -= 1
+    columnBoost13 -= 1
+    columnBoost14 -= 1
+    columnBoost15 -= 1
+    columnBoost16 -= 1
+    columnBoost17 -= 1
+    columnBoost18 -= 1
+    columnBoost19 -= 1
 fenetre, screen_width, screen_height = creer_fenetre()
 zone_graphique = creer_Canvas()
 
