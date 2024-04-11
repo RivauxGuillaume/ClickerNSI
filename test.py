@@ -23,67 +23,29 @@ print(points(10000000))
 
 
 
-import tkinter as tk
+from tkinter import *
 
-root = tk.Tk()
-root.grid_rowconfigure(0, weight=1)
-root.columnconfigure(0, weight=1)
+fenetre = Tk()
+fenetre.grid_rowconfigure(0, weight=1)
+fenetre.grid_columnconfigure(0, weight=1)
+    
+zoneUpgrade=Canvas(fenetre)
+zoneUpgrade.grid(row=0, column=0, sticky="nswe")
+    
+vScroll=Scrollbar(fenetre, orient=VERTICAL, command=zoneUpgrade.yview)
+vScroll.grid(row=0, column=1, sticky="ns")
+    
+zoneUpgrade.configure(yscrollcommand=vScroll.set)
+    
+frm=Frame(zoneUpgrade)
+    
+for i in range(50):
+    Label(frm, text="Label%s " % i).grid(row=i, column=0)
+        
+frm.update()
+    
+zoneUpgrade.create_window(0,0,window=frm, anchor=NW)
+    
+zoneUpgrade.configure(scrollregion=zoneUpgrade.bbox(ALL))
 
-
-# Create a frame for the canvas with non-zero row&column weights
-frame_canvas = tk.Frame(root)
-frame_canvas.grid(row=2, column=0, pady=(5, 0), sticky='nw')
-frame_canvas.grid_rowconfigure(0, weight=1)
-frame_canvas.grid_columnconfigure(0, weight=1)
-# Set grid_propagate to False to allow 5-by-5 buttons resizing later
-frame_canvas.grid_propagate(False)
-
-# Add a canvas in that frame
-canvas = tk.Canvas(frame_canvas, bg="yellow")
-canvas.grid(row=0, column=0, sticky="news")
-
-# Link a scrollbar to the canvas
-vsb = tk.Scrollbar(frame_canvas, orient="vertical", command=canvas.yview)
-vsb.grid(row=0, column=1, sticky='ns')
-canvas.configure(yscrollcommand=vsb.set)
-
-# Create a frame to contain the buttons
-frame_buttons = tk.Frame(canvas, bg="blue")
-canvas.create_window((0, 0), window=frame_buttons, anchor='nw')
-
-btn=tk.Button(frame_buttons).grid(row=0,column=0, sticky='news')
-
-# Set the canvas scrolling region
-canvas.config(scrollregion=canvas.bbox("all"))
-
-# Launch the GUI
-root.mainloop()
-
-
-"""
-import tkinter as tk
-
-root = tk.Tk()
-
-frame_canvas = tk.Frame(root)
-frame_canvas.grid(row=2, column=0, sticky='nw')
-
-# Add a canvas in that frame
-canvas = tk.Canvas(frame_canvas, bg="yellow")
-canvas.grid(row=0, column=0, sticky="news")
-
-# Link a scrollbar to the canvas
-vsb = tk.Scrollbar(frame_canvas, orient="vertical", command=canvas.yview)
-vsb.grid(row=0, column=1, sticky='ns')
-canvas.configure(yscrollcommand=vsb.set)
-
-# Create a frame to contain the buttons
-frame_buttons = tk.Frame(canvas, bg="blue")
-canvas.create_window((0, 0), window=frame_buttons, anchor='nw')
-
-btn=tk.Button(frame_buttons, width=5, height=2)
-
-canvas.config(scrollregion=canvas.bbox("all"))
-
-root.mainloop()
-"""
+fenetre.mainloop()
