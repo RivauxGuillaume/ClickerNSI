@@ -27,15 +27,15 @@ def creer_Canvas():
 def creerItemUpgrade():
     global frm
     
-    zoneUpgrade=Canvas(fenetre, bg="grey28")
-    zoneUpgrade.grid(row=3, column=10,rowspan=10, columnspan=5, sticky="nswe")
+    zoneUpgrade=Canvas(fenetre, bg="grey28", border=0)
+    zoneUpgrade.grid(row=3, column=10,rowspan=10, columnspan=4, sticky="nswe")
     
     vScroll=Scrollbar(fenetre, orient=VERTICAL, command=zoneUpgrade.yview)
     vScroll.grid(row=3, column=14,rowspan=10, sticky="ns")
     
     zoneUpgrade.configure(yscrollcommand=vScroll.set)
     
-    frm=Frame(zoneUpgrade, bg="grey28")
+    frm=Frame(zoneUpgrade, bg="grey28", border=0)
     for i in range(16):
         frm.rowconfigure(i, minsize=int(screen_width/16), pad=0)
         frm.columnconfigure(i, minsize=int(screen_width/16), pad=0)
@@ -767,8 +767,6 @@ def Amelioration1Clic():
             if niveau_amelioration1 == 1000:
                 levelUpgrade1.configure(text="MAX")
                 priceUpgrade1.configure(text=f"niveau max\natteint")
-                th2 = threading.Thread(target=deleteAmelioration, args=[1])
-                th2.start()
             else:
                 levelUpgrade1.configure(text=niveau_amelioration1)
                 priceUpgrade1.configure(text=f"prix : {points(prix_amelioration_1[niveau_amelioration1])}")
@@ -788,8 +786,6 @@ def Amelioration2Clic():
             if niveau_amelioration2 == 1000:
                 levelUpgrade2.configure(text="MAX")
                 priceUpgrade2.configure(text=f"niveau max\natteint")
-                th2 = threading.Thread(target=deleteAmelioration, args=[2])
-                th2.start()
             else:
                 levelUpgrade2.configure(text=niveau_amelioration2)
                 priceUpgrade2.configure(text=f"prix : {points(prix_amelioration_2[niveau_amelioration2])}")
@@ -808,8 +804,6 @@ def Amelioration3Clic():
             if niveau_amelioration3 == 1000:
                 levelUpgrade3.configure(text="MAX")
                 priceUpgrade3.configure(text=f"niveau max\natteint")
-                th2 = threading.Thread(target=deleteAmelioration, args=[3])
-                th2.start()
             else:
                 levelUpgrade3.configure(text=niveau_amelioration3)
                 priceUpgrade3.configure(text=f"prix : {points(prix_amelioration_3[niveau_amelioration3])}")
@@ -828,8 +822,6 @@ def Amelioration4Clic():
             if niveau_amelioration4 == 1000:
                 levelUpgrade4.configure(text="MAX")
                 priceUpgrade4.configure(text=f"niveau max\natteint")
-                th2 = threading.Thread(target=deleteAmelioration, args=[4])
-                th2.start()
             else:
                 levelUpgrade4.configure(text=niveau_amelioration4)
                 priceUpgrade4.configure(text=f"prix : {points(prix_amelioration_4[niveau_amelioration4])}")
@@ -848,8 +840,6 @@ def Amelioration5Clic():
             if niveau_amelioration5 == 1000:
                 levelUpgrade5.configure(text="MAX")
                 priceUpgrade5.configure(text=f"niveau max\natteint")
-                th2 = threading.Thread(target=deleteAmelioration, args=[5])
-                th2.start()
             else:
                 levelUpgrade5.configure(text=niveau_amelioration5)
                 priceUpgrade5.configure(text=f"prix : {points(prix_amelioration_5[niveau_amelioration5])}")
@@ -867,8 +857,6 @@ def Amelioration6Clic():
             if niveau_amelioration6 == 1000:
                 levelUpgrade6.configure(text="MAX")
                 priceUpgrade6.configure(text=f"niveau max\natteint")
-                th2 = threading.Thread(target=deleteAmelioration, args=[6])
-                th2.start()
             else:
                 levelUpgrade6.configure(text=niveau_amelioration6)
                 priceUpgrade6.configure(text=f"prix : {points(prix_amelioration_6[niveau_amelioration6])}")
@@ -886,8 +874,6 @@ def Amelioration7Clic():
             if niveau_amelioration7 == 1000:
                 levelUpgrade7.configure(text="MAX")
                 priceUpgrade7.configure(text=f"niveau max\natteint")
-                th2 = threading.Thread(target=deleteAmelioration, args=[7])
-                th2.start()
             else:
                 levelUpgrade7.configure(text=niveau_amelioration7)
                 priceUpgrade7.configure(text=f"prix : {points(prix_amelioration_7[niveau_amelioration7])}")
@@ -905,8 +891,6 @@ def Amelioration8Clic():
             if niveau_amelioration8 == 1000:
                 levelUpgrade8.configure(text="MAX")
                 priceUpgrade8.configure(text=f"niveau max\natteint")
-                th2 = threading.Thread(target=deleteAmelioration, args=[8])
-                th2.start()
             else:
                 levelUpgrade8.configure(text=niveau_amelioration8)
                 priceUpgrade8.configure(text=f"prix : {points(prix_amelioration_8[niveau_amelioration8])}")
@@ -924,8 +908,6 @@ def Amelioration9Clic():
             if niveau_amelioration9 == 1000:
                 levelUpgrade9.configure(text="MAX")
                 priceUpgrade9.configure(text=f"niveau max\natteint")
-                th2 = threading.Thread(target=deleteAmelioration, args=[9])
-                th2.start()
             else:
                 levelUpgrade9.configure(text=niveau_amelioration9)
                 priceUpgrade9.configure(text=f"prix : {points(prix_amelioration_9[niveau_amelioration9])}")
@@ -943,8 +925,6 @@ def Amelioration10Clic():
             if niveau_amelioration10 == 1000:
                 levelUpgrade10.configure(text="MAX")
                 priceUpgrade10.configure(text=f"niveau max\natteint")
-                th2 = threading.Thread(target=deleteAmelioration, args=[10])
-                th2.start()
             else:
                 levelUpgrade10.configure(text=niveau_amelioration10)
                 priceUpgrade10.configure(text=f"prix : {points(prix_amelioration_10[niveau_amelioration10])}")
@@ -962,8 +942,6 @@ def Amelioration11Clic():
             if niveau_amelioration11 == 1000:
                 levelUpgrade11.configure(text="MAX")
                 priceUpgrade11.configure(text=f"niveau max\natteint")
-                th2 = threading.Thread(target=deleteAmelioration, args=[11])
-                th2.start()
             else:
                 levelUpgrade11.configure(text=niveau_amelioration11)
                 priceUpgrade11.configure(text=f"prix : {points(prix_amelioration_11[niveau_amelioration11])}")
@@ -981,8 +959,6 @@ def Amelioration12Clic():
             if niveau_amelioration12 == 1000:
                 levelUpgrade12.configure(text="MAX")
                 priceUpgrade12.configure(text=f"niveau max\natteint")
-                th2 = threading.Thread(target=deleteAmelioration, args=[12])
-                th2.start()
             else:
                 levelUpgrade12.configure(text=niveau_amelioration12)
                 priceUpgrade12.configure(text=f"prix : {points(prix_amelioration_12[niveau_amelioration12])}")
@@ -1000,8 +976,6 @@ def Amelioration13Clic():
             if niveau_amelioration13 == 1000:
                 levelUpgrade13.configure(text="MAX")
                 priceUpgrade13.configure(text=f"niveau max\natteint")
-                th2 = threading.Thread(target=deleteAmelioration, args=[13])
-                th2.start()
             else:
                 levelUpgrade13.configure(text=niveau_amelioration13)
                 priceUpgrade13.configure(text=f"prix : {points(prix_amelioration_13[niveau_amelioration13])}")
@@ -1019,8 +993,6 @@ def Amelioration14Clic():
             if niveau_amelioration14 == 1000:
                 levelUpgrade14.configure(text="MAX")
                 priceUpgrade14.configure(text=f"niveau max\natteint")
-                th2 = threading.Thread(target=deleteAmelioration, args=[14])
-                th2.start()
             else:
                 levelUpgrade14.configure(text=niveau_amelioration14)
                 priceUpgrade14.configure(text=f"prix : {points(prix_amelioration_14[niveau_amelioration14])}")
@@ -1038,8 +1010,6 @@ def Amelioration15Clic():
             if niveau_amelioration15 == 1000:
                 levelUpgrade15.configure(text="MAX")
                 priceUpgrade15.configure(text=f"niveau max\natteint")
-                th2 = threading.Thread(target=deleteAmelioration, args=[15])
-                th2.start()
             else:
                 levelUpgrade15.configure(text=niveau_amelioration15)
                 priceUpgrade15.configure(text=f"prix : {points(prix_amelioration_15[niveau_amelioration15])}")
@@ -1057,8 +1027,6 @@ def Amelioration16Clic():
             if niveau_amelioration16 == 1000:
                 levelUpgrade16.configure(text="MAX")
                 priceUpgrade16.configure(text=f"niveau max\natteint")
-                th2 = threading.Thread(target=deleteAmelioration, args=[16])
-                th2.start()
             else:
                 levelUpgrade16.configure(text=niveau_amelioration16)
                 priceUpgrade16.configure(text=f"prix : {points(prix_amelioration_16[niveau_amelioration16])}")
