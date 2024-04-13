@@ -20,20 +20,32 @@ def points(points):
 
 print(points(10000000))
 
+
+
+
 from tkinter import *
 
-root=Tk()
-frame=Frame(root,width=300,height=300)
-frame.grid(row=0,column=0)
-canvas=Canvas(frame,bg='#FFFFFF',width=300,height=300,scrollregion=(0,0,500,500))
-hbar=Scrollbar(frame,orient=HORIZONTAL)
-hbar.pack(side=BOTTOM,fill=X)
-hbar.config(command=canvas.xview)
-vbar=Scrollbar(frame,orient=VERTICAL)
-vbar.pack(side=RIGHT,fill=Y)
-vbar.config(command=canvas.yview)
-canvas.config(width=300,height=300)
-canvas.config(xscrollcommand=hbar.set, yscrollcommand=vbar.set)
-canvas.pack(side=LEFT,expand=True,fill=BOTH)
+fenetre = Tk()
+fenetre.grid_rowconfigure(0, weight=1)
+fenetre.grid_columnconfigure(0, weight=1)
+    
+zoneUpgrade=Canvas(fenetre)
+zoneUpgrade.grid(row=0, column=0, sticky="nswe")
+    
+vScroll=Scrollbar(fenetre, orient=VERTICAL, command=zoneUpgrade.yview)
+vScroll.grid(row=0, column=1, sticky="ns")
+    
+zoneUpgrade.configure(yscrollcommand=vScroll.set)
+    
+frm=Frame(zoneUpgrade)
+    
+for i in range(50):
+    Label(frm, text="Label%s " % i).grid(row=i, column=0)
+        
+frm.update()
+    
+zoneUpgrade.create_window(0,0,window=frm, anchor=NW)
+    
+zoneUpgrade.configure(scrollregion=zoneUpgrade.bbox(ALL))
 
-root.mainloop()
+fenetre.mainloop()
