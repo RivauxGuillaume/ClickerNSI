@@ -6,14 +6,14 @@ Goal :
 
 """
 
-listboostBought = "[]"
+listboostBought = "['2', '3', '4']"
 
 print(listboostBought)
 if listboostBought == "[]":
     listboostBought = []
 else:
     listboostBought = listboostBought[2:-2]
-    listboostBought.split("', '")
+    listboostBought = listboostBought.split("""', '""")
 
 print(listboostBought)
 print(type(listboostBought))

@@ -134,9 +134,9 @@ def save():
             user_niveau_amelioration15 = niveau_amelioration15
             user_niveau_amelioration16 = niveau_amelioration16
             user_listboostBought = listboostBought
-        textWrite = textWrite + f"{user},{user_lastSave},{user_score},{user_scoreClick},{user_scoreSec},{user_niveau_amelioration1},{user_niveau_amelioration2},{user_niveau_amelioration3},{user_niveau_amelioration4},{user_niveau_amelioration5},{user_niveau_amelioration6},{user_niveau_amelioration7},{user_niveau_amelioration8},{user_niveau_amelioration9},{user_niveau_amelioration10},{user_niveau_amelioration11},{user_niveau_amelioration12},{user_niveau_amelioration13},{user_niveau_amelioration14},{user_niveau_amelioration15},{user_niveau_amelioration16},{user_listboostBought}" + "\n"
+        textWrite = textWrite + f"{user};{user_lastSave};{user_score};{user_scoreClick};{user_scoreSec};{user_niveau_amelioration1};{user_niveau_amelioration2};{user_niveau_amelioration3};{user_niveau_amelioration4};{user_niveau_amelioration5};{user_niveau_amelioration6};{user_niveau_amelioration7};{user_niveau_amelioration8};{user_niveau_amelioration9};{user_niveau_amelioration10};{user_niveau_amelioration11};{user_niveau_amelioration12};{user_niveau_amelioration13};{user_niveau_amelioration14};{user_niveau_amelioration15};{user_niveau_amelioration16};{user_listboostBought}" + "\n"
     if textRead == []:
-        textWrite = f"{joueur},{datetime.datetime.now().strftime('%a %d/%m/%y %H:%M')},{score},{scoreClick},{scoreSec},{niveau_amelioration1},{niveau_amelioration2},{niveau_amelioration3},{niveau_amelioration4},{niveau_amelioration5},{niveau_amelioration6},{niveau_amelioration7},{niveau_amelioration8},{niveau_amelioration9},{niveau_amelioration10},{niveau_amelioration11},{niveau_amelioration12},{niveau_amelioration13},{niveau_amelioration14},{niveau_amelioration15},{niveau_amelioration16},{listboostBought}\n"
+        textWrite = f"{joueur};{datetime.datetime.now().strftime('%a %d/%m/%y %H:%M')};{score};{scoreClick};{scoreSec};{niveau_amelioration1};{niveau_amelioration2};{niveau_amelioration3};{niveau_amelioration4};{niveau_amelioration5};{niveau_amelioration6};{niveau_amelioration7};{niveau_amelioration8};{niveau_amelioration9};{niveau_amelioration10};{niveau_amelioration11};{niveau_amelioration12};{niveau_amelioration13};{niveau_amelioration14};{niveau_amelioration15};{niveau_amelioration16};{listboostBought}\n"
     savefile.write(textWrite)
     savefile.close()
 
@@ -150,7 +150,7 @@ def start(joueur):
     people = savefile.readlines()
     lastSave = "pas de sauvegarde\neffectué"
     for person in people:
-        person = person[:-1].split(",")
+        person = person[:-1].split(";")
         if person[0] == joueur:
             lastSave = person[1]
             score = person[2]
@@ -1777,11 +1777,11 @@ fenetre_pop_up, text_popup, prenom_user, bouton_valider_popup = pop_up()
 fenetre_pop_up.mainloop()
 
 lastSave, score, scoreClick, scoreSec, niveau_amelioration1, niveau_amelioration2, niveau_amelioration3, niveau_amelioration4, niveau_amelioration5, niveau_amelioration6, niveau_amelioration7, niveau_amelioration8, niveau_amelioration9, niveau_amelioration10, niveau_amelioration11, niveau_amelioration12, niveau_amelioration13, niveau_amelioration14, niveau_amelioration15, niveau_amelioration16, listboostBought = start(joueur)
-if listboostBought == "[]":
+if listboostBought == "[]" or listboostBought == []:
     listboostBought = []
 else:
     listboostBought = listboostBought[2:-2]
-    listboostBought.split("', '")
+    listboostBought = listboostBought.split("', '")
 
 for i in range(len(listboostBought)):
     columnBoost1 -= 1
