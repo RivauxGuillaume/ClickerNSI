@@ -20,7 +20,7 @@ def creer_fenetre():
 
 def creer_Canvas():
     zone_graphique = Canvas(fenetre, width=screen_width, height=screen_height, bg = "gray28", border=0, borderwidth=0)
-    zone_graphique.grid(row=0, column=05, columnspan=15)
+    zone_graphique.grid(row=0, column=0, rowspan=15, columnspan=15)
 
     return zone_graphique
 
@@ -92,7 +92,7 @@ def cree_widget():
     # Bouton clicker
     picture = PhotoImage(file="image/ordi2.png")
     button_clicker = Button(fenetre, image=picture, command=AjoutScore, bg = "gray28", activebackground="gray28", bd=0)
-    button_clicker.grid(row=1, column=01, columnspan=6)
+    button_clicker.grid(row=1, column=0, rowspan=11, columnspan=6)
 
     # Texte dernière enregistrement
     text_last_save = Label(fenetre, text=f"Dernière sauvegarde :\n {lastSave}", bg="gray28", fg="white")
@@ -220,7 +220,7 @@ def start(joueur):
 
 def pop_up():
     fenetre_pop_up = Tk()
-    fenetre_pop_up.title("Entre ton nom")
+    fenetre_pop_up.title("Entres ton nom")
     fenetre_pop_up.geometry("200x150+900+400")
 
     text_popup = Label(fenetre_pop_up, text="Entre ton nom : ", height=7)
