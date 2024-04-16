@@ -118,7 +118,7 @@ def cree_widget():
     button_save_quit = Button(fenetre, bg="gray28", activebackground="gray28", bd=5, command=save_and_quit, text="Sauvegarder et\nquitter", fg="white", font="Helvetica 12")
     button_save_quit.grid(row=11, column=7, rowspan=2, columnspan=3)
 
-    return text_player, picture, button_clicker, text_last_save, text_score, text_octets_secondes, text_octets_click, button_save, button_save_quit     #pour que le programmme fonctionne, on est obligé de return la photo
+    return text_player, picture, button_clicker, text_last_save, text_score, text_octets_secondes, text_octets_click, button_save, button_save_quit
 
 def save():
     global score, scoreClick, scoreSec, niveau_amelioration1, niveau_amelioration2, niveau_amelioration3, niveau_amelioration4, niveau_amelioration5, niveau_amelioration6, niveau_amelioration7, niveau_amelioration8, niveau_amelioration9, niveau_amelioration10, niveau_amelioration11, niveau_amelioration12, niveau_amelioration13, niveau_amelioration14, niveau_amelioration15, niveau_amelioration16, listboostBought
@@ -127,9 +127,12 @@ def save():
     savefile.close()
     savefile = open("save.txt", "w", encoding="utf-8")
     textWrite = ""
+    user_exist = False
     for person in textRead:
         person = person[:-1].split(";")
         user = person[0]
+        if user == joueur:
+            user_exist = True
         user_lastSave = person[1]
         user_score = person[2]
         user_scoreClick = person[3]
@@ -174,8 +177,10 @@ def save():
             user_niveau_amelioration16 = niveau_amelioration16
             user_listboostBought = listboostBought
         textWrite = textWrite + f"{user};{user_lastSave};{user_score};{user_scoreClick};{user_scoreSec};{user_niveau_amelioration1};{user_niveau_amelioration2};{user_niveau_amelioration3};{user_niveau_amelioration4};{user_niveau_amelioration5};{user_niveau_amelioration6};{user_niveau_amelioration7};{user_niveau_amelioration8};{user_niveau_amelioration9};{user_niveau_amelioration10};{user_niveau_amelioration11};{user_niveau_amelioration12};{user_niveau_amelioration13};{user_niveau_amelioration14};{user_niveau_amelioration15};{user_niveau_amelioration16};{user_listboostBought}" + "\n"
-    if textRead == []:
-        textWrite = f"{joueur};{datetime.datetime.now().strftime('%a %d/%m/%y %H:%M')};{score};{scoreClick};{scoreSec};{niveau_amelioration1};{niveau_amelioration2};{niveau_amelioration3};{niveau_amelioration4};{niveau_amelioration5};{niveau_amelioration6};{niveau_amelioration7};{niveau_amelioration8};{niveau_amelioration9};{niveau_amelioration10};{niveau_amelioration11};{niveau_amelioration12};{niveau_amelioration13};{niveau_amelioration14};{niveau_amelioration15};{niveau_amelioration16};{listboostBought}\n"
+
+    if textRead == [] or not user_exist:
+        textWrite += f"{joueur};{datetime.datetime.now().strftime('%a %d/%m/%y %H:%M')};{score};{scoreClick};{scoreSec};{niveau_amelioration1};{niveau_amelioration2};{niveau_amelioration3};{niveau_amelioration4};{niveau_amelioration5};{niveau_amelioration6};{niveau_amelioration7};{niveau_amelioration8};{niveau_amelioration9};{niveau_amelioration10};{niveau_amelioration11};{niveau_amelioration12};{niveau_amelioration13};{niveau_amelioration14};{niveau_amelioration15};{niveau_amelioration16};{listboostBought}\n"
+
     savefile.write(textWrite)
     savefile.close()
 
@@ -188,6 +193,7 @@ def start(joueur):
     savefile = open("save.txt", "r", encoding="utf-8")
     people = savefile.readlines()
     lastSave = "pas de sauvegarde\neffectué"
+    personne_attribue = False
     for person in people:
         person = person[:-1].split(";")
         if person[0] == joueur:
@@ -212,11 +218,12 @@ def start(joueur):
             niveau_amelioration15 = person[19]
             niveau_amelioration16 = person[20]
             listboostBought = person[21]
+            personne_attribue = True
+    if not personne_attribue:
+        lastSave, score, scoreClick, scoreSec, niveau_amelioration1, niveau_amelioration2, niveau_amelioration3, niveau_amelioration4, niveau_amelioration5, niveau_amelioration6, niveau_amelioration7, niveau_amelioration8, niveau_amelioration9, niveau_amelioration10, niveau_amelioration11, niveau_amelioration12, niveau_amelioration13, niveau_amelioration14, niveau_amelioration15, niveau_amelioration16, listboostBought = lastSave, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, []
+
     savefile.close()
-    if people != []:
-        return lastSave, float(score), float(scoreClick), float(scoreSec), int(niveau_amelioration1), int(niveau_amelioration2), int(niveau_amelioration3), int(niveau_amelioration4), int(niveau_amelioration5), int(niveau_amelioration6), int(niveau_amelioration7), int(niveau_amelioration8), int(niveau_amelioration9), int(niveau_amelioration10), int(niveau_amelioration11), int(niveau_amelioration12), int(niveau_amelioration13), int(niveau_amelioration14), int(niveau_amelioration15), int(niveau_amelioration16), listboostBought
-    else:
-        return lastSave, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, []
+    return lastSave, float(score), float(scoreClick), float(scoreSec), int(niveau_amelioration1), int(niveau_amelioration2), int(niveau_amelioration3), int(niveau_amelioration4), int(niveau_amelioration5), int(niveau_amelioration6), int(niveau_amelioration7), int(niveau_amelioration8), int(niveau_amelioration9), int(niveau_amelioration10), int(niveau_amelioration11), int(niveau_amelioration12), int(niveau_amelioration13), int(niveau_amelioration14), int(niveau_amelioration15), int(niveau_amelioration16), listboostBought
 
 def pop_up():
     fenetre_pop_up = Tk()
@@ -848,7 +855,7 @@ def Amelioration1Clic():
         if score >= prix_amelioration_1[niveau_amelioration1]:
             niveau_amelioration1 += 1
             scoreSec=scoreSec_fonction()
-            score= round(score-prix_amelioration_1[niveau_amelioration1 - 1], 1)
+            score=round(score-prix_amelioration_1[niveau_amelioration1 - 1], 1)
             text_score.configure(text=f"{points(score)}")
             if niveau_amelioration1 == 1000:
                 levelUpgrade1.configure(text="MAX")
@@ -1522,7 +1529,7 @@ def scoreSec_fonction():
 
 def point1k(event):
     global score
-    score += 100000000000000000000000000
+    score += 500
     text_score.configure(text=f"{score}")
 
 
@@ -1533,7 +1540,7 @@ def ptpclick(event):
 
 def ptpsecondes(event):
     global scoreSec
-    scoreSec += 25000000000000000000000000000
+    scoreSec += 10
     text_octets_secondes.configure(text=f"Par Seconde : {scoreSec}")
 
 
