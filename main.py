@@ -87,7 +87,7 @@ def points(pt):
 def cree_widget():
     # Joueur qui joue
     text_player = Label(fenetre, text=f"Joueur : {joueur}", bg="gray28", fg="white")
-    text_player.grid(row=0, column=0)
+    text_player.grid(row=3, column=2)
 
     # Bouton clicker
     picture = PhotoImage(file="image/ordi2.png")
@@ -111,17 +111,30 @@ def cree_widget():
     text_octets_click.grid(row=3, column=7, columnspan=3)
 
     # Bouton pour sauvegarder
-    button_save = Button(fenetre, bg="gray28", activebackground="gray28", bd=5, command=save, text="Sauvegarder la\nprogression", fg="white", font="Helvetica 12")
+    button_save = Button(fenetre, bg="gray28", activebackground="gray28", bd=0, command=save, image=pictureSave)
     button_save.grid(row=8, column=7, rowspan=2, columnspan=3)
 
     # Bouton pour sauvegarder et quitter
-    button_save_quit = Button(fenetre, bg="gray28", activebackground="gray28", bd=5, command=save_and_quit, text="Sauvegarder et\nquitter", fg="white", font="Helvetica 12")
+    button_save_quit = Button(fenetre, bg="gray28", activebackground="gray28", bd=0, command=save_and_quit, image=pictureSaveAndQuit)
     button_save_quit.grid(row=11, column=7, rowspan=2, columnspan=3)
 
     return text_player, picture, button_clicker, text_last_save, text_score, text_octets_secondes, text_octets_click, button_save, button_save_quit     #pour que le programmme fonctionne, on est obligé de return la photo
 
+def widgetJoueur():
+    text_popup = Label(fenetre, image=pictureEnterName, bg="gray28")
+    text_popup.grid(row=4, column=5, columnspan=5)
+
+    prenom_user = Text(fenetre, width=20, height=1, bg="gray28")
+    prenom_user.grid(row=6, column=5, columnspan=5)
+
+    bouton_valider_popup = Button(fenetre, command=lancerJeu, image=pictureValidName, bd=0, bg="gray28", activebackground="gray28")
+    bouton_valider_popup.grid(row=8, column=5, columnspan=5)
+
+    return text_popup, prenom_user, bouton_valider_popup
+
+
 def save():
-    global score, scoreClick, scoreSec, niveau_amelioration1, niveau_amelioration2, niveau_amelioration3, niveau_amelioration4, niveau_amelioration5, niveau_amelioration6, niveau_amelioration7, niveau_amelioration8, niveau_amelioration9, niveau_amelioration10, niveau_amelioration11, niveau_amelioration12, niveau_amelioration13, niveau_amelioration14, niveau_amelioration15, niveau_amelioration16, listboostBought
+    global score, scoreClick, scoreSec, niveau_amelioration1, niveau_amelioration2, niveau_amelioration3, niveau_amelioration4, niveau_amelioration5, niveau_amelioration6, niveau_amelioration7, niveau_amelioration8, niveau_amelioration9, niveau_amelioration10, niveau_amelioration11, niveau_amelioration12, niveau_amelioration13, niveau_amelioration14, niveau_amelioration15, niveau_amelioration16, listboostBought, user_exist
     savefile = open("save.txt", "r", encoding="utf-8")
     textRead = savefile.readlines()
     savefile.close()
@@ -222,27 +235,6 @@ def start(joueur):
     savefile.close()
     return lastSave, float(score), float(scoreClick), float(scoreSec), int(niveau_amelioration1), int(niveau_amelioration2), int(niveau_amelioration3), int(niveau_amelioration4), int(niveau_amelioration5), int(niveau_amelioration6), int(niveau_amelioration7), int(niveau_amelioration8), int(niveau_amelioration9), int(niveau_amelioration10), int(niveau_amelioration11), int(niveau_amelioration12), int(niveau_amelioration13), int(niveau_amelioration14), int(niveau_amelioration15), int(niveau_amelioration16), listboostBought
 
-def pop_up():
-    fenetre_pop_up = Tk()
-    fenetre_pop_up.title("Entres ton nom")
-    fenetre_pop_up.geometry("200x150+900+400")
-
-    text_popup = Label(fenetre_pop_up, text="Entre ton nom : ", height=7)
-    text_popup.grid(row=0, column=0)
-
-    prenom_user = Text(fenetre_pop_up, height=1, width=14)
-    prenom_user.grid(row=0, column=1)
-
-    bouton_valider_popup = Button(fenetre_pop_up, text="Valider", width=12, command=recuperer_nom)
-    bouton_valider_popup.grid(row=1, column=0, columnspan=2)
-
-    return fenetre_pop_up, text_popup, prenom_user, bouton_valider_popup
-
-def recuperer_nom():
-    global joueur
-    joueur = prenom_user.get("1.0", "end-1c")
-    fenetre_pop_up.destroy()
-
 def AjoutScore():
     global score
     score= round(score + scoreClick, 1)
@@ -325,8 +317,12 @@ def load_picture():
     hoverBoost20=PhotoImage(file="hoverBoost/hoverBoost20.png")
     hoverBoost21=PhotoImage(file="hoverBoost/hoverBoost21.png")
     hoverBoost22=PhotoImage(file="hoverBoost/hoverBoost22.png")
+    pictureSave=PhotoImage(file="image/save.png")
+    pictureSaveAndQuit=PhotoImage(file="image/save and quit.png")
+    pictureValidName = PhotoImage(file="image/ValidName.png")
+    pictureEnterName = PhotoImage(file="image/EnterName.png")
 
-    return pictureUpgrade1,  pictureUpgrade2, pictureUpgrade3, pictureUpgrade4, pictureUpgrade5,  pictureUpgrade6, pictureUpgrade7, pictureUpgrade8, pictureUpgrade9, pictureUpgrade10, pictureUpgrade11, pictureUpgrade12, pictureUpgrade13, pictureUpgrade14, pictureUpgrade15, pictureUpgrade16, pictureBoost1, pictureBoost2, pictureBoost3, pictureBoost4, pictureBoost5, pictureBoost6, pictureBoost7, pictureBoost8, pictureBoost9, pictureBoost10, pictureBoost11, pictureBoost12, pictureBoost13, pictureBoost14, pictureBoost15, pictureBoost16, pictureBoost17, pictureBoost18, pictureBoost19, imageTransparente, hoverBoost1, hoverBoost2, hoverBoost3, hoverBoost4, hoverBoost5, hoverBoost6, hoverBoost7, hoverBoost8, hoverBoost9, hoverBoost10, hoverBoost11, hoverBoost12, hoverBoost13, hoverBoost14, hoverBoost15, hoverBoost16, hoverBoost17, hoverBoost18, hoverBoost19, hoverBoost20, hoverBoost21, hoverBoost22
+    return pictureUpgrade1,  pictureUpgrade2, pictureUpgrade3, pictureUpgrade4, pictureUpgrade5,  pictureUpgrade6, pictureUpgrade7, pictureUpgrade8, pictureUpgrade9, pictureUpgrade10, pictureUpgrade11, pictureUpgrade12, pictureUpgrade13, pictureUpgrade14, pictureUpgrade15, pictureUpgrade16, pictureBoost1, pictureBoost2, pictureBoost3, pictureBoost4, pictureBoost5, pictureBoost6, pictureBoost7, pictureBoost8, pictureBoost9, pictureBoost10, pictureBoost11, pictureBoost12, pictureBoost13, pictureBoost14, pictureBoost15, pictureBoost16, pictureBoost17, pictureBoost18, pictureBoost19, imageTransparente, hoverBoost1, hoverBoost2, hoverBoost3, hoverBoost4, hoverBoost5, hoverBoost6, hoverBoost7, hoverBoost8, hoverBoost9, hoverBoost10, hoverBoost11, hoverBoost12, hoverBoost13, hoverBoost14, hoverBoost15, hoverBoost16, hoverBoost17, hoverBoost18, hoverBoost19, hoverBoost20, hoverBoost21, hoverBoost22, pictureSave, pictureSaveAndQuit, pictureValidName, pictureEnterName
 
 
 def widgetUpgrade1():
@@ -1522,6 +1518,197 @@ def scoreSec_fonction():
     update_text = 1
     return scoreSec
 
+def afficherTtLesWidgets():
+    dicVariable["levelUpgrade1"].grid(row=rowUpgrade1, column=0)
+    dicVariable["levelUpgrade2"].grid(row=rowUpgrade2, column=0)
+    dicVariable["levelUpgrade3"].grid(row=rowUpgrade3, column=0)
+    dicVariable["levelUpgrade4"].grid(row=rowUpgrade4, column=0)
+    dicVariable["levelUpgrade5"].grid(row=rowUpgrade5, column=0)
+    dicVariable["levelUpgrade6"].grid(row=rowUpgrade6, column=0)
+    dicVariable["levelUpgrade7"].grid(row=rowUpgrade7, column=0)
+    dicVariable["levelUpgrade8"].grid(row=rowUpgrade8, column=0)
+    dicVariable["levelUpgrade9"].grid(row=rowUpgrade9, column=0)
+    dicVariable["levelUpgrade10"].grid(row=rowUpgrade10, column=0)
+    dicVariable["levelUpgrade11"].grid(row=rowUpgrade11, column=0)
+    dicVariable["levelUpgrade12"].grid(row=rowUpgrade12, column=0)
+    dicVariable["levelUpgrade13"].grid(row=rowUpgrade13, column=0)
+    dicVariable["levelUpgrade14"].grid(row=rowUpgrade14, column=0)
+    dicVariable["levelUpgrade15"].grid(row=rowUpgrade15, column=0)
+    dicVariable["levelUpgrade16"].grid(row=rowUpgrade16, column=0)
+
+    dicVariable["buttonUpgrade1"].grid(row=rowUpgrade1, column=1)
+    dicVariable["buttonUpgrade2"].grid(row=rowUpgrade2, column=1)
+    dicVariable["buttonUpgrade3"].grid(row=rowUpgrade3, column=1)
+    dicVariable["buttonUpgrade4"].grid(row=rowUpgrade4, column=1)
+    dicVariable["buttonUpgrade5"].grid(row=rowUpgrade5, column=1)
+    dicVariable["buttonUpgrade6"].grid(row=rowUpgrade6, column=1)
+    dicVariable["buttonUpgrade7"].grid(row=rowUpgrade7, column=1)
+    dicVariable["buttonUpgrade8"].grid(row=rowUpgrade8, column=1)
+    dicVariable["buttonUpgrade9"].grid(row=rowUpgrade9, column=1)
+    dicVariable["buttonUpgrade10"].grid(row=rowUpgrade10, column=1)
+    dicVariable["buttonUpgrade11"].grid(row=rowUpgrade11, column=1)
+    dicVariable["buttonUpgrade12"].grid(row=rowUpgrade12, column=1)
+    dicVariable["buttonUpgrade13"].grid(row=rowUpgrade13, column=1)
+    dicVariable["buttonUpgrade14"].grid(row=rowUpgrade14, column=1)
+    dicVariable["buttonUpgrade15"].grid(row=rowUpgrade15, column=1)
+    dicVariable["buttonUpgrade16"].grid(row=rowUpgrade16, column=1)
+
+    dicVariable["priceUpgrade1"].grid(row=rowUpgrade1, column=2)
+    dicVariable["priceUpgrade2"].grid(row=rowUpgrade2, column=2)
+    dicVariable["priceUpgrade3"].grid(row=rowUpgrade3, column=2)
+    dicVariable["priceUpgrade4"].grid(row=rowUpgrade4, column=2)
+    dicVariable["priceUpgrade5"].grid(row=rowUpgrade5, column=2)
+    dicVariable["priceUpgrade6"].grid(row=rowUpgrade6, column=2)
+    dicVariable["priceUpgrade7"].grid(row=rowUpgrade7, column=2)
+    dicVariable["priceUpgrade8"].grid(row=rowUpgrade8, column=2)
+    dicVariable["priceUpgrade9"].grid(row=rowUpgrade9, column=2)
+    dicVariable["priceUpgrade10"].grid(row=rowUpgrade10, column=2)
+    dicVariable["priceUpgrade11"].grid(row=rowUpgrade11, column=2)
+    dicVariable["priceUpgrade12"].grid(row=rowUpgrade12, column=2)
+    dicVariable["priceUpgrade13"].grid(row=rowUpgrade13, column=2)
+    dicVariable["priceUpgrade14"].grid(row=rowUpgrade14, column=2)
+    dicVariable["priceUpgrade15"].grid(row=rowUpgrade15, column=2)
+    dicVariable["priceUpgrade16"].grid(row=rowUpgrade16, column=2)
+
+    dicVariable["textUpgrade1"].grid(row=rowUpgrade1, column=3)
+    dicVariable["textUpgrade2"].grid(row=rowUpgrade2, column=3)
+    dicVariable["textUpgrade3"].grid(row=rowUpgrade3, column=3)
+    dicVariable["textUpgrade4"].grid(row=rowUpgrade4, column=3)
+    dicVariable["textUpgrade5"].grid(row=rowUpgrade5, column=3)
+    dicVariable["textUpgrade6"].grid(row=rowUpgrade6, column=3)
+    dicVariable["textUpgrade7"].grid(row=rowUpgrade7, column=3)
+    dicVariable["textUpgrade8"].grid(row=rowUpgrade8, column=3)
+    dicVariable["textUpgrade9"].grid(row=rowUpgrade9, column=3)
+    dicVariable["textUpgrade10"].grid(row=rowUpgrade10, column=3)
+    dicVariable["textUpgrade11"].grid(row=rowUpgrade11, column=3)
+    dicVariable["textUpgrade12"].grid(row=rowUpgrade12, column=3)
+    dicVariable["textUpgrade13"].grid(row=rowUpgrade13, column=3)
+    dicVariable["textUpgrade14"].grid(row=rowUpgrade14, column=3)
+    dicVariable["textUpgrade15"].grid(row=rowUpgrade15, column=3)
+    dicVariable["textUpgrade16"].grid(row=rowUpgrade16, column=3)
+
+    vScroll.grid(row=3, column=14,rowspan=10, sticky="ns")
+    button_save_quit.grid(row=11, column=7, rowspan=2, columnspan=3)
+    text_player.grid(row=0, column=0)
+    text_score.grid(row=1, column=7, columnspan=3)
+    text_octets_click.grid(row=3, column=7, columnspan=3)
+    text_octets_secondes.grid(row=2, column=7, columnspan=3)
+    text_last_save.grid(row=13, column=1, columnspan=4)
+    button_save.grid(row=8, column=7, rowspan=2, columnspan=3)
+    button_clicker.grid(row=1, column=0, rowspan=11, columnspan=6)
+
+
+def lancerJeu():
+    global dicVariable, zoneUpgrade, vScroll, frm, levelUpgrade1, buttonUpgrade1, priceUpgrade1, textUpgrade1, levelUpgrade2, buttonUpgrade2, priceUpgrade2, textUpgrade2, levelUpgrade3, buttonUpgrade3, priceUpgrade3, textUpgrade3, levelUpgrade4, buttonUpgrade4, priceUpgrade4, textUpgrade4, levelUpgrade5, buttonUpgrade5, priceUpgrade5, textUpgrade5, levelUpgrade6, buttonUpgrade6, priceUpgrade6, textUpgrade6, levelUpgrade7, buttonUpgrade7, priceUpgrade7, textUpgrade7, levelUpgrade8, buttonUpgrade8, priceUpgrade8, textUpgrade8, levelUpgrade9, buttonUpgrade9, priceUpgrade9, textUpgrade9, levelUpgrade10, buttonUpgrade10, priceUpgrade10, textUpgrade10, levelUpgrade11, buttonUpgrade11, priceUpgrade11, textUpgrade11, levelUpgrade12, buttonUpgrade12, priceUpgrade12, textUpgrade12, levelUpgrade13, buttonUpgrade13, priceUpgrade13, textUpgrade13, levelUpgrade14, buttonUpgrade14, priceUpgrade14, textUpgrade14, levelUpgrade15, buttonUpgrade15, priceUpgrade15, textUpgrade15, levelUpgrade16, buttonUpgrade16, priceUpgrade16, textUpgrade16
+    global columnBoost1, columnBoost2, columnBoost3, columnBoost4, columnBoost5, columnBoost6, columnBoost7, columnBoost8, columnBoost9, columnBoost10, columnBoost11, columnBoost12, columnBoost13, columnBoost14, columnBoost15, columnBoost16, columnBoost17, columnBoost18, columnBoost19
+    global buttonBoost1, buttonBoost2, buttonBoost3, buttonBoost4, buttonBoost5, buttonBoost6, buttonBoost7, buttonBoost8, buttonBoost9, buttonBoost10, buttonBoost11, buttonBoost12, buttonBoost13, buttonBoost14, buttonBoost15, buttonBoost16, buttonBoost17, buttonBoost18, buttonBoost19
+    global joueur, joueurRecuperer, lastSave, score, scoreClick, scoreSec, niveau_amelioration1, niveau_amelioration2, niveau_amelioration3, niveau_amelioration4, niveau_amelioration5, niveau_amelioration6, niveau_amelioration7, niveau_amelioration8, niveau_amelioration9, niveau_amelioration10, niveau_amelioration11, niveau_amelioration12, niveau_amelioration13, niveau_amelioration14, niveau_amelioration15, niveau_amelioration16, listboostBought, text_player, picture, button_clicker, text_last_save, text_score, text_octets_secondes, text_octets_click, button_save, button_save_quit, numTransparent
+    joueur = prenom_user.get("1.0", "end-1c")
+    lastSave, score, scoreClick, scoreSec, niveau_amelioration1, niveau_amelioration2, niveau_amelioration3, niveau_amelioration4, niveau_amelioration5, niveau_amelioration6, niveau_amelioration7, niveau_amelioration8, niveau_amelioration9, niveau_amelioration10, niveau_amelioration11, niveau_amelioration12, niveau_amelioration13, niveau_amelioration14, niveau_amelioration15, niveau_amelioration16, listboostBought = start(joueur)
+    if listboostBought == "[]" or listboostBought == []:
+        listboostBought = []
+    else:
+        listboostBought = listboostBought[2:-2]
+        listboostBought = listboostBought.split("', '")
+    text_player, picture, button_clicker, text_last_save, text_score, text_octets_secondes, text_octets_click, button_save, button_save_quit = cree_widget()
+    numTransparent = creerGraphisme()
+    zoneUpgrade, vScroll, frm, levelUpgrade1, buttonUpgrade1, priceUpgrade1, textUpgrade1, levelUpgrade2, buttonUpgrade2, priceUpgrade2, textUpgrade2, levelUpgrade3, buttonUpgrade3, priceUpgrade3, textUpgrade3, levelUpgrade4, buttonUpgrade4, priceUpgrade4, textUpgrade4, levelUpgrade5, buttonUpgrade5, priceUpgrade5, textUpgrade5, levelUpgrade6, buttonUpgrade6, priceUpgrade6, textUpgrade6, levelUpgrade7, buttonUpgrade7, priceUpgrade7, textUpgrade7, levelUpgrade8, buttonUpgrade8, priceUpgrade8, textUpgrade8, levelUpgrade9, buttonUpgrade9, priceUpgrade9, textUpgrade9, levelUpgrade10, buttonUpgrade10, priceUpgrade10, textUpgrade10, levelUpgrade11, buttonUpgrade11, priceUpgrade11, textUpgrade11, levelUpgrade12, buttonUpgrade12, priceUpgrade12, textUpgrade12, levelUpgrade13, buttonUpgrade13, priceUpgrade13, textUpgrade13, levelUpgrade14, buttonUpgrade14, priceUpgrade14, textUpgrade14, levelUpgrade15, buttonUpgrade15, priceUpgrade15, textUpgrade15, levelUpgrade16, buttonUpgrade16, priceUpgrade16, textUpgrade16 = creerItemUpgrade()
+
+    columnBoost1 -= len(listboostBought)
+    columnBoost2 -= len(listboostBought)
+    columnBoost3 -= len(listboostBought)
+    columnBoost4 -= len(listboostBought)
+    columnBoost5 -= len(listboostBought)
+    columnBoost6 -= len(listboostBought)
+    columnBoost7 -= len(listboostBought)
+    columnBoost8 -= len(listboostBought)
+    columnBoost9 -= len(listboostBought)
+    columnBoost10 -= len(listboostBought)
+    columnBoost11 -= len(listboostBought)
+    columnBoost12 -= len(listboostBought)
+    columnBoost13 -= len(listboostBought)
+    columnBoost14 -= len(listboostBought)
+    columnBoost15 -= len(listboostBought)
+    columnBoost16 -= len(listboostBought)
+    columnBoost17 -= len(listboostBought)
+    columnBoost18 -= len(listboostBought)
+    columnBoost19 -= len(listboostBought)
+
+    buttonBoost1 = widgetBoost1()
+    buttonBoost2 = widgetBoost2()
+    buttonBoost3 = widgetBoost3()
+    buttonBoost4 = widgetBoost4()
+    buttonBoost5 = widgetBoost5()
+    buttonBoost6 = widgetBoost6()
+    buttonBoost7 = widgetBoost7()
+    buttonBoost8 = widgetBoost8()
+    buttonBoost9 = widgetBoost9()
+    buttonBoost10 = widgetBoost10()
+    buttonBoost11 = widgetBoost11()
+    buttonBoost12 = widgetBoost12()
+    buttonBoost13 = widgetBoost13()
+    buttonBoost14 = widgetBoost14()
+    buttonBoost15 = widgetBoost15()
+    buttonBoost16 = widgetBoost16()
+    buttonBoost17 = widgetBoost17()
+    buttonBoost18 = widgetBoost18()
+    buttonBoost19 = widgetBoost19()
+
+    dicVariable = {"levelUpgrade1": levelUpgrade1, "buttonUpgrade1": buttonUpgrade1, "priceUpgrade1": priceUpgrade1,
+                   "textUpgrade1": textUpgrade1, "rowUpgrade1": rowUpgrade1, "levelUpgrade2": levelUpgrade2,
+                   "buttonUpgrade2": buttonUpgrade2, "priceUpgrade2": priceUpgrade2, "textUpgrade2": textUpgrade2,
+                   "rowUpgrade2": rowUpgrade2, "levelUpgrade3": levelUpgrade3, "buttonUpgrade3": buttonUpgrade3,
+                   "priceUpgrade3": priceUpgrade3, "textUpgrade3": textUpgrade3, "rowUpgrade3": rowUpgrade3,
+                   "levelUpgrade4": levelUpgrade4, "buttonUpgrade4": buttonUpgrade4, "priceUpgrade4": priceUpgrade4,
+                   "textUpgrade4": textUpgrade4, "rowUpgrade4": rowUpgrade4, "levelUpgrade5": levelUpgrade5,
+                   "buttonUpgrade5": buttonUpgrade5, "priceUpgrade5": priceUpgrade5, "textUpgrade5": textUpgrade5,
+                   "rowUpgrade5": rowUpgrade5, "levelUpgrade6": levelUpgrade6, "buttonUpgrade6": buttonUpgrade6,
+                   "priceUpgrade6": priceUpgrade6, "textUpgrade6": textUpgrade6, "rowUpgrade6": rowUpgrade6,
+                   "levelUpgrade7": levelUpgrade7, "buttonUpgrade7": buttonUpgrade7, "priceUpgrade7": priceUpgrade7,
+                   "textUpgrade7": textUpgrade7, "rowUpgrade7": rowUpgrade7, "levelUpgrade8": levelUpgrade8,
+                   "buttonUpgrade8": buttonUpgrade8, "priceUpgrade8": priceUpgrade8, "textUpgrade8": textUpgrade8,
+                   "rowUpgrade8": rowUpgrade8, "levelUpgrade9": levelUpgrade9, "buttonUpgrade9": buttonUpgrade9,
+                   "priceUpgrade9": priceUpgrade9, "textUpgrade9": textUpgrade9, "rowUpgrade9": rowUpgrade9,
+                   "levelUpgrade10": levelUpgrade10, "buttonUpgrade10": buttonUpgrade10,
+                   "priceUpgrade10": priceUpgrade10, "textUpgrade10": textUpgrade10, "rowUpgrade10": rowUpgrade10,
+                   "levelUpgrade11": levelUpgrade11, "buttonUpgrade11": buttonUpgrade11,
+                   "priceUpgrade11": priceUpgrade11, "textUpgrade11": textUpgrade11, "rowUpgrade11": rowUpgrade11,
+                   "levelUpgrade12": levelUpgrade12, "buttonUpgrade12": buttonUpgrade12,
+                   "priceUpgrade12": priceUpgrade12, "textUpgrade12": textUpgrade12, "rowUpgrade12": rowUpgrade12,
+                   "levelUpgrade13": levelUpgrade13, "buttonUpgrade13": buttonUpgrade13,
+                   "priceUpgrade13": priceUpgrade13, "textUpgrade13": textUpgrade13, "rowUpgrade13": rowUpgrade13,
+                   "levelUpgrade14": levelUpgrade14, "buttonUpgrade14": buttonUpgrade14,
+                   "priceUpgrade14": priceUpgrade14, "textUpgrade14": textUpgrade14, "rowUpgrade14": rowUpgrade14,
+                   "levelUpgrade15": levelUpgrade15, "buttonUpgrade15": buttonUpgrade15,
+                   "priceUpgrade15": priceUpgrade15, "textUpgrade15": textUpgrade15, "rowUpgrade15": rowUpgrade15,
+                   "levelUpgrade16": levelUpgrade16, "buttonUpgrade16": buttonUpgrade16,
+                   "priceUpgrade16": priceUpgrade16, "textUpgrade16": textUpgrade16, "rowUpgrade16": rowUpgrade16,
+                   "columnBoost1": columnBoost1, "columnBoost2": columnBoost2, "columnBoost3": columnBoost3,
+                   "columnBoost4": columnBoost4, "columnBoost5": columnBoost5, "columnBoost6": columnBoost6,
+                   "columnBoost7": columnBoost7, "columnBoost8": columnBoost8, "columnBoost9": columnBoost9,
+                   "columnBoost10": columnBoost10, "columnBoost11": columnBoost11, "columnBoost12": columnBoost12,
+                   "columnBoost13": columnBoost13, "columnBoost14": columnBoost14, "columnBoost15": columnBoost15,
+                   "columnBoost16": columnBoost16, "columnBoost17": columnBoost17, "columnBoost18": columnBoost18,
+                   "columnBoost19": columnBoost19, "buttonBoost1": buttonBoost1, "buttonBoost2": buttonBoost2,
+                   "buttonBoost3": buttonBoost3, "buttonBoost4": buttonBoost4, "buttonBoost5": buttonBoost5,
+                   "buttonBoost6": buttonBoost6, "buttonBoost7": buttonBoost7, "buttonBoost8": buttonBoost8,
+                   "buttonBoost9": buttonBoost9, "buttonBoost10": buttonBoost10, "buttonBoost11": buttonBoost11,
+                   "buttonBoost12": buttonBoost12, "buttonBoost13": buttonBoost13, "buttonBoost14": buttonBoost14,
+                   "buttonBoost15": buttonBoost15, "buttonBoost16": buttonBoost16, "buttonBoost17": buttonBoost17,
+                   "buttonBoost18": buttonBoost18, "buttonBoost19": buttonBoost19}
+    masquerBoost()
+    # Gestion du multithread pour les clic/sec
+    th1 = threading.Thread(target=MajScoreSec)
+    th1.daemon = True
+    th1.start()
+    # Verification si on affiche le boost ou pas
+    th4 = threading.Thread(target=actualiserBoostVerif)
+    th4.daemon = True
+    th4.start()
+    text_popup.destroy()
+    prenom_user.destroy()
+    bouton_valider_popup.destroy()
+
 #---------------------------------------------------------Provisoire--------------------------------------------------------
 
 def point1k(event):
@@ -1543,13 +1730,12 @@ def ptpsecondes(event):
 
 #----------------------------------------------------------------Main-----------------------------------------------------------------------------
 
-
-
 dicImageBoost={}
 listAmelioration = [1, 2, 3, 4, 5]
 # Maintenant listBoost sert a voir a quel boost on a acheté on ne supprime plus de boost dans listBoost
 listBoost = []
 listboostBought = []
+
 rowUpgrade1 = 0
 rowUpgrade2 = 1
 rowUpgrade3 = 2
@@ -1663,17 +1849,6 @@ scoreSec=scoreSec_fonction()
 scoreClick = 1
 score=0
 
-#a mdifier pour 1 seul écran
-fenetre_pop_up, text_popup, prenom_user, bouton_valider_popup = pop_up()
-fenetre_pop_up.mainloop()
-
-lastSave, score, scoreClick, scoreSec, niveau_amelioration1, niveau_amelioration2, niveau_amelioration3, niveau_amelioration4, niveau_amelioration5, niveau_amelioration6, niveau_amelioration7, niveau_amelioration8, niveau_amelioration9, niveau_amelioration10, niveau_amelioration11, niveau_amelioration12, niveau_amelioration13, niveau_amelioration14, niveau_amelioration15, niveau_amelioration16, listboostBought = start(joueur)
-if listboostBought == "[]" or listboostBought == []:
-    listboostBought = []
-else:
-    listboostBought = listboostBought[2:-2]
-    listboostBought = listboostBought.split("', '")
-
 for i in range(len(listboostBought)):
     columnBoost1 -= 1
     columnBoost2 -= 1
@@ -1694,62 +1869,22 @@ for i in range(len(listboostBought)):
     columnBoost17 -= 1
     columnBoost18 -= 1
     columnBoost19 -= 1
+
 fenetre, screen_width, screen_height = creer_fenetre()
 zone_graphique = creer_Canvas()
+pictureUpgrade1,  pictureUpgrade2, pictureUpgrade3, pictureUpgrade4, pictureUpgrade5,  pictureUpgrade6, pictureUpgrade7, pictureUpgrade8, pictureUpgrade9, pictureUpgrade10, pictureUpgrade11, pictureUpgrade12, pictureUpgrade13, pictureUpgrade14, pictureUpgrade15, pictureUpgrade16, pictureBoost1, pictureBoost2, pictureBoost3, pictureBoost4, pictureBoost5, pictureBoost6, pictureBoost7, pictureBoost8, pictureBoost9, pictureBoost10, pictureBoost11, pictureBoost12, pictureBoost13, pictureBoost14, pictureBoost15, pictureBoost16, pictureBoost17, pictureBoost18, pictureBoost19, imageTransparente, hoverBoost1, hoverBoost2, hoverBoost3, hoverBoost4, hoverBoost5, hoverBoost6, hoverBoost7, hoverBoost8, hoverBoost9, hoverBoost10, hoverBoost11, hoverBoost12, hoverBoost13, hoverBoost14, hoverBoost15, hoverBoost16, hoverBoost17, hoverBoost18, hoverBoost19, hoverBoost20, hoverBoost21, hoverBoost22, pictureSave, pictureSaveAndQuit, pictureValidName, pictureEnterName = load_picture()
 
-pictureUpgrade1,  pictureUpgrade2, pictureUpgrade3, pictureUpgrade4, pictureUpgrade5,  pictureUpgrade6, pictureUpgrade7, pictureUpgrade8, pictureUpgrade9, pictureUpgrade10, pictureUpgrade11, pictureUpgrade12, pictureUpgrade13, pictureUpgrade14, pictureUpgrade15, pictureUpgrade16, pictureBoost1, pictureBoost2, pictureBoost3, pictureBoost4, pictureBoost5, pictureBoost6, pictureBoost7, pictureBoost8, pictureBoost9, pictureBoost10, pictureBoost11, pictureBoost12, pictureBoost13, pictureBoost14, pictureBoost15, pictureBoost16, pictureBoost17, pictureBoost18, pictureBoost19, imageTransparente, hoverBoost1, hoverBoost2, hoverBoost3, hoverBoost4, hoverBoost5, hoverBoost6, hoverBoost7, hoverBoost8, hoverBoost9, hoverBoost10, hoverBoost11, hoverBoost12, hoverBoost13, hoverBoost14, hoverBoost15, hoverBoost16, hoverBoost17, hoverBoost18, hoverBoost19, hoverBoost20, hoverBoost21, hoverBoost22 = load_picture()
+text_popup, prenom_user, bouton_valider_popup = widgetJoueur()
 
-zoneUpgrade, vScroll, frm, levelUpgrade1, buttonUpgrade1, priceUpgrade1, textUpgrade1, levelUpgrade2, buttonUpgrade2, priceUpgrade2, textUpgrade2, levelUpgrade3, buttonUpgrade3, priceUpgrade3, textUpgrade3, levelUpgrade4, buttonUpgrade4, priceUpgrade4, textUpgrade4, levelUpgrade5, buttonUpgrade5, priceUpgrade5, textUpgrade5, levelUpgrade6, buttonUpgrade6, priceUpgrade6, textUpgrade6, levelUpgrade7, buttonUpgrade7, priceUpgrade7, textUpgrade7,levelUpgrade8, buttonUpgrade8, priceUpgrade8, textUpgrade8, levelUpgrade9, buttonUpgrade9, priceUpgrade9, textUpgrade9, levelUpgrade10, buttonUpgrade10, priceUpgrade10, textUpgrade10, levelUpgrade11, buttonUpgrade11, priceUpgrade11, textUpgrade11, levelUpgrade12, buttonUpgrade12, priceUpgrade12, textUpgrade12, levelUpgrade13, buttonUpgrade13, priceUpgrade13, textUpgrade13, levelUpgrade14, buttonUpgrade14, priceUpgrade14, textUpgrade14, levelUpgrade15, buttonUpgrade15, priceUpgrade15, textUpgrade15, levelUpgrade16, buttonUpgrade16, priceUpgrade16, textUpgrade16 = creerItemUpgrade()
 
 fenetre.update()
-text_player, picture, button_clicker, text_last_save, text_score, text_octets_secondes, text_octets_click, button_save, button_save_quit =  cree_widget()
-
-numTransparent=creerGraphisme()
-
-buttonBoost1=widgetBoost1()
-buttonBoost2=widgetBoost2()
-buttonBoost3=widgetBoost3()
-buttonBoost4=widgetBoost4()
-buttonBoost5=widgetBoost5()
-buttonBoost6=widgetBoost6()
-buttonBoost7=widgetBoost7()
-buttonBoost8=widgetBoost8()
-buttonBoost9=widgetBoost9()
-buttonBoost10=widgetBoost10()
-buttonBoost11=widgetBoost11()
-buttonBoost12=widgetBoost12()
-buttonBoost13=widgetBoost13()
-buttonBoost14=widgetBoost14()
-buttonBoost15=widgetBoost15()
-buttonBoost16=widgetBoost16()
-buttonBoost17=widgetBoost17()
-buttonBoost18=widgetBoost18()
-buttonBoost19=widgetBoost19()
-
-
-dicVariable={"levelUpgrade1" : levelUpgrade1, "buttonUpgrade1" : buttonUpgrade1, "priceUpgrade1" : priceUpgrade1, "textUpgrade1" : textUpgrade1, "rowUpgrade1" : rowUpgrade1, "levelUpgrade2" : levelUpgrade2, "buttonUpgrade2" : buttonUpgrade2, "priceUpgrade2" : priceUpgrade2, "textUpgrade2" : textUpgrade2, "rowUpgrade2" : rowUpgrade2, "levelUpgrade3" : levelUpgrade3, "buttonUpgrade3" : buttonUpgrade3, "priceUpgrade3" : priceUpgrade3, "textUpgrade3" : textUpgrade3, "rowUpgrade3" : rowUpgrade3, "levelUpgrade4" : levelUpgrade4, "buttonUpgrade4" : buttonUpgrade4, "priceUpgrade4" : priceUpgrade4, "textUpgrade4" : textUpgrade4, "rowUpgrade4" : rowUpgrade4, "levelUpgrade5" : levelUpgrade5, "buttonUpgrade5" : buttonUpgrade5, "priceUpgrade5" : priceUpgrade5, "textUpgrade5" : textUpgrade5, "rowUpgrade5" : rowUpgrade5, "columnBoost1" : columnBoost1, "columnBoost2" : columnBoost2, "columnBoost3" : columnBoost3, "columnBoost4" : columnBoost4, "columnBoost5" : columnBoost5, "columnBoost6" : columnBoost6, "columnBoost7" : columnBoost7, "columnBoost8" : columnBoost8, "columnBoost9" : columnBoost9, "columnBoost10" : columnBoost10, "columnBoost11" : columnBoost11, "columnBoost12" : columnBoost12, "columnBoost13" : columnBoost13, "columnBoost14" : columnBoost14, "columnBoost15" : columnBoost15, "columnBoost16" : columnBoost16, "columnBoost17" : columnBoost17, "columnBoost18" : columnBoost18, "columnBoost19" : columnBoost19, "buttonBoost1": buttonBoost1, "buttonBoost2": buttonBoost2, "buttonBoost3": buttonBoost3, "buttonBoost4": buttonBoost4, "buttonBoost5": buttonBoost5, "buttonBoost6": buttonBoost6, "buttonBoost7": buttonBoost7, "buttonBoost8": buttonBoost8, "buttonBoost9": buttonBoost9, "buttonBoost10": buttonBoost10, "buttonBoost11": buttonBoost11, "buttonBoost12": buttonBoost12, "buttonBoost13": buttonBoost13, "buttonBoost14": buttonBoost14, "buttonBoost15": buttonBoost15, "buttonBoost16": buttonBoost16, "buttonBoost17": buttonBoost17, "buttonBoost18": buttonBoost18, "buttonBoost19": buttonBoost19}
-
 boostVerif={"Boost1" : False, "Boost2" : False, "Boost3" : False, "Boost4" : False, "Boost5" : False, "Boost6" : False, "Boost7" : False, "Boost8" : False, "Boost9" : False, "Boost10" : False, "Boost11" : False, "Boost12" : False, "Boost13" : False, "Boost14" : False, "Boost15" : False, "Boost16" : False, "Boost17" : False, "Boost18" : False, "Boost19" : False}
 boostIsPlaced={"Boost1" : False, "Boost2" : False, "Boost3" : False, "Boost4" : False, "Boost5" : False, "Boost6" : False, "Boost7" : False, "Boost8" : False, "Boost9" : False, "Boost10" : False, "Boost11" : False, "Boost12" : False, "Boost13" : False, "Boost14" : False, "Boost15" : False, "Boost16" : False, "Boost17" : False, "Boost18" : False, "Boost19" : False}
-
-
-
-masquerBoost()
 
 # activation commandes admin
 fenetre.bind("<Up>", point1k)
 fenetre.bind("<Left>", ptpclick)
 fenetre.bind("<Right>", ptpsecondes)
-
-# Gestion du multithread pour les clic/sec
-th1 = threading.Thread(target=MajScoreSec)
-th1.daemon = True
-th1.start()
-
-# Verification si on affiche le boost ou pas
-th4=threading.Thread(target=actualiserBoostVerif)
-th4.daemon=True
-th4.start()
 
 fenetre.mainloop()
 
